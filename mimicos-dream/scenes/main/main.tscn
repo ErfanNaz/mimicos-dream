@@ -4,27 +4,24 @@
 [ext_resource type="Script" uid="uid://d35bt84gd7yoh" path="res://scenes/main/main.gd" id="1_l3cfh"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_hujxm"]
 [ext_resource type="PackedScene" uid="uid://brtj30hrfgtnc" path="res://player/player_controller/player_controller.tscn" id="2_iuonh"]
+[ext_resource type="Texture2D" uid="uid://s2tlil23k38x" path="res://scenes/main/assets/Painterly Sky BGs (165).png" id="2_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://dxyear54toy1v" path="res://entities/input_manager/input_manager.tscn" id="3_k2fmo"]
-[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="6_yyfjg"]
-[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_b1x3f"]
+[ext_resource type="PackedScene" uid="uid://dvs75nw080kyk" path="res://entities/camera_system/camera_system.tscn" id="6_ow5a4"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_l3cfh"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hujxm"]
+panorama = ExtResource("2_yyfjg")
 
-[sub_resource type="Sky" id="Sky_6q06x"]
-sky_material = SubResource("ProceduralSkyMaterial_l3cfh")
+[sub_resource type="Sky" id="Sky_ow5a4"]
+sky_material = SubResource("PanoramaSkyMaterial_hujxm")
 
 [sub_resource type="Environment" id="Environment_ow5a4"]
 background_mode = 2
-sky = SubResource("Sky_6q06x")
+sky = SubResource("Sky_ow5a4")
 glow_enabled = true
+fog_light_color = Color(0.69680893, 0.9194905, 0.9959524, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hujxm"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_b1x3f"]
 viewport_path = NodePath("PlayerActor/PlayerHud/SubViewport")
-
-[sub_resource type="Resource" id="Resource_ouso4"]
-script = ExtResource("7_b1x3f")
 
 [node name="Main" type="Node3D" unique_id=4722677 node_paths=PackedStringArray("player_controller", "input_manager")]
 script = ExtResource("1_l3cfh")
@@ -36,9 +33,12 @@ environment = SubResource("Environment_ow5a4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1327317986]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 0.1
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=128362928]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=145780615]
 process_priority = 300
@@ -49,31 +49,15 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 [node name="Map01" parent="." unique_id=1725308146 instance=ExtResource("1_hyk8p")]
 
 [node name="PlayerController" parent="." unique_id=88308788 instance=ExtResource("2_iuonh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5084114, 1.9042425, -2.4023952)
-
-[node name="HandArea3D" parent="PlayerController/PlayerBody/PlayerActor" parent_id_path=PackedInt32Array(88308788, 1535567688) index="6" unique_id=1244572555]
-transform = Transform3D(0.05001418, -0.9964077, 0.06834688, 0.026982784, -0.06705959, -0.9973838, 0.99838376, 0.051727496, 0.023531882, -0.7199261, 1.2051492, 0.019286633)
 
 [node name="PlayerHud" parent="PlayerController/PlayerBody/PlayerActor" parent_id_path=PackedInt32Array(88308788, 1535567688) index="9" unique_id=1411064321]
-texture = SubResource("ViewportTexture_hujxm")
+texture = SubResource("ViewportTexture_b1x3f")
 
 [node name="InputManager" parent="." unique_id=799682356 instance=ExtResource("3_k2fmo")]
 
-[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=9594229 node_paths=PackedStringArray("follow_target", "look_at_target")]
-transform = Transform3D(5.9604226e-08, -0.44721335, 0.8944201, 1.4901056e-08, 0.8944267, 0.44721004, -0.99999297, -1.4901153e-08, 5.9604172e-08, 20.508411, 11.9042425, -2.4023952)
-top_level = true
-script = ExtResource("6_yyfjg")
-priority = 2
-follow_mode = 2
-follow_target = NodePath("../PlayerController/PlayerBody")
-look_at_mode = 2
-look_at_target = NodePath("../PlayerController/PlayerBody/PlayerActor")
-tween_resource = SubResource("Resource_ouso4")
-follow_offset = Vector3(20, 10, 0)
-align_transform_with_view = Callable()
-align_position_with_view = Callable()
-align_rotation_with_view = Callable()
-metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+[node name="CameraSystem" parent="." unique_id=798910101 node_paths=PackedStringArray("camera_3d", "camera_position_target") instance=ExtResource("6_ow5a4")]
+camera_3d = NodePath("../Camera3D")
+camera_position_target = NodePath("../PlayerController/PlayerBody")
 
 [editable path="PlayerController"]
 [editable path="PlayerController/PlayerBody/PlayerActor"]

@@ -15,9 +15,6 @@ class_name InputManager extends Node
 @export var player_id: int = 1
 @export var active: bool = true
 
-
-
-
 const joy_button_actions: Array[JoyButton] = [JOY_BUTTON_A, JOY_BUTTON_B, JOY_BUTTON_X, JOY_BUTTON_Y, JOY_BUTTON_LEFT_SHOULDER, JOY_BUTTON_RIGHT_SHOULDER]
 
 signal controller_input_changed(controller_input: ControllerInput)

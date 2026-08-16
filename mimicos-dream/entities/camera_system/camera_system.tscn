@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dvs75nw080kyk"]
+
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_dhnus"]
+[ext_resource type="Script" uid="uid://dprsdqw0iu1u" path="res://common/camera_system/camera_system.gd" id="1_k8268"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="2_k8268"]
+
+[sub_resource type="Resource" id="Resource_a5tes"]
+script = ExtResource("2_k8268")
+
+[node name="CameraSystem" type="Node3D" unique_id=798910101 node_paths=PackedStringArray("phantom_camera_3d", "look_at_target", "camera_anchor", "animation_player")]
+script = ExtResource("1_k8268")
+phantom_camera_3d = NodePath("PhantomCamera3D")
+look_at_target = NodePath("AnchorNode3D/TargetSpringArm3D/LookAtTargetNode3D")
+camera_anchor = NodePath("AnchorNode3D/SpringArm3D/CameraAnchorNode3D")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=148431964 node_paths=PackedStringArray("follow_target", "look_at_target")]
+top_level = true
+script = ExtResource("1_dhnus")
+priority = 1
+follow_mode = 2
+follow_target = NodePath("../AnchorNode3D/SpringArm3D/CameraAnchorNode3D")
+look_at_mode = 2
+look_at_target = NodePath("../AnchorNode3D/TargetSpringArm3D/LookAtTargetNode3D")
+tween_resource = SubResource("Resource_a5tes")
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="AnchorNode3D" type="Node3D" parent="." unique_id=285477443]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="AnchorNode3D" unique_id=598632343]
+collision_mask = 0
+spring_length = 10.0
+
+[node name="CameraAnchorNode3D" type="Node3D" parent="AnchorNode3D/SpringArm3D" unique_id=342658640]
+
+[node name="TargetSpringArm3D" type="SpringArm3D" parent="AnchorNode3D" unique_id=59806336]
+transform = Transform3D(-1, 6.181724e-08, -6.181724e-08, 0, 0.70710677, 0.70710677, 8.742278e-08, 0.70710677, -0.70710677, 0, 0, 0)
+collision_mask = 0
+spring_length = 20.0
+
+[node name="LookAtTargetNode3D" type="Node3D" parent="AnchorNode3D/TargetSpringArm3D" unique_id=1036754177]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1116189398]

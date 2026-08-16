@@ -88,6 +88,14 @@ LB={
 "deadzone": 0.2,
 "events": []
 }
+option_button={
+"deadzone": 0.2,
+"events": []
+}
+start_button={
+"deadzone": 0.2,
+"events": []
+}
 
 [physics]
 

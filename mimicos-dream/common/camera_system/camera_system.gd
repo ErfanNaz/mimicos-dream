@@ -4,7 +4,7 @@ class_name CameraSystem extends Node3D
 @export var phantom_camera_3d: PhantomCamera3D
 
 @export var camera_position_target: Node3D
-@export var camera_look_at_marker: Node3D
+@export var look_at_target: Node3D
 @export var camera_anchor: Node3D
 
 @export var min_distance: float = 1
