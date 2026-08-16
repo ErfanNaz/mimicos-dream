@@ -49,7 +49,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 [node name="Map01" parent="." unique_id=1725308146 instance=ExtResource("1_hyk8p")]
 
 [node name="PlayerController" parent="." unique_id=88308788 instance=ExtResource("2_iuonh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 62.293304, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1759113, 0)
 
 [node name="Skeleton3D" parent="PlayerController/PlayerActor/Mimico_Idle/rig" parent_id_path=PackedInt32Array(88308788, 1535567688, 1576097541, 1830469086) index="0" unique_id=2023469869]
 bones/2/rotation = Quaternion(-0.1100089, 0, 0, 0.9939306)
