@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://duw6smuqvr0m1" path="res://assets/models/testobjekte/truhe.glb" id="2_bepxa"]
 [ext_resource type="PackedScene" uid="uid://bsmno2vj20r5r" path="res://assets/models/testobjekte/erz.glb" id="3_g5h58"]
+[ext_resource type="PackedScene" uid="uid://smiv1nftqaxy" path="res://assets/models/testobjekte/tür.glb" id="4_hrjdk"]
 [ext_resource type="PackedScene" uid="uid://cu30teovqg555" path="res://assets/models/maps/map_01.glb" id="4_yr2eo"]
 
 [node name="Map01" type="Node3D" unique_id=1725308146]
@@ -13,3 +14,6 @@ transform = Transform3D(0.6419326, 0, 0.76676106, 0, 1, 0, -0.76676106, 0, 0.641
 
 [node name="erz2" parent="." unique_id=1570559746 instance=ExtResource("3_g5h58")]
 transform = Transform3D(0.637081, 0, 0.77079684, 0, 1, 0, -0.77079684, 0, 0.637081, -1.3527464, 0.09340006, -7.2100735)
+
+[node name="tür2" parent="." unique_id=721003213 instance=ExtResource("4_hrjdk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2391295, 9.536743e-07, -7.9698486)
