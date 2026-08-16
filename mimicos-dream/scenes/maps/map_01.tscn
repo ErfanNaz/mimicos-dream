@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://smiv1nftqaxy" path="res://assets/models/testobjekte/tür.glb" id="4_hrjdk"]
 [ext_resource type="PackedScene" uid="uid://cu30teovqg555" path="res://assets/models/maps/map_01.glb" id="4_yr2eo"]
 [ext_resource type="PackedScene" uid="uid://bsxnimjc8sro0" path="res://assets/models/testobjekte/werkzeuge/spitzhacke.glb" id="5_yr2eo"]
+[ext_resource type="PackedScene" uid="uid://dh5fx0qggs4st" path="res://assets/models/testobjekte/werkzeuge/schwert.glb" id="6_4iqtb"]
 
 [node name="Map01" type="Node3D" unique_id=1725308146]
 
@@ -19,5 +20,8 @@ transform = Transform3D(0.637081, 0, 0.77079684, 0, 1, 0, -0.77079684, 0, 0.6370
 [node name="tür2" parent="." unique_id=721003213 instance=ExtResource("4_hrjdk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2391295, 9.536743e-07, -7.9698486)
 
-[node name="spitzhacke" parent="." unique_id=1648433076 instance=ExtResource("5_yr2eo")]
-transform = Transform3D(-0.057651952, 0.015447794, -0.9982172, -0.29041964, -0.9568974, 0.0019648066, -0.95516104, 0.29001516, 0.05965334, -0.9563818, 0.48597234, -6.349321)
+[node name="spitzhacke2" parent="." unique_id=2137384282 instance=ExtResource("5_yr2eo")]
+transform = Transform3D(1, 0, 0, 0, -0.932859, -0.3602417, 0, 0.3602417, -0.932859, -1.1627369, 0.7699443, -6.43537)
+
+[node name="schwert2" parent="." unique_id=448878792 instance=ExtResource("6_4iqtb")]
+transform = Transform3D(1, 0, 0, 0, 0.022127448, 0.99975514, 0, -0.99975514, 0.022127448, -8.254494, 0.8194362, -3.2521217)
