@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cu30teovqg555"
-path="res://.godot/imported/map_01.glb-352b3451fb876d9b421f18c83392c18e.scn"
+uid="uid://bsmno2vj20r5r"
+path="res://.godot/imported/erz.glb-308e31987cb2f5a71a735212345ba518.scn"
 
 [deps]
 
-source_file="res://assets/models/maps/map_01.glb"
-dest_files=["res://.godot/imported/map_01.glb-352b3451fb876d9b421f18c83392c18e.scn"]
+source_file="res://assets/models/testobjekte/erz.glb"
+dest_files=["res://.godot/imported/erz.glb-308e31987cb2f5a71a735212345ba518.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:ground": {
+"PATH:erz": {
 "generate/physics": true
 }
 }

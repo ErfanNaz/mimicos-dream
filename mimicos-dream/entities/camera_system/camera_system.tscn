@@ -15,6 +15,7 @@ camera_anchor = NodePath("AnchorNode3D/SpringArm3D/CameraAnchorNode3D")
 animation_player = NodePath("AnimationPlayer")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." unique_id=148431964 node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 top_level = true
 script = ExtResource("1_dhnus")
 priority = 1
@@ -25,6 +26,7 @@ look_at_target = NodePath("../AnchorNode3D/TargetSpringArm3D/LookAtTargetNode3D"
 tween_resource = SubResource("Resource_a5tes")
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
+align_rotation_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="AnchorNode3D" type="Node3D" parent="." unique_id=285477443]
@@ -32,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70
 
 [node name="SpringArm3D" type="SpringArm3D" parent="AnchorNode3D" unique_id=598632343]
 collision_mask = 0
-spring_length = 10.0
+spring_length = 8.0
 
 [node name="CameraAnchorNode3D" type="Node3D" parent="AnchorNode3D/SpringArm3D" unique_id=342658640]
 

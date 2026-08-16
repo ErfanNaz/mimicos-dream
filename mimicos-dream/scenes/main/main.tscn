@@ -51,10 +51,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 [node name="Map01" parent="." unique_id=1725308146 instance=ExtResource("1_hyk8p")]
 
 [node name="PlayerController" parent="." unique_id=88308788 instance=ExtResource("2_iuonh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 62.293304, 0)
-
-[node name="HandArea3D" parent="PlayerController/PlayerActor" parent_id_path=PackedInt32Array(88308788, 1535567688) index="6" unique_id=1244572555]
-transform = Transform3D(0.77429086, -0.6325068, -0.020223856, 0.62645346, 0.7615721, 0.16602421, -0.08960962, -0.14122003, 0.9859144, -0.45804363, 1.3767128, 0.488881)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1759113, 0)
 
 [node name="PlayerHud" parent="PlayerController/PlayerActor" parent_id_path=PackedInt32Array(88308788, 1535567688) index="10" unique_id=1411064321]
 texture = SubResource("ViewportTexture_hujxm")
