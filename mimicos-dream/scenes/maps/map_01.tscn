@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://b03dp11bxot1q"]
 
+[ext_resource type="PackedScene" uid="uid://duw6smuqvr0m1" path="res://assets/models/testobjekte/truhe.glb" id="2_bepxa"]
 [ext_resource type="PackedScene" uid="uid://cu30teovqg555" path="res://assets/models/maps/map_01.glb" id="4_yr2eo"]
 
 [node name="Map01" type="Node3D" unique_id=1725308146]
 
 [node name="map_01" parent="." unique_id=142608024 instance=ExtResource("4_yr2eo")]
+
+[node name="truhe2" parent="." unique_id=1646094741 instance=ExtResource("2_bepxa")]
+transform = Transform3D(0.6419326, 0, 0.76676106, 0, 1, 0, -0.76676106, 0, 0.6419326, -9.252748, 9.536743e-07, -3.449089)
