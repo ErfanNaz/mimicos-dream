@@ -58,7 +58,6 @@ func _ready() -> void:
 	player_actor.set_outline(false)
 	player_actor_mover.activated()
 	#player_properties = player_properties.duplicate()
-	state_changed.connect(self._on_state_changed)
 	if input_manager:
 		plug_in_input_manager(input_manager)
 	
@@ -118,11 +117,3 @@ func get_player_color(_team: int) -> Color:
 	if _team > TEAM_COLORS.size():
 		return Color.TRANSPARENT
 	return TEAM_COLORS.get(_team - 1)
-
-
-func _on_state_changed(_state: String) -> void:
-	match(_state):
-			'idle':
-				player_actor.set_animation("idle")
-			'walk':
-				player_actor.set_animation("walk")

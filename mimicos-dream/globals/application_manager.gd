@@ -1,6 +1,6 @@
 extends Node
 
-const log_level: int = 0
+var log_level: int = 0
 
 var random_generator = RandomNumberGenerator.new()
 var runtime_args: RuntimeArgs = RuntimeArgs.new()

@@ -27,6 +27,7 @@ viewport_path = NodePath("PlayerActor/PlayerHud/SubViewport")
 script = ExtResource("1_l3cfh")
 player_controller = NodePath("PlayerController")
 input_manager = NodePath("InputManager")
+log_level = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1823298397]
 environment = SubResource("Environment_ow5a4")
@@ -232,7 +233,7 @@ bones/207/rotation = Quaternion(0.1361466, -4.0532373e-09, 0.91909015, -0.369780
 bones/209/position = Vector3(0, 0, 0)
 bones/221/position = Vector3(0, 0, 0)
 
-[node name="PlayerHud" parent="PlayerController/PlayerActor" parent_id_path=PackedInt32Array(88308788, 1535567688) index="9" unique_id=1411064321]
+[node name="PlayerHud" parent="PlayerController/PlayerActor" parent_id_path=PackedInt32Array(88308788, 1535567688) index="10" unique_id=1411064321]
 texture = SubResource("ViewportTexture_hujxm")
 
 [node name="InputManager" parent="." unique_id=799682356 instance=ExtResource("3_k2fmo")]
@@ -243,4 +244,5 @@ camera_position_target = NodePath("../PlayerController/PlayerActor")
 
 [editable path="PlayerController"]
 [editable path="PlayerController/PlayerActor"]
-[editable path="PlayerController/PlayerActor/Mimico_Idle"]
+[editable path="PlayerController/PlayerActor/player_model"]
+[editable path="PlayerController/PlayerActor/player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack"]
