@@ -4,6 +4,8 @@ extends State
 
 func enter() -> void:
 	ApplicationManager.system_log("PlayerState InAir")
+
+func physics_update(delta: float):
 	if player_body.is_on_floor():
 		transition("idle")
 		return
