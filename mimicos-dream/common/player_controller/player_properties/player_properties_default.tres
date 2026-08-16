@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PlayerProperties" format=3 uid="uid://d0o3dvfqisusl"]
+
+[ext_resource type="Script" path="res://entities/player/player_properties/player_properties.gd" id="1_8de1m"]
+
+[resource]
+script = ExtResource("1_8de1m")
+metadata/_custom_type_script = "uid://ba1qxsjfxtnwf"

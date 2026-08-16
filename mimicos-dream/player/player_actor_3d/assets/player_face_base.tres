@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cvff6hkfnq5r6"]
+
+[ext_resource type="Texture2D" uid="uid://3c30cs2fx0u8" path="res://entities/player/player_actor_3d/faces/shoked.png" id="1_y6h72"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_y6h72")

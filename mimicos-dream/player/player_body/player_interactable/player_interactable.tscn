@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bxye5myofuce1"]
+
+[ext_resource type="Script" uid="uid://dwjaj6b1w32fr" path="res://common/interaction_system/interactable/interaction.gd" id="1_1m62u"]
+
+[sub_resource type="Resource" id="Resource_adt6h"]
+metadata/__load_path__ = "res://entities/interaction_system/player_interaction/player_interact_data.tres"
+
+[node name="PlayerInteractable" type="Node3D" unique_id=735506298]
+
+[node name="Interactable" type="Area3D" parent="." unique_id=1647974667]
+script = ExtResource("1_1m62u")
+interact_data = SubResource("Resource_adt6h")
+metadata/_custom_type_script = "uid://dwjaj6b1w32fr"
