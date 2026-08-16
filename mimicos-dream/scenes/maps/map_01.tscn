@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://b03dp11bxot1q"]
 
+[ext_resource type="Texture2D" uid="uid://b5fgr6t10ug2k" path="res://assets/textures/Grid.png" id="1_hsmnc"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_mf8xc"]
 size = Vector3(200, 1, 200)
 
@@ -7,6 +9,7 @@ size = Vector3(200, 1, 200)
 size = Vector3(200, 1, 200)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ts7x6"]
+albedo_texture = ExtResource("1_hsmnc")
 
 [node name="Map01" type="Node3D" unique_id=1725308146]
 
