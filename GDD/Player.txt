@@ -1,0 +1,12 @@
+Player:
+
+movement:
+	- schleichen
+	- gehen
+	- rennen
+	- springen
+	- angreifen
+	- abbauen
+
+interaktionen:
+	- mit f/viereck an objekten interagieren (tür,objekte nehmen, truhen öffnen, erzabbauen usw.)
