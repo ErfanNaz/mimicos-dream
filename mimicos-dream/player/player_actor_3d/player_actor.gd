@@ -1,15 +1,5 @@
 class_name PlayerActor3D extends Node3D
 
-enum PlayerAnimation {
-	IDLE = 0,
-	IDLE_RIG = 1,
-	RUNNING_RIG = 2,
-	STUNNED = 3,
-	TAUNT = 4,
-	HIDE = 5,
-	ATTACK = 6,
-	FLY = 7
-}
 
 @export var animation_player: AnimationPlayer
 @export var player_body_mesh: MeshInstance3D
@@ -19,7 +9,7 @@ enum PlayerAnimation {
 
 @export var color: Color
 @export_range(0, 5, 1) var current_face: int = 0
-@export_range(0, 5, 1) var animation: int = 0
+@export_enum("idle", "walk", "jump", "fall") var animation: String = ""
 @export_node_path() var face_look_at: NodePath:
 	set(value):
 		face_look_at = value
@@ -42,6 +32,7 @@ enum PlayerAnimation {
 			set_lookup_target("")
 
 @export var snap_image: ImageTexture
+@export var finite_state_machine: FiniteStateMachine
 
 @export var hand_area_3d: Area3D
 
@@ -70,20 +61,16 @@ const PLAYER_BODY_BASE: StandardMaterial3D = preload("uid://bsava25irrlk1")
 
 var is_ready: bool = false
 var tween: Tween
-var current_animation: PlayerAnimation = PlayerAnimation.IDLE
+var current_animation: String = "idle"
 
 var head_look_at_tween: Tween
 
-const animation_map = [
-	PlayerAnimation.IDLE,
-	PlayerAnimation.IDLE_RIG,
-	PlayerAnimation.RUNNING_RIG,
-	PlayerAnimation.STUNNED,
-	PlayerAnimation.TAUNT,
-	PlayerAnimation.HIDE,
-	PlayerAnimation.ATTACK,
-	PlayerAnimation.FLY,
-]
+const animation_map: Dictionary[String, bool] = {
+	"idle": true,
+	"walk": true,
+	"jump": true,
+	"fall": true
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -104,8 +91,6 @@ func update_current_look_at() -> void:
 	set_lookup_target(face_look_at)
 	
 func set_lookup_target(path: NodePath) -> void:
-	if true:
-		return
 	if !is_ready:
 		return
 	if look_at_modifier_head.target_node == path:
@@ -136,8 +121,6 @@ func set_color(_color: Color) -> void:
 	player_body_mesh.set_surface_override_material(0, mat)
 
 func set_outline(outline: bool) -> void:
-	if true:
-		return
 	var mat: StandardMaterial3D = get_body_material().duplicate_deep()
 	if outline:
 		mat.stencil_color = Color.WHITE
@@ -146,8 +129,6 @@ func set_outline(outline: bool) -> void:
 	player_body_mesh.set_surface_override_material(0, mat)
 
 func set_face(face: int) -> void:
-	if true:
-		return
 	current_face = face
 	var face_material = get_face_material()
 	var mat: StandardMaterial3D = face_material.duplicate()
@@ -201,36 +182,14 @@ func get_body_material() -> StandardMaterial3D:
 	return body_material
 	
 
-func set_animation(_animation: int) -> void:
+func set_animation(_animation: String) -> void:
 	animation = _animation
-	if _animation > animation_map.size():
+	if !animation_map.has(_animation):
 		ApplicationManager.system_log("unknown animation")
 		return
-	current_animation = animation_map.get(_animation)
-	match(current_animation):
-		PlayerAnimation.IDLE: 
-			animation_player.play("idle")
-			#player_actor_animation_player.stop()
-		PlayerAnimation.IDLE_RIG: 
-			animation_player.play("idle_rig")
-			#player_actor_animation_player.stop()
-		PlayerAnimation.RUNNING_RIG: 
-			animation_player.play("running_rig")
-			#player_actor_animation_player.stop()
-		PlayerAnimation.STUNNED: 
-			animation_player.play("stunned")
-			#player_actor_animation_player.stop()
-		PlayerAnimation.TAUNT: 
-			animation_player.play("taunt_01")
-			#player_actor_animation_player.stop()
-		PlayerAnimation.HIDE:
-			#animation_player.play("fall_rig")
-			player_actor_animation_player.play("hide", -1, 2)
-		PlayerAnimation.ATTACK: 
-			animation_player.play("slap", -1, 2)
-			player_actor_animation_player.play("punch", -1, 2)
-		PlayerAnimation.FLY: 
-			animation_player.play("flying")
+	match(animation):
+		"idle": 
+			finite_state_machine.transition("PlayerActorIdle")
 		_: 
-			animation_player.play("idle")
+			finite_state_machine.transition("PlayerActorWalk")
 			

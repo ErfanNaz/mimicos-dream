@@ -86,7 +86,7 @@ func process_tick(delta: float, _controller_input: ControllerInput) -> void:
 	var _velocity: Vector2 = direction * player_properties.speed * running
 	
 	if velocity.length() > 0.1:
-		state = 'walking'
+		state = 'walk'
 	
 	player_body.velocity = Vector3(_velocity.x, velocity.y, _velocity.y)
 	player_body.move_and_slide()

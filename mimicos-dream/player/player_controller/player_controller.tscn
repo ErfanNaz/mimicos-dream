@@ -68,9 +68,6 @@ player_controller = NodePath("..")
 
 [node name="PlayerActor" parent="." unique_id=1535567688 instance=ExtResource("10_ofon0")]
 
-[node name="HandArea3D" parent="PlayerActor" index="4" unique_id=1244572555]
-transform = Transform3D(0.05001418, -0.9964077, 0.06834688, 0.026982784, -0.06705959, -0.9973838, 0.99838376, 0.051727496, 0.023531882, -0.7199261, 1.2051492, 0.019286565)
-
 [node name="LightTarget" type="Node3D" parent="PlayerActor" unique_id=38885408]
 
 [node name="LightOffset" type="Node3D" parent="PlayerActor/LightTarget" unique_id=131498548]
@@ -171,4 +168,5 @@ player_controller = NodePath("..")
 libraries/ = SubResource("AnimationLibrary_la4u0")
 
 [editable path="PlayerActor"]
-[editable path="PlayerActor/Mimico_Idle"]
+[editable path="PlayerActor/player_model"]
+[editable path="PlayerActor/player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack"]

@@ -20,7 +20,7 @@ var TEAM_COLORS: Array[Color] = [
 
 @export var id: int = 1
 
-@export_enum('idle', 'walking', 'punching', 'stunned', 'taunt', 'hide', 'flying') var state: String = 'idle':
+@export_enum('idle', 'walk', 'punching', 'stunned', 'taunt', 'hide', 'flying') var state: String = 'idle':
 	set(value):
 		if state == value:
 			return
@@ -58,6 +58,7 @@ func _ready() -> void:
 	player_actor.set_outline(false)
 	player_actor_mover.activated()
 	#player_properties = player_properties.duplicate()
+	state_changed.connect(self._on_state_changed)
 	if input_manager:
 		plug_in_input_manager(input_manager)
 	
@@ -122,14 +123,6 @@ func get_player_color(_team: int) -> Color:
 func _on_state_changed(_state: String) -> void:
 	match(_state):
 			'idle':
-				player_actor.set_animation(0)
-			'walking':
-				player_actor.set_animation(2)
-			'stunned':
-				player_actor.set_animation(3)
-			'taunt':
-				player_actor.set_animation(4)
-			'punching':
-				player_actor.set_animation(6)
-			'flying':
-				player_actor.set_animation(7)
+				player_actor.set_animation("idle")
+			'walk':
+				player_actor.set_animation("walk")
