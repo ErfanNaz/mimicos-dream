@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://b03dp11bxot1q"]
 
 [ext_resource type="Texture2D" uid="uid://b5fgr6t10ug2k" path="res://assets/textures/Grid.png" id="1_hsmnc"]
+[ext_resource type="PackedScene" uid="uid://42lygt5x58gi" path="res://assets/models/gebäude/haus.glb" id="2_g5h58"]
+[ext_resource type="PackedScene" uid="uid://b4y1k6b7g0osh" path="res://assets/models/enviroment/baum.glb" id="3_hrjdk"]
+[ext_resource type="PackedScene" uid="uid://b37drc8akqdrh" path="res://assets/models/enviroment/erhöhung_mit_treppe.glb" id="4_hrjdk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mf8xc"]
 size = Vector3(200, 1, 200)
@@ -22,3 +25,24 @@ shape = SubResource("BoxShape3D_mf8xc")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1286697433]
 mesh = SubResource("BoxMesh_mf8xc")
 surface_material_override/0 = SubResource("StandardMaterial3D_ts7x6")
+
+[node name="haus2" parent="StaticBody3D" unique_id=1070396178 instance=ExtResource("2_g5h58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.335045, 0.5, -18.628407)
+
+[node name="haus3" parent="StaticBody3D" unique_id=113869464 instance=ExtResource("2_g5h58")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 27.465023, 0.5, -18.628407)
+
+[node name="haus4" parent="StaticBody3D" unique_id=1243449824 instance=ExtResource("2_g5h58")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 27.465023, 0.5, -3.81361)
+
+[node name="baum" parent="StaticBody3D" unique_id=1808017476 instance=ExtResource("3_hrjdk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.859987, 0.5, -10.624931)
+
+[node name="baum2" parent="StaticBody3D" unique_id=1464300365 instance=ExtResource("3_hrjdk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.29119, 0.5, 7.402622)
+
+[node name="baum3" parent="StaticBody3D" unique_id=1547012679 instance=ExtResource("3_hrjdk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.29119, 0.5, -31.695835)
+
+[node name="erhöhung_mit_treppe" parent="." unique_id=2069591597 instance=ExtResource("4_hrjdk")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 41.535202, 0.11111832, -59.360462)
