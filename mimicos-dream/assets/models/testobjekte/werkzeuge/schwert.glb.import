@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b4y1k6b7g0osh"
-path="res://.godot/imported/baum.glb-0f595351b3a08f7175e1421992703b49.scn"
+uid="uid://dh5fx0qggs4st"
+path="res://.godot/imported/schwert.glb-28ae0cfe57bca35b0fecd66dcd1e7910.scn"
 
 [deps]
 
-source_file="res://assets/models/enviroment/baum.glb"
-dest_files=["res://.godot/imported/baum.glb-0f595351b3a08f7175e1421992703b49.scn"]
+source_file="res://assets/models/testobjekte/werkzeuge/schwert.glb"
+dest_files=["res://.godot/imported/schwert.glb-28ae0cfe57bca35b0fecd66dcd1e7910.scn"]
 
 [params]
 
@@ -39,7 +39,13 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:schwert": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
 gltf/texture_map_mode=1

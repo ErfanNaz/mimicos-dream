@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://42lygt5x58gi"
-path="res://.godot/imported/haus.glb-85124c73f16627a62f09946f78e77292.scn"
+uid="uid://bsxnimjc8sro0"
+path="res://.godot/imported/spitzhacke.glb-a69129cc29ce17b767bac7900540750f.scn"
 
 [deps]
 
-source_file="res://assets/models/gebäude/haus.glb"
-dest_files=["res://.godot/imported/haus.glb-85124c73f16627a62f09946f78e77292.scn"]
+source_file="res://assets/models/testobjekte/werkzeuge/spitzhacke.glb"
+dest_files=["res://.godot/imported/spitzhacke.glb-a69129cc29ce17b767bac7900540750f.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:haus": {
+"PATH:spitzhacke": {
 "generate/physics": true
 }
 }
