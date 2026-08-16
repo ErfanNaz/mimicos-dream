@@ -66,8 +66,7 @@ func process_tick(delta: float, _controller_input: ControllerInput) -> void:
 	if !player_body.is_on_floor():
 		velocity += player_body.get_gravity() * 2 * delta
 	state = 'idle'
-	
-	
+			
 	var running: float = 1
 	
 	if !is_stunned:

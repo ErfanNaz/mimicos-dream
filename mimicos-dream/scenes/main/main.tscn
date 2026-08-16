@@ -27,6 +27,7 @@ viewport_path = NodePath("PlayerActor/PlayerHud/SubViewport")
 script = ExtResource("1_l3cfh")
 player_controller = NodePath("PlayerController")
 input_manager = NodePath("InputManager")
+log_level = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1823298397]
 environment = SubResource("Environment_ow5a4")
@@ -50,7 +51,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PlayerController" parent="." unique_id=88308788 instance=ExtResource("2_iuonh")]
 
-[node name="PlayerHud" parent="PlayerController/PlayerActor" parent_id_path=PackedInt32Array(88308788, 1535567688) index="9" unique_id=1411064321]
+[node name="PlayerHud" parent="PlayerController/PlayerActor" parent_id_path=PackedInt32Array(88308788, 1535567688) index="10" unique_id=1411064321]
 texture = SubResource("ViewportTexture_hujxm")
 
 [node name="InputManager" parent="." unique_id=799682356 instance=ExtResource("3_k2fmo")]
@@ -61,4 +62,5 @@ camera_position_target = NodePath("../PlayerController/PlayerActor")
 
 [editable path="PlayerController"]
 [editable path="PlayerController/PlayerActor"]
-[editable path="PlayerController/PlayerActor/Mimico_Idle"]
+[editable path="PlayerController/PlayerActor/player_model"]
+[editable path="PlayerController/PlayerActor/player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack"]
