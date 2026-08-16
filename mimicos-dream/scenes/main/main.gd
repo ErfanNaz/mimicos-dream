@@ -12,3 +12,4 @@ extends Node3D
 func _ready() -> void:
 	player_controller.plug_in_input_manager(input_manager)
 	ApplicationManager.log_level = log_level
+	player_controller.input_active_state_machine()

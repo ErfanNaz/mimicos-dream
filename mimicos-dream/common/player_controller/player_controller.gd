@@ -97,6 +97,7 @@ func plug_in_input_manager(_input_manager: InputManager) -> void:
 	if pluged_input_manager.get(player_id, null) != null:
 		return
 	pluged_input_manager.set(player_id, _input_manager)
+	input_manager = _input_manager
 	update_controller_input(_input_manager.controller_input)
 
 func unplug_input_manager(_input_manager: InputManager) -> void:
@@ -110,6 +111,8 @@ func unplug_input_manager(_input_manager: InputManager) -> void:
 	if pluged_input_manager.get(player_id, null) == null:
 		return
 	pluged_input_manager.erase(player_id)
+	if input_manager == _input_manager:
+		input_manager = null
 	update_controller_input(ControllerInput.new())
 		
 

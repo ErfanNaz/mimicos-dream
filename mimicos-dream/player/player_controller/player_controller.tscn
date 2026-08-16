@@ -155,7 +155,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="ControllerStateMachine" type="Node" parent="." unique_id=1662482892 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("15_la4u0")
-initial_state = NodePath("PlayerInputActiveControlled")
+initial_state = NodePath("PlayerIdleControlled")
 metadata/_custom_type_script = "uid://doejhfgthu4ky"
 
 [node name="PlayerInputActiveControlled" type="Node" parent="ControllerStateMachine" unique_id=117359017 node_paths=PackedStringArray("player_controller", "player_body")]
@@ -178,8 +178,9 @@ script = ExtResource("15_la4u0")
 initial_state = NodePath("idle")
 metadata/_custom_type_script = "uid://doejhfgthu4ky"
 
-[node name="idle" type="Node" parent="PlayerStateMachine" unique_id=1697516893 node_paths=PackedStringArray("player_body", "player_actor")]
+[node name="idle" type="Node" parent="PlayerStateMachine" unique_id=1697516893 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
 script = ExtResource("12_fcair")
+player_controller = NodePath("../..")
 player_body = NodePath("../../PlayerBody")
 player_actor = NodePath("../../PlayerActor")
 metadata/_custom_type_script = "uid://2y37yx57ooc4"
@@ -189,14 +190,16 @@ script = ExtResource("13_nyhp0")
 player_body = NodePath("../../PlayerBody")
 metadata/_custom_type_script = "uid://2y37yx57ooc4"
 
-[node name="jump" type="Node" parent="PlayerStateMachine/InAir" unique_id=99284279 node_paths=PackedStringArray("player_body", "player_actor")]
+[node name="jump" type="Node" parent="PlayerStateMachine/InAir" unique_id=99284279 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
 script = ExtResource("14_ptvgx")
+player_controller = NodePath("../../..")
 player_body = NodePath("../../../PlayerBody")
 player_actor = NodePath("../../../PlayerActor")
 metadata/_custom_type_script = "uid://2y37yx57ooc4"
 
-[node name="fall" type="Node" parent="PlayerStateMachine/InAir" unique_id=2040141609 node_paths=PackedStringArray("player_body", "player_actor")]
+[node name="fall" type="Node" parent="PlayerStateMachine/InAir" unique_id=2040141609 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
 script = ExtResource("15_lnwrh")
+player_controller = NodePath("../../..")
 player_body = NodePath("../../../PlayerBody")
 player_actor = NodePath("../../../PlayerActor")
 metadata/_custom_type_script = "uid://2y37yx57ooc4"
@@ -205,8 +208,9 @@ metadata/_custom_type_script = "uid://2y37yx57ooc4"
 script = ExtResource("16_5x3y2")
 metadata/_custom_type_script = "uid://2y37yx57ooc4"
 
-[node name="walk" type="Node" parent="PlayerStateMachine/Movement" unique_id=959309532 node_paths=PackedStringArray("player_body", "player_actor")]
+[node name="walk" type="Node" parent="PlayerStateMachine/Movement" unique_id=959309532 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
 script = ExtResource("17_4eq88")
+player_controller = NodePath("../../..")
 player_body = NodePath("../../../PlayerBody")
 player_actor = NodePath("../../../PlayerActor")
 metadata/_custom_type_script = "uid://2y37yx57ooc4"
