@@ -19,7 +19,7 @@ metadata/_custom_type_script = "uid://ba1qxsjfxtnwf"
 [sub_resource type="SphereShape3D" id="SphereShape3D_e3mql"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nrvps"]
-viewport_path = NodePath("PlayerBody/PlayerActor/PlayerHud/SubViewport")
+viewport_path = NodePath("PlayerActor/PlayerHud/SubViewport")
 
 [sub_resource type="LabelSettings" id="LabelSettings_kvkos"]
 font_size = 60
@@ -54,118 +54,36 @@ _data = {
 &"taunt": SubResource("Animation_8e8q0")
 }
 
-[node name="PlayerController" type="Node3D" unique_id=88308788 node_paths=PackedStringArray("player_body", "player_actor", "player_state_machine", "animation_player", "player_actor_mover")]
+[node name="PlayerController" type="Node3D" unique_id=88308788 node_paths=PackedStringArray("player_body", "player_actor", "player_state_machine", "player_actor_mover")]
 script = ExtResource("1_w10rj")
 player_body = NodePath("PlayerBody")
-player_actor = NodePath("PlayerBody/PlayerActor")
+player_actor = NodePath("PlayerActor")
 player_state_machine = NodePath("FiniteStateMachine")
 player_properties = SubResource("Resource_meoet")
-animation_player = NodePath("PlayerBody/PlayerActor/player_model/AnimationPlayer")
 player_actor_mover = NodePath("PlayerActorMover")
 metadata/_custom_type_script = "uid://c3wdr378gd80j"
 
 [node name="PlayerBody" parent="." unique_id=551982809 node_paths=PackedStringArray("player_controller") instance=ExtResource("3_jipor")]
 player_controller = NodePath("..")
 
-[node name="PlayerActor" parent="PlayerBody" unique_id=1535567688 instance=ExtResource("10_ofon0")]
-ik_hands_active = false
-ik_head_active = false
+[node name="PlayerActor" parent="." unique_id=1535567688 instance=ExtResource("10_ofon0")]
 
-[node name="Skeleton3D" parent="PlayerBody/PlayerActor/player_model/Armature" parent_id_path=PackedInt32Array(1535567688, 643908776, 1764096358) index="0" unique_id=208862631]
-bones/0/position = Vector3(0, 0.7611475, 0.0131311305)
-bones/0/rotation = Quaternion(-4.8130474e-08, 0, 0, 1)
-bones/1/position = Vector3(0, 0.11055285, -0.0022104024)
-bones/1/rotation = Quaternion(-0.009995536, 0, 0, 0.99995005)
-bones/2/rotation = Quaternion(-6.519259e-09, 0, 0, 1)
-bones/3/rotation = Quaternion(0, 0, 0, 1)
-bones/4/rotation = Quaternion(0.009995544, 0, 0, 0.99995005)
-bones/5/rotation = Quaternion(-1.3549055e-09, 0, 0, 1)
-bones/7/rotation = Quaternion(-0.5776821, -0.40601075, 0.5824416, -0.4027412)
-bones/8/rotation = Quaternion(-0.1226661, -0.0011025588, 0.00892033, 0.9924073)
-bones/9/rotation = Quaternion(-0.019344142, -0.00040289026, 0.020816378, 0.9995961)
-bones/10/rotation = Quaternion(5.0640665e-09, 1.1641532e-10, 1.1641532e-09, 1)
-bones/11/rotation = Quaternion(0.57813984, -0.4056906, 0.58199984, 0.40304548)
-bones/12/rotation = Quaternion(-0.12283266, 0.00022269449, -0.0017995106, 0.99242574)
-bones/13/rotation = Quaternion(-0.01928835, 0.00051652506, -0.026769819, 0.9994554)
-bones/14/rotation = Quaternion(-4.8312354e-09, 1.4551915e-09, 9.895302e-10, 1)
-bones/15/rotation = Quaternion(-0.004914852, -0.08203369, 0.9948339, -0.059597794)
-bones/16/rotation = Quaternion(0.042070672, -0.00049322407, -0.0118349455, 0.9990444)
-bones/17/rotation = Quaternion(0.46998435, -0.07264966, 0.038851835, 0.87882155)
-bones/18/rotation = Quaternion(0.31995547, -0.009979637, 0.003369697, 0.94737405)
-bones/20/rotation = Quaternion(0.0049024494, -0.081835695, 0.99485, 0.059602734)
-bones/21/rotation = Quaternion(0.034501072, 0.00041434995, 0.011958415, 0.999333)
-bones/22/rotation = Quaternion(0.48128745, 0.07012526, -0.03866447, 0.8728974)
-bones/23/rotation = Quaternion(0.31476685, 0.0128487535, -0.004261599, 0.9490725)
-bones/26/position = Vector3(-0.00013130913, 0.7611475, 0.013130474)
-bones/26/rotation = Quaternion(-3.6657756e-08, -0.0049999794, -1.9855102e-10, 0.9999875)
-bones/29/rotation = Quaternion(0.05496057, 0.9975169, 0.043972906, 0.0024207972)
-bones/30/rotation = Quaternion(-0.04370367, -1.7611769e-06, -8.1401296e-08, 0.99904454)
-bones/36/rotation = Quaternion(-0.054945238, 0.99722135, 0.05022898, -0.0027678018)
-bones/37/rotation = Quaternion(-0.036514796, 1.1090983e-06, -5.4305566e-08, 0.9993331)
-bones/38/rotation = Quaternion(-0.054945238, 0.99722135, 0.05022898, -0.0027678018)
-bones/43/rotation = Quaternion(-0.009995536, -1.5253677e-13, 1.5259724e-11, 0.99995005)
-bones/44/rotation = Quaternion(-6.519259e-09, 2.7105096e-20, 1.9689968e-27, 1)
-bones/45/rotation = Quaternion(0, -1.4333997e-26, 1.009742e-27, 1)
-bones/46/rotation = Quaternion(0.009995544, -1.2718651e-26, 2.0195848e-28, 0.99995005)
-bones/47/rotation = Quaternion(-1.3549055e-09, 5.1718467e-26, -2.928646e-29, 1)
-bones/48/rotation = Quaternion(-0.5776821, -0.40601075, 0.5824416, -0.4027412)
-bones/49/rotation = Quaternion(-0.13473818, 0.010776008, 0.0026405593, 0.9908191)
-bones/50/rotation = Quaternion(2.5892308e-07, 8.401521e-06, 0.028416842, 0.9995962)
-bones/51/position = Vector3(0.16963403, 0.102870755, -0.0013910648)
-bones/54/rotation = Quaternion(0.57813984, -0.40569064, 0.58199984, 0.40304554)
-bones/55/rotation = Quaternion(-0.1348007, -0.009912483, 0.0033854563, 0.99081737)
-bones/56/rotation = Quaternion(-6.685077e-07, 1.9185167e-05, -0.03299487, 0.9994556)
-bones/57/position = Vector3(-0.16963403, 0.102865495, -0.0011279534)
-bones/60/rotation = Quaternion(0, 0, 0, 1)
-bones/61/position = Vector3(0.7199261, 1.2051489, 0.021839963)
-bones/61/rotation = Quaternion(0.52199775, 0.46250468, -0.51092803, 0.5025537)
-bones/62/rotation = Quaternion(0, 0, 0, 1)
-bones/63/position = Vector3(-0.7199261, 1.2051489, 0.019286714)
-bones/63/rotation = Quaternion(0.52286285, -0.46351755, 0.5100433, 0.50161904)
-bones/64/position = Vector3(0.16360565, 0.113904715, -0.062452123)
-bones/64/rotation = Quaternion(0.08144668, 0.7024001, 0.7024005, -0.08144958)
-bones/65/position = Vector3(-4.9213043e-09, -5.5876828e-09, 3.596412e-10)
-bones/65/rotation = Quaternion(-0.31799334, 0.063481905, -0.021346577, 0.94572437)
-bones/67/rotation = Quaternion(0.3199548, -0.0099793915, 0.0033696245, 0.9473743)
-bones/68/position = Vector3(6.4028427e-09, -1.5624664e-08, 3.8417056e-09)
-bones/68/rotation = Quaternion(-1.702574e-08, 1.740409e-08, -6.6493167e-09, 1)
-bones/76/rotation = Quaternion(-0.0669768, 1.0880157e-08, 0.9977546, 1.8786414e-08)
-bones/78/rotation = Quaternion(-1.2296371e-09, 2.1536837e-09, -2.9954208e-08, 1)
-bones/80/position = Vector3(0.14316267, 0.2988569, 0.54541767)
-bones/80/rotation = Quaternion(0, 0, 0, 1)
-bones/81/position = Vector3(-0.16360661, 0.113905065, -0.065301426)
-bones/81/rotation = Quaternion(-0.079645336, 0.70260644, 0.70260704, 0.07965055)
-bones/82/position = Vector3(-1.1439511e-08, -1.3037765e-08, 3.6503351e-09)
-bones/82/rotation = Quaternion(-0.31298602, -0.06417174, 0.021203294, 0.9473501)
-bones/84/rotation = Quaternion(0.31476632, 0.0128484825, -0.004261548, 0.94907266)
-bones/85/position = Vector3(7.1013346e-09, 1.832359e-08, -4.656613e-09)
-bones/85/rotation = Quaternion(2.0081643e-08, 6.949995e-08, -1.1158954e-07, 1)
-bones/93/rotation = Quaternion(0.06758641, 9.7466035e-09, 0.99771345, 4.2084194e-09)
-bones/95/rotation = Quaternion(1.542503e-09, 5.1222745e-08, -1.1216798e-08, 1)
-bones/97/rotation = Quaternion(0, 0, 0, 1)
-
-[node name="BoneAttachment3D" parent="PlayerBody/PlayerActor/player_model/Armature/Skeleton3D" index="8" unique_id=1663178290]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 9.126961e-08, 0, -9.126961e-08, 0.99999994, 0, 1.3139116, 0.0020790724)
-
-[node name="BoneAttachment3DHand" parent="PlayerBody/PlayerActor/player_model/Armature/Skeleton3D" index="9" unique_id=1906970325]
+[node name="HandArea3D" parent="PlayerActor" index="4" unique_id=1244572555]
 transform = Transform3D(0.05001418, -0.9964077, 0.06834688, 0.026982784, -0.06705959, -0.9973838, 0.99838376, 0.051727496, 0.023531882, -0.7199261, 1.2051492, 0.019286565)
 
-[node name="HandArea3D" parent="PlayerBody/PlayerActor" index="6" unique_id=1244572555]
-transform = Transform3D(0.05001418, -0.9964077, 0.06834688, 0.026982784, -0.06705959, -0.9973838, 0.99838376, 0.051727496, 0.023531882, -0.7199261, 1.2051492, 0.019286565)
+[node name="LightTarget" type="Node3D" parent="PlayerActor" unique_id=38885408]
 
-[node name="LightTarget" type="Node3D" parent="PlayerBody/PlayerActor" unique_id=38885408]
-
-[node name="LightOffset" type="Node3D" parent="PlayerBody/PlayerActor/LightTarget" unique_id=131498548]
+[node name="LightOffset" type="Node3D" parent="PlayerActor/LightTarget" unique_id=131498548]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2, 0)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="PlayerBody/PlayerActor/LightTarget/LightOffset" unique_id=1004512971]
+[node name="SpringArm3D" type="SpringArm3D" parent="PlayerActor/LightTarget/LightOffset" unique_id=1004512971]
 collision_mask = 8388608
 shape = SubResource("SphereShape3D_e3mql")
 spring_length = 7.0
 
-[node name="LightPosition" type="Node3D" parent="PlayerBody/PlayerActor/LightTarget/LightOffset/SpringArm3D" unique_id=139524607]
+[node name="LightPosition" type="Node3D" parent="PlayerActor/LightTarget/LightOffset/SpringArm3D" unique_id=139524607]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="PlayerBody/PlayerActor/LightTarget/LightOffset/SpringArm3D/LightPosition" unique_id=1174802908]
+[node name="OmniLight3D" type="OmniLight3D" parent="PlayerActor/LightTarget/LightOffset/SpringArm3D/LightPosition" unique_id=1174802908]
 light_energy = 0.1
 shadow_enabled = true
 shadow_opacity = 0.4
@@ -173,7 +91,7 @@ shadow_blur = 4.0
 omni_range = 60.0
 omni_attenuation = -0.2
 
-[node name="PlayerHud" type="Sprite3D" parent="PlayerBody/PlayerActor" unique_id=1411064321 node_paths=PackedStringArray("label")]
+[node name="PlayerHud" type="Sprite3D" parent="PlayerActor" unique_id=1411064321 node_paths=PackedStringArray("label")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.493, 0)
 visible = false
 billboard = 2
@@ -181,13 +99,13 @@ texture = SubResource("ViewportTexture_nrvps")
 script = ExtResource("5_6ovrf")
 label = NodePath("SubViewport/CenterContainer/Label")
 
-[node name="SubViewport" type="SubViewport" parent="PlayerBody/PlayerActor/PlayerHud" unique_id=538701170]
+[node name="SubViewport" type="SubViewport" parent="PlayerActor/PlayerHud" unique_id=538701170]
 disable_3d = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(200, 100)
 
-[node name="CenterContainer" type="CenterContainer" parent="PlayerBody/PlayerActor/PlayerHud/SubViewport" unique_id=386371882]
+[node name="CenterContainer" type="CenterContainer" parent="PlayerActor/PlayerHud/SubViewport" unique_id=386371882]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -200,32 +118,32 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="PlayerBody/PlayerActor/PlayerHud/SubViewport/CenterContainer" unique_id=1571117440]
+[node name="Label" type="Label" parent="PlayerActor/PlayerHud/SubViewport/CenterContainer" unique_id=1571117440]
 layout_mode = 2
 text = "1"
 label_settings = SubResource("LabelSettings_kvkos")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="PlayerBody/PlayerActor" unique_id=809169558]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="PlayerActor" unique_id=809169558]
 emitting = false
 amount = 30
 explosiveness = 0.2
 process_material = SubResource("ParticleProcessMaterial_ofon0")
 draw_pass_1 = SubResource("SphereMesh_8e8q0")
 
-[node name="PlayerCameraSystem" type="Node3D" parent="PlayerBody/PlayerActor" unique_id=480455912]
+[node name="PlayerCameraSystem" type="Node3D" parent="PlayerActor" unique_id=480455912]
 
-[node name="HeadPosition" type="Node3D" parent="PlayerBody/PlayerActor/PlayerCameraSystem" unique_id=1422323089]
+[node name="HeadPosition" type="Node3D" parent="PlayerActor/PlayerCameraSystem" unique_id=1422323089]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="PlayerBody/PlayerActor/PlayerCameraSystem/HeadPosition" unique_id=2013156475]
+[node name="SpringArm3D" type="SpringArm3D" parent="PlayerActor/PlayerCameraSystem/HeadPosition" unique_id=2013156475]
 transform = Transform3D(-0.77714586, 0, -0.62932044, 0, 0.99999994, 0, 0.6293205, 0, -0.7771458, 0, 0, 0)
 collision_mask = 12582915
 shape = SubResource("SphereShape3D_dpos4")
 spring_length = 3.0
 
-[node name="PhantomCamera3D" type="Node3D" parent="PlayerBody/PlayerActor/PlayerCameraSystem/HeadPosition/SpringArm3D" unique_id=1909779976]
+[node name="PhantomCamera3D" type="Node3D" parent="PlayerActor/PlayerCameraSystem/HeadPosition/SpringArm3D" unique_id=1909779976]
 transform = Transform3D(0.9999996, -1.192093e-06, 0, 0, 0, 0.9115299, -1.192093e-06, -0.9999996, 0, 0, 0, 0)
 script = ExtResource("12_la4u0")
 look_at_mode = 2
@@ -252,6 +170,5 @@ player_controller = NodePath("..")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1302863982]
 libraries/ = SubResource("AnimationLibrary_la4u0")
 
-[editable path="PlayerBody/PlayerActor"]
-[editable path="PlayerBody/PlayerActor/player_model"]
-[editable path="PlayerBody/PlayerActor/player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack"]
+[editable path="PlayerActor"]
+[editable path="PlayerActor/Mimico_Idle"]

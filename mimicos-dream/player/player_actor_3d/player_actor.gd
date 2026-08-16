@@ -104,6 +104,8 @@ func update_current_look_at() -> void:
 	set_lookup_target(face_look_at)
 	
 func set_lookup_target(path: NodePath) -> void:
+	if true:
+		return
 	if !is_ready:
 		return
 	if look_at_modifier_head.target_node == path:
@@ -134,6 +136,8 @@ func set_color(_color: Color) -> void:
 	player_body_mesh.set_surface_override_material(0, mat)
 
 func set_outline(outline: bool) -> void:
+	if true:
+		return
 	var mat: StandardMaterial3D = get_body_material().duplicate_deep()
 	if outline:
 		mat.stencil_color = Color.WHITE
@@ -142,6 +146,8 @@ func set_outline(outline: bool) -> void:
 	player_body_mesh.set_surface_override_material(0, mat)
 
 func set_face(face: int) -> void:
+	if true:
+		return
 	current_face = face
 	var face_material = get_face_material()
 	var mat: StandardMaterial3D = face_material.duplicate()
