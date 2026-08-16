@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bsmno2vj20r5r" path="res://assets/models/testobjekte/erz.glb" id="3_g5h58"]
 [ext_resource type="PackedScene" uid="uid://smiv1nftqaxy" path="res://assets/models/testobjekte/tür.glb" id="4_hrjdk"]
 [ext_resource type="PackedScene" uid="uid://cu30teovqg555" path="res://assets/models/maps/map_01.glb" id="4_yr2eo"]
+[ext_resource type="PackedScene" uid="uid://bsxnimjc8sro0" path="res://assets/models/testobjekte/werkzeuge/spitzhacke.glb" id="5_yr2eo"]
 
 [node name="Map01" type="Node3D" unique_id=1725308146]
 
@@ -17,3 +18,6 @@ transform = Transform3D(0.637081, 0, 0.77079684, 0, 1, 0, -0.77079684, 0, 0.6370
 
 [node name="tür2" parent="." unique_id=721003213 instance=ExtResource("4_hrjdk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2391295, 9.536743e-07, -7.9698486)
+
+[node name="spitzhacke" parent="." unique_id=1648433076 instance=ExtResource("5_yr2eo")]
+transform = Transform3D(-0.057651952, 0.015447794, -0.9982172, -0.29041964, -0.9568974, 0.0019648066, -0.95516104, 0.29001516, 0.05965334, -0.9563818, 0.48597234, -6.349321)
