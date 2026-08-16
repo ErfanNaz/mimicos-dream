@@ -46,3 +46,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.29119, 0.5, -31.695835)
 
 [node name="erhöhung_mit_treppe" parent="." unique_id=2069591597 instance=ExtResource("4_hrjdk")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 41.535202, 0.11111832, -59.360462)
+
+[node name="haus2" parent="." unique_id=251748798 instance=ExtResource("2_g5h58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.83944, 9.429546, -42.996292)
+
+[node name="haus3" parent="." unique_id=1952952569 instance=ExtResource("2_g5h58")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 23.43489, 9.429546, -44.155437)
+
+[node name="haus4" parent="." unique_id=1540374130 instance=ExtResource("2_g5h58")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 24.1985, 9.429546, -74.83328)
+
+[node name="haus5" parent="." unique_id=250025398 instance=ExtResource("2_g5h58")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 32.17933, 9.429546, -74.83328)
+
+[node name="haus6" parent="." unique_id=1384340753 instance=ExtResource("2_g5h58")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 53.279526, 9.429546, -74.83328)
