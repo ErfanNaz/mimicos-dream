@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dcg4urt1do56e"]
+
+[ext_resource type="Script" uid="uid://nie1xt0hadhs" path="res://entities/trigger_system/trigger_target/trigger_target.gd" id="1_7m5h1"]
+
+[node name="TriggerTarget" type="Node3D" unique_id=676973349]
+script = ExtResource("1_7m5h1")

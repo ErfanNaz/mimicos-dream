@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dsa25ajkyujjl"]
+
+[ext_resource type="Script" uid="uid://ddqiidhgsglhc" path="res://entities/trigger_system/trigger_system.gd" id="1_olgry"]
+[ext_resource type="PackedScene" uid="uid://dcg4urt1do56e" path="res://entities/trigger_system/trigger_target/trigger_target.tscn" id="2_4lc3n"]
+[ext_resource type="PackedScene" uid="uid://bgtpbxtq808xf" path="res://entities/trigger_system/trigger_switch/trigger_switch.tscn" id="3_4lyf6"]
+
+[node name="TriggerSystem" type="Node3D" unique_id=446900515 node_paths=PackedStringArray("trigger_target", "trigger_switch")]
+script = ExtResource("1_olgry")
+trigger_target = NodePath("TriggerTarget")
+trigger_switch = NodePath("TriggerSwitch")
+
+[node name="TriggerTarget" parent="." unique_id=676973349 instance=ExtResource("2_4lc3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33303607, 0, 0.31082058)
+
+[node name="TriggerSwitch" parent="." unique_id=181858922 instance=ExtResource("3_4lyf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30292904, 0, 0.47741222)

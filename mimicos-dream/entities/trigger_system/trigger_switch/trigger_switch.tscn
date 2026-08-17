@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://bgtpbxtq808xf"]
+
+[ext_resource type="Script" uid="uid://cljxuo22wk70a" path="res://entities/trigger_system/trigger_switch/trigger_switch.gd" id="1_o6njo"]
+[ext_resource type="Script" uid="uid://dwjaj6b1w32fr" path="res://common/interaction_system/interactable/interaction.gd" id="2_6eqys"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_afyb6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kypxe"]
+transparency = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+stencil_flags = 2
+stencil_color = Color(1, 1, 1, 1)
+stencil_outline_thickness = 0.02
+
+[sub_resource type="Animation" id="Animation_w8jql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BallMeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2c88i"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BallMeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, 2, 0), Vector3(0, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q273g"]
+_data = {
+&"RESET": SubResource("Animation_w8jql"),
+&"idle": SubResource("Animation_2c88i")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_leqk4"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_sr83l"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_3j4p3"]
+font_size = 60
+
+[node name="TriggerSwitch" type="Node3D" unique_id=181858922 node_paths=PackedStringArray("interaction", "ball_mesh_instance_3d", "sprite_3d", "label")]
+script = ExtResource("1_o6njo")
+interaction = NodePath("Interaction")
+ball_mesh_instance_3d = NodePath("BallMeshInstance3D")
+sprite_3d = NodePath("Sprite3D")
+label = NodePath("Sprite3D/SubViewport/CenterContainer/Label")
+
+[node name="BallMeshInstance3D" type="MeshInstance3D" parent="." unique_id=203046647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("SphereMesh_afyb6")
+surface_material_override/0 = SubResource("StandardMaterial3D_kypxe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=217771368]
+libraries/ = SubResource("AnimationLibrary_q273g")
+autoplay = &"idle"
+
+[node name="Interaction" type="Area3D" parent="." unique_id=1103262287]
+script = ExtResource("2_6eqys")
+metadata/_custom_type_script = "uid://dwjaj6b1w32fr"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction" unique_id=956279352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.602946, 0)
+shape = SubResource("SphereShape3D_leqk4")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=226529221]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
+billboard = 2
+texture = SubResource("ViewportTexture_sr83l")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=250294196]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(200, 100)
+
+[node name="CenterContainer" type="CenterContainer" parent="Sprite3D/SubViewport" unique_id=1174701933]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Sprite3D/SubViewport/CenterContainer" unique_id=926306729]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_3j4p3")
+horizontal_alignment = 1
+vertical_alignment = 1
