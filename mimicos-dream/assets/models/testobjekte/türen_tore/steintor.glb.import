@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c1gqybo57v7hp"
-path="res://.godot/imported/baum_laubbaum.glb-731523e243ecb7f5046e77fa488a9b19.scn"
+uid="uid://dry6ijejd4cc2"
+path="res://.godot/imported/steintor.glb-e43293f0274decb5a41768d7749b9021.scn"
 
 [deps]
 
-source_file="res://assets/models/testobjekte/enviroment/baum_laubbaum.glb"
-dest_files=["res://.godot/imported/baum_laubbaum.glb-731523e243ecb7f5046e77fa488a9b19.scn"]
+source_file="res://assets/models/testobjekte/türen_tore/steintor.glb"
+dest_files=["res://.godot/imported/steintor.glb-e43293f0274decb5a41768d7749b9021.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:baum_laubbaum": {
+"PATH:Cube": {
 "generate/physics": true
 }
 }
