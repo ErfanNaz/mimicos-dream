@@ -11,8 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://c1gqybo57v7hp" path="res://assets/models/testobjekte/enviroment/baum_laubbaum.glb" id="9_ja8my"]
 [ext_resource type="PackedScene" uid="uid://cvqwqivis7ng8" path="res://assets/models/testobjekte/enviroment/berg.glb" id="10_5ofjs"]
 [ext_resource type="PackedScene" uid="uid://smh6piuu63w8" path="res://assets/models/testobjekte/enviroment/fels.glb" id="11_pcy5s"]
-[ext_resource type="PackedScene" uid="uid://dlmm6smhredls" path="res://assets/models/testobjekte/items/holzscheitel.glb" id="12_8rg8i"]
-[ext_resource type="PackedScene" uid="uid://dhgvcrmb7sllr" path="res://assets/animationen/baumstamm_sägen.glb" id="13_pgpfx"]
 
 [node name="Map01" type="Node3D" unique_id=1725308146]
 
@@ -207,11 +205,5 @@ transform = Transform3D(0.8353663, 1.0775336, 0.102148265, 0, 0.12903357, -1.361
 
 [node name="fels10" parent="gestein" unique_id=1759678233 instance=ExtResource("11_pcy5s")]
 transform = Transform3D(1.3718786, 0, 0, 0, 1.3718786, 0, 0, 0, 1.3718786, -44.85195, -1.7823632, -58.65638)
-
-[node name="holzscheitel2" parent="." unique_id=1529471304 instance=ExtResource("12_8rg8i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.940487, 0, 16.294867)
-
-[node name="baumstamm_sägen2" parent="." unique_id=122409960 instance=ExtResource("13_pgpfx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2808275, 0.10702815, 14.008818)
 
 [editable path="tür2"]
