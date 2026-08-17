@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b03lla3h30nmy"
-path="res://.godot/imported/haus01.glb-4a98fbb7d79f7703c128f546e6934fcf.scn"
+uid="uid://ddxoe58b44kb3"
+path="res://.godot/imported/dorf.glb-de6483306962d9b0e8df6a4a96311137.scn"
 
 [deps]
 
-source_file="res://assets/models/testobjekte/gebäude/haus01.glb"
-dest_files=["res://.godot/imported/haus01.glb-4a98fbb7d79f7703c128f546e6934fcf.scn"]
+source_file="res://assets/models/testobjekte/enviroment/gelände/dorf.glb"
+dest_files=["res://.godot/imported/dorf.glb-de6483306962d9b0e8df6a4a96311137.scn"]
 
 [params]
 
@@ -41,7 +41,10 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:haus01": {
+"PATH:gelände": {
+"generate/physics": true
+},
+"PATH:häusergruppe": {
 "generate/physics": true
 }
 }

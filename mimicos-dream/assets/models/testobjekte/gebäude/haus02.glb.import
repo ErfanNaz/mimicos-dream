@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b03lla3h30nmy"
-path="res://.godot/imported/haus01.glb-4a98fbb7d79f7703c128f546e6934fcf.scn"
+uid="uid://c0nb65ggexonq"
+path="res://.godot/imported/haus02.glb-03fc642e362f29ebdb939d5f62e5a43c.scn"
 
 [deps]
 
-source_file="res://assets/models/testobjekte/gebäude/haus01.glb"
-dest_files=["res://.godot/imported/haus01.glb-4a98fbb7d79f7703c128f546e6934fcf.scn"]
+source_file="res://assets/models/testobjekte/gebäude/haus02.glb"
+dest_files=["res://.godot/imported/haus02.glb-03fc642e362f29ebdb939d5f62e5a43c.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:haus01": {
+"PATH:haus02": {
 "generate/physics": true
 }
 }
