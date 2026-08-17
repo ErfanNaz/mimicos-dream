@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bsmno2vj20r5r"
-path="res://.godot/imported/erz.glb-308e31987cb2f5a71a735212345ba518.scn"
+uid="uid://c1gqybo57v7hp"
+path="res://.godot/imported/baum_laubbaum.glb-731523e243ecb7f5046e77fa488a9b19.scn"
 
 [deps]
 
-source_file="res://assets/models/testobjekte/erz.glb"
-dest_files=["res://.godot/imported/erz.glb-308e31987cb2f5a71a735212345ba518.scn"]
+source_file="res://assets/models/testobjekte/enviroment/baum_laubbaum.glb"
+dest_files=["res://.godot/imported/baum_laubbaum.glb-731523e243ecb7f5046e77fa488a9b19.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:erz": {
+"PATH:baum_laubbaum": {
 "generate/physics": true
 }
 }

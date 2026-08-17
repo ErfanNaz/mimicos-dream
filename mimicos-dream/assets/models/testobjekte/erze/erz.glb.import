@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://smiv1nftqaxy"
-path="res://.godot/imported/tür.glb-57fab98185fb08200a5f727b4df9b110.scn"
+uid="uid://bsmno2vj20r5r"
+path="res://.godot/imported/erz.glb-75a1d9250d20580d4c61d4b46eea4f73.scn"
 
 [deps]
 
-source_file="res://assets/models/testobjekte/tür.glb"
-dest_files=["res://.godot/imported/tür.glb-57fab98185fb08200a5f727b4df9b110.scn"]
+source_file="res://assets/models/testobjekte/erze/erz.glb"
+dest_files=["res://.godot/imported/erz.glb-75a1d9250d20580d4c61d4b46eea4f73.scn"]
 
 [params]
 
@@ -41,10 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:tür": {
-"generate/physics": true
-},
-"PATH:türsegment": {
+"PATH:erz": {
 "generate/physics": true
 }
 }

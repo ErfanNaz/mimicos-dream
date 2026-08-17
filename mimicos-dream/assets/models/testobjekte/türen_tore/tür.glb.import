@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://duw6smuqvr0m1"
-path="res://.godot/imported/truhe.glb-c2b1906e0841914380e95870cc62ba6f.scn"
+uid="uid://smiv1nftqaxy"
+path="res://.godot/imported/tür.glb-e43922e2217779af31bf449184abc9c7.scn"
 
 [deps]
 
-source_file="res://assets/models/testobjekte/truhe.glb"
-dest_files=["res://.godot/imported/truhe.glb-c2b1906e0841914380e95870cc62ba6f.scn"]
+source_file="res://assets/models/testobjekte/türen_tore/tür.glb"
+dest_files=["res://.godot/imported/tür.glb-e43922e2217779af31bf449184abc9c7.scn"]
 
 [params]
 
@@ -41,7 +41,10 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:truhe": {
+"PATH:tür": {
+"generate/physics": true
+},
+"PATH:türsegment": {
 "generate/physics": true
 }
 }

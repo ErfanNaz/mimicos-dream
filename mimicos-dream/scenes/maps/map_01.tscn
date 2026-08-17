@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://b03dp11bxot1q"]
 
-[ext_resource type="PackedScene" uid="uid://duw6smuqvr0m1" path="res://assets/models/testobjekte/truhe.glb" id="2_bepxa"]
-[ext_resource type="PackedScene" uid="uid://bsmno2vj20r5r" path="res://assets/models/testobjekte/erz.glb" id="3_g5h58"]
-[ext_resource type="PackedScene" uid="uid://smiv1nftqaxy" path="res://assets/models/testobjekte/tür.glb" id="4_hrjdk"]
+[ext_resource type="PackedScene" uid="uid://duw6smuqvr0m1" path="res://assets/models/testobjekte/behälter/truhe.glb" id="2_bepxa"]
+[ext_resource type="PackedScene" uid="uid://bsmno2vj20r5r" path="res://assets/models/testobjekte/erze/erz.glb" id="3_g5h58"]
+[ext_resource type="PackedScene" uid="uid://smiv1nftqaxy" path="res://assets/models/testobjekte/türen_tore/tür.glb" id="4_hrjdk"]
 [ext_resource type="PackedScene" uid="uid://cu30teovqg555" path="res://assets/models/maps/map_01.glb" id="4_yr2eo"]
 [ext_resource type="PackedScene" uid="uid://bsxnimjc8sro0" path="res://assets/models/testobjekte/werkzeuge/spitzhacke.glb" id="5_yr2eo"]
 [ext_resource type="PackedScene" uid="uid://dh5fx0qggs4st" path="res://assets/models/testobjekte/werkzeuge/schwert.glb" id="6_4iqtb"]
 [ext_resource type="PackedScene" uid="uid://18x64ejxbe1d" path="res://entities/door_system/door_system.tscn" id="7_e1bmt"]
+[ext_resource type="PackedScene" uid="uid://m7eexdlt51ic" path="res://assets/models/testobjekte/enviroment/baumstamm_liegend.glb" id="8_4hvco"]
+[ext_resource type="PackedScene" uid="uid://c1gqybo57v7hp" path="res://assets/models/testobjekte/enviroment/baum_laubbaum.glb" id="9_ja8my"]
 
 [node name="Map01" type="Node3D" unique_id=1725308146]
 
@@ -21,9 +23,6 @@ transform = Transform3D(0.637081, 0, 0.77079684, 0, 1, 0, -0.77079684, 0, 0.6370
 [node name="tür2" parent="." unique_id=721003213 instance=ExtResource("4_hrjdk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2391295, 9.536743e-07, -7.9698486)
 
-[node name="tür3" parent="." unique_id=855907428 instance=ExtResource("4_hrjdk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.87406, 9.536743e-07, -7.9698486)
-
 [node name="DoorSystem" parent="." unique_id=1276792702 node_paths=PackedStringArray("animation_player") instance=ExtResource("7_e1bmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.445489, -9.536743e-07, -6.272217)
 animation_player = NodePath("../tür2/AnimationPlayer")
@@ -35,10 +34,19 @@ transform = Transform3D(1, 0, 0, 0, -0.932859, -0.3602417, 0, 0.3602417, -0.9328
 [node name="schwert2" parent="." unique_id=448878792 instance=ExtResource("6_4iqtb")]
 transform = Transform3D(1, 0, 0, 0, 0.022127448, 0.99975514, 0, -0.99975514, 0.022127448, -8.254494, 0.8194362, -3.2521217)
 
-[node name="DoorSystem2" parent="." unique_id=1102653214 node_paths=PackedStringArray("animation_player") instance=ExtResource("7_e1bmt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.95642, 9.536743e-07, -7.219906)
-animation_player = NodePath("../tür3/AnimationPlayer")
-toggle_back_timer = 2
+[node name="baumstamm_liegend2" parent="." unique_id=1771375863 instance=ExtResource("8_4hvco")]
+transform = Transform3D(0.6170789, 0, -0.7869013, 0, 1, 0, 0.7869013, 0, 0.6170789, 17.846243, 0.10702815, -13.69488)
+
+[node name="baum_laubbaum2" parent="." unique_id=1420315988 instance=ExtResource("9_ja8my")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.619913, 0.003994689, -13.022413)
+
+[node name="baum_laubbaum3" parent="." unique_id=799218278 instance=ExtResource("9_ja8my")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.113922, 0.003993735, -10.469227)
+
+[node name="baum_laubbaum4" parent="." unique_id=354835800 instance=ExtResource("9_ja8my")]
+transform = Transform3D(0.23888294, 0, -0.70772845, 0, 0.74695694, 0, 0.70772845, 0, 0.23888294, -11.4520035, 0.0039956425, 1.8978071)
+
+[node name="baum_laubbaum5" parent="." unique_id=742923864 instance=ExtResource("9_ja8my")]
+transform = Transform3D(-0.2934362, 0, 0.95597863, 0, 1, 0, -0.95597863, 0, -0.2934362, 8.314134, 0.0039956425, -27.35068)
 
 [editable path="tür2"]
-[editable path="tür3"]
