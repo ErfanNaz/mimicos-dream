@@ -21,6 +21,9 @@ transform = Transform3D(0.637081, 0, 0.77079684, 0, 1, 0, -0.77079684, 0, 0.6370
 [node name="tür2" parent="." unique_id=721003213 instance=ExtResource("4_hrjdk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2391295, 9.536743e-07, -7.9698486)
 
+[node name="tür3" parent="." unique_id=855907428 instance=ExtResource("4_hrjdk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.87406, 9.536743e-07, -7.9698486)
+
 [node name="DoorSystem" parent="." unique_id=1276792702 node_paths=PackedStringArray("animation_player") instance=ExtResource("7_e1bmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.445489, -9.536743e-07, -6.272217)
 animation_player = NodePath("../tür2/AnimationPlayer")
@@ -32,4 +35,10 @@ transform = Transform3D(1, 0, 0, 0, -0.932859, -0.3602417, 0, 0.3602417, -0.9328
 [node name="schwert2" parent="." unique_id=448878792 instance=ExtResource("6_4iqtb")]
 transform = Transform3D(1, 0, 0, 0, 0.022127448, 0.99975514, 0, -0.99975514, 0.022127448, -8.254494, 0.8194362, -3.2521217)
 
+[node name="DoorSystem2" parent="." unique_id=1102653214 node_paths=PackedStringArray("animation_player") instance=ExtResource("7_e1bmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.95642, 9.536743e-07, -7.219906)
+animation_player = NodePath("../tür3/AnimationPlayer")
+toggle_back_timer = 2
+
 [editable path="tür2"]
+[editable path="tür3"]
