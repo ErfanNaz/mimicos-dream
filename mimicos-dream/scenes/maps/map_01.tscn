@@ -24,6 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2391295, 9.536743e-07, -7.9
 [node name="DoorSystem" parent="." unique_id=1276792702 node_paths=PackedStringArray("animation_player") instance=ExtResource("7_e1bmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.445489, -9.536743e-07, -6.272217)
 animation_player = NodePath("../tür2/AnimationPlayer")
+toggle_back_timer = 1
 
 [node name="spitzhacke2" parent="." unique_id=2137384282 instance=ExtResource("5_yr2eo")]
 transform = Transform3D(1, 0, 0, 0, -0.932859, -0.3602417, 0, 0.3602417, -0.932859, -1.1627369, 0.7699443, -6.43537)
