@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b1k2rssuf3yfs"]
+
+[ext_resource type="PackedScene" uid="uid://bsxg8vbm2rc2a" path="res://scenes/maps/assets/ground_01.tscn" id="1_b03nq"]
+
+[node name="GroundMeshLib" type="Node3D" unique_id=1562811040]
+
+[node name="Ground_01" parent="." unique_id=339505191 instance=ExtResource("1_b03nq")]

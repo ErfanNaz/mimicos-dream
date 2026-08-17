@@ -15,9 +15,64 @@
 [ext_resource type="PackedScene" uid="uid://dsa25ajkyujjl" path="res://entities/trigger_system/trigger_system.tscn" id="13_8rg8i"]
 [ext_resource type="PackedScene" uid="uid://cr0opx4157hid" path="res://assets/models/testobjekte/enviroment/bäume/baum_tannenbaum.glb" id="14_pgpfx"]
 [ext_resource type="PackedScene" uid="uid://dblri820gp4a" path="res://assets/models/testobjekte/enviroment/berge/berg01.glb" id="15_4228d"]
+[ext_resource type="Material" uid="uid://c2to67v55oatp" path="res://scenes/maps/assets/materials/grass_01/grass_01.tres" id="15_ru6md"]
 [ext_resource type="PackedScene" uid="uid://dry6ijejd4cc2" path="res://assets/models/testobjekte/türen_tore/steintor.glb" id="16_ru6md"]
 [ext_resource type="PackedScene" uid="uid://ctg2cpn4eh5wo" path="res://assets/models/testobjekte/statue/ritter.glb" id="17_lwxhp"]
 [ext_resource type="PackedScene" uid="uid://b03lla3h30nmy" path="res://assets/models/testobjekte/gebäude/haus01.glb" id="18_8cp7r"]
+[ext_resource type="Shader" uid="uid://d2pxrch4crrap" path="res://shaders/ground.gdshader" id="19_msigb"]
+[ext_resource type="Texture2D" uid="uid://di62ixsr75dl2" path="res://scenes/maps/assets/palette/palette_01.tres" id="20_tfnqt"]
+[ext_resource type="Shader" uid="uid://jqrwa1d8fqbj" path="res://shaders/grass.gdshader" id="21_gsad5"]
+[ext_resource type="Texture2D" uid="uid://dv6g2qxppq3ec" path="res://scenes/maps/assets/texture/basic/grass_basic_atlas.png" id="22_pubn1"]
+[ext_resource type="Texture2D" uid="uid://bqe52kvd1l838" path="res://scenes/maps/assets/texture/basic/grass_basic_01.png" id="23_qeyhh"]
+[ext_resource type="PackedScene" uid="uid://5moi3og5vsv1" path="res://scenes/maps/assets/grid_01.tscn" id="25_pubn1"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4kq14"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7ntmc"]
+noise = SubResource("FastNoiseLite_4kq14")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oa41v"]
+render_priority = 0
+shader = ExtResource("19_msigb")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_7ntmc")
+shader_parameter/color_gradient = ExtResource("20_tfnqt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_mf8xc"]
+material = SubResource("ShaderMaterial_oa41v")
+size = Vector2(10000, 10000)
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gsad5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0mq61"]
+noise = SubResource("FastNoiseLite_gsad5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qotnr"]
+render_priority = 0
+shader = ExtResource("21_gsad5")
+shader_parameter/billboard = false
+shader_parameter/shape_texture = ExtResource("23_qeyhh")
+shader_parameter/shape_atlas = ExtResource("22_pubn1")
+shader_parameter/use_atlas = true
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_0mq61")
+shader_parameter/color_gradient = ExtResource("20_tfnqt")
+shader_parameter/random_variation = 0.002000000095
+shader_parameter/wind_velocity = Vector2(0, 0)
+shader_parameter/alpha_cut_start = 0.1
+shader_parameter/alpha_cut_end = 0.9
+shader_parameter/alpha_mode = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_g8xnu"]
+material = SubResource("ShaderMaterial_qotnr")
+size = Vector2(4, 4)
+subdivide_width = 2
+subdivide_depth = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_oa41v"]
+material = ExtResource("15_ru6md")
+subdivide_width = 2
+subdivide_depth = 2
 
 [node name="Map01" type="Node3D" unique_id=1725308146]
 
@@ -151,13 +206,13 @@ transform = Transform3D(-0.042012494, 4.8221836, 0.034311064, -3.7348988, -0.054
 [node name="baumstamm_sägen2" parent="." unique_id=1787133559 instance=ExtResource("12_5dti3")]
 transform = Transform3D(0.9341245, 0, -0.3569472, 0, 1, 0, 0.3569472, 0, 0.9341245, 32.055336, 0.10702624, -5.026846)
 
-[node name="baumstamm_liegend_001" parent="baumstamm_sägen2" index="0" unique_id=915514069]
+[node name="baumstamm_liegend_001" parent="baumstamm_sägen2" index="0" unique_id=1230948347]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 
-[node name="CollisionShape3D" parent="baumstamm_sägen2/baumstamm_liegend_001/StaticBody3D" parent_id_path=PackedInt32Array(1787133559, 1786291411) index="0" unique_id=723634576]
+[node name="CollisionShape3D" parent="baumstamm_sägen2/baumstamm_liegend_001/StaticBody3D" parent_id_path=PackedInt32Array(1787133559, 1857291729) index="0" unique_id=2043367010]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="baumstamm_sägen" parent="baumstamm_sägen2" index="1" unique_id=1128626045]
+[node name="baumstamm_sägen" parent="baumstamm_sägen2" index="1" unique_id=553068869]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.0038938522, 3.9402707, 4.386858)
 
 [node name="TriggerSystem" parent="." unique_id=446900515 node_paths=PackedStringArray("animation_player") instance=ExtResource("13_8rg8i")]
@@ -316,6 +371,24 @@ transform = Transform3D(-0.9999992, 0, 0.0013185889, 0, 1, 0, -0.0013185889, 0, 
 
 [node name="haus14" parent="." unique_id=740855440 instance=ExtResource("18_8cp7r")]
 transform = Transform3D(-0.3223845, 0, -0.9466089, 0, 1, 0, 0.9466089, 0, -0.3223845, 253.25235, -0.6472666, -150.89455)
+
+[node name="SimpleGround" type="MeshInstance3D" parent="." unique_id=65224127]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.1, 0)
+mesh = SubResource("QuadMesh_mf8xc")
+
+[node name="GrassGroundShader" type="MeshInstance3D" parent="." unique_id=1575260939]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.2, 0)
+mesh = SubResource("QuadMesh_g8xnu")
+
+[node name="SingleGrassMesh" type="MeshInstance3D" parent="." unique_id=90393185]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.74980843, 0)
+mesh = SubResource("QuadMesh_oa41v")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1472606837]
+size = Vector3(10000, 0.1, 10000)
+
+[node name="Grid01" parent="." unique_id=624680464 instance=ExtResource("25_pubn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.445675, -9.040738, -2.2304935)
 
 [editable path="tür2"]
 [editable path="baumstamm_sägen2"]

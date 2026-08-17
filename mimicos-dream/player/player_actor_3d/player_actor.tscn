@@ -109,7 +109,6 @@ player_body_mesh = NodePath("player_model/Armature/Skeleton3D/body")
 player_face_mesh = NodePath("player_model/Armature/Skeleton3D/face")
 mimico_backpack = NodePath("player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack")
 player_actor_animation_player = NodePath("PlayerActorAnimationPlayer")
-color = Color(0.81344205, 0.16523299, 0.4615935, 1)
 spring_bone_simulator_3d = NodePath("player_model/Armature/Skeleton3D/SpringBoneSimulator3D")
 ik_hands_active = true
 ik_head_active = true

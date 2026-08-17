@@ -7,7 +7,7 @@ class_name PlayerActor3D extends Node3D
 @export var mimico_backpack: Node3D
 @export var player_actor_animation_player: AnimationPlayer
 
-@export var color: Color
+@export var color: Color = Color.YELLOW
 @export_range(0, 5, 1) var current_face: int = 0
 @export_enum("idle", "walk", "jump", "fall") var animation: String = ""
 @export_node_path() var face_look_at: NodePath:
