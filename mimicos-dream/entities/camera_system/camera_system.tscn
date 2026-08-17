@@ -7,9 +7,11 @@
 [sub_resource type="Resource" id="Resource_a5tes"]
 script = ExtResource("2_k8268")
 
-[node name="CameraSystem" type="Node3D" unique_id=798910101 node_paths=PackedStringArray("phantom_camera_3d", "look_at_target", "camera_anchor", "animation_player")]
+[node name="CameraSystem" type="Node3D" unique_id=798910101 node_paths=PackedStringArray("phantom_camera_3d", "anchor_node", "target_spring_arm_3d", "look_at_target", "camera_anchor", "animation_player")]
 script = ExtResource("1_k8268")
 phantom_camera_3d = NodePath("PhantomCamera3D")
+anchor_node = NodePath("AnchorNode3D")
+target_spring_arm_3d = NodePath("AnchorNode3D/TargetSpringArm3D")
 look_at_target = NodePath("AnchorNode3D/TargetSpringArm3D/LookAtTargetNode3D")
 camera_anchor = NodePath("AnchorNode3D/SpringArm3D/CameraAnchorNode3D")
 animation_player = NodePath("AnimationPlayer")
@@ -24,13 +26,10 @@ follow_target = NodePath("../AnchorNode3D/SpringArm3D/CameraAnchorNode3D")
 look_at_mode = 2
 look_at_target = NodePath("../AnchorNode3D/TargetSpringArm3D/LookAtTargetNode3D")
 tween_resource = SubResource("Resource_a5tes")
-align_transform_with_view = Callable()
-align_position_with_view = Callable()
-align_rotation_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="AnchorNode3D" type="Node3D" parent="." unique_id=285477443]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 0, 0, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="AnchorNode3D" unique_id=598632343]
 collision_mask = 0
@@ -39,7 +38,7 @@ spring_length = 8.0
 [node name="CameraAnchorNode3D" type="Node3D" parent="AnchorNode3D/SpringArm3D" unique_id=342658640]
 
 [node name="TargetSpringArm3D" type="SpringArm3D" parent="AnchorNode3D" unique_id=59806336]
-transform = Transform3D(-1, 6.181724e-08, -6.181724e-08, 0, 0.70710677, 0.70710677, 8.742278e-08, 0.70710677, -0.70710677, 0, 0, 0)
+transform = Transform3D(-1, -6.181723e-08, 6.181723e-08, 0, 0.7071068, 0.7071068, -8.742279e-08, 0.7071068, -0.7071068, 0, 2, 2)
 collision_mask = 0
 spring_length = 20.0
 

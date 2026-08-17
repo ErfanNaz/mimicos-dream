@@ -13,6 +13,8 @@ var input_ingore: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interaction.on_interact.connect(self._toggle_door)
+	var mat: StandardMaterial3D = mesh_instance_3d.get_surface_override_material(0).duplicate()
+	mesh_instance_3d.set_surface_override_material(0, mat) 
 
 func _toggle_door(_player_controller: PlayerController) -> void:
 	if !door:

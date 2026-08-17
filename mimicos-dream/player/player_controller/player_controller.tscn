@@ -51,6 +51,14 @@ rings = 4
 [sub_resource type="Resource" id="Resource_arldf"]
 script = ExtResource("13_i5aod")
 
+[sub_resource type="SphereMesh" id="SphereMesh_mf8xc"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oa41v"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
 [sub_resource type="Animation" id="Animation_ofon0"]
 length = 0.001
 
@@ -64,12 +72,13 @@ _data = {
 &"taunt": SubResource("Animation_8e8q0")
 }
 
-[node name="PlayerController" type="Node3D" unique_id=88308788 node_paths=PackedStringArray("player_body", "player_actor", "player_state_machine", "player_actor_mover")]
+[node name="PlayerController" type="Node3D" unique_id=88308788 node_paths=PackedStringArray("player_body", "player_actor", "player_state_machine", "look_at_target_node_3d", "player_actor_mover")]
 script = ExtResource("1_w10rj")
 player_body = NodePath("PlayerBody")
 player_actor = NodePath("PlayerActor")
 player_state_machine = NodePath("ControllerStateMachine")
 player_properties = SubResource("Resource_4eq88")
+look_at_target_node_3d = NodePath("PlayerCameraSystem/TargetAnchorNode3D/TargetSpringArm3D/LookAtTargetNode3D")
 player_actor_mover = NodePath("PlayerActorMover")
 metadata/_custom_type_script = "uid://c3wdr378gd80j"
 
@@ -82,6 +91,11 @@ player_controller = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody/PlayerInteractable/PlayerInteractable" parent_id_path=PackedInt32Array(735506298, 1647974667) index="0" unique_id=671178556]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4117048, 0)
 shape = SubResource("SphereShape3D_mf8xc")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="PlayerBody" unique_id=107302597]
+remote_path = NodePath("../../PlayerCameraSystem")
+update_rotation = false
+update_scale = false
 
 [node name="PlayerActor" parent="." unique_id=1535567688 instance=ExtResource("10_ofon0")]
 
@@ -185,6 +199,7 @@ spring_length = 7.0
 [node name="LightPosition" type="Node3D" parent="PlayerActor/LightTarget/LightOffset/SpringArm3D" unique_id=139524607]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="PlayerActor/LightTarget/LightOffset/SpringArm3D/LightPosition" unique_id=1174802908]
+visible = false
 light_energy = 0.1
 shadow_enabled = true
 shadow_opacity = 0.4
@@ -233,33 +248,48 @@ explosiveness = 0.2
 process_material = SubResource("ParticleProcessMaterial_ofon0")
 draw_pass_1 = SubResource("SphereMesh_8e8q0")
 
-[node name="PlayerCameraSystem" type="Node3D" parent="PlayerActor" unique_id=480455912]
+[node name="PlayerCameraSystem" type="Node3D" parent="." unique_id=40465795]
 
-[node name="HeadPosition" type="Node3D" parent="PlayerActor/PlayerCameraSystem" unique_id=1422323089]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+[node name="TargetAnchorNode3D" type="Node3D" parent="PlayerCameraSystem" unique_id=1838338819]
 
-[node name="SpringArm3D" type="SpringArm3D" parent="PlayerActor/PlayerCameraSystem/HeadPosition" unique_id=2013156475]
-transform = Transform3D(-0.77714586, 0, -0.62932044, 0, 0.99999994, 0, 0.6293205, 0, -0.7771458, 0, 0, 0)
-collision_mask = 12582915
+[node name="HeadPosition" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D" unique_id=996517117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="PlayerCameraSystem/TargetAnchorNode3D/HeadPosition" unique_id=1136149354]
+transform = Transform3D(-1, 0, -8.742277e-08, 0, 0.99999994, 0, 8.742278e-08, 0, -0.99999994, 0, 0, 0)
+collision_mask = 12582913
 shape = SubResource("SphereShape3D_dpos4")
-spring_length = 3.0
+spring_length = 6.0
 
-[node name="PhantomCamera3D" type="Node3D" parent="PlayerActor/PlayerCameraSystem/HeadPosition/SpringArm3D" unique_id=1909779976]
-transform = Transform3D(0.9999996, -1.192093e-06, 0, 0, 0, 0.9115299, -1.192093e-06, -0.9999996, 0, 0, 0, 0)
+[node name="PhantomCamera3D" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D/HeadPosition/SpringArm3D" unique_id=1124404546 node_paths=PackedStringArray("look_at_target")]
+transform = Transform3D(0.9910749, 0.13331969, 6.781375e-09, 1.490121e-08, -2.3840005e-07, 0.91018075, 0.13333048, -0.9909947, -2.17004e-07, 0, 0, 0)
 script = ExtResource("12_la4u0")
+priority = 2
 look_at_mode = 2
+look_at_target = NodePath("../../../TargetSpringArm3D/LookAtTargetNode3D")
 tween_resource = SubResource("Resource_arldf")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="TargetSpringArm3D" type="SpringArm3D" parent="PlayerCameraSystem/TargetAnchorNode3D" unique_id=2131670787]
+collision_mask = 0
+spring_length = 20.0
+
+[node name="LookAtTargetNode3D" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D/TargetSpringArm3D" unique_id=1543885278]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerCameraSystem/TargetAnchorNode3D/TargetSpringArm3D/LookAtTargetNode3D" unique_id=635233501]
+mesh = SubResource("SphereMesh_mf8xc")
+surface_material_override/0 = SubResource("StandardMaterial3D_oa41v")
 
 [node name="ControllerStateMachine" type="Node" parent="." unique_id=1662482892 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("15_la4u0")
 initial_state = NodePath("PlayerIdleControlled")
 metadata/_custom_type_script = "uid://doejhfgthu4ky"
 
-[node name="PlayerInputActiveControlled" type="Node" parent="ControllerStateMachine" unique_id=117359017 node_paths=PackedStringArray("player_controller", "player_body")]
+[node name="PlayerInputActiveControlled" type="Node" parent="ControllerStateMachine" unique_id=117359017 node_paths=PackedStringArray("player_controller", "player_body", "target_anchor_node_3d")]
 script = ExtResource("9_meoet")
 player_controller = NodePath("../..")
 player_body = NodePath("../../PlayerBody")
+target_anchor_node_3d = NodePath("../../PlayerCameraSystem/TargetAnchorNode3D")
 
 [node name="PlayerIdleControlled" type="Node" parent="ControllerStateMachine" unique_id=224958845]
 script = ExtResource("10_fcair")

@@ -20,7 +20,7 @@ sky = SubResource("Sky_ow5a4")
 glow_enabled = true
 fog_light_color = Color(0.69680893, 0.9194905, 0.9959524, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_b1x3f"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hujxm"]
 viewport_path = NodePath("PlayerActor/PlayerHud/SubViewport")
 
 [node name="Main" type="Node3D" unique_id=4722677 node_paths=PackedStringArray("player_controller", "input_manager")]
@@ -40,7 +40,6 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="." unique_id=128362928]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 top_level = true
-fov = 100.0
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=145780615]
 process_priority = 300
@@ -54,15 +53,17 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1759113, 0)
 
 [node name="PlayerHud" parent="PlayerController/PlayerActor" parent_id_path=PackedInt32Array(88308788, 1535567688) index="10" unique_id=1411064321]
-texture = SubResource("ViewportTexture_b1x3f")
+texture = SubResource("ViewportTexture_hujxm")
 
 [node name="InputManager" parent="." unique_id=799682356 instance=ExtResource("3_k2fmo")]
+enable_lookup_direction = true
 
 [node name="CameraSystem" parent="." unique_id=798910101 node_paths=PackedStringArray("camera_3d", "camera_position_target") instance=ExtResource("6_ow5a4")]
 camera_3d = NodePath("../Camera3D")
 camera_position_target = NodePath("../PlayerController/PlayerActor")
 
 [editable path="PlayerController"]
+[editable path="PlayerController/PlayerBody/PlayerInteractable"]
 [editable path="PlayerController/PlayerActor"]
 [editable path="PlayerController/PlayerActor/player_model"]
 [editable path="PlayerController/PlayerActor/player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack"]

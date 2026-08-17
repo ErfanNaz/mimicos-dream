@@ -36,6 +36,7 @@ var TEAM_COLORS: Array[Color] = [
 		team_changed.emit(team)
 		
 @export var is_spectator: bool = false
+@export var look_at_target_node_3d: Node3D
 
 @export var input_manager: InputManager
 @export var player_actor_mover: PlayerActorMover
