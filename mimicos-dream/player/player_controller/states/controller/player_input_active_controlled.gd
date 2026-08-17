@@ -20,6 +20,8 @@ var is_conntected: bool = false
 var is_dashing: bool = false
 var is_stunned: bool = false
 
+
+
 func _ready() -> void:
 	set_process_input(false)
 
@@ -41,13 +43,12 @@ func process_tick(delta: float, _controller_input: ControllerInput) -> void:
 	var velocity: Vector3 = player_body.velocity
 	var player_properties: PlayerProperties = player_controller.player_properties
 	if !player_body.is_on_floor():
-		velocity += player_body.get_gravity() * 2 * delta
+		velocity += player_body.get_gravity() * delta
 			
 	var running: float = 1
 	
 	if !is_stunned:
 		if _controller_input.in_menu:
-			
 			return
 	
 	if controller_input.lookup_direction.length() != 0:

@@ -14,7 +14,7 @@ class_name PlayerProperties extends Resource
 		dash_speed = value
 		on_properties_changed.emit()
 
-@export_range(6, 20, 1, "prefer_slider") var jump: float = 8.0:
+@export_range(6, 20, 1, "prefer_slider") var jump: float = 4.0:
 	set(value):
 		if value == jump:
 			return

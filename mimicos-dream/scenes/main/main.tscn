@@ -55,6 +55,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1759113, 0)
 [node name="PlayerHud" parent="PlayerController/PlayerActor" parent_id_path=PackedInt32Array(88308788, 1535567688) index="10" unique_id=1411064321]
 texture = SubResource("ViewportTexture_hujxm")
 
+[node name="PhantomCamera3D" parent="PlayerController/PlayerCameraSystem/TargetAnchorNode3D/HeadPosition/SpringArm3D" parent_id_path=PackedInt32Array(88308788, 1136149354) index="0" unique_id=1124404546]
+transform = Transform3D(0.9910749, 0.13331969, 6.781031e-09, 1.490121e-08, -2.3840005e-07, 0.91013455, 0.13333048, -0.9909947, -2.1699299e-07, 0, 0, 0)
+align_transform_with_view = Callable()
+align_rotation_with_view = Callable()
+
 [node name="InputManager" parent="." unique_id=799682356 instance=ExtResource("3_k2fmo")]
 enable_lookup_direction = true
 

@@ -13,4 +13,5 @@ func _ready() -> void:
 	player_controller.plug_in_input_manager(input_manager)
 	ApplicationManager.log_level = log_level
 	player_controller.input_active_state_machine()
+	player_controller.player_actor.disable_outline()
 	GameManager.camera_system.phantom_camera_3d.set_look_at_target(player_controller.look_at_target_node_3d)

@@ -11,8 +11,12 @@ func enter() -> void:
 	
 func physics_update(delta: float) -> void:
 	if player_body.is_on_floor():
-		transition("idle")
-		return
+		if player_controller.controller_input.direction.length() == 0:
+			transition("idle")
+			return
+		else:
+			transition("Movement")
+			return
 	if player_body.velocity.y > 0:
 		transition("InAir/jump")
 		return

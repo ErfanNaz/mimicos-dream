@@ -75,6 +75,10 @@ const animation_map: Dictionary[String, bool] = {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	is_ready = true
+	var mat: StandardMaterial3D = get_body_material().duplicate()
+	player_body_mesh.set_surface_override_material(0, mat)
+	var face_material = player_face_mesh.get_surface_override_material(0)
+	player_face_mesh.set_surface_override_material(0, face_material)
 	set_face(current_face)
 	set_lookup_target(face_look_at)
 
@@ -116,25 +120,28 @@ func set_lookup_position(_position: Vector3) -> void:
 	look_at_modifier_head.target_node = head_target.get_path()
 
 func set_color(_color: Color) -> void:
-	var mat: StandardMaterial3D = get_body_material().duplicate()
+	var mat: StandardMaterial3D = get_body_material()
 	mat.albedo_color = _color
-	player_body_mesh.set_surface_override_material(0, mat)
 
 func disable_outline() -> void:
-	pass
+	var mat: StandardMaterial3D = get_body_material()
+	mat.stencil_mode = BaseMaterial3D.STENCIL_MODE_DISABLED
+
+func enable_outline() -> void:
+	var mat: StandardMaterial3D = get_body_material()
+	mat.stencil_mode = BaseMaterial3D.STENCIL_MODE_OUTLINE
 
 func set_outline(outline: bool) -> void:
-	var mat: StandardMaterial3D = get_body_material().duplicate_deep()
+	var mat: StandardMaterial3D = get_body_material()
 	if outline:
 		mat.stencil_color = Color.WHITE
 	else:
 		mat.stencil_color = Color.BLACK
-	player_body_mesh.set_surface_override_material(0, mat)
 
 func set_face(face: int) -> void:
 	current_face = face
 	var face_material = get_face_material()
-	var mat: StandardMaterial3D = face_material.duplicate()
+	var mat: StandardMaterial3D = face_material
 	match(face):
 		0: mat.albedo_texture = Face_idle
 		1: mat.albedo_texture = Face_shoked
@@ -142,15 +149,13 @@ func set_face(face: int) -> void:
 		3: mat.albedo_texture = face_smile
 		4: mat.albedo_texture = face_stunned
 		5: mat.albedo_texture = face_ruben
-	player_face_mesh.set_surface_override_material(0, mat)
 
 func set_snap_face() -> void:
-	var mat: StandardMaterial3D = get_face_material().duplicate()
+	var mat: StandardMaterial3D = get_face_material()
 	if snap_image:
 		mat.albedo_texture = snap_image
 	else:
 		mat.albedo_texture = Face_idle
-	player_face_mesh.set_surface_override_material(0, mat)
 
 func set_active_ik_hands(active: bool) -> void:
 	if !is_ready:

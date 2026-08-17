@@ -210,7 +210,7 @@ omni_attenuation = -0.2
 [node name="PlayerHud" type="Sprite3D" parent="PlayerActor" unique_id=1411064321 node_paths=PackedStringArray("label")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.493, 0)
 visible = false
-billboard = 2
+billboard = 1
 texture = SubResource("ViewportTexture_nrvps")
 script = ExtResource("5_6ovrf")
 label = NodePath("SubViewport/CenterContainer/Label")
