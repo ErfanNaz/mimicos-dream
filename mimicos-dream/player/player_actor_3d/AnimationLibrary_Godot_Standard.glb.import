@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b03lla3h30nmy"
-path="res://.godot/imported/haus01.glb-4a98fbb7d79f7703c128f546e6934fcf.scn"
+uid="uid://dyl7cg4lq4ctd"
+path="res://.godot/imported/AnimationLibrary_Godot_Standard.glb-5c4c003ca5f86e2218355dc7ceaa2752.scn"
 
 [deps]
 
-source_file="res://assets/models/testobjekte/gebäude/haus01.glb"
-dest_files=["res://.godot/imported/haus01.glb-4a98fbb7d79f7703c128f546e6934fcf.scn"]
+source_file="res://player/player_actor_3d/AnimationLibrary_Godot_Standard.glb"
+dest_files=["res://.godot/imported/AnimationLibrary_Godot_Standard.glb-5c4c003ca5f86e2218355dc7ceaa2752.scn"]
 
 [params]
 
@@ -39,13 +39,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"nodes": {
-"PATH:haus01": {
-"generate/physics": true
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
 gltf/texture_map_mode=1

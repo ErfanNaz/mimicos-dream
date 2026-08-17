@@ -7,6 +7,7 @@ movement:
 	- springen
 	- angreifen
 	- abbauen
+	- fallen
 
 interaktionen:
 	- mit f/viereck an objekten interagieren (tür,objekte nehmen, truhen öffnen, erzabbauen usw.)

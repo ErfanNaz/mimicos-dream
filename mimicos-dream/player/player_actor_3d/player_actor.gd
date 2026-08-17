@@ -5,7 +5,6 @@ class_name PlayerActor3D extends Node3D
 @export var player_body_mesh: MeshInstance3D
 @export var player_face_mesh: MeshInstance3D
 @export var mimico_backpack: Node3D
-@export var player_actor_animation_player: AnimationPlayer
 
 @export var color: Color = Color.YELLOW
 @export_range(0, 5, 1) var current_face: int = 0
@@ -195,9 +194,16 @@ func set_animation(_animation: String) -> void:
 	if !animation_map.has(_animation):
 		ApplicationManager.system_log("unknown animation")
 		return
+	ApplicationManager.system_log("animation: %s" % [_animation])
 	match(animation):
 		"idle": 
 			finite_state_machine.transition("PlayerActorIdle")
+		"walk": 
+			finite_state_machine.transition("PlayerActorWalk")
+		"jump": 
+			finite_state_machine.transition("PlayerActorJump")
+		"fall": 
+			finite_state_machine.transition("PlayerActorJump")
 		_: 
 			finite_state_machine.transition("PlayerActorWalk")
 			

@@ -7,6 +7,7 @@ var TEAM_COLORS: Array[Color] = [
 	Color.from_string("#78bf69", Color.LIME_GREEN) 
 ]
 
+@export var blackboard: StateBlackboard = StateBlackboard.new()
 @export var player_body: PlayerBody
 @export var player_actor: PlayerActor3D
 @export var player_state_machine: FiniteStateMachine

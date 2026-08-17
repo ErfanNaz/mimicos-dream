@@ -1,0 +1,19 @@
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://vqiw1k0y0kro"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_joku2"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kmofx"]
+animation = &"running_rig"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_kmofx"]
+
+[resource]
+graph_offset = Vector2(-481.33334, 93.49093)
+nodes/run/node = SubResource("AnimationNodeBlend2_kmofx")
+nodes/run/position = Vector2(-53.333332, 200)
+nodes/Idle_Anim/node = SubResource("AnimationNodeAnimation_joku2")
+nodes/Idle_Anim/position = Vector2(-293.33334, 160)
+nodes/Walk_Anim/node = SubResource("AnimationNodeAnimation_kmofx")
+nodes/Walk_Anim/position = Vector2(-266.66666, 386.66666)
+node_connections = [&"output", 0, &"run", &"run", 0, &"Idle_Anim", &"run", 1, &"Walk_Anim"]

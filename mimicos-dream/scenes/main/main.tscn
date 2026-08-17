@@ -39,7 +39,7 @@ light_energy = 0.1
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=128362928]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+transform = Transform3D(0.99107176, 0.13332938, 0, 0, -1.1920929e-07, 1.0000001, 0.13332938, -0.9910719, -1.1920929e-07, 0, 4.1759114, 0)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=145780615]
@@ -53,11 +53,11 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 [node name="PlayerController" parent="." unique_id=88308788 instance=ExtResource("2_iuonh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1759113, 0)
 
-[node name="PlayerHud" parent="PlayerController/PlayerActor" parent_id_path=PackedInt32Array(88308788, 1535567688) index="10" unique_id=1411064321]
+[node name="PlayerHud" parent="PlayerController/PlayerActor" parent_id_path=PackedInt32Array(88308788, 1535567688) index="11" unique_id=1411064321]
 texture = SubResource("ViewportTexture_hujxm")
 
 [node name="PhantomCamera3D" parent="PlayerController/PlayerCameraSystem/TargetAnchorNode3D/HeadPosition/SpringArm3D" parent_id_path=PackedInt32Array(88308788, 1136149354) index="0" unique_id=1124404546]
-transform = Transform3D(0.9910749, 0.13331969, 6.7424355e-09, 1.490121e-08, -2.3840005e-07, 0.9049544, 0.13333048, -0.9909947, -2.1575794e-07, 0, 0, 0)
+transform = Transform3D(0.99107516, 0.13331993, 0, 0, -1.1920085e-07, 0.90632796, 0.13332984, -0.9910017, -1.080427e-07, 0, 0, 0)
 align_transform_with_view = Callable()
 align_rotation_with_view = Callable()
 
@@ -79,3 +79,4 @@ one_shot = true
 [editable path="PlayerController/PlayerActor"]
 [editable path="PlayerController/PlayerActor/player_model"]
 [editable path="PlayerController/PlayerActor/player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack"]
+[editable path="PlayerController/PlayerActor/AnimationLibrary_Godot_Standard"]

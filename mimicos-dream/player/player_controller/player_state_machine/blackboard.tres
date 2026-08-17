@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="StateBillboard" format=3 uid="uid://ciw6vwl83lbqy"]
+
+[ext_resource type="Script" uid="uid://vi148nbw2qvd" path="res://entities/player_controller/player_state_machine/state_billboard.gd" id="1_j0kyp"]
+
+[resource]
+script = ExtResource("1_j0kyp")
+metadata/_custom_type_script = "uid://vi148nbw2qvd"
