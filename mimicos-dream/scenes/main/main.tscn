@@ -17,7 +17,8 @@ sky_material = SubResource("PanoramaSkyMaterial_hujxm")
 [sub_resource type="Environment" id="Environment_ow5a4"]
 background_mode = 2
 sky = SubResource("Sky_ow5a4")
-glow_enabled = true
+tonemap_mode = 2
+sdfgi_enabled = true
 fog_light_color = Color(0.69680893, 0.9194905, 0.9959524, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hujxm"]
@@ -56,9 +57,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1759113, 0)
 texture = SubResource("ViewportTexture_hujxm")
 
 [node name="PhantomCamera3D" parent="PlayerController/PlayerCameraSystem/TargetAnchorNode3D/HeadPosition/SpringArm3D" parent_id_path=PackedInt32Array(88308788, 1136149354) index="0" unique_id=1124404546]
-transform = Transform3D(0.9910749, 0.13331969, 6.781031e-09, 1.490121e-08, -2.3840005e-07, 0.91013455, 0.13333048, -0.9909947, -2.1699299e-07, 0, 0, 0)
+transform = Transform3D(0.9910749, 0.13331969, 6.7424355e-09, 1.490121e-08, -2.3840005e-07, 0.9049544, 0.13333048, -0.9909947, -2.1575794e-07, 0, 0, 0)
 align_transform_with_view = Callable()
 align_rotation_with_view = Callable()
+
+[node name="PlayerInputActiveControlled" parent="PlayerController/ControllerStateMachine" parent_id_path=PackedInt32Array(88308788, 1662482892) index="0" unique_id=117359017 node_paths=PackedStringArray("dash_timer")]
+dash_timer = NodePath("../../../DashTimer")
 
 [node name="InputManager" parent="." unique_id=799682356 instance=ExtResource("3_k2fmo")]
 enable_lookup_direction = true
@@ -66,6 +70,9 @@ enable_lookup_direction = true
 [node name="CameraSystem" parent="." unique_id=798910101 node_paths=PackedStringArray("camera_3d", "camera_position_target") instance=ExtResource("6_ow5a4")]
 camera_3d = NodePath("../Camera3D")
 camera_position_target = NodePath("../PlayerController/PlayerActor")
+
+[node name="DashTimer" type="Timer" parent="." unique_id=17897821]
+one_shot = true
 
 [editable path="PlayerController"]
 [editable path="PlayerController/PlayerBody/PlayerInteractable"]

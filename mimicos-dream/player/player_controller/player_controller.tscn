@@ -253,7 +253,7 @@ draw_pass_1 = SubResource("SphereMesh_8e8q0")
 [node name="TargetAnchorNode3D" type="Node3D" parent="PlayerCameraSystem" unique_id=1838338819]
 
 [node name="HeadPosition" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D" unique_id=996517117]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 0, 4, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="PlayerCameraSystem/TargetAnchorNode3D/HeadPosition" unique_id=1136149354]
 transform = Transform3D(-1, 0, -8.742277e-08, 0, 0.99999994, 0, 8.742278e-08, 0, -0.99999994, 0, 0, 0)

@@ -46,6 +46,7 @@ var controller_input: ControllerInput = ControllerInput.new()
 
 var pluged_input_manager: Dictionary[int, InputManager] = {}
 
+var is_looking_to_camera: bool = false
 
 signal controller_input_changed(controller_input: ControllerInput)
 signal command_bus(command: PlayerControllerCommand)
@@ -58,10 +59,20 @@ func _ready() -> void:
 	team_changed.connect(self.change_team)
 	player_actor.set_outline(false)
 	player_actor_mover.activated()
-	#player_properties = player_properties.duplicate()
+	player_actor.set_lookup_target(look_at_target_node_3d.get_path())
+	player_properties = player_properties.duplicate()
 	if input_manager:
 		plug_in_input_manager(input_manager)
-	
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("toggle_look_at_camera"):
+		if is_looking_to_camera:
+			is_looking_to_camera = false
+			player_actor.set_lookup_target(look_at_target_node_3d.get_path())
+		else:
+			is_looking_to_camera = true
+			player_actor.set_lookup_target(GameManager.camera_system.camera_3d.get_path())
+
 		
 func change_team(_team: int):
 	if !player_actor:
