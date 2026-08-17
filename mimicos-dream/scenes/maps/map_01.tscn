@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://ctg2cpn4eh5wo" path="res://assets/models/testobjekte/statue/ritter.glb" id="17_lwxhp"]
 [ext_resource type="PackedScene" uid="uid://b03lla3h30nmy" path="res://assets/models/testobjekte/gebäude/haus01.glb" id="18_8cp7r"]
 [ext_resource type="PackedScene" uid="uid://ddxoe58b44kb3" path="res://assets/models/testobjekte/enviroment/gelände/dorf.glb" id="19_oendh"]
+[ext_resource type="PackedScene" uid="uid://by3j0ydtex3xi" path="res://assets/models/testobjekte/gebäude/testgaus.glb" id="20_msigb"]
 
 [node name="Map01" type="Node3D" unique_id=1725308146]
 
@@ -98,7 +99,7 @@ transform = Transform3D(-1.0645001, 0, -1.3041806, 0, 1.6834631, 0, 1.3041806, 0
 transform = Transform3D(0.76761395, 0, -0.64091253, 0, 1, 0, 0.64091253, 0, 0.76761395, -62.85595, 0.003993735, 1.71908)
 
 [node name="baum_laubbaum15" parent="bäume" unique_id=1073699559 instance=ExtResource("9_ja8my")]
-transform = Transform3D(0.35972047, 0, 0.9330601, 0, 1, 0, -0.9330601, 0, 0.35972047, -84.455666, 0.003993735, 33.6326)
+transform = Transform3D(0.35972047, 0, 0.9330601, 0, 1, 0, -0.9330601, 0, 0.35972047, -114.97979, 0.003993735, 4.4292946)
 
 [node name="baum_laubbaum30" parent="bäume" unique_id=1283972172 instance=ExtResource("9_ja8my")]
 transform = Transform3D(0.35972047, 0, 0.9330601, 0, 1, 0, -0.9330601, 0, 0.35972047, -51.662163, 0.003993735, 14.324917)
@@ -386,6 +387,9 @@ transform = Transform3D(-0.3223845, 0, -0.9466089, 0, 1, 0, 0.9466089, 0, -0.322
 
 [node name="dorf" parent="." unique_id=1210151617 instance=ExtResource("19_oendh")]
 transform = Transform3D(-0.0031928206, 0, -0.9999949, 0, 1, 0, 0.9999949, 0, -0.0031928206, 664.1812, -19.754822, -16.176514)
+
+[node name="testgaus" parent="." unique_id=1023567569 instance=ExtResource("20_msigb")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -79.90289, 0, 51.64818)
 
 [editable path="tür2"]
 [editable path="baumstamm_sägen2"]
