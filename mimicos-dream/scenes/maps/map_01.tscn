@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dblri820gp4a" path="res://assets/models/testobjekte/enviroment/berge/berg01.glb" id="15_4228d"]
 [ext_resource type="PackedScene" uid="uid://dry6ijejd4cc2" path="res://assets/models/testobjekte/türen_tore/steintor.glb" id="16_ru6md"]
 [ext_resource type="PackedScene" uid="uid://ctg2cpn4eh5wo" path="res://assets/models/testobjekte/statue/ritter.glb" id="17_lwxhp"]
+[ext_resource type="PackedScene" uid="uid://b03lla3h30nmy" path="res://assets/models/testobjekte/gebäude/haus01.glb" id="18_8cp7r"]
 
 [node name="Map01" type="Node3D" unique_id=1725308146]
 
@@ -267,6 +268,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 259.93713, -0.40397263, -304.
 
 [node name="ritter2" parent="." unique_id=1130784256 instance=ExtResource("17_lwxhp")]
 transform = Transform3D(0.851355, 0, 0.52458996, 0, 1, 0, -0.52458996, 0, 0.851355, 16.50235, -0.40397263, -249.29031)
+
+[node name="haus01" parent="." unique_id=202451598 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.001434, -0.6472666, -112.700516)
+
+[node name="haus02" parent="." unique_id=1091905753 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(0.7915852, 0, 0.6110588, 0, 1, 0, -0.6110588, 0, 0.7915852, -69.28685, -0.6472666, -106.98628)
+
+[node name="haus03" parent="." unique_id=749399331 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(-0.18368125, 0, 0.982986, 0, 1, 0, -0.982986, 0, -0.18368125, -102.533325, -0.6472666, -45.16864)
+
+[node name="haus04" parent="." unique_id=1385238579 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(-0.18368125, 0, 0.982986, 0, 1, 0, -0.982986, 0, -0.18368125, -78.37769, -0.6472666, -20.753262)
+
+[node name="haus05" parent="." unique_id=630240185 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(-0.9999992, 0, 0.0013185889, 0, 1, 0, -0.0013185889, 0, -0.9999992, 4.2189865, -0.6472666, -30.883041)
+
+[node name="haus06" parent="." unique_id=1408936592 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(-0.9999992, 0, 0.0013185889, 0, 1, 0, -0.0013185889, 0, -0.9999992, 38.504402, -0.6472666, -30.103832)
+
+[node name="haus07" parent="." unique_id=1192283385 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(-0.3223845, 0, -0.9466089, 0, 1, 0, 0.9466089, 0, -0.3223845, 32.01095, -0.6472666, -115.03816)
+
+[node name="haus08" parent="." unique_id=1932646599 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.23996, -0.6472666, -148.5569)
+
+[node name="haus09" parent="." unique_id=1468742667 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(0.7915852, 0, 0.6110588, 0, 1, 0, -0.6110588, 0, 0.7915852, 151.95454, -0.6472666, -142.84267)
+
+[node name="haus15" parent="." unique_id=1528916312 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(0.8987082, 0, -0.4385474, 0, 1, 0, 0.4385474, 0, 0.8987082, 60.040222, -0.6472666, -174.57991)
+
+[node name="haus16" parent="." unique_id=735406123 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(0.98243654, 0, -0.18659736, 0, 1, 0, 0.18659736, 0, 0.98243654, 124.751205, -0.6472666, -188.18158)
+
+[node name="haus10" parent="." unique_id=1083125196 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(-0.18368125, 0, 0.982986, 0, 1, 0, -0.982986, 0, -0.18368125, 118.70807, -0.6472666, -81.025024)
+
+[node name="haus11" parent="." unique_id=440517813 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(-0.18368125, 0, 0.982986, 0, 1, 0, -0.982986, 0, -0.18368125, 142.86371, -0.6472666, -56.60965)
+
+[node name="haus12" parent="." unique_id=1382841400 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(-0.9999992, 0, 0.0013185889, 0, 1, 0, -0.0013185889, 0, -0.9999992, 225.46039, -0.6472666, -66.739426)
+
+[node name="haus13" parent="." unique_id=498320104 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(-0.9999992, 0, 0.0013185889, 0, 1, 0, -0.0013185889, 0, -0.9999992, 259.7458, -0.6472666, -65.96022)
+
+[node name="haus14" parent="." unique_id=740855440 instance=ExtResource("18_8cp7r")]
+transform = Transform3D(-0.3223845, 0, -0.9466089, 0, 1, 0, 0.9466089, 0, -0.3223845, 253.25235, -0.6472666, -150.89455)
 
 [editable path="tür2"]
 [editable path="baumstamm_sägen2"]
