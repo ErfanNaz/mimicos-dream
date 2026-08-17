@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c3wdr378gd80j" path="res://common/player_controller/player_controller.gd" id="1_w10rj"]
 [ext_resource type="Script" uid="uid://ba1qxsjfxtnwf" path="res://common/player_controller/player_properties/player_properties.gd" id="2_meoet"]
 [ext_resource type="PackedScene" uid="uid://d2h1lm7msiuwn" path="res://player/player_body/player_body.tscn" id="3_jipor"]
+[ext_resource type="PackedScene" uid="uid://bxye5myofuce1" path="res://player/player_controller/player_interactable/player_interactable.tscn" id="4_6hnq4"]
 [ext_resource type="Script" uid="uid://ck4suobi4m27i" path="res://player/player_controller/player_hud.gd" id="5_6ovrf"]
 [ext_resource type="Script" uid="uid://c3c77lxcykh81" path="res://player/player_controller/states/controller/player_input_active_controlled.gd" id="9_meoet"]
 [ext_resource type="Script" uid="uid://b3rwnrbu2k2tw" path="res://player/player_controller/states/controller/player_idle_controlled.gd" id="10_fcair"]
@@ -21,6 +22,9 @@
 [sub_resource type="Resource" id="Resource_4eq88"]
 script = ExtResource("2_meoet")
 metadata/_custom_type_script = "uid://ba1qxsjfxtnwf"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mf8xc"]
+radius = 1.4741474
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e3mql"]
 
@@ -71,6 +75,13 @@ metadata/_custom_type_script = "uid://c3wdr378gd80j"
 
 [node name="PlayerBody" parent="." unique_id=551982809 node_paths=PackedStringArray("player_controller") instance=ExtResource("3_jipor")]
 player_controller = NodePath("..")
+
+[node name="PlayerInteractable" parent="PlayerBody" unique_id=735506298 node_paths=PackedStringArray("player_controller") instance=ExtResource("4_6hnq4")]
+player_controller = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody/PlayerInteractable/PlayerInteractable" parent_id_path=PackedInt32Array(735506298, 1647974667) index="0" unique_id=671178556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4117048, 0)
+shape = SubResource("SphereShape3D_mf8xc")
 
 [node name="PlayerActor" parent="." unique_id=1535567688 instance=ExtResource("10_ofon0")]
 
@@ -302,6 +313,7 @@ player_body = NodePath("../../../PlayerBody")
 player_actor = NodePath("../../../PlayerActor")
 metadata/_custom_type_script = "uid://2y37yx57ooc4"
 
+[editable path="PlayerBody/PlayerInteractable"]
 [editable path="PlayerActor"]
 [editable path="PlayerActor/player_model"]
 [editable path="PlayerActor/player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack"]

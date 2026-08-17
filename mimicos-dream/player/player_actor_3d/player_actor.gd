@@ -120,6 +120,9 @@ func set_color(_color: Color) -> void:
 	mat.albedo_color = _color
 	player_body_mesh.set_surface_override_material(0, mat)
 
+func disable_outline() -> void:
+	pass
+
 func set_outline(outline: bool) -> void:
 	var mat: StandardMaterial3D = get_body_material().duplicate_deep()
 	if outline:
