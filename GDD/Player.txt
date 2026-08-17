@@ -1,9 +1,10 @@
 Player:
 
-movement:
+was der spieler können sollte: 
 	- schleichen
 	- gehen
 	- rennen
+	- dashen
 	- springen
 	- angreifen
 	- abbauen
