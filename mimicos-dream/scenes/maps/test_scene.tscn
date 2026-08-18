@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://jsjeoeetk2d8"]
+
+[ext_resource type="PackedScene" uid="uid://cu30teovqg555" path="res://assets/models/maps/map_01.glb" id="1_hshav"]
+[ext_resource type="PackedScene" uid="uid://bxi83jt8kqnjc" path="res://assets/models/testobjekte/statue/kampfpuppe.glb" id="2_a5bem"]
+[ext_resource type="PackedScene" uid="uid://brtj30hrfgtnc" path="res://player/player_controller/player_controller.tscn" id="3_83srw"]
+
+[node name="TestScene" type="Node3D" unique_id=601054209]
+
+[node name="map_01" parent="." unique_id=558223960 instance=ExtResource("1_hshav")]
+
+[node name="kampfpuppe2" parent="." unique_id=1329350971 instance=ExtResource("2_a5bem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6724741, 0, 16.727959)
+
+[node name="kampfpuppe3" parent="." unique_id=603185554 instance=ExtResource("2_a5bem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7835908, 0, 16.727959)
+
+[node name="kampfpuppe4" parent="." unique_id=163885973 instance=ExtResource("2_a5bem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8305588, 0, 16.727959)
+
+[node name="PlayerController" parent="." unique_id=88308788 instance=ExtResource("3_83srw")]

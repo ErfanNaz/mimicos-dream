@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dsa25ajkyujjl" path="res://entities/trigger_system/trigger_system.tscn" id="13_8rg8i"]
 [ext_resource type="PackedScene" uid="uid://cr0opx4157hid" path="res://assets/models/testobjekte/enviroment/bäume/baum_tannenbaum.glb" id="14_pgpfx"]
 [ext_resource type="PackedScene" uid="uid://dblri820gp4a" path="res://assets/models/testobjekte/enviroment/berge/berg01.glb" id="15_4228d"]
+[ext_resource type="PackedScene" uid="uid://bxi83jt8kqnjc" path="res://assets/models/testobjekte/statue/kampfpuppe.glb" id="15_ru6md"]
 [ext_resource type="PackedScene" uid="uid://dry6ijejd4cc2" path="res://assets/models/testobjekte/türen_tore/steintor.glb" id="16_ru6md"]
 [ext_resource type="PackedScene" uid="uid://ctg2cpn4eh5wo" path="res://assets/models/testobjekte/statue/ritter.glb" id="17_lwxhp"]
 [ext_resource type="PackedScene" uid="uid://b03lla3h30nmy" path="res://assets/models/testobjekte/gebäude/haus01.glb" id="18_8cp7r"]
@@ -271,5 +272,8 @@ transform = Transform3D(-0.0031928206, 0, -0.9999949, 0, 1, 0, 0.9999949, 0, -0.
 
 [node name="testgaus" parent="." unique_id=1023567569 instance=ExtResource("20_msigb")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -79.90289, 0, 51.64818)
+
+[node name="kampfpuppe2" parent="." unique_id=508017274 instance=ExtResource("15_ru6md")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5802059, 3.8146973e-06, 6.988596)
 
 [editable path="baumstamm_sägen2"]
