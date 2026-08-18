@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bxi83jt8kqnjc"
-path="res://.godot/imported/kampfpuppe.glb-407bc805ff585c4a353b0dc1ed397f4f.scn"
+uid="uid://b883jgi5qpsuu"
+path="res://.godot/imported/tisch.glb-97c0ed5399f1b9e7d5d7ca7f485c8a24.scn"
 
 [deps]
 
-source_file="res://assets/models/testobjekte/statue/kampfpuppe.glb"
-dest_files=["res://.godot/imported/kampfpuppe.glb-407bc805ff585c4a353b0dc1ed397f4f.scn"]
+source_file="res://assets/models/testobjekte/Objekte/tisch.glb"
+dest_files=["res://.godot/imported/tisch.glb-97c0ed5399f1b9e7d5d7ca7f485c8a24.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:kampfpuppe": {
+"PATH:Cube_001": {
 "generate/physics": true
 }
 }

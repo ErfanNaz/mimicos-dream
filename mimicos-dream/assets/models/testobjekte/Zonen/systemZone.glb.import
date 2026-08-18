@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bxi83jt8kqnjc"
-path="res://.godot/imported/kampfpuppe.glb-407bc805ff585c4a353b0dc1ed397f4f.scn"
+uid="uid://c3w2y4aook43c"
+path="res://.godot/imported/systemZone.glb-455a621cdfd094c90ee3cadad5307080.scn"
 
 [deps]
 
-source_file="res://assets/models/testobjekte/statue/kampfpuppe.glb"
-dest_files=["res://.godot/imported/kampfpuppe.glb-407bc805ff585c4a353b0dc1ed397f4f.scn"]
+source_file="res://assets/models/testobjekte/Zonen/systemZone.glb"
+dest_files=["res://.godot/imported/systemZone.glb-455a621cdfd094c90ee3cadad5307080.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:kampfpuppe": {
+"PATH:systemZone": {
 "generate/physics": true
 }
 }
