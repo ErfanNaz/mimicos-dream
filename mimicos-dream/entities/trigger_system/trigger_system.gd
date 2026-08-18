@@ -1,7 +1,7 @@
 extends Node3D
 
-@export var on_animation: String = "on"
-@export var off_animation: String = "off"
+@export var on_animation: String = "animation|open"
+@export var off_animation: String = "animation|close"
 @export var animation_player: AnimationPlayer
 
 @export_category("trigger settings")

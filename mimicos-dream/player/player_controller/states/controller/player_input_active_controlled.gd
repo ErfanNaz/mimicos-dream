@@ -105,6 +105,12 @@ func _input(event: InputEvent) -> void:
 			min_spring_length,
 			max_spring_length
 		)
+		
+	if event.is_action_pressed("ui_cancel"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+	if event is InputEventMouseButton and event.pressed:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 func start_dash() -> void:

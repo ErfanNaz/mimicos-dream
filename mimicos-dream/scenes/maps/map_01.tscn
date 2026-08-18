@@ -16,14 +16,10 @@ metadata/_edit_lock_ = true
 
 [node name="TriggerSystem" parent="triggers" unique_id=446900515 node_paths=PackedStringArray("animation_player") instance=ExtResource("13_8rg8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.31679, 3.8146973e-06, 12.255948)
-on_animation = "truhe_deckel|open"
-off_animation = "truhe_deckel|close"
 animation_player = NodePath("../../objekte/truhe2/AnimationPlayer")
 
 [node name="TriggerSystem2" parent="triggers" unique_id=613127884 node_paths=PackedStringArray("animation_player") instance=ExtResource("13_8rg8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.31679, 3.8146973e-06, -2.744052)
-on_animation = "tür|open"
-off_animation = "tür|close"
 animation_player = NodePath("../../objekte/tür/AnimationPlayer")
 toggle_back_timer = 2
 
@@ -32,14 +28,8 @@ toggle_back_timer = 2
 [node name="tür" parent="objekte" unique_id=487807018 instance=ExtResource("3_g5h58")]
 transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -10, 0, 0)
 
-[node name="tür" parent="objekte/tür" index="0" unique_id=1330788824]
-transform = Transform3D(-103.92305, 60.000008, 2.6226835e-06, 0, -5.2453665e-06, 120, 60.00001, 103.92305, 4.542621e-06, -0.715, 1.375, 0.22)
-
 [node name="truhe2" parent="objekte" unique_id=1986066644 instance=ExtResource("4_hrjdk")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 0, 13)
-
-[node name="truhe_deckel" parent="objekte/truhe2" index="1" unique_id=1330851957]
-transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0.8369425, -0.800635)
 
 [editable path="objekte/tür"]
 [editable path="objekte/truhe2"]
