@@ -1,0 +1,3 @@
+Gestaltung von Zuhause:
+	- map wird eine insel.
+	- haus und rakete sind nah beisammen.
