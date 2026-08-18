@@ -4,8 +4,7 @@ extends State
 @export var animation_tree: AnimationTree
 
 func enter() -> void:
-	animation_tree.set("parameters/fall/blend_amount", 1)
-	player_actor.set_face(2)
+	animation_tree.set("parameters/run/blend_amount", 1)
 
 func exit() -> void:
-	animation_tree.set("parameters/fall/blend_amount", 0)
+	animation_tree.set("parameters/run/blend_amount", 0)

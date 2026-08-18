@@ -8,7 +8,7 @@ func enter() -> void:
 	
 func update(_delta: float) -> void:
 	if player_body.velocity.length() > 0:
-		transition("Move/Run")
+		transition("Move/Walk")
 		return
 	if !player_body.is_on_floor():
 		transition("InAir")

@@ -57,6 +57,11 @@ signal state_changed(state: String)
 
 func _ready() -> void:
 	change_team(team)
+	blackboard.on_state_switched.connect(
+		func (from: String, to: String) -> void:
+			ApplicationManager.system_log("Player state switched from:%s to:%s" % [from, to])
+			player_actor.set_animation(to)
+	)
 	team_changed.connect(self.change_team)
 	player_actor.set_outline(false)
 	player_actor_mover.activated()

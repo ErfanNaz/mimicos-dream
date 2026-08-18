@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fb4jbhi6ds4" path="res://player/player_actor_3d/player_actor.gd" id="1_hs5vj"]
 [ext_resource type="PackedScene" uid="uid://cig6mbi61fcu4" path="res://player/player_actor_3d/mimico_with_rig_animations.glb" id="2_72pf7"]
+[ext_resource type="PackedScene" uid="uid://o0pu2sga1tfq" path="res://assets/animationen/mimico/mimico_animationen.glb" id="2_dg8bj"]
 [ext_resource type="Texture2D" uid="uid://buchwg7bg7rdw" path="res://player/player_actor_3d/faces/idle.png" id="3_11glw"]
 [ext_resource type="PackedScene" uid="uid://by42uy3lknwpj" path="res://player/player_actor_3d/assets/mimico_backpack.glb" id="4_wghgn"]
 [ext_resource type="Material" uid="uid://bsava25irrlk1" path="res://player/player_actor_3d/assets/player_body_base.tres" id="5_v1g2m"]
@@ -11,6 +12,8 @@
 [ext_resource type="Script" uid="uid://bp5dgjm0trr2n" path="res://player/player_actor_3d/states/player_actor_walk.gd" id="8_dg8bj"]
 [ext_resource type="Script" uid="uid://bq43jt10v4crp" path="res://player/player_actor_3d/states/player_actor_jump.gd" id="9_py5t8"]
 [ext_resource type="Script" uid="uid://d3atsgcls83pa" path="res://player/player_actor_3d/states/player_actor_fall.gd" id="10_2p4le"]
+[ext_resource type="Script" uid="uid://begysqxypk4uh" path="res://player/player_actor_3d/states/player_actor_run.gd" id="11_k8725"]
+[ext_resource type="Material" uid="uid://cvff6hkfnq5r6" path="res://player/player_actor_3d/assets/player_face_base.tres" id="13_7hylb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1g2m"]
 transparency = 1
@@ -21,100 +24,185 @@ radius = 0.4655641
 
 [node name="PlayerActor" type="Node3D" unique_id=1535567688 node_paths=PackedStringArray("animation_player", "player_body_mesh", "player_face_mesh", "mimico_backpack", "spring_bone_simulator_3d", "finite_state_machine", "hand_area_3d", "look_at_modifier_head", "two_bone_ik_3d_left_arm", "copy_transform_modifier_3d_left_hand", "two_bone_ik_3d_right_arm", "copy_transform_modifier_3d_right_hand", "head_target", "left_hand_target", "right_hand_target")]
 script = ExtResource("1_hs5vj")
-animation_player = NodePath("")
-player_body_mesh = NodePath("player_model/Armature/Skeleton3D/body")
-player_face_mesh = NodePath("player_model/Armature/Skeleton3D/face")
-mimico_backpack = NodePath("player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack")
-spring_bone_simulator_3d = NodePath("player_model/Armature/Skeleton3D/SpringBoneSimulator3D")
+animation_player = NodePath("mimico_animationen/AnimationPlayer")
+player_body_mesh = NodePath("mimico_animationen/Armature/Skeleton3D/body")
+player_face_mesh = NodePath("mimico_animationen/Armature/Skeleton3D/body_001")
+mimico_backpack = NodePath("mimico_animationen/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack")
+spring_bone_simulator_3d = NodePath("mimico_animationen/Armature/Skeleton3D/SpringBoneSimulator3D")
 ik_hands_active = true
 ik_head_active = true
 finite_state_machine = NodePath("FiniteStateMachine")
 hand_area_3d = NodePath("HandArea3D")
-look_at_modifier_head = NodePath("player_model/Armature/Skeleton3D/LookAtModifierHead")
-two_bone_ik_3d_left_arm = NodePath("player_model/Armature/Skeleton3D/TwoBoneIK3DLeftArm")
-copy_transform_modifier_3d_left_hand = NodePath("player_model/Armature/Skeleton3D/CopyTransformModifier3DLeftHand")
-two_bone_ik_3d_right_arm = NodePath("player_model/Armature/Skeleton3D/TwoBoneIK3DRightArm")
-copy_transform_modifier_3d_right_hand = NodePath("player_model/Armature/Skeleton3D/CopyTransformModifier3DRightHand")
+look_at_modifier_head = NodePath("mimico_animationen/Armature/Skeleton3D/LookAtModifierHead")
+two_bone_ik_3d_left_arm = NodePath("mimico_animationen/Armature/Skeleton3D/TwoBoneIK3DLeftArm")
+copy_transform_modifier_3d_left_hand = NodePath("mimico_animationen/Armature/Skeleton3D/CopyTransformModifier3DLeftHand")
+two_bone_ik_3d_right_arm = NodePath("mimico_animationen/Armature/Skeleton3D/TwoBoneIK3DRightArm")
+copy_transform_modifier_3d_right_hand = NodePath("mimico_animationen/Armature/Skeleton3D/CopyTransformModifier3DRightHand")
 head_target = NodePath("head_target")
 left_hand_target = NodePath("left_hand_target")
 right_hand_target = NodePath("right_hand_target")
 
 [node name="player_model" parent="." unique_id=643908776 instance=ExtResource("2_72pf7")]
+visible = false
 
-[node name="Skeleton3D" parent="player_model/Armature" parent_id_path=PackedInt32Array(643908776, 1304833099) index="0" unique_id=2025664327]
-bones/0/position = Vector3(-7.572928e-12, 0.7611475, 0.0131311305)
-bones/0/rotation = Quaternion(-3.6658278e-08, -3.1786513e-08, -1.5259322e-11, 1)
-bones/1/position = Vector3(-1.4738563e-10, 0.11055281, -0.0022104017)
-bones/1/rotation = Quaternion(-0.009995535, 3.1784772e-08, 3.3298303e-10, 0.99995005)
-bones/2/rotation = Quaternion(-7.4505815e-09, 2.7105093e-20, 9.592547e-28, 1)
-bones/3/rotation = Quaternion(-9.313225e-10, -1.4333603e-26, 1.7670484e-28, 1)
-bones/4/rotation = Quaternion(0.009995543, 1.6761648e-29, 2.4156492e-28, 0.99995005)
-bones/5/rotation = Quaternion(-1.3549055e-09, 5.17192e-26, -2.797382e-29, 1)
-bones/7/rotation = Quaternion(-0.5776821, -0.40601072, 0.5824416, -0.40274116)
-bones/8/rotation = Quaternion(-0.13473839, 0.01078393, 0.0026349132, 0.9908191)
-bones/9/rotation = Quaternion(2.6331918e-07, 8.401505e-06, 0.028424343, 0.999596)
-bones/10/rotation = Quaternion(-0.00791014, -0.013203069, -0.0031090835, 0.99987674)
-bones/11/rotation = Quaternion(0.57813996, -0.40569064, 0.5819997, 0.4030455)
-bones/12/rotation = Quaternion(-0.13480005, -0.009891721, 0.0033878507, 0.9908177)
-bones/13/rotation = Quaternion(-6.7013815e-07, 1.9184785e-05, -0.033003412, 0.9994552)
-bones/14/rotation = Quaternion(-0.007896966, 0.011331088, 0.0025497952, 0.99990135)
-bones/15/rotation = Quaternion(0.0024207179, -0.04397139, 0.99751693, -0.054960556)
-bones/16/rotation = Quaternion(-0.043707088, -1.7612474e-06, -8.5019565e-08, 0.9990445)
-bones/17/rotation = Quaternion(0.5114538, -0.06983777, 0.025365908, 0.85609245)
-bones/18/rotation = Quaternion(0.3199547, -0.0099793235, 0.0033698354, 0.9473743)
-bones/20/rotation = Quaternion(-0.0027677706, -0.050233513, 0.9972212, 0.054945208)
-bones/21/rotation = Quaternion(-0.036504366, 1.1096708e-06, -6.085975e-08, 0.9993335)
-bones/22/rotation = Quaternion(0.51540023, 0.06715534, -0.02577728, 0.8539252)
-bones/23/rotation = Quaternion(0.31476626, 0.012848407, -0.004261664, 0.94907266)
-bones/26/position = Vector3(-0.00013130912, 0.76114756, 0.013130474)
-bones/26/rotation = Quaternion(-3.665775e-08, -0.004999979, -1.9855094e-10, 0.9999875)
-bones/29/rotation = Quaternion(0.05496062, 0.99751693, 0.043971423, 0.0024206203)
-bones/30/rotation = Quaternion(-0.04370709, -1.761545e-06, -8.7089404e-08, 0.9990445)
-bones/36/rotation = Quaternion(-0.05494526, 0.9972211, 0.05023356, -0.0027678264)
-bones/37/rotation = Quaternion(-0.03650436, 1.1080832e-06, -5.944949e-08, 0.9993335)
-bones/38/rotation = Quaternion(-0.054945238, 0.99722135, 0.05022898, -0.0027678015)
-bones/43/rotation = Quaternion(-0.009995535, -1.5253677e-13, 1.5259726e-11, 0.99995005)
-bones/44/rotation = Quaternion(-7.4505815e-09, 2.7105083e-20, 1.3308508e-27, 1)
-bones/45/rotation = Quaternion(-9.313225e-10, -2.7052013e-26, 3.7865316e-28, 1)
-bones/46/rotation = Quaternion(0.009995543, -1.2697347e-26, -1.0837832e-29, 0.99995005)
-bones/47/rotation = Quaternion(-1.3549055e-09, 5.173888e-26, -3.201666e-29, 1)
-bones/48/rotation = Quaternion(-0.5776821, -0.40601072, 0.5824416, -0.40274116)
-bones/49/rotation = Quaternion(-0.13473837, 0.010783931, 0.0026349123, 0.9908191)
-bones/50/rotation = Quaternion(2.5957468e-07, 8.401493e-06, 0.028424338, 0.99959594)
-bones/51/position = Vector3(0.16963394, 0.102871016, -0.0013910597)
-bones/54/rotation = Quaternion(0.57813996, -0.4056906, 0.5819997, 0.4030455)
-bones/55/rotation = Quaternion(-0.13480006, -0.009891719, 0.003387849, 0.99081767)
-bones/56/rotation = Quaternion(-6.6626535e-07, 1.9185141e-05, -0.033003423, 0.9994553)
-bones/57/position = Vector3(-0.16963397, 0.102865376, -0.0011279574)
-bones/60/rotation = Quaternion(0, 0, 4.1014995e-26, 1)
-bones/61/position = Vector3(0.71992606, 1.2051488, 0.021839965)
-bones/61/rotation = Quaternion(0.52199787, 0.46250477, -0.51092803, 0.5025537)
-bones/62/rotation = Quaternion(0, 0, 4.1014995e-26, 1)
-bones/63/position = Vector3(-0.7199261, 1.205149, 0.019286713)
-bones/63/rotation = Quaternion(0.52286285, -0.46351767, 0.51004344, 0.50161904)
-bones/64/position = Vector3(0.16360565, 0.113904715, -0.06245213)
-bones/64/rotation = Quaternion(0.08144688, 0.7024002, 0.7024005, -0.0814494)
-bones/65/position = Vector3(-1.1050798e-07, 1.577618e-09, 5.6071925e-10)
-bones/65/rotation = Quaternion(-0.31799325, 0.06348194, -0.02134681, 0.9457244)
-bones/67/rotation = Quaternion(0.31995466, -0.009979558, 0.0033697614, 0.94737434)
-bones/68/position = Vector3(1.6734703e-08, -2.0417815e-08, -8.8475645e-09)
-bones/68/rotation = Quaternion(4.6282366e-08, 1.3370295e-07, 7.843843e-08, 1)
-bones/76/rotation = Quaternion(-0.0669768, 1.9397689e-08, 0.9977546, 2.3999535e-08)
-bones/78/rotation = Quaternion(-1.4770194e-09, 3.6088752e-09, -2.6308955e-08, 1)
-bones/80/position = Vector3(0.1431627, 0.2988569, 0.54541767)
-bones/80/rotation = Quaternion(2.842171e-14, 3.7252903e-09, 1.7053026e-13, 1)
-bones/81/position = Vector3(-0.1636066, 0.113905065, -0.06530142)
-bones/81/rotation = Quaternion(-0.07964566, 0.70260656, 0.7026069, 0.07965024)
-bones/82/position = Vector3(4.2316184e-08, 8.9849586e-09, 1.1454933e-08)
-bones/82/rotation = Quaternion(-0.31298593, -0.06417189, 0.021203564, 0.94735014)
-bones/84/rotation = Quaternion(0.31476632, 0.012848783, -0.004261594, 0.94907266)
-bones/85/position = Vector3(5.355094e-09, -3.378466e-08, 7.2177473e-09)
-bones/85/rotation = Quaternion(-4.3946827e-08, -1.9453002e-07, -1.1630799e-07, 1)
-bones/93/rotation = Quaternion(0.06758641, -2.7326614e-09, 0.99771345, -8.745168e-10)
-bones/95/rotation = Quaternion(2.153684e-09, 5.5006243e-08, -7.506969e-09, 1)
-bones/97/rotation = Quaternion(0, 3.7252903e-09, 0, 1)
+[node name="body" parent="player_model/Armature/Skeleton3D" parent_id_path=PackedInt32Array(643908776, 2025664327) index="0" unique_id=1677525325]
+surface_material_override/0 = ExtResource("5_v1g2m")
 
-[node name="LookAtModifierHead" type="LookAtModifier3D" parent="player_model/Armature/Skeleton3D" index="0" unique_id=1999836357]
+[node name="face" parent="player_model/Armature/Skeleton3D" parent_id_path=PackedInt32Array(643908776, 2025664327) index="1" unique_id=504553136]
+surface_material_override/0 = SubResource("StandardMaterial3D_v1g2m")
+
+[node name="cs_grp" parent="player_model" index="1" unique_id=44315244]
+visible = false
+
+[node name="AnimationPlayer" parent="player_model" index="2" unique_id=478112098]
+autoplay = &"idle"
+
+[node name="left_hand_target" type="Marker3D" parent="." unique_id=227313736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4779597, 1.2920202, 0.39458883)
+
+[node name="left_pole_target" type="Marker3D" parent="." unique_id=1581276002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67379326, 1.2619594, -0.091252804)
+
+[node name="head_target" type="Marker3D" parent="." unique_id=2032560088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.989, 6.629)
+
+[node name="right_hand_target" type="Marker3D" parent="." unique_id=217253442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46537215, 1.272474, 0.4253714)
+
+[node name="right_pole_target" type="Marker3D" parent="." unique_id=1538221755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60263234, 1.0832956, -0.19639742)
+
+[node name="HandArea3D" type="Area3D" parent="." unique_id=1244572555]
+transform = Transform3D(0.004977981, -0.001312209, 0.008573087, 0.0038120474, -0.008547811, -0.0035218108, 0.007790246, 0.0050212517, -0.003754864, -0.279936, 0.70257825, 0.075927295)
+collision_layer = 0
+collision_mask = 32768
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HandArea3D" unique_id=985002213]
+shape = SubResource("SphereShape3D_v1g2m")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=918044580]
+root_node = NodePath("../mimico_animationen")
+tree_root = ExtResource("6_2p4le")
+anim_player = NodePath("../mimico_animationen/AnimationPlayer")
+parameters/walk/blend_amount = 0.0
+parameters/jump/blend_amount = 0.0
+parameters/attack/blend_amount = 0.0
+parameters/TimeScale/scale = 2.0
+parameters/run/blend_amount = 0.0
+
+[node name="FiniteStateMachine" type="Node" parent="." unique_id=482290337 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("6_rp2p5")
+initial_state = NodePath("PlayerActorIdle")
+metadata/_custom_type_script = "uid://doejhfgthu4ky"
+
+[node name="PlayerActorIdle" type="Node" parent="FiniteStateMachine" unique_id=328647811 node_paths=PackedStringArray("player_actor", "animation_tree")]
+script = ExtResource("7_dg8bj")
+player_actor = NodePath("../..")
+animation_tree = NodePath("../../AnimationTree")
+metadata/_custom_type_script = "uid://2y37yx57ooc4"
+
+[node name="PlayerActorWalk" type="Node" parent="FiniteStateMachine" unique_id=106166842 node_paths=PackedStringArray("player_actor", "animation_tree")]
+script = ExtResource("8_dg8bj")
+player_actor = NodePath("../..")
+animation_tree = NodePath("../../AnimationTree")
+metadata/_custom_type_script = "uid://bp5dgjm0trr2n"
+
+[node name="PlayerActorJump" type="Node" parent="FiniteStateMachine" unique_id=1799809741 node_paths=PackedStringArray("player_actor", "animation_tree")]
+script = ExtResource("9_py5t8")
+player_actor = NodePath("../..")
+animation_tree = NodePath("../../AnimationTree")
+metadata/_custom_type_script = "uid://2y37yx57ooc4"
+
+[node name="PlayerActorFall" type="Node" parent="FiniteStateMachine" unique_id=80606864 node_paths=PackedStringArray("player_actor", "animation_tree")]
+script = ExtResource("10_2p4le")
+player_actor = NodePath("../..")
+animation_tree = NodePath("../../AnimationTree")
+metadata/_custom_type_script = "uid://2y37yx57ooc4"
+
+[node name="PlayerActorRun" type="Node" parent="FiniteStateMachine" unique_id=1351327585 node_paths=PackedStringArray("player_actor", "animation_tree")]
+script = ExtResource("11_k8725")
+player_actor = NodePath("../..")
+animation_tree = NodePath("../../AnimationTree")
+metadata/_custom_type_script = "uid://2y37yx57ooc4"
+
+[node name="mimico_animationen" parent="." unique_id=1020652613 instance=ExtResource("2_dg8bj")]
+
+[node name="Skeleton3D" parent="mimico_animationen/Armature" parent_id_path=PackedInt32Array(1020652613, 881296735) index="0" unique_id=1961366039]
+bones/0/position = Vector3(-2.8063903, 0.42009532, -80.72643)
+bones/0/rotation = Quaternion(-0.71204245, 0.039522223, -0.03910897, 0.6999314)
+bones/1/position = Vector3(-1.7136335e-07, 10.189091, -0.26635227)
+bones/1/rotation = Quaternion(-0.011556598, 0.0022982012, -0.013400221, 0.9998408)
+bones/2/position = Vector3(1.4901161e-08, 11.891309, 1.4901154e-07)
+bones/2/rotation = Quaternion(-0.034450743, 0.0009479389, -0.0045829467, 0.9993955)
+bones/3/position = Vector3(4.4703484e-07, 13.590073, -9.536743e-07)
+bones/3/rotation = Quaternion(-0.034232672, 0.0010568528, -0.004361927, 0.99940383)
+bones/4/rotation = Quaternion(-0.01083373, -0.00027850928, -0.0073483065, 0.99991435)
+bones/5/position = Vector3(4.7683716e-07, 13.805379, 0.08692831)
+bones/5/rotation = Quaternion(-0.059084926, -0.027365126, -0.11017966, 0.99177647)
+bones/6/position = Vector3(-4.7683716e-07, 111.95767, 0.70499295)
+bones/7/rotation = Quaternion(-0.59758335, -0.39113635, 0.627425, -0.310233)
+bones/8/position = Vector3(1.9367857e-07, 11.850665, -2.4274868e-07)
+bones/8/rotation = Quaternion(0.3881701, 0.16502163, 0.049170606, 0.90535855)
+bones/9/position = Vector3(1.6473009e-06, 23.265387, -9.322946e-08)
+bones/9/rotation = Quaternion(0.0023797438, -0.00064216665, 0.07246401, 0.997368)
+bones/10/position = Vector3(1.0955476e-06, 33.12188, 2.2307568e-06)
+bones/10/rotation = Quaternion(0.017035687, 0.121971495, 0.013050038, 0.9923016)
+bones/11/position = Vector3(-4.0399723, 1.4944178, 4.7683716e-07)
+bones/11/rotation = Quaternion(-0.05691018, 0.113954805, 0.1478283, 0.9807765)
+bones/12/position = Vector3(-0.85076255, 3.3393347, -5.840975e-06)
+bones/12/rotation = Quaternion(0.19399151, 0.033439513, -0.05358262, 0.9789679)
+bones/13/position = Vector3(-0.7788249, 4.989052, 4.420185e-06)
+bones/13/rotation = Quaternion(-0.2488116, -0.011296355, 0.31570622, 0.9155845)
+bones/14/position = Vector3(1.6295931, 4.1060085, -7.2195107e-06)
+bones/15/position = Vector3(-2.6950752e-06, 3.5427501, 1.7521234e-06)
+bones/15/rotation = Quaternion(0.1910036, -0.014014, 0.065614805, 0.97929364)
+bones/16/position = Vector3(0.1297276, 8.29649, -6.2262534e-06)
+bones/16/rotation = Quaternion(0.30802858, 0.00024505012, 0.012549055, 0.9512943)
+bones/17/position = Vector3(-0.118397474, 6.25881, 9.893265e-07)
+bones/17/rotation = Quaternion(0.19489124, 0.0028911137, 0.026677046, 0.9804578)
+bones/18/position = Vector3(-0.011329926, 5.2870693, 6.0251996e-06)
+bones/19/rotation = Quaternion(0.59788036, -0.38093698, 0.6239306, 0.32884172)
+bones/20/position = Vector3(-3.0636284e-06, 11.850675, -1.3644487e-05)
+bones/20/rotation = Quaternion(0.43422732, 0.007380192, 0.06541115, 0.89839506)
+bones/21/position = Vector3(8.768329e-07, 23.263199, -1.856501e-06)
+bones/21/rotation = Quaternion(0.0036865582, 0.00079160114, -0.12843426, 0.99171084)
+bones/22/position = Vector3(5.313197e-07, 33.130688, -4.3125738e-06)
+bones/22/rotation = Quaternion(-0.009294425, -0.23632285, -0.11893416, 0.9643236)
+bones/23/position = Vector3(4.4794164, 1.3317825, -6.318114e-06)
+bones/23/rotation = Quaternion(0.00063924125, -0.11249861, -0.14690992, 0.98273146)
+bones/24/position = Vector3(0.95193005, 3.6153495, -9.504756e-07)
+bones/24/rotation = Quaternion(0.14307177, -0.05287015, 0.02992357, 0.98784614)
+bones/25/position = Vector3(0.12745714, 4.707045, -1.9796805e-06)
+bones/25/rotation = Quaternion(-0.22218028, 0.025909273, -0.21470821, 0.95071816)
+bones/26/position = Vector3(-1.0793884, 3.907393, -2.5489808e-06)
+bones/27/position = Vector3(-1.7264215e-06, 4.4303985, 4.456829e-06)
+bones/27/rotation = Quaternion(0.10541885, 0.006365822, -0.07693471, 0.991427)
+bones/28/position = Vector3(-0.034370422, 7.7544003, -2.8873137e-06)
+bones/28/rotation = Quaternion(0.34807268, -0.0043149414, -0.037437737, 0.93670976)
+bones/29/position = Vector3(0.24005413, 6.3391104, 3.2293244e-06)
+bones/29/rotation = Quaternion(0.24994272, 0.00063071965, -0.07856176, 0.9650681)
+bones/30/position = Vector3(-0.20568053, 5.053294, -5.826092e-06)
+bones/31/rotation = Quaternion(0.061230544, 0.01070793, 0.996859, -0.049074683)
+bones/32/rotation = Quaternion(-0.11062227, -0.008962264, 0.006826198, 0.99379873)
+bones/33/position = Vector3(1.0111839e-06, 30.739124, -5.882953e-07)
+bones/33/rotation = Quaternion(0.49942514, -0.08810383, 0.02589531, 0.8614765)
+bones/34/position = Vector3(-8.433756e-07, 18.798332, -2.1527035e-06)
+bones/34/rotation = Quaternion(0.31309178, -0.0032994202, 0.001244071, 0.9497163)
+bones/35/position = Vector3(-7.0780516e-07, 7.18936, 1.1175891e-07)
+bones/36/rotation = Quaternion(-0.08617652, -0.030989157, 0.99465656, 0.047661386)
+bones/37/position = Vector3(6.9175775e-07, 32.614174, -5.120534e-07)
+bones/37/rotation = Quaternion(-0.08550241, 0.081536405, 0.00944, 0.9929512)
+bones/38/rotation = Quaternion(0.4928455, 0.08382943, -0.034066554, 0.86539906)
+bones/39/position = Vector3(-1.389403e-06, 18.631144, -1.1885061e-07)
+bones/39/rotation = Quaternion(0.34029686, -0.00012231835, -0.0027494442, 0.9403141)
+
+[node name="body_001" parent="mimico_animationen/Armature/Skeleton3D" index="1" unique_id=1256885996]
+surface_material_override/0 = ExtResource("13_7hylb")
+
+[node name="LookAtModifierHead" type="LookAtModifier3D" parent="mimico_animationen/Armature/Skeleton3D" index="2" unique_id=1999836357]
+transform = Transform3D(100, 0, 0, 0, 0, 100, 0, -100, 0, 0, 0, 0)
 active = false
 bone_name = "mixamorig_Neck"
 bone = 4
@@ -127,13 +215,8 @@ primary_damp_threshold = 1.0
 secondary_limit_angle = 3.1415927
 secondary_damp_threshold = 1.0
 
-[node name="body" parent="player_model/Armature/Skeleton3D" index="1" unique_id=1677525325]
-surface_material_override/0 = ExtResource("5_v1g2m")
-
-[node name="face" parent="player_model/Armature/Skeleton3D" index="2" unique_id=504553136]
-surface_material_override/0 = SubResource("StandardMaterial3D_v1g2m")
-
-[node name="TwoBoneIK3DLeftArm" type="TwoBoneIK3D" parent="player_model/Armature/Skeleton3D" index="3" unique_id=1266874619]
+[node name="TwoBoneIK3DLeftArm" type="TwoBoneIK3D" parent="mimico_animationen/Armature/Skeleton3D" index="3" unique_id=1266874619]
+transform = Transform3D(100, 0, 0, 0, 0, 100, 0, -100, 0, 0, 0, 0)
 active = false
 setting_count = 1
 settings/0/target_node = NodePath("../../../../left_hand_target")
@@ -148,7 +231,8 @@ settings/0/end_bone = 10
 settings/0/use_virtual_end = false
 settings/0/extend_end_bone = false
 
-[node name="CopyTransformModifier3DLeftHand" type="CopyTransformModifier3D" parent="player_model/Armature/Skeleton3D" index="4" unique_id=672860875]
+[node name="CopyTransformModifier3DLeftHand" type="CopyTransformModifier3D" parent="mimico_animationen/Armature/Skeleton3D" index="4" unique_id=672860875]
+transform = Transform3D(100, 0, 0, 0, 0, 100, 0, -100, 0, 0, 0, 0)
 active = false
 setting_count = 1
 settings/0/amount = 1.0
@@ -161,27 +245,29 @@ settings/0/axes = 7
 settings/0/invert = 0
 settings/0/additive = false
 
-[node name="TwoBoneIK3DRightArm" type="TwoBoneIK3D" parent="player_model/Armature/Skeleton3D" index="5" unique_id=1774117502]
+[node name="TwoBoneIK3DRightArm" type="TwoBoneIK3D" parent="mimico_animationen/Armature/Skeleton3D" index="5" unique_id=1774117502]
+transform = Transform3D(100, 0, 0, 0, 0, 100, 0, -100, 0, 0, 0, 0)
 active = false
 setting_count = 1
 settings/0/target_node = NodePath("../../../../right_hand_target")
 settings/0/pole_node = NodePath("../../../../right_pole_target")
 settings/0/root_bone_name = "mixamorig_RightArm"
-settings/0/root_bone = 12
+settings/0/root_bone = 20
 settings/0/middle_bone_name = "mixamorig_RightForeArm"
-settings/0/middle_bone = 13
+settings/0/middle_bone = 21
 settings/0/pole_direction = 0
 settings/0/end_bone_name = "mixamorig_RightHand"
-settings/0/end_bone = 14
+settings/0/end_bone = 22
 settings/0/use_virtual_end = false
 settings/0/extend_end_bone = false
 
-[node name="CopyTransformModifier3DRightHand" type="CopyTransformModifier3D" parent="player_model/Armature/Skeleton3D" index="6" unique_id=407599766]
+[node name="CopyTransformModifier3DRightHand" type="CopyTransformModifier3D" parent="mimico_animationen/Armature/Skeleton3D" index="6" unique_id=407599766]
+transform = Transform3D(100, 0, 0, 0, 0, 100, 0, -100, 0, 0, 0, 0)
 active = false
 setting_count = 1
 settings/0/amount = 1.0
 settings/0/apply_bone_name = "mixamorig_RightHand"
-settings/0/apply_bone = 14
+settings/0/apply_bone = 22
 settings/0/reference_type = 1
 settings/0/reference_node = NodePath("../../../../right_hand_target")
 settings/0/copy = 7
@@ -189,7 +275,8 @@ settings/0/axes = 7
 settings/0/invert = 0
 settings/0/additive = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="player_model/Armature/Skeleton3D" index="7" unique_id=983800300]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="mimico_animationen/Armature/Skeleton3D" index="7" unique_id=983800300]
+transform = Transform3D(100, 0, 0, 0, 0, 100, 0, -100, 0, 0, 0, 0)
 active = false
 setting_count = 1
 settings/0/root_bone_name = "mixamorig_Neck"
@@ -216,19 +303,19 @@ settings/0/joints/1/bone = 5
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="player_model/Armature/Skeleton3D" index="8" unique_id=1663178290]
-transform = Transform3D(1, -1.1099902e-16, 2.273543e-18, 2.2402473e-16, 0.99999994, 7.0780516e-08, -5.4199326e-20, -7.0780516e-08, 0.99999994, -1.1062506e-11, 1.3139116, 0.0020790854)
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="mimico_animationen/Armature/Skeleton3D" index="8" unique_id=1663178290]
+transform = Transform3D(0.9917493, 0.035745665, 0.12310803, -0.11338721, -0.20342015, 0.97250324, 0.059805475, -0.97843844, -0.19768868, -1.9010602, -4.8184547, -131.31999)
 visible = false
 bone_name = "mixamorig_Neck"
 bone_idx = 4
 
-[node name="mimico_backpack" parent="player_model/Armature/Skeleton3D/BoneAttachment3D" unique_id=1386257698 instance=ExtResource("4_wghgn")]
+[node name="mimico_backpack" parent="mimico_animationen/Armature/Skeleton3D/BoneAttachment3D" unique_id=1386257698 instance=ExtResource("4_wghgn")]
 transform = Transform3D(-0.9999991, 4.9312007e-06, 0.0013262348, 4.9173827e-06, 1, -1.04224e-05, -0.0013262348, -1.0415869e-05, -0.9999991, 1.284377e-10, -5.9604645e-07, -0.063865244)
 
-[node name="backpack_black" parent="player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1386257698, 246948385) index="0" unique_id=276203689]
+[node name="backpack_black" parent="mimico_animationen/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1386257698, 246948385) index="0" unique_id=276203689]
 transform = Transform3D(1.0000001, -1.3969839e-09, 2.9802322e-08, 2.3283064e-10, 1, -1.6298145e-09, 2.9802322e-08, -3.259629e-09, 1.0000002, 0, 0, 0)
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1386257698, 246948385) index="1" unique_id=1784912520]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="mimico_animationen/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1386257698, 246948385) index="1" unique_id=1784912520]
 transform = Transform3D(0.9999999, 0, -2.3283064e-10, 0, 0.9999998, 0, 2.3283064e-10, 0, 0.9999999, 0, 0, 0)
 setting_count = 1
 settings/0/root_bone_name = "Bone.001"
@@ -255,79 +342,14 @@ settings/0/joints/1/bone = 2
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="BoneAttachment3DHand" type="BoneAttachment3D" parent="player_model/Armature/Skeleton3D" index="9" unique_id=1906970325]
-transform = Transform3D(0.05001445, -0.99640787, 0.06834697, 0.026982434, -0.067059636, -0.99738395, 0.9983839, 0.051727783, 0.023531573, -0.7199261, 1.2051492, 0.019286769)
+[node name="BoneAttachment3DHand" type="BoneAttachment3D" parent="mimico_animationen/Armature/Skeleton3D" index="9" unique_id=1906970325]
+transform = Transform3D(0.49779812, -0.13122089, 0.85730875, 0.7790246, 0.5021252, -0.3754864, -0.38120475, 0.8547811, 0.35218108, -27.993599, 7.5927296, -70.25783)
 bone_name = "mixamorig_RightHand"
-bone_idx = 14
+bone_idx = 22
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="player_model/Armature/Skeleton3D/BoneAttachment3DHand" unique_id=460059773]
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="mimico_animationen/Armature/Skeleton3D/BoneAttachment3DHand" unique_id=460059773]
 remote_path = NodePath("../../../../../HandArea3D")
 
-[node name="cs_grp" parent="player_model" index="1" unique_id=44315244]
-visible = false
-
-[node name="AnimationPlayer" parent="player_model" index="2" unique_id=478112098]
-autoplay = &"idle"
-
-[node name="left_hand_target" type="Marker3D" parent="." unique_id=227313736]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4779597, 1.2920202, 0.39458883)
-
-[node name="left_pole_target" type="Marker3D" parent="." unique_id=1581276002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67379326, 1.2619594, -0.091252804)
-
-[node name="head_target" type="Marker3D" parent="." unique_id=2032560088]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.989, 6.629)
-
-[node name="right_hand_target" type="Marker3D" parent="." unique_id=217253442]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46537215, 1.272474, 0.4253714)
-
-[node name="right_pole_target" type="Marker3D" parent="." unique_id=1538221755]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60263234, 1.0832956, -0.19639742)
-
-[node name="HandArea3D" type="Area3D" parent="." unique_id=1244572555]
-transform = Transform3D(0.05001445, -0.99640787, 0.06834697, 0.026982434, -0.067059636, -0.99738395, 0.9983839, 0.051727783, 0.023531573, -0.7199261, 1.2051492, 0.019286769)
-collision_layer = 0
-collision_mask = 32768
-monitoring = false
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HandArea3D" unique_id=985002213]
-shape = SubResource("SphereShape3D_v1g2m")
-
-[node name="AnimationTree" type="AnimationTree" parent="." unique_id=918044580]
-root_node = NodePath("../player_model")
-tree_root = ExtResource("6_2p4le")
-anim_player = NodePath("../player_model/AnimationPlayer")
-parameters/run/blend_amount = 0.0
-
-[node name="FiniteStateMachine" type="Node" parent="." unique_id=482290337 node_paths=PackedStringArray("initial_state")]
-script = ExtResource("6_rp2p5")
-initial_state = NodePath("PlayerActorIdle")
-metadata/_custom_type_script = "uid://doejhfgthu4ky"
-
-[node name="PlayerActorIdle" type="Node" parent="FiniteStateMachine" unique_id=328647811 node_paths=PackedStringArray("player_actor", "animation_tree")]
-script = ExtResource("7_dg8bj")
-player_actor = NodePath("../..")
-animation_tree = NodePath("../../AnimationTree")
-metadata/_custom_type_script = "uid://2y37yx57ooc4"
-
-[node name="PlayerActorWalk" type="Node" parent="FiniteStateMachine" unique_id=106166842 node_paths=PackedStringArray("player_actor", "animation_tree")]
-script = ExtResource("8_dg8bj")
-player_actor = NodePath("../..")
-animation_tree = NodePath("../../AnimationTree")
-metadata/_custom_type_script = "uid://bp5dgjm0trr2n"
-
-[node name="PlayerActorJump" type="Node" parent="FiniteStateMachine" unique_id=1799809741 node_paths=PackedStringArray("player_actor", "animation_player")]
-script = ExtResource("9_py5t8")
-player_actor = NodePath("../..")
-animation_player = NodePath("../../player_model/AnimationPlayer")
-metadata/_custom_type_script = "uid://2y37yx57ooc4"
-
-[node name="PlayerActorFall" type="Node" parent="FiniteStateMachine" unique_id=80606864 node_paths=PackedStringArray("player_actor", "animation_player")]
-script = ExtResource("10_2p4le")
-player_actor = NodePath("../..")
-animation_player = NodePath("../../player_model/AnimationPlayer")
-metadata/_custom_type_script = "uid://2y37yx57ooc4"
-
 [editable path="player_model"]
-[editable path="player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack"]
+[editable path="mimico_animationen"]
+[editable path="mimico_animationen/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack"]

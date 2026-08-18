@@ -4,5 +4,5 @@ class_name PlayerActorIdle extends State
 @export var animation_tree: AnimationTree
 
 func enter() -> void:
-	animation_tree.set("parameters/run/blend_amount", 0)
+	animation_tree.set("parameters/walk/blend_amount", 0)
 	player_actor.set_face(2)

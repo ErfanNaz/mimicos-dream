@@ -9,7 +9,7 @@ var is_state_active: bool = false
 
 func enter() -> void:
 	player_controller.blackboard.pre_state = player_controller.blackboard.state
-	player_controller.blackboard.state = "run"
+	player_controller.blackboard.state = "walk"
 	
 func exit() -> void:
 	is_state_active = false
@@ -28,9 +28,9 @@ func crossfade_run_sprint() -> void:
 	if is_fading:
 		return
 	is_fading = true
-	player_actor.set_animation("dash")
+	player_actor.set_animation("run")
 	await get_tree().create_timer(1).timeout
 	is_fading = false
 	if !is_state_active:
 		return
-	player_actor.set_animation("run")
+	player_actor.set_animation("walk")

@@ -12,7 +12,14 @@
 [ext_resource type="Script" uid="uid://bnpdtjr6tt0a1" path="res://player/player_controller/player_actor_mover.gd" id="11_meoet"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="12_la4u0"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_i5aod"]
+[ext_resource type="Script" uid="uid://b3dol6hq5dqof" path="res://player/player_controller/player_state_machine/idle.gd" id="14_lnwrh"]
+[ext_resource type="Script" uid="uid://dm3xkn4d23r0q" path="res://player/player_controller/player_state_machine/in_air/in_air.gd" id="15_5x3y2"]
 [ext_resource type="Script" uid="uid://doejhfgthu4ky" path="res://addons/finite_state_machine/finite_state_machine.gd" id="15_la4u0"]
+[ext_resource type="Script" uid="uid://vt18gvc37pdl" path="res://player/player_controller/player_state_machine/in_air/jump.gd" id="16_4eq88"]
+[ext_resource type="Script" uid="uid://54eo4y0kmllw" path="res://player/player_controller/player_state_machine/in_air/fall.gd" id="17_6hnq4"]
+[ext_resource type="Script" uid="uid://v6vr2of2srym" path="res://player/player_controller/player_state_machine/move/move.gd" id="18_iyi3h"]
+[ext_resource type="Script" uid="uid://djyuuhie3s4a5" path="res://player/player_controller/player_state_machine/move/run.gd" id="19_w1cqy"]
+[ext_resource type="Script" uid="uid://dlddvtncpa8bj" path="res://player/player_controller/player_state_machine/move/walk.gd" id="20_w1cqy"]
 
 [sub_resource type="Resource" id="Resource_6hnq4"]
 script = ExtResource("2_nyhp0")
@@ -71,122 +78,6 @@ _data = {
 &"taunt": SubResource("Animation_8e8q0")
 }
 
-[sub_resource type="GDScript" id="GDScript_fcair"]
-script/source = "extends State
-
-@export var player_controller: PlayerController
-@export var player_body: PlayerBody
-@export var player_actor: PlayerActor3D
-
-func enter() -> void:
-	ApplicationManager.system_log(\"PlayerState Idle\")
-	player_actor.set_animation(\"idle\")
-	player_controller.state = \"idle\"
-
-func physics_update(_delta: float) -> void:
-	if !player_body.is_on_floor():
-		transition(\"InAir\")
-		return
-	if player_body.velocity.length() > 0:
-		transition(\"Movement\")
-		return
-"
-
-[sub_resource type="GDScript" id="GDScript_nyhp0"]
-script/source = "extends State
-
-@export var player_body: PlayerBody
-
-func enter() -> void:
-	ApplicationManager.system_log(\"PlayerState InAir\")
-
-func physics_update(delta: float):
-	if player_body.is_on_floor():
-		transition(\"idle\")
-		return
-	if player_body.velocity.y > 0:
-		transition(\"InAir/jump\")
-	else:
-		transition(\"InAir/fall\")
-"
-
-[sub_resource type="GDScript" id="GDScript_ptvgx"]
-script/source = "extends State
-
-@export var player_controller: PlayerController
-@export var player_body: PlayerBody
-@export var player_actor: PlayerActor3D
-
-func enter() -> void:
-	ApplicationManager.system_log(\"PlayerState InAir/jump\")
-	player_actor.set_animation(\"jump\")
-	player_controller.state = \"jump\"
-	
-func physics_update(delta: float) -> void:
-	if player_body.is_on_floor():
-		transition(\"idle\")
-		return
-	if player_body.velocity.y < 0:
-		transition(\"InAir/fall\")
-		return
-"
-
-[sub_resource type="GDScript" id="GDScript_lnwrh"]
-script/source = "extends State
-
-@export var player_controller: PlayerController
-@export var player_body: PlayerBody
-@export var player_actor: PlayerActor3D
-
-func enter() -> void:
-	ApplicationManager.system_log(\"PlayerState InAir/fall\")
-	player_actor.set_animation(\"fall\")
-	player_controller.state = \"fall\"
-	
-func physics_update(delta: float) -> void:
-	if player_body.is_on_floor():
-		if player_controller.controller_input.direction.length() == 0:
-			transition(\"idle\")
-			return
-		else:
-			transition(\"Movement\")
-			return
-	if player_body.velocity.y > 0:
-		transition(\"InAir/jump\")
-		return
-"
-
-[sub_resource type="GDScript" id="GDScript_5x3y2"]
-script/source = "extends State
-
-func enter() -> void:
-	ApplicationManager.system_log(\"PlayerState Movement\")
-
-func physics_update(delta: float):
-	transition(\"Movement/walk\")
-"
-
-[sub_resource type="GDScript" id="GDScript_4eq88"]
-script/source = "extends State
-
-@export var player_controller: PlayerController
-@export var player_body: PlayerBody
-@export var player_actor: PlayerActor3D
-
-func enter() -> void:
-	ApplicationManager.system_log(\"PlayerState Movement/walk\")
-	player_actor.set_animation(\"walk\")
-	player_controller.state = \"fall\"
-	
-func physics_update(delta: float) -> void:
-	if player_body.velocity.length() <= 0:
-		transition(\"idle\")
-		return
-	if !player_body.is_on_floor():
-		transition(\"InAir\")
-		return
-"
-
 [node name="PlayerController" type="Node3D" unique_id=88308788 node_paths=PackedStringArray("player_body", "player_actor", "player_state_machine", "look_at_target_node_3d", "player_actor_mover")]
 script = ExtResource("1_w10rj")
 blackboard = SubResource("Resource_6hnq4")
@@ -213,6 +104,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4117048, 0)
 shape = SubResource("SphereShape3D_mf8xc")
 
 [node name="PlayerActor" parent="." unique_id=1535567688 instance=ExtResource("10_ofon0")]
+
+[node name="HandArea3D" parent="PlayerActor" index="6" unique_id=1244572555]
+transform = Transform3D(0.0047706035, -0.0014411, 0.008669751, 0.00382532, -0.00854074, -0.0035245707, 0.007912534, 0.00499789, -0.0035231812, -0.26815984, 0.7037074, 0.06657895)
+
+[node name="Skeleton3D" parent="PlayerActor/mimico_animationen/Armature" parent_id_path=PackedInt32Array(1535567688, 1020652613, 337211981) index="0" unique_id=825235118]
+bones/0/position = Vector3(-1.6801875, 0.3290007, -80.73772)
+bones/0/rotation = Quaternion(-0.7136237, 0.036167998, -0.04030789, 0.69843286)
+bones/1/rotation = Quaternion(-0.006584598, -0.0005657392, -0.01750563, 0.99982494)
+bones/2/rotation = Quaternion(-0.034524642, 0.00069561054, -0.0037430641, 0.9993966)
+bones/3/rotation = Quaternion(-0.034597028, 0.0007886479, -0.003834608, 0.9993937)
+bones/4/rotation = Quaternion(-0.011075585, -0.0009478729, -0.006381777, 0.9999179)
+bones/5/rotation = Quaternion(-0.06274767, -0.036333695, -0.10260635, 0.9920759)
+bones/7/rotation = Quaternion(-0.600722, -0.3898949, 0.6222806, -0.31604114)
+bones/8/rotation = Quaternion(0.3896666, 0.16705945, 0.050508574, 0.9042677)
+bones/9/rotation = Quaternion(0.002388428, -0.00064207485, 0.07273193, 0.99734855)
+bones/10/rotation = Quaternion(0.013608374, 0.1212386, 0.014105528, 0.9924299)
+bones/11/rotation = Quaternion(-0.056916494, 0.11395292, 0.14791153, 0.98076373)
+bones/12/rotation = Quaternion(0.19355819, 0.033580117, -0.05308136, 0.97907615)
+bones/13/rotation = Quaternion(-0.24923527, -0.011225358, 0.31577587, 0.915446)
+bones/15/rotation = Quaternion(0.17448129, -0.01477442, 0.064612776, 0.9824273)
+bones/16/rotation = Quaternion(0.29499188, 0.00022250274, 0.011250959, 0.9554335)
+bones/17/rotation = Quaternion(0.18171059, 0.0027544785, 0.025450641, 0.9830188)
+bones/19/rotation = Quaternion(0.59509057, -0.38199162, 0.62808657, 0.32474154)
+bones/20/rotation = Quaternion(0.4345325, 0.010253924, 0.06850191, 0.89798874)
+bones/21/rotation = Quaternion(0.0036865703, 0.00079163, -0.12843615, 0.99171066)
+bones/22/rotation = Quaternion(-0.007640901, -0.23612219, -0.12352098, 0.96381044)
+bones/23/rotation = Quaternion(-0.00031499576, -0.111658745, -0.15566777, 0.9814784)
+bones/24/rotation = Quaternion(0.13962436, -0.05476483, 0.01983095, 0.9884901)
+bones/25/rotation = Quaternion(-0.2255771, 0.022973467, -0.2231072, 0.9480561)
+bones/27/rotation = Quaternion(0.09581155, 0.006639387, -0.075023085, 0.9925461)
+bones/28/rotation = Quaternion(0.3397882, -0.004171418, -0.036009666, 0.9398031)
+bones/29/rotation = Quaternion(0.2406641, 0.00061835645, -0.07715009, 0.9675372)
+bones/31/rotation = Quaternion(0.06738514, 0.021458294, 0.9962213, -0.0504173)
+bones/32/rotation = Quaternion(-0.1369189, -0.0035334516, -0.00015695559, 0.99057597)
+bones/33/rotation = Quaternion(0.5062172, -0.08822806, 0.025048481, 0.8575154)
+bones/34/rotation = Quaternion(0.3306187, -0.0003617393, 0.00425152, 0.9437548)
+bones/36/rotation = Quaternion(-0.08907908, -0.030437967, 0.99416536, 0.05266614)
+bones/37/rotation = Quaternion(-0.08665809, 0.07642176, 0.0076944, 0.9932729)
+bones/38/rotation = Quaternion(0.4841414, 0.0862241, -0.028609205, 0.870261)
+bones/39/rotation = Quaternion(0.34612933, 0.002817395, -0.002466316, 0.9381793)
+
+[node name="BoneAttachment3D" parent="PlayerActor/mimico_animationen/Armature/Skeleton3D" index="8" unique_id=1663178290]
+transform = Transform3D(0.9922732, 0.0478577, 0.114471145, -0.102780595, -0.19974266, 0.9744426, 0.06949941, -0.97867864, -0.19328053, -0.11572409, -4.785032, -131.3304)
+
+[node name="BoneAttachment3DHand" parent="PlayerActor/mimico_animationen/Armature/Skeleton3D" index="9" unique_id=1906970325]
+transform = Transform3D(0.47706038, -0.14411001, 0.86697507, 0.79125345, 0.499789, -0.35231814, -0.382532, 0.85407406, 0.35245708, -26.815983, 6.6578946, -70.37074)
 
 [node name="LightTarget" type="Node3D" parent="PlayerActor" unique_id=38885408]
 
@@ -290,7 +227,7 @@ shape = SubResource("SphereShape3D_dpos4")
 spring_length = 6.0
 
 [node name="PhantomCamera3D" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D/HeadPosition/SpringArm3D" unique_id=1124404546 node_paths=PackedStringArray("look_at_target")]
-transform = Transform3D(0.99107534, 0.13331676, 7.051586e-09, 7.450605e-09, -1.1920015e-07, 0.94644797, 0.13332741, -0.9909962, -1.12825376e-07, 0, 0, 0)
+transform = Transform3D(0.99107534, 0.13331676, 7.1879995e-09, 7.450605e-09, -1.1920015e-07, 0.9647571, 0.13332741, -0.9909962, -1.1500799e-07, 0, 0, 0)
 script = ExtResource("12_la4u0")
 priority = 2
 look_at_mode = 2
@@ -334,41 +271,51 @@ libraries/ = SubResource("AnimationLibrary_la4u0")
 
 [node name="PlayerStateMachine" type="Node" parent="." unique_id=982906743 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("15_la4u0")
-initial_state = NodePath("idle")
+initial_state = NodePath("Idle")
 metadata/_custom_type_script = "uid://doejhfgthu4ky"
 
-[node name="idle" type="Node" parent="PlayerStateMachine" unique_id=1697516893 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
-script = SubResource("GDScript_fcair")
+[node name="Idle" type="Node" parent="PlayerStateMachine" unique_id=1697516893 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
+script = ExtResource("14_lnwrh")
 player_controller = NodePath("../..")
 player_body = NodePath("../../PlayerBody")
 player_actor = NodePath("../../PlayerActor")
 metadata/_custom_type_script = "uid://2y37yx57ooc4"
 
-[node name="InAir" type="Node" parent="PlayerStateMachine" unique_id=1168692703 node_paths=PackedStringArray("player_body")]
-script = SubResource("GDScript_nyhp0")
+[node name="InAir" type="Node" parent="PlayerStateMachine" unique_id=1168692703 node_paths=PackedStringArray("player_controller", "player_body")]
+script = ExtResource("15_5x3y2")
+player_controller = NodePath("../..")
 player_body = NodePath("../../PlayerBody")
 metadata/_custom_type_script = "uid://2y37yx57ooc4"
 
-[node name="jump" type="Node" parent="PlayerStateMachine/InAir" unique_id=99284279 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
-script = SubResource("GDScript_ptvgx")
+[node name="Jump" type="Node" parent="PlayerStateMachine/InAir" unique_id=99284279 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
+script = ExtResource("16_4eq88")
 player_controller = NodePath("../../..")
 player_body = NodePath("../../../PlayerBody")
 player_actor = NodePath("../../../PlayerActor")
 metadata/_custom_type_script = "uid://2y37yx57ooc4"
 
-[node name="fall" type="Node" parent="PlayerStateMachine/InAir" unique_id=2040141609 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
-script = SubResource("GDScript_lnwrh")
+[node name="Fall" type="Node" parent="PlayerStateMachine/InAir" unique_id=2040141609 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
+script = ExtResource("17_6hnq4")
 player_controller = NodePath("../../..")
 player_body = NodePath("../../../PlayerBody")
 player_actor = NodePath("../../../PlayerActor")
 metadata/_custom_type_script = "uid://2y37yx57ooc4"
 
-[node name="Movement" type="Node" parent="PlayerStateMachine" unique_id=1775735527]
-script = SubResource("GDScript_5x3y2")
+[node name="Move" type="Node" parent="PlayerStateMachine" unique_id=1775735527 node_paths=PackedStringArray("player_controller", "player_body")]
+script = ExtResource("18_iyi3h")
+player_controller = NodePath("../..")
+player_body = NodePath("../../PlayerBody")
 metadata/_custom_type_script = "uid://2y37yx57ooc4"
 
-[node name="walk" type="Node" parent="PlayerStateMachine/Movement" unique_id=959309532 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
-script = SubResource("GDScript_4eq88")
+[node name="Walk" type="Node" parent="PlayerStateMachine/Move" unique_id=1432719582 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
+script = ExtResource("20_w1cqy")
+player_controller = NodePath("../../..")
+player_body = NodePath("../../../PlayerBody")
+player_actor = NodePath("../../../PlayerActor")
+metadata/_custom_type_script = "uid://2y37yx57ooc4"
+
+[node name="Run" type="Node" parent="PlayerStateMachine/Move" unique_id=959309532 node_paths=PackedStringArray("player_controller", "player_body", "player_actor")]
+script = ExtResource("19_w1cqy")
 player_controller = NodePath("../../..")
 player_body = NodePath("../../../PlayerBody")
 player_actor = NodePath("../../../PlayerActor")
@@ -377,4 +324,5 @@ metadata/_custom_type_script = "uid://2y37yx57ooc4"
 [editable path="PlayerBody/PlayerInteractable"]
 [editable path="PlayerActor"]
 [editable path="PlayerActor/player_model"]
-[editable path="PlayerActor/player_model/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack"]
+[editable path="PlayerActor/mimico_animationen"]
+[editable path="PlayerActor/mimico_animationen/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack"]

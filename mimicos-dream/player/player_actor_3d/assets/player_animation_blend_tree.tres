@@ -1,19 +1,51 @@
 [gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://vqiw1k0y0kro"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pdfdu"]
+animation = &"Angriff_Abbauen"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_joku2"]
-animation = &"idle"
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pbm1c"]
+animation = &"Springen"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ge11j"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_kmofx"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kmofx"]
-animation = &"running_rig"
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ge11j"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ic50e"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_1clgp"]
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_kmofx"]
 
 [resource]
-graph_offset = Vector2(-481.33334, 93.49093)
-nodes/run/node = SubResource("AnimationNodeBlend2_kmofx")
-nodes/run/position = Vector2(-53.333332, 200)
+graph_offset = Vector2(-408.48132, 96.37411)
+nodes/output/position = Vector2(813.3333, 186.66667)
+nodes/walk/node = SubResource("AnimationNodeBlend2_kmofx")
+nodes/walk/position = Vector2(-200, 133.33333)
 nodes/Idle_Anim/node = SubResource("AnimationNodeAnimation_joku2")
-nodes/Idle_Anim/position = Vector2(-293.33334, 160)
+nodes/Idle_Anim/position = Vector2(-453.33334, 120)
 nodes/Walk_Anim/node = SubResource("AnimationNodeAnimation_kmofx")
-nodes/Walk_Anim/position = Vector2(-266.66666, 386.66666)
-node_connections = [&"output", 0, &"run", &"run", 0, &"Idle_Anim", &"run", 1, &"Walk_Anim"]
+nodes/Walk_Anim/position = Vector2(-466.66666, 386.66666)
+nodes/Jump_Anim/node = SubResource("AnimationNodeAnimation_pbm1c")
+nodes/Jump_Anim/position = Vector2(-306.66666, 546.6667)
+nodes/jump/node = SubResource("AnimationNodeBlend2_ic50e")
+nodes/jump/position = Vector2(65.73333, 243.40001)
+nodes/Attack_Anim/node = SubResource("AnimationNodeAnimation_pdfdu")
+nodes/Attack_Anim/position = Vector2(53.333332, 560)
+nodes/attack/node = SubResource("AnimationNodeBlend2_ge11j")
+nodes/attack/position = Vector2(346.66666, 200)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_kmofx")
+nodes/TimeScale/position = Vector2(-106.666664, 480)
+nodes/Run_Anim/node = SubResource("AnimationNodeAnimation_ge11j")
+nodes/Run_Anim/position = Vector2(373.33334, 626.6667)
+nodes/run/node = SubResource("AnimationNodeBlend2_1clgp")
+nodes/run/position = Vector2(613.3333, 333.33334)
+node_connections = [&"output", 0, &"run", &"walk", 0, &"Idle_Anim", &"walk", 1, &"Walk_Anim", &"jump", 0, &"walk", &"jump", 1, &"TimeScale", &"attack", 0, &"jump", &"attack", 1, &"Attack_Anim", &"TimeScale", 0, &"Jump_Anim", &"run", 0, &"attack", &"run", 1, &"Run_Anim"]

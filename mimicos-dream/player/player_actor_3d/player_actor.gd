@@ -68,7 +68,9 @@ const animation_map: Dictionary[String, bool] = {
 	"idle": true,
 	"walk": true,
 	"jump": true,
-	"fall": true
+	"fall": true,
+	"run": true,
+	"attack": true
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -204,6 +206,8 @@ func set_animation(_animation: String) -> void:
 			finite_state_machine.transition("PlayerActorJump")
 		"fall": 
 			finite_state_machine.transition("PlayerActorJump")
+		"run": 
+			finite_state_machine.transition("PlayerActorRun")
 		_: 
-			finite_state_machine.transition("PlayerActorWalk")
+			finite_state_machine.transition("PlayerActorIdle")
 			
