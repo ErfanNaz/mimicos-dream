@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cmplwpkxjfk83"
-path="res://.godot/imported/interaktionssystem.glb-2568f380e130d059a70955ecbfcef397.scn"
+uid="uid://dkgvy4bc13e2s"
+path="res://.godot/imported/erklärtafel_mining.glb-af276284eee34c52040b1d71f2d3b5d2.scn"
 
 [deps]
 
-source_file="res://assets/models/testobjekte/Objekte/schilder/interaktionssystem.glb"
-dest_files=["res://.godot/imported/interaktionssystem.glb-2568f380e130d059a70955ecbfcef397.scn"]
+source_file="res://assets/models/testobjekte/Objekte/schilder/erklärtafel_mining.glb"
+dest_files=["res://.godot/imported/erklärtafel_mining.glb-af276284eee34c52040b1d71f2d3b5d2.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Cube_002": {
+"PATH:Cube_006": {
 "generate/physics": true
 }
 }

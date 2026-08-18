@@ -2,16 +2,147 @@
 
 [ext_resource type="PackedScene" uid="uid://cu30teovqg555" path="res://assets/models/maps/map_01.glb" id="1_hshav"]
 [ext_resource type="PackedScene" uid="uid://bxi83jt8kqnjc" path="res://assets/models/testobjekte/statue/kampfpuppe.glb" id="2_a5bem"]
+[ext_resource type="PackedScene" uid="uid://b54t77ssxra01" path="res://assets/models/testobjekte/Objekte/wände/Wand.glb" id="3_a5bem"]
+[ext_resource type="PackedScene" uid="uid://c3w2y4aook43c" path="res://assets/models/testobjekte/Zonen/systemZone.glb" id="4_83srw"]
+[ext_resource type="PackedScene" uid="uid://b883jgi5qpsuu" path="res://assets/models/testobjekte/Objekte/tisch.glb" id="5_68upt"]
+[ext_resource type="PackedScene" uid="uid://dh5fx0qggs4st" path="res://assets/models/testobjekte/werkzeuge/schwert.glb" id="6_lmufv"]
+[ext_resource type="PackedScene" uid="uid://d4mlwclwojf7j" path="res://assets/models/testobjekte/Objekte/schilder/kampfsystem.glb" id="7_ilhsa"]
+[ext_resource type="PackedScene" uid="uid://blxbn8mcqv35x" path="res://assets/models/testobjekte/Objekte/schilder/miningsystem.glb" id="8_g5r4j"]
+[ext_resource type="PackedScene" uid="uid://bsxnimjc8sro0" path="res://assets/models/testobjekte/werkzeuge/spitzhacke.glb" id="9_t5hx1"]
+[ext_resource type="PackedScene" uid="uid://bsmno2vj20r5r" path="res://assets/models/testobjekte/erze/erz.glb" id="10_nh3r1"]
+[ext_resource type="PackedScene" uid="uid://cmplwpkxjfk83" path="res://assets/models/testobjekte/Objekte/schilder/interaktionssystem.glb" id="11_3aun6"]
+[ext_resource type="PackedScene" uid="uid://duw6smuqvr0m1" path="res://assets/models/testobjekte/behälter/truhe.glb" id="12_1lu2r"]
+[ext_resource type="PackedScene" uid="uid://smiv1nftqaxy" path="res://assets/models/testobjekte/türen_tore/tür.glb" id="13_aphke"]
+[ext_resource type="PackedScene" uid="uid://rv4penglpbj2" path="res://assets/models/testobjekte/Objekte/schilder/erklärtafel_kampf.glb" id="14_lmufv"]
+[ext_resource type="PackedScene" uid="uid://dkgvy4bc13e2s" path="res://assets/models/testobjekte/Objekte/schilder/erklärtafel_mining.glb" id="15_t5hx1"]
+[ext_resource type="PackedScene" uid="uid://d3qicow2d7w1g" path="res://assets/models/testobjekte/Objekte/schilder/erklärtafel_interaktionen.glb" id="16_nh3r1"]
+[ext_resource type="PackedScene" uid="uid://b8tfv76sk318e" path="res://assets/models/testobjekte/Objekte/schilder/erklärtafel_willkommen.glb" id="17_3aun6"]
 
 [node name="TestScene" type="Node3D" unique_id=601054209]
 
 [node name="map_01" parent="." unique_id=558223960 instance=ExtResource("1_hshav")]
 
-[node name="kampfpuppe2" parent="." unique_id=1329350971 instance=ExtResource("2_a5bem")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6724741, 0, 16.727959)
+[node name="Objekte" type="Node3D" parent="." unique_id=2117030698]
 
-[node name="kampfpuppe3" parent="." unique_id=603185554 instance=ExtResource("2_a5bem")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7835908, 0, 16.727959)
+[node name="kampfpuppe2" parent="Objekte" unique_id=1329350971 instance=ExtResource("2_a5bem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.32752, 0, 86.72796)
 
-[node name="kampfpuppe4" parent="." unique_id=163885973 instance=ExtResource("2_a5bem")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8305588, 0, 16.727959)
+[node name="kampfpuppe3" parent="Objekte" unique_id=603185554 instance=ExtResource("2_a5bem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.78359, 0, 86.72796)
+
+[node name="kampfpuppe4" parent="Objekte" unique_id=163885973 instance=ExtResource("2_a5bem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.83056, 0, 86.72796)
+
+[node name="Wand" parent="Objekte" unique_id=1624777317 instance=ExtResource("3_a5bem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.59441, 0, 100.06126)
+
+[node name="Wand2" parent="Objekte" unique_id=424713713 instance=ExtResource("3_a5bem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.594414, 0, 100.06126)
+
+[node name="Wand3" parent="Objekte" unique_id=1054990395 instance=ExtResource("3_a5bem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.594414, 0, 100.06126)
+
+[node name="Wand4" parent="Objekte" unique_id=1092823647 instance=ExtResource("3_a5bem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.405586, 0, 100.06126)
+
+[node name="Wand5" parent="Objekte" unique_id=316104342 instance=ExtResource("3_a5bem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.405586, 0, 100.06126)
+
+[node name="Wand6" parent="Objekte" unique_id=1485881414 instance=ExtResource("3_a5bem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.40559, 0, 100.06126)
+
+[node name="Wand7" parent="Objekte" unique_id=1688663689 instance=ExtResource("3_a5bem")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 100.40559, 0, 81.06126)
+
+[node name="Wand10" parent="Objekte" unique_id=101830409 instance=ExtResource("3_a5bem")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 100.40559, 0, 45.061256)
+
+[node name="Wand8" parent="Objekte" unique_id=971428236 instance=ExtResource("3_a5bem")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -100.59441, 0, 81.06126)
+
+[node name="Wand9" parent="Objekte" unique_id=1761504091 instance=ExtResource("3_a5bem")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -100.59441, 0, 45.061256)
+
+[node name="systemZone2" parent="Objekte" unique_id=696992352 instance=ExtResource("4_83srw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 70, 0, 81)
+
+[node name="systemZone3" parent="Objekte" unique_id=28191882 instance=ExtResource("4_83srw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 35, 0, 81)
+
+[node name="systemZone4" parent="Objekte" unique_id=1247876598 instance=ExtResource("4_83srw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 81)
+
+[node name="systemZone5" parent="Objekte" unique_id=1275274200 instance=ExtResource("4_83srw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -35, 0, 81)
+
+[node name="systemZone6" parent="Objekte" unique_id=2132760840 instance=ExtResource("4_83srw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -70, 0, 81)
+
+[node name="tisch" parent="Objekte" unique_id=1808670710 instance=ExtResource("5_68upt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 67)
+
+[node name="schwert2" parent="Objekte" unique_id=448878792 instance=ExtResource("6_lmufv")]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 60.75228, 1.15815, 67)
+
+[node name="kampfsystem" parent="Objekte" unique_id=1710936241 instance=ExtResource("7_ilhsa")]
+transform = Transform3D(-0.86602545, 0, -0.4999999, 0, 1, 0, 0.4999999, 0, -0.86602545, 75.5, 2, 65)
+
+[node name="kampfsystem2" parent="Objekte" unique_id=1871494799 instance=ExtResource("7_ilhsa")]
+transform = Transform3D(-0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, -0.7071067, 64.58356, 2, 65)
+
+[node name="miningsystem" parent="Objekte" unique_id=1311116022 instance=ExtResource("8_g5r4j")]
+transform = Transform3D(-0.86602545, 0, -0.4999999, 0, 1, 0, 0.4999999, 0, -0.86602545, 40.336674, 2, 65.25695)
+
+[node name="miningsystem2" parent="Objekte" unique_id=236924291 instance=ExtResource("8_g5r4j")]
+transform = Transform3D(-0.8660253, 0, 0.50000006, 0, 1, 0, -0.50000006, 0, -0.8660253, 29.336674, 2, 65.25695)
+
+[node name="tisch2" parent="Objekte" unique_id=2051249498 instance=ExtResource("5_68upt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 67)
+
+[node name="spitzhacke2" parent="Objekte" unique_id=2137384282 instance=ExtResource("9_t5hx1")]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 26, 1.122397, 67)
+
+[node name="erz2" parent="Objekte" unique_id=516089715 instance=ExtResource("10_nh3r1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 42, 0, 83)
+
+[node name="erz3" parent="Objekte" unique_id=640954866 instance=ExtResource("10_nh3r1")]
+transform = Transform3D(-1.7, 0, -1.4861872e-07, 0, 1.7, 0, 1.4861872e-07, 0, -1.7, 37, 0, 87)
+
+[node name="erz4" parent="Objekte" unique_id=1415512404 instance=ExtResource("10_nh3r1")]
+transform = Transform3D(-1.19, 0, -1.04033106e-07, 0, 1.19, 0, 1.04033106e-07, 0, -1.19, 33, 0, 83)
+
+[node name="interaktionssystem" parent="Objekte" unique_id=1897333949 instance=ExtResource("11_3aun6")]
+transform = Transform3D(-0.86602545, 0, -0.4999999, 0, 1, 0, 0.4999999, 0, -0.86602545, 5.5053663, 2, 65.33867)
+
+[node name="interaktionssystem2" parent="Objekte" unique_id=976094167 instance=ExtResource("11_3aun6")]
+transform = Transform3D(-0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, -0.7071067, -5.4946337, 2, 65.33867)
+
+[node name="truhe2" parent="Objekte" unique_id=728258158 instance=ExtResource("12_1lu2r")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10, 0, 81)
+
+[node name="truhe3" parent="Objekte" unique_id=1597264888 instance=ExtResource("12_1lu2r")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10, 0, 77)
+
+[node name="truhe4" parent="Objekte" unique_id=1211236010 instance=ExtResource("12_1lu2r")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10, 0, 73)
+
+[node name="tür2" parent="Objekte" unique_id=1084884147 instance=ExtResource("13_aphke")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9, 0, 89)
+
+[node name="tür3" parent="Objekte" unique_id=1026469001 instance=ExtResource("13_aphke")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9, 0, 79)
+
+[node name="erklärtafel_kampf" parent="Objekte" unique_id=33948285 instance=ExtResource("14_lmufv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 56, 0, 71)
+
+[node name="erklärtafel_mining" parent="Objekte" unique_id=2018047921 instance=ExtResource("15_t5hx1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 21, 0, 70)
+
+[node name="erklärtafel_interaktionen" parent="Objekte" unique_id=2136980874 instance=ExtResource("16_nh3r1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14, 0, 69)
+
+[node name="erklärtafel_willkommen" parent="Objekte" unique_id=1037249319 instance=ExtResource("17_3aun6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 4)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=312407441]
+transform = Transform3D(1, 0, 0, 0, -0.7071068, 0.7071067, 0, -0.7071067, -0.7071068, 0, 19, 0)
