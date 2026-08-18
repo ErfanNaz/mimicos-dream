@@ -17,9 +17,9 @@ sky_material = SubResource("PanoramaSkyMaterial_g451t")
 
 [sub_resource type="Environment" id="Environment_ioiol"]
 background_mode = 2
+background_energy_multiplier = 0.35
 sky = SubResource("Sky_ow5a4")
 tonemap_mode = 2
-fog_light_color = Color(0.69680893, 0.9194905, 0.9959524, 1)
 
 [node name="TestScene" type="Node3D" unique_id=805365231 node_paths=PackedStringArray("player_controller", "input_manager")]
 script = ExtResource("1_doi4a")
@@ -33,6 +33,7 @@ environment = SubResource("Environment_ioiol")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Spieler und welt" unique_id=2111646090]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.666867, 0.5105868, 0.14875278, 1)
 light_energy = 0.1
 shadow_enabled = true
 
