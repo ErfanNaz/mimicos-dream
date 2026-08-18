@@ -56,4 +56,4 @@ enable_lookup_direction = true
 camera_3d = NodePath("../Camera3D")
 
 [node name="zuhause" parent="." unique_id=1173817261 instance=ExtResource("7_vrddd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -5, 16)
