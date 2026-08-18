@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dxyear54toy1v" path="res://entities/input_manager/input_manager.tscn" id="4_ork3v"]
 [ext_resource type="PackedScene" uid="uid://dvs75nw080kyk" path="res://entities/camera_system/camera_system.tscn" id="5_a0rq3"]
 [ext_resource type="PackedScene" uid="uid://cn2yyhknolne3" path="res://assets/Testobjecte/Welten/hauptwelt/zuhause.glb" id="7_vrddd"]
-[ext_resource type="PackedScene" uid="uid://cvk6hb4bsr118" path="res://assets/Testobjecte/Welten/hauptwelt/zuhause2.glb" id="8_ork3v"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
 panorama = ExtResource("1_wgdak")
@@ -38,7 +37,7 @@ light_energy = 0.1
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="Spieler und welt" unique_id=1019278167]
-transform = Transform3D(0.9910721, 0.13332698, 7.450581e-09, 7.450581e-09, -1.1920929e-07, 1.0000001, 0.13332698, -0.9910722, -1.1920929e-07, 0, 4.1759114, 0)
+transform = Transform3D(0.9910721, 0.133327, 7.450581e-09, 7.450581e-09, -1.1920929e-07, 1.0000001, 0.133327, -0.9910722, -1.1920929e-07, 0, 4.1759114, 0)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Spieler und welt/Camera3D" unique_id=663753918]
@@ -57,7 +56,4 @@ enable_lookup_direction = true
 camera_3d = NodePath("../Camera3D")
 
 [node name="zuhause" parent="." unique_id=1173817261 instance=ExtResource("7_vrddd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -346, -11, 0)
-
-[node name="zuhause2" parent="." unique_id=1678202777 instance=ExtResource("8_ork3v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 16)
