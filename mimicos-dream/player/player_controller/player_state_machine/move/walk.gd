@@ -21,7 +21,7 @@ func update(_delta: float) -> void:
 	if !player_body.is_on_floor():
 		transition("InAir")
 		return
-	if Input.is_action_just_pressed("B"):
+	if Input.is_action_just_pressed("RB"):
 		crossfade_run_sprint()
 
 func crossfade_run_sprint() -> void:

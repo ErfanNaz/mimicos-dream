@@ -74,7 +74,7 @@ func process_tick(delta: float, _controller_input: ControllerInput) -> void:
 	var move_direction: Vector3 = get_move_direction(_controller_input.direction)
 	direction = Vector2(move_direction.x, move_direction.z).normalized()
 	
-	if input_manager.is_action_pressed(1):
+	if input_manager.is_action_pressed(5):
 		start_dash()
 	
 	if is_dashing:

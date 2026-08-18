@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://b03dp11bxot1q"]
 
+[ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="2_yr2eo"]
 [ext_resource type="PackedScene" uid="uid://bcmlryrbvnnvq" path="res://assets/Testobjecte/Objekte/türen/tür.fbx" id="3_g5h58"]
 [ext_resource type="PackedScene" uid="uid://drrdvbflsvfca" path="res://assets/Testobjecte/Objekte/behälter/truhe.fbx" id="4_hrjdk"]
+[ext_resource type="PackedScene" uid="uid://cn1n3kfjpmwht" path="res://assets/Testobjecte/Objekte/schalter/schalter02.fbx" id="4_yr2eo"]
 [ext_resource type="PackedScene" uid="uid://dsa25ajkyujjl" path="res://entities/trigger_system/trigger_system.tscn" id="13_8rg8i"]
+
+[sub_resource type="Resource" id="Resource_w1cqy"]
+script = ExtResource("2_yr2eo")
+title = "tuer"
+action_button = 0
+metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4iqtb"]
+viewport_path = NodePath("Sprite3D/SubViewport")
 
 [node name="Map01" type="Node3D" unique_id=1725308146]
 
@@ -14,22 +25,38 @@ metadata/_edit_lock_ = true
 
 [node name="triggers" type="Node3D" parent="." unique_id=1881714884]
 
-[node name="TriggerSystem" parent="triggers" unique_id=446900515 node_paths=PackedStringArray("animation_player") instance=ExtResource("13_8rg8i")]
+[node name="TruheTriggerSystem" parent="triggers" unique_id=446900515 node_paths=PackedStringArray("animation_player") instance=ExtResource("13_8rg8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.31679, 3.8146973e-06, 12.255948)
 animation_player = NodePath("../../objekte/truhe2/AnimationPlayer")
 
-[node name="TriggerSystem2" parent="triggers" unique_id=613127884 node_paths=PackedStringArray("animation_player") instance=ExtResource("13_8rg8i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.31679, 3.8146973e-06, -2.744052)
+[node name="TuerTriggerSystem" parent="triggers" unique_id=613127884 node_paths=PackedStringArray("animation_player", "trigger_element") instance=ExtResource("13_8rg8i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.576765, 3.8146973e-06, -2.5105467)
+visible = false
 animation_player = NodePath("../../objekte/tür/AnimationPlayer")
 toggle_back_timer = 2
+trigger_element = NodePath("../../schalter02")
+
+[node name="TriggerSwitch" parent="triggers/TuerTriggerSystem" index="1" unique_id=181858922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8227329, 0, 0.6991334)
+
+[node name="Interaction" parent="triggers/TuerTriggerSystem/TriggerSwitch" index="2" unique_id=1103262287]
+interact_data = SubResource("Resource_w1cqy")
+
+[node name="Sprite3D" parent="triggers/TuerTriggerSystem/TriggerSwitch" index="3" unique_id=226529221]
+texture = SubResource("ViewportTexture_4iqtb")
 
 [node name="objekte" type="Node3D" parent="." unique_id=288404009]
-
-[node name="tür" parent="objekte" unique_id=487807018 instance=ExtResource("3_g5h58")]
-transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -10, 0, 0)
 
 [node name="truhe2" parent="objekte" unique_id=1986066644 instance=ExtResource("4_hrjdk")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 0, 13)
 
-[editable path="objekte/tür"]
+[node name="tür" parent="objekte" unique_id=487807018 instance=ExtResource("3_g5h58")]
+transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -10, 0, 0)
+
+[node name="schalter02" parent="." unique_id=316356812 instance=ExtResource("4_yr2eo")]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -9.684284, 1.6419241, -2.0750709)
+
+[editable path="triggers/TuerTriggerSystem"]
+[editable path="triggers/TuerTriggerSystem/TriggerSwitch"]
 [editable path="objekte/truhe2"]
+[editable path="objekte/tür"]

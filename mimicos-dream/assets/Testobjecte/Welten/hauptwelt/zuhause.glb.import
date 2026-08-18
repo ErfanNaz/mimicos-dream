@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b18evjelxwlnj"
-path="res://.godot/imported/schalter01.fbx-88e01093e3242b2c47b2d44a29bd0222.scn"
+uid="uid://cn2yyhknolne3"
+path="res://.godot/imported/zuhause.glb-8f9e6a298363802cb9fe7827872d8964.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Objekte/schalter/schalter01.fbx"
-dest_files=["res://.godot/imported/schalter01.fbx-88e01093e3242b2c47b2d44a29bd0222.scn"]
+source_file="res://assets/Testobjecte/Welten/hauptwelt/zuhause.glb"
+dest_files=["res://.godot/imported/zuhause.glb-8f9e6a298363802cb9fe7827872d8964.scn"]
 
 [params]
 
@@ -32,15 +32,38 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
-fbx/naming_version=2
+_subresources={
+"nodes": {
+"PATH:Cube": {
+"generate/physics": true
+},
+"PATH:Cube_001": {
+"generate/physics": true
+},
+"PATH:Cube_002": {
+"generate/physics": true
+},
+"PATH:Cube_003": {
+"generate/physics": true
+},
+"PATH:Cylinder": {
+"generate/physics": true
+},
+"PATH:Icosphere_001": {
+"generate/physics": true
+},
+"PATH:Plane": {
+"generate/physics": true
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=1

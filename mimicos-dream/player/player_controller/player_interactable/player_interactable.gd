@@ -12,6 +12,7 @@ var is_hunting: bool = false
 var is_enabled: bool = false
 
 func _ready() -> void:
+	set_physics_process(false)
 	enable()
 
 func reset() -> void:
@@ -21,6 +22,7 @@ func enable() -> void:
 	if is_enabled:
 		return
 	is_enabled = true
+	set_physics_process(true)
 	player_interactable.on_entity_entered.connect(self._on_entity_entered)
 	player_interactable.on_entity_exited.connect(self._on_entity_exited)
 	var entitie_list: Array[Interaction] = player_interactable.get_overlapping_entities()
@@ -31,6 +33,7 @@ func disable() -> void:
 	if !is_enabled:
 		return
 	is_enabled = false
+	set_physics_process(false)
 	player_interactable.on_entity_entered.disconnect(self._on_entity_entered)
 	player_interactable.on_entity_exited.disconnect(self._on_entity_exited)
 
@@ -59,7 +62,7 @@ func _on_entity_entered(interaction: Interaction) -> void:
 	if interact_data.action_button == -1:
 		interaction.on_interact.emit(player_controller)
 		return
-	if registered_interactable_actions.has(interaction):
+	if registered_interactable_actions.has(interact_data.action_button):
 		ApplicationManager.warn("Player:%d is already in list:%s" % [player_controller.id, interaction])
 		return
 	registered_interactable_actions.set(interact_data.action_button, interaction)
@@ -83,3 +86,13 @@ func _on_player_entered(interaction: Interaction) -> void:
 	if _player_controller.is_knockbacked:
 		return
 	on_player_hunted.emit(player_controller, _player_controller)
+	
+func _physics_process(_delta: float) -> void:
+	if registered_interactable_actions.is_empty():
+		return
+	var actions: Array[int] = registered_interactable_actions.keys()
+	for action in actions:
+		if player_controller.input_manager.is_action_pressed(action):
+			var interaction: Interaction = registered_interactable_actions.get(action)
+			interaction.on_interact.emit(player_controller)
+			registered_actions_changed.emit(registered_interactable_actions, interaction)
