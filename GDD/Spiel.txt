@@ -8,9 +8,6 @@ Spiel Merkmale:
 	- mit einer rakete von welt zu welt fliegen
 	- hauptwelt mit kleinen grundstück drauf was man verschönern kann.
 	- auf dem grundstück können sachen hergestellt werden.
-	- erkunden, orte entdecken.
-	- kisten öffnen.
-	- sachen sammeln.
-	- sachen herstellen.
+	- erkunden, orte entdecken.	
 	- auf den welten aufgaben lösen um neue welten freizuschalten.
-	- resourcen sammeln.
+	

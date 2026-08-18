@@ -1,14 +1,12 @@
 Player:
 
 was der spieler können sollte: 
-	- schleichen
-	- gehen
-	- rennen
-	- dashen
-	- springen
-	- angreifen
-	- abbauen
-	- fallen
+	- idle, walk, run
+	- objekte benutzen (trühen, türen etc öffnen)
+	- resourcen sammeln
+	- sachen herstellen
+	- deine heimat dekorieren und verschöner
 
 interaktionen:
-	- mit f/viereck an objekten interagieren (tür,objekte nehmen, truhen öffnen, erzabbauen usw.)
+	- mit E/viereck an objekten interagieren 
+	- an automatisierten objecten durch das kugeltriggersystem
