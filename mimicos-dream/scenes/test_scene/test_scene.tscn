@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cmlkquq7cvvnx"]
+
+[ext_resource type="Script" uid="uid://l2lsf2g4fx07" path="res://scenes/test_scene/test_scene.gd" id="1_doi4a"]
+[ext_resource type="Texture2D" uid="uid://b0a0jhp5nte7n" path="res://scenes/main/assets/sky_19_2k.png" id="1_wgdak"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_doi4a"]
+[ext_resource type="PackedScene" uid="uid://brtj30hrfgtnc" path="res://player/player_controller/player_controller.tscn" id="3_vrddd"]
+[ext_resource type="PackedScene" uid="uid://dxyear54toy1v" path="res://entities/input_manager/input_manager.tscn" id="4_ork3v"]
+[ext_resource type="PackedScene" uid="uid://dvs75nw080kyk" path="res://entities/camera_system/camera_system.tscn" id="5_a0rq3"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
+panorama = ExtResource("1_wgdak")
+energy_multiplier = 0.6
+
+[sub_resource type="Sky" id="Sky_ow5a4"]
+sky_material = SubResource("PanoramaSkyMaterial_g451t")
+
+[sub_resource type="Environment" id="Environment_ioiol"]
+background_mode = 2
+sky = SubResource("Sky_ow5a4")
+tonemap_mode = 2
+fog_light_color = Color(0.69680893, 0.9194905, 0.9959524, 1)
+
+[node name="TestScene" type="Node3D" unique_id=805365231 node_paths=PackedStringArray("player_controller", "input_manager")]
+script = ExtResource("1_doi4a")
+player_controller = NodePath("PlayerController")
+input_manager = NodePath("InputManager")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1758032337]
+environment = SubResource("Environment_ioiol")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2111646090]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 0.1
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1019278167]
+transform = Transform3D(0.9910718, 0.13332939, 1.58941e-08, 0, -1.1920928e-07, 1, 0.13332939, -0.9910718, -1.1814495e-07, 0, 4.1759114, 0)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=663753918]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_doi4a")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="PlayerController" parent="." unique_id=88308788 instance=ExtResource("3_vrddd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1759113, 0)
+
+[node name="InputManager" parent="." unique_id=799682356 instance=ExtResource("4_ork3v")]
+enable_lookup_direction = true
+
+[node name="CameraSystem" parent="." unique_id=798910101 node_paths=PackedStringArray("camera_3d") instance=ExtResource("5_a0rq3")]
+camera_3d = NodePath("../Camera3D")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=530083610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(1000, 1, 1000)
+metadata/_edit_lock_ = true

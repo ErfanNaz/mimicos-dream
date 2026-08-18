@@ -14,7 +14,7 @@ class_name PlayerInputActiveControlled extends State
 @export_category("Internal")
 @export var dash_timer: Timer
 @export var min_spring_length := 2.0
-@export var max_spring_length := 100.0
+@export var max_spring_length := 10.0
 @export var zoom_step := 1.0
 @export var zoom_speed := 8.0
 

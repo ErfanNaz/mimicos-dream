@@ -12,8 +12,6 @@ class_name CameraSystem extends Node3D
 @export var min_distance: float = 1
 @export_range(1, 30, 1) var follow_speed: float = 6
 
-@export var animation_player: AnimationPlayer
-
 var initial_anchor_transform: Transform3D
 
 func _ready() -> void:
