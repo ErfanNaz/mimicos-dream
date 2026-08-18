@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://jsjeoeetk2d8"]
 
 [ext_resource type="PackedScene" uid="uid://cvney3d1177a6" path="res://assets/Testobjecte/Boden/boden.glb" id="1_cqklx"]
+[ext_resource type="PackedScene" uid="uid://cu3ipru45cenf" path="res://assets/Testobjecte/Objekte/behälter/truhe.glb" id="2_hshav"]
 
 [node name="TestScene" type="Node3D" unique_id=601054209]
 
@@ -8,3 +9,6 @@
 transform = Transform3D(1, 0, 0, 0, -0.7071068, 0.7071067, 0, -0.7071067, -0.7071068, 0, 19, 0)
 
 [node name="boden" parent="." unique_id=759066932 instance=ExtResource("1_cqklx")]
+
+[node name="truhe" parent="." unique_id=1660741033 instance=ExtResource("2_hshav")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5, 0, 13)
