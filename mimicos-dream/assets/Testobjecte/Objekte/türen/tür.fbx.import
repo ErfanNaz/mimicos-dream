@@ -41,9 +41,6 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:tür": {
-"generate/physics": true
-},
 "PATH:tür_rahmen": {
 "generate/physics": true
 }
