@@ -1,0 +1,16 @@
+Spiel aussehen:
+
+	- Animal crossing look, mit Mario party look gemischt.
+	- jede welt hat ein eigenes thema.
+
+
+Spiel Merkmale:
+	- mit einer rakete von welt zu welt fliegen
+	- hauptwelt mit kleinen grundstück drauf was man verschönern kann.
+	- auf dem grundstück können sachen hergestellt werden.
+	- erkunden, orte entdecken.
+	- kisten öffnen.
+	- sachen sammeln.
+	- sachen herstellen.
+	- auf den welten aufgaben lösen um neue welten freizuschalten.
+	- resourcen sammeln.
