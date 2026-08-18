@@ -1,4 +1,11 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://c2to67v55oatp"]
+[gd_scene format=3 uid="uid://b0g4o2qe8owkv"]
+
+[ext_resource type="Material" uid="uid://bra6ug2wjmj0j" path="res://scenes/maps/assets/materials/grass_01/grass_ground_01.tres" id="1_0xm2m"]
+[ext_resource type="Material" uid="uid://c2to67v55oatp" path="res://scenes/maps/assets/materials/grass_01/grass_01.tres" id="2_h2yge"]
+[ext_resource type="MultiMesh" uid="uid://bd8endmn2hj80" path="res://scenes/maps/assets/grass_multi_mesh.tres" id="4_2avkh"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
+size = Vector2(20, 20)
 
 [sub_resource type="Shader" id="Shader_6hyye"]
 code = "shader_type spatial;
@@ -110,6 +117,43 @@ void light(){
 }
 "
 
-[resource]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dlv6v"]
 render_priority = 0
 shader = SubResource("Shader_6hyye")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ig7tw"]
+material = SubResource("ShaderMaterial_dlv6v")
+size = Vector2(0.4, 0.4)
+subdivide_width = 2
+subdivide_depth = 2
+center_offset = Vector3(0, 0.2, 0)
+
+[sub_resource type="Environment" id="Environment_1bvp3"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.695381, 0.644979, 0.598817, 1)
+
+[node name="Node3D" type="Node3D" unique_id=742000073]
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=2048506932]
+material_override = ExtResource("1_0xm2m")
+mesh = SubResource("PlaneMesh_7dm0k")
+
+[node name="GrassBlade" type="MeshInstance3D" parent="." unique_id=255071305]
+visible = false
+mesh = SubResource("QuadMesh_ig7tw")
+
+[node name="Grass" type="MultiMeshInstance3D" parent="." unique_id=2108978388]
+material_override = ExtResource("2_h2yge")
+cast_shadow = 0
+multimesh = ExtResource("4_2avkh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=724876440]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.01
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=221416274]
+environment = SubResource("Environment_1bvp3")
