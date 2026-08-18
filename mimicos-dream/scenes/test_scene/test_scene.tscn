@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brtj30hrfgtnc" path="res://player/player_controller/player_controller.tscn" id="3_vrddd"]
 [ext_resource type="PackedScene" uid="uid://dxyear54toy1v" path="res://entities/input_manager/input_manager.tscn" id="4_ork3v"]
 [ext_resource type="PackedScene" uid="uid://dvs75nw080kyk" path="res://entities/camera_system/camera_system.tscn" id="5_a0rq3"]
-[ext_resource type="PackedScene" uid="uid://c28igglhmuf1l" path="res://assets/Testobjecte/Welten/hauptwelt/zuhause.fbx" id="7_vrddd"]
+[ext_resource type="PackedScene" uid="uid://cn2yyhknolne3" path="res://assets/Testobjecte/Welten/hauptwelt/zuhause.glb" id="7_vrddd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
 panorama = ExtResource("1_wgdak")
@@ -55,4 +55,5 @@ enable_lookup_direction = true
 [node name="CameraSystem" parent="Spieler und welt" unique_id=798910101 node_paths=PackedStringArray("camera_3d") instance=ExtResource("5_a0rq3")]
 camera_3d = NodePath("../Camera3D")
 
-[node name="zuhause" parent="." unique_id=1251777220 instance=ExtResource("7_vrddd")]
+[node name="zuhause" parent="." unique_id=1173817261 instance=ExtResource("7_vrddd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11, 0)
