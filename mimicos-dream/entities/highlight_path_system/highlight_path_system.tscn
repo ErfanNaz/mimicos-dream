@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://pd03uswmh1wv"]
+
+[ext_resource type="Script" uid="uid://dreyo4luskfhl" path="res://entities/highlight_path_system/highlight_path_system.gd" id="1_rqgk8"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_qwbk3"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_8nvhe"]
+[ext_resource type="PackedScene" uid="uid://bgtpbxtq808xf" path="res://entities/trigger_system/trigger_switch/trigger_switch.tscn" id="4_qwbk3"]
+
+[sub_resource type="Resource" id="Resource_s7l5o"]
+script = ExtResource("3_8nvhe")
+
+[sub_resource type="Curve3D" id="Curve3D_mxndm"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.7902145, 0.59124756, 1.564518, 0, 0, 0, 0, 0, 0, -12.044416, 1.2933655, 7.2514467, 0, 0, 0, 0, 0, 0, -16.959692, 1.2933645, 6.1047387, 0, 0, 0, 0, 0, 0, -23.301275, 2.4513502, -4.228848, 0, 0, 0, 0, 0, 0, -18.485113, 2.4513521, -8.964835, 0, 0, 0, 0, 0, 0, -5.635687, 0.5728564, -4.475292, 0, 0, 0, 0, 0, 0, -4.6081715, 1.2547064, -2.4307132, 0, 0, 0, 0, 0, 0, -7.7902145, 1.3880234, -2.2151515),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="Curve3D" id="Curve3D_rqgk8"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.3021994, 9.536743e-07, 0.02201879, 0, 0, 0, 0, 0, 0, -0.9718857, 1.1269245, 6.8490553, 0, 0, 0, 0, 0, 0, -3.7632027, 1.9807956, 12.393975, 0, 0, 0, 0, 0, 0, -21.886856, 3.7503176, 30.732735, 0, 0, 0, 0, 0, 0, -89.014145, 11.096437, 33.712963, 0, 0, 0, 0, 0, 0, -51.744164, 2.5763197, -3.7943301, 0, 0, 0, 0, 0, 0, -51.485172, 2.5763197, -16.823895, 0, 0, 0, 0, 0, 0, -24.612228, 3.7503166, -16.135262, 0, 0, 0, 0, 0, 0, -12.584383, 1.9719362, -16.199734, 0, 0, 0, 0, 0, 0, 0.6444602, 1.5654831, -12.788886, 0, 0, 0, 0, 0, 0, 4.365963, 1.2779241, -1.6289561, 0, 0, 0, 0, 0, 0, 3.5464458, 1.2581434, -0.36053586),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 12
+
+[node name="HighlightPathSystem" type="Node3D" unique_id=1936520103 node_paths=PackedStringArray("camera_target_path_follow_3d", "camera_position_path_follow_3d", "camera_target", "camera_position_target", "trigger_switch", "phantom_camera_3d")]
+script = ExtResource("1_rqgk8")
+camera_target_path_follow_3d = NodePath("CameraTargetPath3D/CameraTargetPathFollow3D")
+camera_position_path_follow_3d = NodePath("CameraPositionPath3D/CameraPositionPathFollow3D")
+camera_target = NodePath("CameraTargetPath3D/CameraTargetPathFollow3D/CameraTarget")
+camera_position_target = NodePath("CameraPositionPath3D/CameraPositionPathFollow3D/CameraPositionTarget")
+trigger_switch = NodePath("TriggerSwitch")
+phantom_camera_3d = NodePath("PhantomCamera3D")
+
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=1411640092 node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+top_level = true
+script = ExtResource("2_qwbk3")
+follow_mode = 2
+follow_target = NodePath("../CameraPositionPath3D/CameraPositionPathFollow3D/CameraPositionTarget")
+look_at_mode = 2
+look_at_target = NodePath("../CameraTargetPath3D/CameraTargetPathFollow3D/CameraTarget")
+tween_resource = SubResource("Resource_s7l5o")
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+align_rotation_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="CameraTargetPath3D" type="Path3D" parent="." unique_id=296671165]
+curve = SubResource("Curve3D_mxndm")
+
+[node name="CameraTargetPathFollow3D" type="PathFollow3D" parent="CameraTargetPath3D" unique_id=1978594820]
+transform = Transform3D(-0.8007425, -0.04969551, 0.59694374, 0, 0.99655265, 0.082962915, -0.59900874, 0.06643193, -0.79798204, -7.7902145, 0.59124756, 1.564518)
+
+[node name="CameraTarget" type="Node3D" parent="CameraTargetPath3D/CameraTargetPathFollow3D" unique_id=1721678430]
+
+[node name="CameraPositionPath3D" type="Path3D" parent="." unique_id=1894891783]
+curve = SubResource("Curve3D_rqgk8")
+
+[node name="CameraPositionPathFollow3D" type="PathFollow3D" parent="CameraPositionPath3D" unique_id=1569865166]
+transform = Transform3D(-0.98153895, 0, -0.19126232, 0, 1, 0, 0.19126232, 0, -0.98153895, -2.3021994, 9.536743e-07, 0.02201879)
+
+[node name="CameraPositionTarget" type="Node3D" parent="CameraPositionPath3D/CameraPositionPathFollow3D" unique_id=497719252]
+
+[node name="TriggerSwitch" parent="." unique_id=181858922 instance=ExtResource("4_qwbk3")]

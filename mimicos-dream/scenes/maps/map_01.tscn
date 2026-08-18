@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bcmlryrbvnnvq" path="res://assets/Testobjecte/Objekte/türen/tür.fbx" id="3_g5h58"]
 [ext_resource type="PackedScene" uid="uid://drrdvbflsvfca" path="res://assets/Testobjecte/Objekte/behälter/truhe.fbx" id="4_hrjdk"]
 [ext_resource type="PackedScene" uid="uid://cn1n3kfjpmwht" path="res://assets/Testobjecte/Objekte/schalter/schalter02.fbx" id="4_yr2eo"]
+[ext_resource type="PackedScene" uid="uid://pd03uswmh1wv" path="res://entities/highlight_path_system/highlight_path_system.tscn" id="7_e1bmt"]
 [ext_resource type="PackedScene" uid="uid://dsa25ajkyujjl" path="res://entities/trigger_system/trigger_system.tscn" id="13_8rg8i"]
 
 [sub_resource type="Resource" id="Resource_olgry"]
@@ -20,6 +21,11 @@ action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
 [sub_resource type="Resource" id="Resource_4iqtb"]
+script = ExtResource("2_yr2eo")
+action_button = 0
+metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
+
+[sub_resource type="Resource" id="Resource_qwbk3"]
 script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
@@ -68,3 +74,23 @@ transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-
 
 [node name="schalter02" parent="objekte/tür" unique_id=1097197224 instance=ExtResource("4_yr2eo")]
 transform = Transform3D(0.83333325, 0, 1.0587912e-22, 0, -3.6426155e-08, -0.83333325, 0, 0.83333325, -3.6426155e-08, 1.7292255, 1.36827, 0.26309586)
+
+[node name="HighlightPathSystem" parent="." unique_id=1936520103 instance=ExtResource("7_e1bmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8737831, 0, 0.079276085)
+interact_data = SubResource("Resource_qwbk3")
+toggle_back_timer = 7
+playback_time = 5.0
+
+[node name="PhantomCamera3D" parent="HighlightPathSystem" index="0" unique_id=1411640092]
+transform = Transform3D(-0.2705223, 0.09931264, 0.9574078, 7.448931e-09, 0.9946539, -0.10314551, -0.96248364, -0.02791349, -0.26909554, -4.1759825, 9.536743e-07, 0.101294875)
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+align_rotation_with_view = Callable()
+
+[node name="CameraTargetPathFollow3D" parent="HighlightPathSystem/CameraTargetPath3D" parent_id_path=PackedInt32Array(1936520103, 296671165) index="0" unique_id=1978594820]
+transform = Transform3D(-0.8007424, 0.058931105, 0.5961028, 5.5879346e-09, 0.9951447, -0.09838142, -0.5990086, -0.07877788, -0.79685783, -7.7902145, 0.59124756, 1.564518)
+
+[node name="CameraPositionPathFollow3D" parent="HighlightPathSystem/CameraPositionPath3D" parent_id_path=PackedInt32Array(1936520103, 1894891783) index="0" unique_id=1569865166]
+transform = Transform3D(-0.98153734, -0.030589458, -0.18879998, -9.3132113e-10, 0.98712605, -0.15993452, 0.191262, -0.15698202, -0.9689024, -2.3021994, 9.536743e-07, 0.02201879)
+
+[editable path="HighlightPathSystem"]
