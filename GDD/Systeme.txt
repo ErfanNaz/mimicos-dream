@@ -1,0 +1,14 @@
+SpielSysteme:
+	- movementsystem
+	- interaktion
+	- inventar
+	- crafting
+ 	- bausystem
+	- questsystem
+
+MovementSystem:
+	- Idle
+	- Run
+
+InteraktionsSystem:
+	- mit E interagieren.
