@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b03dp11bxot1q"]
 
 [ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="2_yr2eo"]
+[ext_resource type="PackedScene" uid="uid://d2dubbwfxg5b0" path="res://entities/highlight_system/highlight_system.tscn" id="3_4iqtb"]
 [ext_resource type="PackedScene" uid="uid://bcmlryrbvnnvq" path="res://assets/Testobjecte/Objekte/türen/tür.fbx" id="3_g5h58"]
 [ext_resource type="PackedScene" uid="uid://drrdvbflsvfca" path="res://assets/Testobjecte/Objekte/behälter/truhe.fbx" id="4_hrjdk"]
 [ext_resource type="PackedScene" uid="uid://cn1n3kfjpmwht" path="res://assets/Testobjecte/Objekte/schalter/schalter02.fbx" id="4_yr2eo"]
@@ -15,6 +16,11 @@ metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 [sub_resource type="Resource" id="Resource_yr2eo"]
 script = ExtResource("2_yr2eo")
 title = "truhe"
+action_button = 0
+metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
+
+[sub_resource type="Resource" id="Resource_4iqtb"]
+script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
@@ -35,12 +41,19 @@ target_element = NodePath("../../objekte/tür")
 trigger_element = NodePath("../../objekte/tür/schalter02")
 interact_data = SubResource("Resource_olgry")
 
-[node name="TruheTriggerSystem" parent="triggers" unique_id=199348244 node_paths=PackedStringArray("target_element") instance=ExtResource("13_8rg8i")]
+[node name="TruheTriggerSystem" parent="triggers" unique_id=199348244 node_paths=PackedStringArray("target_element", "trigger_element") instance=ExtResource("13_8rg8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.448155, 0, 12.521147)
 visible = false
 target_element = NodePath("../../objekte/truhe2")
+trigger_element = NodePath("../../objekte/truhe2/schalter02")
 interact_data = SubResource("Resource_yr2eo")
 toggle_back_timer = 2
+
+[node name="HighlightSystem" parent="triggers" unique_id=1902751354 node_paths=PackedStringArray("target_element") instance=ExtResource("3_4iqtb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4541197, 0, 13.811768)
+target_element = NodePath("../../objekte/truhe2")
+interact_data = SubResource("Resource_4iqtb")
+toggle_back_timer = 5
 
 [node name="objekte" type="Node3D" parent="." unique_id=288404009]
 

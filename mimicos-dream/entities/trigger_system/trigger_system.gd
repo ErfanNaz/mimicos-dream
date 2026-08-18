@@ -32,23 +32,23 @@ func _ready() -> void:
 	_find_target_animation_player()
 	_find_trigger_animation_player()
 	
-func _on_switch_toggle(on: bool) -> void:
+func _on_switch_toggle(player_controller: PlayerController, on: bool) -> void:
 	trigger_target.is_on = on
 
 func _find_trigger_animation_player() -> void:
 	if !trigger_element:
 		trigger_switch.animation_player = null
 		return
-	for child in trigger_element.get_children():
-		if child is AnimationPlayer:
-			trigger_switch.animation_player = child
-			break
+	var animation_player: AnimationPlayer = Utils.find_animation_player_in_glb(trigger_element)
+	if !animation_player:
+		return
+	trigger_switch.animation_player = animation_player
 
 func _find_target_animation_player() -> void:
 	if !target_element:
 		trigger_target.animation_player = null
 		return
-	for child in target_element.get_children():
-		if child is AnimationPlayer:
-			trigger_target.animation_player = child
-			break
+	var animation_player: AnimationPlayer = Utils.find_animation_player_in_glb(target_element)
+	if !animation_player:
+		return
+	trigger_target.animation_player = animation_player

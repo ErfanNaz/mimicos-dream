@@ -13,6 +13,7 @@ var TEAM_COLORS: Array[Color] = [
 @export var player_state_machine: FiniteStateMachine
 @export var player_properties: PlayerProperties
 @export var animation_player: AnimationPlayer
+@export var phantom_camera_3d: PhantomCamera3D
 
 @export var player_interactable: PlayerInteractable
 

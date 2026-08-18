@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://mtr8b5hxj1d7"]
-
-[ext_resource type="Script" uid="uid://bx7qpsw7tgxje" path="res://entities/door_system/door/door.gd" id="1_05v0y"]
-
-[node name="Door" type="Node3D" unique_id=1251206745 node_paths=PackedStringArray("animation_player")]
-script = ExtResource("1_05v0y")
-animation_player = NodePath("")

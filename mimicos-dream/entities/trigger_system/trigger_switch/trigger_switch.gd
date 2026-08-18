@@ -9,9 +9,9 @@ class_name TriggerSwitch extends Node3D
 @export var sprite_3d: Sprite3D
 @export var label: Label
 
-signal on_switch(on: bool)
+signal on_switch(player_controller: PlayerController, on: bool)
 
-
+var last_player: PlayerController
 var is_on: bool = false
 
 func _ready() -> void:
@@ -19,23 +19,24 @@ func _ready() -> void:
 	var mat: StandardMaterial3D = ball_mesh_instance_3d.get_surface_override_material(0).duplicate()
 	ball_mesh_instance_3d.set_surface_override_material(0, mat)
 
-func _toggle_trigger(_player_controller: PlayerController) -> void:
+func _toggle_trigger(player_controller: PlayerController) -> void:
 	if is_on:
 		return
 	is_on = true
-	on_switch.emit(true)
+	on_switch.emit(player_controller, true)
 	if animation_player:
 		animation_player.play("animation|on")
 	var mat: StandardMaterial3D = ball_mesh_instance_3d.get_surface_override_material(0)
-	var color: Color = _player_controller.get_player_color(_player_controller.team)
+	var color: Color = player_controller.get_player_color(player_controller.team)
 	mat.emission = color
 	await get_tree().create_timer(1).timeout
 	if toggle_back_timer > 0:
 		sprite_3d.show()
+		last_player = player_controller
 		_auto_close(toggle_back_timer)
 		return
 	is_on = false
-	on_switch.emit(false)
+	on_switch.emit(player_controller, false)
 	mat.emission = Color.WHITE
 	if animation_player:
 		animation_player.play("animation|off")
@@ -45,7 +46,7 @@ func _auto_close(timer: int) -> void:
 		timer = 0
 		label.text = ""
 		is_on = false
-		on_switch.emit(false)
+		on_switch.emit(last_player, false)
 		var mat: StandardMaterial3D = ball_mesh_instance_3d.get_surface_override_material(0)
 		mat.emission = Color.WHITE
 		sprite_3d.hide()

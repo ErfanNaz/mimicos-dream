@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d2dubbwfxg5b0"]
+
+[ext_resource type="Script" uid="uid://dyo47gmnn5tjb" path="res://entities/highlight_system/highlight_system.gd" id="1_sxlbi"]
+[ext_resource type="PackedScene" uid="uid://bgtpbxtq808xf" path="res://entities/trigger_system/trigger_switch/trigger_switch.tscn" id="2_sxlbi"]
+
+[node name="HighlightSystem" type="Node3D" unique_id=1902751354 node_paths=PackedStringArray("trigger_switch")]
+script = ExtResource("1_sxlbi")
+trigger_switch = NodePath("TriggerSwitch")
+
+[node name="TriggerSwitch" parent="." unique_id=181858922 instance=ExtResource("2_sxlbi")]
