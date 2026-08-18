@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s2tlil23k38x"
-path.s3tc="res://.godot/imported/Painterly Sky BGs (165).png-eeb08395bebb0e50ca898b06ae442cd5.s3tc.ctex"
+uid="uid://b0a0jhp5nte7n"
+path.s3tc="res://.godot/imported/sky_19_2k.png-b93a70b94b2e7df59b4049dcc85b30c9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/main/assets/Painterly Sky BGs (165).png"
-dest_files=["res://.godot/imported/Painterly Sky BGs (165).png-eeb08395bebb0e50ca898b06ae442cd5.s3tc.ctex"]
+source_file="res://scenes/main/assets/sky_19_2k.png"
+dest_files=["res://.godot/imported/sky_19_2k.png-b93a70b94b2e7df59b4049dcc85b30c9.s3tc.ctex"]
 
 [params]
 
