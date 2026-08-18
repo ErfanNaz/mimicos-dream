@@ -8,11 +8,17 @@ class_name PlayerInputActiveControlled extends State
 @export var min_pitch: float = -40.0
 @export var max_pitch: float = 20.0
 @export var target_anchor_node_3d: Node3D
+@export var spring_arm_3d: SpringArm3D
 
 
 @export_category("Internal")
 @export var dash_timer: Timer
+@export var min_spring_length := 2.0
+@export var max_spring_length := 100.0
+@export var zoom_step := 1.0
+@export var zoom_speed := 8.0
 
+var zoom_target: float
 
 var accumulator: float = 0
 
@@ -27,6 +33,7 @@ var is_stunned: bool = false
 
 func _ready() -> void:
 	set_process_input(false)
+	zoom_target = spring_arm_3d.spring_length
 
 func enter() -> void:
 	controller_input = player_controller.controller_input
@@ -43,6 +50,11 @@ func exit() -> void:
 
 func physics_update(delta: float) -> void:
 	process_tick(delta, controller_input)
+	spring_arm_3d.spring_length = move_toward(
+		spring_arm_3d.spring_length,
+		zoom_target,
+		zoom_speed * delta
+	)
 
 func process_tick(delta: float, _controller_input: ControllerInput) -> void:
 	var velocity: Vector3 = player_body.velocity
@@ -58,9 +70,6 @@ func process_tick(delta: float, _controller_input: ControllerInput) -> void:
 	
 	if controller_input.lookup_direction.length() != 0:
 		update_lookpu_direction(delta)
-	
-	if player_body.is_on_floor() and input_manager.is_action_pressed(0):
-		velocity.y += player_properties.jump
 	
 	var move_direction: Vector3 = get_move_direction(_controller_input.direction)
 	direction = Vector2(move_direction.x, move_direction.z).normalized()
@@ -83,6 +92,19 @@ func process_tick(delta: float, _controller_input: ControllerInput) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_camera_mouse(event.relative)
+	if event.is_action_pressed("zoom_in"):
+		zoom_target = clamp(
+			zoom_target - zoom_step,
+			min_spring_length,
+			max_spring_length
+		)
+
+	if event.is_action_pressed("zoom_out"):
+		zoom_target = clamp(
+			zoom_target + zoom_step,
+			min_spring_length,
+			max_spring_length
+		)
 
 
 func start_dash() -> void:
