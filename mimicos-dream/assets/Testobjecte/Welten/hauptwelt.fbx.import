@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bcmlryrbvnnvq"
-path="res://.godot/imported/tür.fbx-611be04564dcc2b574b8097ebd6f1d7f.scn"
+uid="uid://cdwrn3d6heqeu"
+path="res://.godot/imported/hauptwelt.fbx-767d38892bd31fae1b9480eeac673378.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Objekte/türen/tür.fbx"
-dest_files=["res://.godot/imported/tür.fbx-611be04564dcc2b574b8097ebd6f1d7f.scn"]
+source_file="res://assets/Testobjecte/Welten/hauptwelt.fbx"
+dest_files=["res://.godot/imported/hauptwelt.fbx-767d38892bd31fae1b9480eeac673378.scn"]
 
 [params]
 
@@ -39,13 +39,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"nodes": {
-"PATH:tür_rahmen": {
-"generate/physics": true
-}
-}
-}
+_subresources={}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
