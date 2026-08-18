@@ -8,6 +8,8 @@ class_name TriggerTarget extends Node3D
 		if value == is_on:
 			return
 		is_on = value
+		if !animation_player:
+			return
 		if is_on:
 			animation_player.play(on_animation)
 			return
