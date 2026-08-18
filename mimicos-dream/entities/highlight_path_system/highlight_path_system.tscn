@@ -32,7 +32,7 @@ trigger_switch = NodePath("TriggerSwitch")
 phantom_camera_3d = NodePath("PhantomCamera3D")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." unique_id=1411640092 node_paths=PackedStringArray("follow_target", "look_at_target")]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+transform = Transform3D(-0.27052274, 0.09931315, 0.95744276, 7.4489432e-09, 0.994659, -0.10314928, -0.96248525, -0.027913634, -0.26910537, -2.3021994, 9.536743e-07, 0.02201879)
 top_level = true
 script = ExtResource("2_qwbk3")
 follow_mode = 2
@@ -49,7 +49,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 curve = SubResource("Curve3D_mxndm")
 
 [node name="CameraTargetPathFollow3D" type="PathFollow3D" parent="CameraTargetPath3D" unique_id=1978594820]
-transform = Transform3D(-0.8007425, -0.04969551, 0.59694374, 0, 0.99655265, 0.082962915, -0.59900874, 0.06643193, -0.79798204, -7.7902145, 0.59124756, 1.564518)
+transform = Transform3D(-0.8007425, 0.058931343, 0.59610283, 5.5879354e-09, 0.9951488, -0.09838144, -0.59900874, -0.0787782, -0.79685795, -7.7902145, 0.59124756, 1.564518)
 
 [node name="CameraTarget" type="Node3D" parent="CameraTargetPath3D/CameraTargetPathFollow3D" unique_id=1721678430]
 
@@ -57,7 +57,7 @@ transform = Transform3D(-0.8007425, -0.04969551, 0.59694374, 0, 0.99655265, 0.08
 curve = SubResource("Curve3D_rqgk8")
 
 [node name="CameraPositionPathFollow3D" type="PathFollow3D" parent="CameraPositionPath3D" unique_id=1569865166]
-transform = Transform3D(-0.98153895, 0, -0.19126232, 0, 1, 0, 0.19126232, 0, -0.98153895, -2.3021994, 9.536743e-07, 0.02201879)
+transform = Transform3D(-0.98153895, -0.030589504, -0.18880032, -9.313227e-10, 0.9871276, -0.15993482, 0.19126232, -0.15698226, -0.9689042, -2.3021994, 9.536743e-07, 0.02201879)
 
 [node name="CameraPositionTarget" type="Node3D" parent="CameraPositionPath3D/CameraPositionPathFollow3D" unique_id=497719252]
 

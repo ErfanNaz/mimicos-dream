@@ -59,6 +59,7 @@ toggle_back_timer = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4541197, 0, 13.811768)
 target_element = NodePath("../../objekte/truhe2")
 interact_data = SubResource("Resource_4iqtb")
+one_shot = true
 toggle_back_timer = 5
 
 [node name="objekte" type="Node3D" parent="." unique_id=288404009]
@@ -78,14 +79,11 @@ transform = Transform3D(0.83333325, 0, 1.0587912e-22, 0, -3.6426155e-08, -0.8333
 [node name="HighlightPathSystem" parent="." unique_id=1936520103 instance=ExtResource("7_e1bmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8737831, 0, 0.079276085)
 interact_data = SubResource("Resource_qwbk3")
-toggle_back_timer = 7
-playback_time = 5.0
+toggle_back_timer = 10
+one_shot = true
 
 [node name="PhantomCamera3D" parent="HighlightPathSystem" index="0" unique_id=1411640092]
 transform = Transform3D(-0.2705223, 0.09931264, 0.9574078, 7.448931e-09, 0.9946539, -0.10314551, -0.96248364, -0.02791349, -0.26909554, -4.1759825, 9.536743e-07, 0.101294875)
-align_transform_with_view = Callable()
-align_position_with_view = Callable()
-align_rotation_with_view = Callable()
 
 [node name="CameraTargetPathFollow3D" parent="HighlightPathSystem/CameraTargetPath3D" parent_id_path=PackedInt32Array(1936520103, 296671165) index="0" unique_id=1978594820]
 transform = Transform3D(-0.8007424, 0.058931105, 0.5961028, 5.5879346e-09, 0.9951447, -0.09838142, -0.5990086, -0.07877788, -0.79685783, -7.7902145, 0.59124756, 1.564518)

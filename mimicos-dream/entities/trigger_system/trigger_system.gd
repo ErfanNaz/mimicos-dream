@@ -16,7 +16,7 @@ extends Node3D
 @export var interact_data: InteractData
 
 @export_category("trigger settings")
-@export_range(0, 10, 1, "prefer_slider") var toggle_back_timer: int = 0
+@export_range(0, 100, 1, "prefer_slider") var toggle_back_timer: int = 0
 
 @export_category("Internal")
 @export var trigger_target: TriggerTarget

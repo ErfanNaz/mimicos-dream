@@ -8,8 +8,9 @@ class_name CameraPathSystem extends Node3D
 
 @export var interact_data: InteractData
 
-@export_range(0, 10, 1, "prefer_slider") var toggle_back_timer: int = 0
-@export var playback_time: float = 1.0
+@export_range(0, 100, 1, "prefer_slider") var toggle_back_timer: int = 0
+
+@export var one_shot: bool = false
 
 @export_category("Internal")
 @export var trigger_switch: TriggerSwitch
@@ -32,6 +33,8 @@ func _on_switch_toggle(player_controller: PlayerController, on: bool) -> void:
 	else:
 		player_controller.input_active_state_machine()
 		phantom_camera_3d.set_priority(0)
+		if one_shot:
+			queue_free()
 
 func start() -> void:
 	if _is_playing:
@@ -50,14 +53,14 @@ func start() -> void:
 		camera_target_path_follow_3d,
 		"progress_ratio",
 		1.0,
-		playback_time
+		toggle_back_timer
 	)
 
 	tween.tween_property(
 		camera_position_path_follow_3d,
 		"progress_ratio",
 		1.0,
-		playback_time
+		toggle_back_timer
 	)
 
 	tween.set_parallel(false)

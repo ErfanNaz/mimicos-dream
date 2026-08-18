@@ -1,6 +1,6 @@
 class_name TriggerSwitch extends Node3D
 
-@export_range(0, 10, 1, "prefer_slider") var toggle_back_timer: int = 0
+@export_range(0, 100, 1, "prefer_slider") var toggle_back_timer: int = 0
 @export var animation_player: AnimationPlayer
 
 @export_category("internal")
