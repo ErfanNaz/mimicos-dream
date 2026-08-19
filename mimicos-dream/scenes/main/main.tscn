@@ -21,10 +21,11 @@ sky = SubResource("Sky_hujxm")
 tonemap_mode = 2
 fog_light_color = Color(0.69680893, 0.9194905, 0.9959524, 1)
 
-[node name="Main" type="Node3D" unique_id=4722677 node_paths=PackedStringArray("player_controller", "input_manager")]
+[node name="Main" type="Node3D" unique_id=4722677 node_paths=PackedStringArray("player_controller", "input_manager", "map")]
 script = ExtResource("1_l3cfh")
 player_controller = NodePath("PlayerController")
 input_manager = NodePath("InputManager")
+map = NodePath("Map01")
 log_level = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1823298397]
@@ -36,7 +37,7 @@ light_energy = 0.1
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=128362928]
-transform = Transform3D(0.9910718, 0.13332939, 1.58941e-08, 0, -1.1920928e-07, 1, 0.13332939, -0.9910718, -1.1814495e-07, 0, 4.1759114, 0)
+transform = Transform3D(0, -1, 0, 0, 0, 1, -1, 0, 0, 0, 4.1759114, 0)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=145780615]

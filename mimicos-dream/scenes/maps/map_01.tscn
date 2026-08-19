@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b03dp11bxot1q"]
 
+[ext_resource type="Script" uid="uid://bmmwdtdaesnbb" path="res://scenes/maps/map_01.gd" id="1_pcy5s"]
 [ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="2_yr2eo"]
 [ext_resource type="PackedScene" uid="uid://d2dubbwfxg5b0" path="res://entities/highlight_system/highlight_system.tscn" id="3_4iqtb"]
 [ext_resource type="PackedScene" uid="uid://bcmlryrbvnnvq" path="res://assets/Testobjecte/Objekte/türen/tür.fbx" id="3_g5h58"]
@@ -16,7 +17,7 @@ script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ja8my"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_pcy5s"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Resource" id="Resource_yr2eo"]
@@ -40,7 +41,12 @@ metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 script = ExtResource("2_yr2eo")
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[node name="Map01" type="Node3D" unique_id=1725308146]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5dti3"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="Map01" type="Node3D" unique_id=1725308146 node_paths=PackedStringArray("start_marker_3d")]
+script = ExtResource("1_pcy5s")
+start_marker_3d = NodePath("StartMarker3D")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=834964381]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -51,6 +57,8 @@ metadata/_edit_lock_ = true
 [node name="zuhause" parent="." unique_id=397786495 instance=ExtResource("10_5ofjs")]
 transform = Transform3D(-0.93483865, 0, -0.35507283, 0, 1, 0, 0.35507283, 0, -0.93483865, -192.47913, 29.824394, 163.61868)
 metadata/_edit_lock_ = true
+
+[node name="StartMarker3D" type="Marker3D" parent="." unique_id=193951223]
 
 [node name="triggers" type="Node3D" parent="." unique_id=1881714884]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.6577603, 0, -0.5978474)
@@ -73,7 +81,7 @@ visible = false
 
 [node name="Sprite3D" parent="triggers/TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.4, 0, 6.039832e-08, 0, 0.4, 0, -6.039832e-08, 0, -0.4, -4.612211, 2.5914545, 2.1660986)
-texture = SubResource("ViewportTexture_ja8my")
+texture = SubResource("ViewportTexture_pcy5s")
 
 [node name="objekte" type="Node3D" parent="." unique_id=288404009]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.6577603, 0, -0.5978474)
@@ -150,5 +158,24 @@ visible = false
 one_shot = false
 switch_back = false
 
+[node name="tür" parent="." unique_id=1468137168 instance=ExtResource("3_g5h58")]
+transform = Transform3D(-0.3554341, 0, 0.9347013, 0, 1, 0, -0.9347013, 0, -0.3554341, -223.84512, 45.351913, 226.74025)
+
+[node name="schalter02" parent="tür" unique_id=510915357 instance=ExtResource("4_yr2eo")]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 1.6627996, 1.5358467, 0.26678467)
+
+[node name="TextSystem" parent="." unique_id=1115912158 instance=ExtResource("3_ja8my")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -222.79065, 45.194363, 226.21103)
+text = "Hier ended die Reise"
+toggle_back_timer = 10
+
+[node name="TriggerSwitch" parent="TextSystem" index="0" unique_id=181858922]
+visible = false
+
+[node name="Sprite3D" parent="TextSystem" index="1" unique_id=571532252]
+transform = Transform3D(-0.24545783, 0, 0.54749477, 0, 0.6, 0, -0.54749477, 0, -0.24545783, -0.67036444, 3.9025612, 0.2469357)
+texture = SubResource("ViewportTexture_5dti3")
+
 [editable path="triggers/TextSystem"]
 [editable path="HighlightPathSystem"]
+[editable path="TextSystem"]
