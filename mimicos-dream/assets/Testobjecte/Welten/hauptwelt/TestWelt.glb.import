@@ -47,6 +47,12 @@ _subresources={
 "PATH:Plane": {
 "generate/physics": true
 },
+"PATH:Rakete": {
+"generate/physics": true
+},
+"PATH:RaketenPlattform": {
+"generate/physics": true
+},
 "PATH:bäume": {
 "generate/physics": true
 },
