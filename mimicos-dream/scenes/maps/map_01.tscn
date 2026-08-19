@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://pd03uswmh1wv" path="res://entities/highlight_path_system/highlight_path_system.tscn" id="7_e1bmt"]
 [ext_resource type="PackedScene" uid="uid://coda3ip52ori5" path="res://entities/camera_switch_system/camera_switch_system.tscn" id="8_4hvco"]
 [ext_resource type="PackedScene" uid="uid://cn2yyhknolne3" path="res://assets/Testobjecte/Welten/hauptwelt/zuhause.glb" id="10_5ofjs"]
+[ext_resource type="PackedScene" uid="uid://dxooow1xo2ie" path="res://assets/Testobjecte/Objekte/schalter/schalter01.fbx" id="11_5dti3"]
+[ext_resource type="Curve3D" uid="uid://dqnfwvsqtrssj" path="res://entities/highlight_path_system/curves/path_t_01.tres" id="11_pgpfx"]
+[ext_resource type="Curve3D" uid="uid://daagpxovqr7ho" path="res://entities/highlight_path_system/curves/path_p_01.tres" id="12_4228d"]
 [ext_resource type="PackedScene" uid="uid://dsa25ajkyujjl" path="res://entities/trigger_system/trigger_system.tscn" id="13_8rg8i"]
 
 [sub_resource type="Resource" id="Resource_4iqtb"]
@@ -17,7 +20,7 @@ script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_pcy5s"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_pgpfx"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Resource" id="Resource_yr2eo"]
@@ -37,12 +40,29 @@ script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_4228d"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
 [sub_resource type="Resource" id="Resource_4hvco"]
 script = ExtResource("2_yr2eo")
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5dti3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ru6md"]
 viewport_path = NodePath("Sprite3D/SubViewport")
+
+[sub_resource type="Curve3D" id="Curve3D_ru6md"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -4.0242515, 1.2452564, 3.1952906, 0, 0, 0, 0, 0, 0, -37.480175, 4.399584, 27.563566, 0, 0, 0, 0, 0, 0, -58.125107, 23.04635, 42.875027, 0, 0, 0, 0, 0, 0, -80.43221, 29.07124, 62.459587, 0, 0, 0, 0, 0, 0, -146.80019, 31.153744, 126.38309, 0, 0, 0, 0, 0, 0, -190.95541, 45.14803, 148.09932),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[sub_resource type="Curve3D" id="Curve3D_lwxhp"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.585045, -4.7683716e-07, 7.695488, 0, 0, 0, 0, 0, 0, -68.81555, 27.681826, 51.32551, 0, 0, 0, 0, 0, 0, -157.15712, 37.10755, 143.70622, 0, 0, 0, 0, 0, 0, -196.00822, 46.87835, 148.88806),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
 
 [node name="Map01" type="Node3D" unique_id=1725308146 node_paths=PackedStringArray("start_marker_3d")]
 script = ExtResource("1_pcy5s")
@@ -81,7 +101,7 @@ visible = false
 
 [node name="Sprite3D" parent="triggers/TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.4, 0, 6.039832e-08, 0, 0.4, 0, -6.039832e-08, 0, -0.4, -4.612211, 2.5914545, 2.1660986)
-texture = SubResource("ViewportTexture_pcy5s")
+texture = SubResource("ViewportTexture_pgpfx")
 
 [node name="objekte" type="Node3D" parent="." unique_id=288404009]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.6577603, 0, -0.5978474)
@@ -113,11 +133,12 @@ target_element = NodePath("..")
 trigger_element = NodePath("../schalter02")
 interact_data = SubResource("Resource_olgry")
 
-[node name="HighlightPathSystem" parent="." unique_id=1936520103 instance=ExtResource("7_e1bmt")]
+[node name="HighlightPathSystem" parent="." unique_id=1936520103 node_paths=PackedStringArray("camera_p_path_follow_3d", "camera_t_path_follow_3d") instance=ExtResource("7_e1bmt")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5582626, 0, 1.2749708)
+camera_p_path_follow_3d = NodePath("PPath3D2")
+camera_t_path_follow_3d = NodePath("TPath3D")
 interact_data = SubResource("Resource_qwbk3")
-toggle_back_timer = 10
-one_shot = true
+playback_back_timer = 10
 
 [node name="PhantomCamera3D" parent="HighlightPathSystem" index="0" unique_id=1411640092]
 transform = Transform3D(-0.9604548, -0.027913317, -0.2691054, -2.787461e-09, 0.99464786, -0.10314927, 0.26995203, -0.099312015, -0.95744276, -0.5362437, 9.536743e-07, 3.5771701)
@@ -127,6 +148,22 @@ transform = Transform3D(-0.8007424, 0.058931105, 0.5961028, 5.5879346e-09, 0.995
 
 [node name="CameraPositionPathFollow3D" parent="HighlightPathSystem/CameraPositionPath3D" parent_id_path=PackedInt32Array(1936520103, 1894891783) index="0" unique_id=1569865166]
 transform = Transform3D(-0.98153734, -0.030589458, -0.18879998, -9.3132113e-10, 0.98712605, -0.15993452, 0.191262, -0.15698202, -0.9689024, -2.3021994, 9.536743e-07, 0.02201879)
+
+[node name="TriggerSwitch" parent="HighlightPathSystem" index="3" unique_id=181858922 node_paths=PackedStringArray("animation_player")]
+visible = false
+animation_player = NodePath("../../schalter01/AnimationPlayer")
+
+[node name="Sprite3D" parent="HighlightPathSystem/TriggerSwitch" index="3" unique_id=226529221]
+texture = SubResource("ViewportTexture_4228d")
+
+[node name="TPath3D" type="Path3D" parent="HighlightPathSystem" unique_id=16752374]
+curve = ExtResource("11_pgpfx")
+
+[node name="PPath3D2" type="Path3D" parent="HighlightPathSystem" unique_id=1127803273]
+curve = ExtResource("12_4228d")
+
+[node name="schalter01" parent="." unique_id=1594216519 instance=ExtResource("11_5dti3")]
+transform = Transform3D(0.08356324, 0, -0.99650246, 0, 1, 0, 0.99650246, 0, 0.08356324, -0.14533472, 0, 1.4121547)
 
 [node name="CameraSwitchSystem" parent="." unique_id=2042903880 instance=ExtResource("8_4hvco")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62011147, 0, 14.231754)
@@ -174,8 +211,24 @@ visible = false
 
 [node name="Sprite3D" parent="TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.24545783, 0, 0.54749477, 0, 0.6, 0, -0.54749477, 0, -0.24545783, -0.67036444, 3.9025612, 0.2469357)
-texture = SubResource("ViewportTexture_5dti3")
+texture = SubResource("ViewportTexture_ru6md")
+
+[node name="HighlightPathSystem2" parent="." unique_id=126581828 node_paths=PackedStringArray("camera_p_path_follow_3d", "camera_t_path_follow_3d") instance=ExtResource("7_e1bmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.210854, -4.7683716e-07, 76.58662)
+camera_p_path_follow_3d = NodePath("PositionPath3D")
+camera_t_path_follow_3d = NodePath("TargetPath3D")
+playback_back_timer = 10
+camera_target_back_timer = 8
+one_shot = true
+
+[node name="PositionPath3D" type="Path3D" parent="HighlightPathSystem2" unique_id=914099747]
+curve = SubResource("Curve3D_ru6md")
+
+[node name="TargetPath3D" type="Path3D" parent="HighlightPathSystem2" unique_id=123723981]
+curve = SubResource("Curve3D_lwxhp")
 
 [editable path="triggers/TextSystem"]
 [editable path="HighlightPathSystem"]
+[editable path="HighlightPathSystem/TriggerSwitch"]
+[editable path="schalter01"]
 [editable path="TextSystem"]
