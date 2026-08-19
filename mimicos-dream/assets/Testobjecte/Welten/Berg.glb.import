@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cn2yyhknolne3"
-path="res://.godot/imported/zuhause.glb-8f9e6a298363802cb9fe7827872d8964.scn"
+uid="uid://do4r4nyvx2p52"
+path="res://.godot/imported/Berg.glb-6a7068f12688953dc7adad68fa748705.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Welten/hauptwelt/zuhause.glb"
-dest_files=["res://.godot/imported/zuhause.glb-8f9e6a298363802cb9fe7827872d8964.scn"]
+source_file="res://assets/Testobjecte/Welten/Berg.glb"
+dest_files=["res://.godot/imported/Berg.glb-6a7068f12688953dc7adad68fa748705.scn"]
 
 [params]
 
@@ -41,32 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Berge": {
-"generate/physics": true
-},
-"PATH:Cone": {
-"generate/physics": true
-},
-"PATH:Cube": {
-"generate/physics": true
-},
-"PATH:Cube_001": {
-"generate/physics": true
-},
-"PATH:Cube_005": {
-"generate/physics": true
-},
-"PATH:Cube_006": {
-"generate/physics": true,
-"physics/shape_type": 1
-},
-"PATH:Cube_007": {
-"generate/physics": true
-},
-"PATH:gebäude": {
-"generate/physics": true
-},
-"PATH:inseln": {
+"PATH:Berg": {
 "generate/physics": true
 }
 }

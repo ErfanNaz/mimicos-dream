@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxyear54toy1v" path="res://entities/input_manager/input_manager.tscn" id="4_ork3v"]
 [ext_resource type="PackedScene" uid="uid://dvs75nw080kyk" path="res://entities/camera_system/camera_system.tscn" id="5_a0rq3"]
 [ext_resource type="PackedScene" uid="uid://cn2yyhknolne3" path="res://assets/Testobjecte/Welten/hauptwelt/zuhause.glb" id="7_vrddd"]
+[ext_resource type="PackedScene" uid="uid://do4r4nyvx2p52" path="res://assets/Testobjecte/Welten/Berg.glb" id="8_ork3v"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
 panorama = ExtResource("1_wgdak")
@@ -58,3 +59,9 @@ camera_3d = NodePath("../Camera3D")
 
 [node name="zuhause" parent="." unique_id=1173817261 instance=ExtResource("7_vrddd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 3.360836, 16)
+
+[node name="Berg2" parent="." unique_id=1326702398 instance=ExtResource("8_ork3v")]
+transform = Transform3D(-2.8999996, 0, -5.0229473, 0, 5.7999997, 0, 5.0229473, 0, -2.8999996, 244, -123, 601)
+
+[node name="Berg3" parent="." unique_id=1854376144 instance=ExtResource("8_ork3v")]
+transform = Transform3D(-8.120001, 0, 3.33786e-07, 0, 8.12, 0, -3.33786e-07, 0, -8.120001, -645, -123, 1188)
