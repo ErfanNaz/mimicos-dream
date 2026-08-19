@@ -3,16 +3,21 @@
 [ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="2_yr2eo"]
 [ext_resource type="PackedScene" uid="uid://d2dubbwfxg5b0" path="res://entities/highlight_system/highlight_system.tscn" id="3_4iqtb"]
 [ext_resource type="PackedScene" uid="uid://bcmlryrbvnnvq" path="res://assets/Testobjecte/Objekte/türen/tür.fbx" id="3_g5h58"]
+[ext_resource type="PackedScene" uid="uid://cyiamia4oprhb" path="res://entities/text_system/text_system.tscn" id="3_ja8my"]
 [ext_resource type="PackedScene" uid="uid://drrdvbflsvfca" path="res://assets/Testobjecte/Objekte/behälter/truhe.fbx" id="4_hrjdk"]
 [ext_resource type="PackedScene" uid="uid://cn1n3kfjpmwht" path="res://assets/Testobjecte/Objekte/schalter/schalter02.fbx" id="4_yr2eo"]
 [ext_resource type="PackedScene" uid="uid://pd03uswmh1wv" path="res://entities/highlight_path_system/highlight_path_system.tscn" id="7_e1bmt"]
 [ext_resource type="PackedScene" uid="uid://coda3ip52ori5" path="res://entities/camera_switch_system/camera_switch_system.tscn" id="8_4hvco"]
+[ext_resource type="PackedScene" uid="uid://cn2yyhknolne3" path="res://assets/Testobjecte/Welten/hauptwelt/zuhause.glb" id="10_5ofjs"]
 [ext_resource type="PackedScene" uid="uid://dsa25ajkyujjl" path="res://entities/trigger_system/trigger_system.tscn" id="13_8rg8i"]
 
 [sub_resource type="Resource" id="Resource_4iqtb"]
 script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ja8my"]
+viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Resource" id="Resource_yr2eo"]
 script = ExtResource("2_yr2eo")
@@ -43,6 +48,10 @@ use_collision = true
 size = Vector3(1000, 1, 1000)
 metadata/_edit_lock_ = true
 
+[node name="zuhause" parent="." unique_id=397786495 instance=ExtResource("10_5ofjs")]
+transform = Transform3D(-0.93483865, 0, -0.35507283, 0, 1, 0, 0.35507283, 0, -0.93483865, -192.47913, 29.824394, 163.61868)
+metadata/_edit_lock_ = true
+
 [node name="triggers" type="Node3D" parent="." unique_id=1881714884]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.6577603, 0, -0.5978474)
 
@@ -52,6 +61,19 @@ target_element = NodePath("../../objekte/truhe2")
 interact_data = SubResource("Resource_4iqtb")
 one_shot = true
 toggle_back_timer = 5
+
+[node name="TextSystem" parent="triggers" unique_id=1175762003 instance=ExtResource("3_ja8my")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.3242173, -9.536743e-07, 2.6237724)
+text = "Hi Mimico"
+toggle_back_timer = 3
+
+[node name="TriggerSwitch" parent="triggers/TextSystem" index="0" unique_id=181858922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5951853, 0, -1.0691576)
+visible = false
+
+[node name="Sprite3D" parent="triggers/TextSystem" index="1" unique_id=571532252]
+transform = Transform3D(-0.4, 0, 6.039832e-08, 0, 0.4, 0, -6.039832e-08, 0, -0.4, -4.612211, 2.5914545, 2.1660986)
+texture = SubResource("ViewportTexture_ja8my")
 
 [node name="objekte" type="Node3D" parent="." unique_id=288404009]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.6577603, 0, -0.5978474)
@@ -90,7 +112,7 @@ toggle_back_timer = 10
 one_shot = true
 
 [node name="PhantomCamera3D" parent="HighlightPathSystem" index="0" unique_id=1411640092]
-transform = Transform3D(-0.9612779, -0.027913317, -0.2691054, -2.78985e-09, 0.99464786, -0.10314927, 0.27018338, -0.099312015, -0.95744276, -0.5362437, 9.536743e-07, 3.5771701)
+transform = Transform3D(-0.9604548, -0.027913317, -0.2691054, -2.787461e-09, 0.99464786, -0.10314927, 0.26995203, -0.099312015, -0.95744276, -0.5362437, 9.536743e-07, 3.5771701)
 
 [node name="CameraTargetPathFollow3D" parent="HighlightPathSystem/CameraTargetPath3D" parent_id_path=PackedInt32Array(1936520103, 296671165) index="0" unique_id=1978594820]
 transform = Transform3D(-0.8007424, 0.058931105, 0.5961028, 5.5879346e-09, 0.9951447, -0.09838142, -0.5990086, -0.07877788, -0.79685783, -7.7902145, 0.59124756, 1.564518)
@@ -109,4 +131,24 @@ switch_back = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5723467, 0, 34.260258)
 switch_back = false
 
+[node name="CameraSwitchSystem3" parent="." unique_id=86164853 instance=ExtResource("8_4hvco")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -66.17218, -10.703359, 100.76301)
+visible = false
+toState = "top_down"
+one_shot = false
+switch_back = false
+
+[node name="CameraSwitchSystem4" parent="." unique_id=2090644672 instance=ExtResource("8_4hvco")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -57.086933, -10.687229, 91.0883)
+visible = false
+one_shot = false
+switch_back = false
+
+[node name="CameraSwitchSystem5" parent="." unique_id=1694059012 instance=ExtResource("8_4hvco")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -101.48777, 11.913453, 129.45619)
+visible = false
+one_shot = false
+switch_back = false
+
+[editable path="triggers/TextSystem"]
 [editable path="HighlightPathSystem"]
