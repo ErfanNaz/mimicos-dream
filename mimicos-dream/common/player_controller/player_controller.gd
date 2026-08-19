@@ -39,9 +39,11 @@ var TEAM_COLORS: Array[Color] = [
 		
 @export var is_spectator: bool = false
 @export var look_at_target_node_3d: Node3D
+@export var target_anchor_node_3d: Node3D
 
 @export var input_manager: InputManager
 @export var player_actor_mover: PlayerActorMover
+
 
 var pre_state: String = 'idle'
 var controller_input: ControllerInput = ControllerInput.new()
@@ -99,11 +101,32 @@ func _command_filter(command: PlayerControllerCommand) -> void:
 		return
 	command_bus.emit(command)
 
+func get_controller_state() -> String:
+	match(blackboard.controller_state):
+		StateBlackboard.PlayerControllerState.idle: return "idle"
+		StateBlackboard.PlayerControllerState.input_third_person: return "third_person"
+		StateBlackboard.PlayerControllerState.input_top_down: return "top_down"
+	return "third_person"
+
+func switch_to_state(state: String) -> void:
+	var current_state = get_controller_state()
+	if state == current_state:
+		ApplicationManager.warn("state currently active")
+		return
+	match(state):
+		"idle": idle_state_machine()
+		"third_person": input_active_state_machine()
+		"top_down": input_active_top_down_machine()
+		_: input_active_state_machine()
+
 func input_active_state_machine() -> void:
 	self.player_state_machine.transition("PlayerInputActiveControlled")
 
 func idle_state_machine() -> void:
 	self.player_state_machine.transition("PlayerIdleControlled")
+
+func input_active_top_down_machine() -> void:
+	self.player_state_machine.transition("PlayerInputTopDownState")
 	
 func plug_in_input_manager(_input_manager: InputManager) -> void:
 	if !_input_manager:

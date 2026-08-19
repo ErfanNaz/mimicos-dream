@@ -1,20 +1,17 @@
-class_name PlayerInputActiveControlled extends State
+class_name PlayerInputTopDownControlled extends State
 
 @export var player_controller: PlayerController
 @export var player_body: PlayerBody
 
-@export var mouse_sensitivity: float = 0.1
-@export var controller_sensitivity: float = 90.0
-@export var min_pitch: float = -40.0
-@export var max_pitch: float = 20.0
 @export var target_anchor_node_3d: Node3D
 @export var spring_arm_3d: SpringArm3D
+@export var phantom_camera_3d: PhantomCamera3D
 
 
 @export_category("Internal")
 @export var dash_timer: Timer
-@export var min_spring_length := 2.0
-@export var max_spring_length := 10.0
+@export var min_spring_length := 10
+@export var max_spring_length := 30
 @export var zoom_step := 1.0
 @export var zoom_speed := 8.0
 
@@ -42,12 +39,15 @@ func enter() -> void:
 	set_process_input(true)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	dash_timer.timeout.connect(self._on_dash_finished)
-	player_controller.blackboard.controller_state = StateBlackboard.PlayerControllerState.input_third_person
+	player_controller.blackboard.controller_state = StateBlackboard.PlayerControllerState.input_top_down
+	phantom_camera_3d.set_priority(2)
+	target_anchor_node_3d.rotation.x = 0
 	
 func exit() -> void:
 	set_process_input(false)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	dash_timer.timeout.disconnect(self._on_dash_finished)
+	phantom_camera_3d.set_priority(0)
 
 func physics_update(delta: float) -> void:
 	process_tick(delta, controller_input)
@@ -69,9 +69,6 @@ func process_tick(delta: float, _controller_input: ControllerInput) -> void:
 		if _controller_input.in_menu:
 			return
 	
-	if controller_input.lookup_direction.length() != 0:
-		update_lookpu_direction(delta)
-	
 	var move_direction: Vector3 = get_move_direction(_controller_input.direction)
 	direction = Vector2(move_direction.x, move_direction.z).normalized()
 	
@@ -91,8 +88,6 @@ func process_tick(delta: float, _controller_input: ControllerInput) -> void:
 	player_body.move_and_slide()
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		rotate_camera_mouse(event.relative)
 	if event.is_action_pressed("zoom_in"):
 		zoom_target = clamp(
 			zoom_target - zoom_step,
@@ -135,44 +130,6 @@ func get_move_direction(input: Vector2) -> Vector3:
 		camera_forward * -input.y
 	).normalized()
 
-func rotate_camera_mouse(mouse_delta: Vector2) -> void:
-	var spring_arm := target_anchor_node_3d
-
-	target_anchor_node_3d.rotate_y(
-		deg_to_rad(-mouse_delta.x * mouse_sensitivity)
-	)
-
-	spring_arm.rotation_degrees.x += mouse_delta.y * mouse_sensitivity
-
-	spring_arm.rotation_degrees.x = clamp(
-		spring_arm.rotation_degrees.x,
-		min_pitch,
-		max_pitch
-	)
-
-
-func update_lookpu_direction(delta: float) -> void:
-	var look_input := controller_input.lookup_direction
-
-	# Horizontal
-	if look_input.x != 0.0:
-		target_anchor_node_3d.rotate_y(
-			look_input.x * deg_to_rad(controller_sensitivity) * delta
-		)
-
-	# Vertikal
-	if look_input.y != 0.0:
-		var spring_arm := target_anchor_node_3d
-
-		spring_arm.rotation_degrees.x -= (
-			look_input.y * controller_sensitivity * delta
-		)
-
-		spring_arm.rotation_degrees.x = clamp(
-			spring_arm.rotation_degrees.x,
-			min_pitch,
-			max_pitch
-		)
 
 func _on_dash_finished() -> void:
 	if !is_dashing:

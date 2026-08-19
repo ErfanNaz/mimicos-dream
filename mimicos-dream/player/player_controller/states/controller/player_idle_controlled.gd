@@ -1,5 +1,7 @@
 class_name IdleControlled extends State
 
+@export var player_controller: PlayerController
+
 @export var mouse_sensitivity: float = 0.1
 @export var controller_sensitivity: float = 90.0
 @export var min_pitch: float = -40.0
@@ -10,6 +12,7 @@ func _ready() -> void:
 	set_process_input(false)
 
 func enter() -> void:
+	player_controller.blackboard.controller_state = StateBlackboard.PlayerControllerState.idle
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	set_process_input(true)
 	

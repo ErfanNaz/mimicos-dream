@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dxflnfoucfgrw" path="res://player/player_actor_3d/player_actor.tscn" id="10_ofon0"]
 [ext_resource type="Script" uid="uid://bnpdtjr6tt0a1" path="res://player/player_controller/player_actor_mover.gd" id="11_meoet"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="12_la4u0"]
+[ext_resource type="Script" uid="uid://i4n7pxfu8127" path="res://player/player_controller/states/controller/player_input_top_down_state.gd" id="13_awkps"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_i5aod"]
 [ext_resource type="Script" uid="uid://b3dol6hq5dqof" path="res://player/player_controller/player_state_machine/idle.gd" id="14_lnwrh"]
 [ext_resource type="Script" uid="uid://dm3xkn4d23r0q" path="res://player/player_controller/player_state_machine/in_air/in_air.gd" id="15_5x3y2"]
@@ -52,11 +53,6 @@ height = 0.2
 radial_segments = 4
 rings = 4
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_dpos4"]
-
-[sub_resource type="Resource" id="Resource_arldf"]
-script = ExtResource("13_i5aod")
-
 [sub_resource type="SphereMesh" id="SphereMesh_mf8xc"]
 radius = 0.1
 height = 0.2
@@ -64,6 +60,11 @@ height = 0.2
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oa41v"]
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dpos4"]
+
+[sub_resource type="Resource" id="Resource_arldf"]
+script = ExtResource("13_i5aod")
 
 [sub_resource type="Resource" id="Resource_w1cqy"]
 script = ExtResource("13_i5aod")
@@ -80,7 +81,7 @@ _data = {
 &"top_down": SubResource("Animation_w1cqy")
 }
 
-[node name="PlayerController" type="Node3D" unique_id=88308788 node_paths=PackedStringArray("player_body", "player_actor", "player_state_machine", "phantom_camera_3d", "look_at_target_node_3d", "player_actor_mover")]
+[node name="PlayerController" type="Node3D" unique_id=88308788 node_paths=PackedStringArray("player_body", "player_actor", "player_state_machine", "phantom_camera_3d", "look_at_target_node_3d", "target_anchor_node_3d", "player_actor_mover")]
 script = ExtResource("1_w10rj")
 blackboard = SubResource("Resource_6hnq4")
 player_body = NodePath("PlayerBody")
@@ -89,6 +90,7 @@ player_state_machine = NodePath("ControllerStateMachine")
 player_properties = SubResource("Resource_4eq88")
 phantom_camera_3d = NodePath("PlayerCameraSystem/TargetAnchorNode3D/HeadPosition/SpringArm3D/PhantomCamera3D")
 look_at_target_node_3d = NodePath("PlayerCameraSystem/TargetAnchorNode3D/TargetSpringArm3D/LookAtTargetNode3D")
+target_anchor_node_3d = NodePath("PlayerCameraSystem/TargetAnchorNode3D")
 player_actor_mover = NodePath("PlayerActorMover")
 metadata/_custom_type_script = "uid://c3wdr378gd80j"
 
@@ -109,50 +111,50 @@ shape = SubResource("SphereShape3D_mf8xc")
 [node name="PlayerActor" parent="." unique_id=1535567688 instance=ExtResource("10_ofon0")]
 
 [node name="HandArea3D" parent="PlayerActor" index="6" unique_id=1244572555]
-transform = Transform3D(0.0049601584, -0.0013585843, 0.008576195, 0.0037996667, -0.008541386, -0.0035506594, 0.007807645, 0.0050198506, -0.0037204449, -0.28403103, 0.70173055, 0.077235326)
+transform = Transform3D(0.0032862937, -0.0017460884, 0.0092817815, 0.0037596456, -0.008773537, -0.002981611, 0.008664022, 0.0044694664, -0.0022267736, -0.25892645, 0.6799067, 0.02954473)
 
 [node name="Skeleton3D" parent="PlayerActor/mimico_animationen/Armature" parent_id_path=PackedInt32Array(1535567688, 1020652613, 1582663160) index="0" unique_id=232319626]
-bones/0/position = Vector3(-3.0838757, 0.42551935, -80.72217)
-bones/0/rotation = Quaternion(-0.71168524, 0.038666733, -0.037604906, 0.70042485)
-bones/1/rotation = Quaternion(-0.012980747, 0.0028276783, -0.01218327, 0.99983764)
-bones/2/rotation = Quaternion(-0.034234423, 0.0009557116, -0.0046329363, 0.99940264)
-bones/3/rotation = Quaternion(-0.034071457, 0.0011307235, -0.00447014, 0.9994088)
-bones/4/rotation = Quaternion(-0.010724713, -0.00020996465, -0.0069292476, 0.99991846)
-bones/5/rotation = Quaternion(-0.058028426, -0.025202874, -0.11038034, 0.9918739)
-bones/7/rotation = Quaternion(-0.59671474, -0.39174888, 0.6282705, -0.30941963)
-bones/8/rotation = Quaternion(0.38975644, 0.16183892, 0.048007473, 0.905314)
-bones/9/rotation = Quaternion(0.0023132756, -0.0006421939, 0.07044553, 0.99751276)
-bones/10/rotation = Quaternion(0.016945288, 0.12199524, 0.013499517, 0.9922943)
-bones/11/rotation = Quaternion(-0.056908287, 0.113955356, 0.14780344, 0.9807802)
-bones/12/rotation = Quaternion(0.19412078, 0.03339757, -0.05373214, 0.97893554)
-bones/13/rotation = Quaternion(-0.24551491, -0.011918528, 0.31498584, 0.91671395)
-bones/15/rotation = Quaternion(0.19641188, -0.013857955, 0.065772824, 0.9782149)
-bones/16/rotation = Quaternion(0.31134182, 0.00025080386, 0.012879609, 0.9502107)
-bones/17/rotation = Quaternion(0.19674379, 0.0029101775, 0.026849283, 0.9800829)
-bones/19/rotation = Quaternion(0.5984976, -0.3796817, 0.6249786, 0.32717615)
-bones/20/rotation = Quaternion(0.43062544, 0.009452734, 0.062355965, 0.90032446)
-bones/21/rotation = Quaternion(0.0035985329, 0.0007920339, -0.12537374, 0.9921028)
-bones/22/rotation = Quaternion(-0.010600704, -0.23695993, -0.11819855, 0.9642441)
-bones/23/rotation = Quaternion(0.00096228346, -0.112778805, -0.14398949, 0.98313123)
-bones/24/rotation = Quaternion(0.1436149, -0.05254708, 0.03259974, 0.9876998)
-bones/25/rotation = Quaternion(-0.22084405, 0.027091978, -0.21190785, 0.9516245)
-bones/27/rotation = Quaternion(0.10842806, 0.0061959163, -0.077424645, 0.9910654)
-bones/28/rotation = Quaternion(0.35079336, -0.004362011, -0.037907097, 0.93567526)
-bones/29/rotation = Quaternion(0.25286263, 0.0006345809, -0.07900524, 0.96427095)
-bones/31/rotation = Quaternion(0.06155474, 0.007078987, 0.99684024, -0.04970558)
-bones/32/rotation = Quaternion(-0.10238629, -0.010170178, 0.0075362516, 0.9946642)
-bones/33/rotation = Quaternion(0.49668932, -0.08792892, 0.025993096, 0.8630716)
-bones/34/rotation = Quaternion(0.31281552, -0.003485328, 0.0011510723, 0.9498068)
-bones/36/rotation = Quaternion(-0.085353754, -0.030216485, 0.99482346, 0.046130072)
-bones/37/rotation = Quaternion(-0.08554585, 0.08120484, 0.009818881, 0.992971)
-bones/38/rotation = Quaternion(0.49447867, 0.08278326, -0.036246534, 0.8644791)
-bones/39/rotation = Quaternion(0.3393839, -0.00030116359, -0.0027025808, 0.940644)
+bones/0/position = Vector3(-0.97515666, 0.45961928, -80.70337)
+bones/0/rotation = Quaternion(-0.708513, 0.021389805, -0.022905514, 0.7050015)
+bones/1/rotation = Quaternion(-0.009358542, -0.012764019, -0.003096575, 0.99986994)
+bones/2/rotation = Quaternion(-0.03375522, -0.0024564648, 0.0051489696, 0.9994139)
+bones/3/rotation = Quaternion(-0.033755075, -0.0023745962, 0.005188696, 0.9994139)
+bones/4/rotation = Quaternion(-0.012455982, -0.0027581106, 0.0011519612, 0.999918)
+bones/5/rotation = Quaternion(-0.07737037, -0.06368753, 0.02563894, 0.99463576)
+bones/7/rotation = Quaternion(-0.5981375, -0.40025264, 0.60554016, -0.3396331)
+bones/8/rotation = Quaternion(0.42450488, 0.18238607, 0.063520305, 0.8845881)
+bones/9/rotation = Quaternion(0.0028736088, -0.0006415123, 0.0875137, 0.99615896)
+bones/10/rotation = Quaternion(0.004644189, 0.107976675, 0.018273475, 0.9939747)
+bones/11/rotation = Quaternion(-0.055323537, 0.11440904, 0.1271003, 0.9837151)
+bones/12/rotation = Quaternion(0.19898352, 0.03229884, -0.07452301, 0.9766313)
+bones/13/rotation = Quaternion(-0.2441896, -0.01658123, 0.29712263, 0.92293805)
+bones/15/rotation = Quaternion(0.17446803, -0.0147437155, 0.06450144, 0.9824374)
+bones/16/rotation = Quaternion(0.29195148, 0.00021731314, 0.010948722, 0.95637053)
+bones/17/rotation = Quaternion(0.181059, 0.0027476663, 0.025390172, 0.9831406)
+bones/19/rotation = Quaternion(0.59202284, -0.37221462, 0.6512927, 0.2945898)
+bones/20/rotation = Quaternion(0.3898194, 0.016757673, 0.06962889, 0.9181024)
+bones/21/rotation = Quaternion(0.0037001711, 0.0007916021, -0.12890723, 0.99164945)
+bones/22/rotation = Quaternion(-0.006912038, -0.22535318, -0.11956504, 0.96688807)
+bones/23/rotation = Quaternion(0.00072825706, -0.11257623, -0.14610311, 0.98284286)
+bones/24/rotation = Quaternion(0.14379606, -0.05249102, 0.031288203, 0.9877189)
+bones/25/rotation = Quaternion(-0.22177514, 0.026353525, -0.21392962, 0.9509761)
+bones/27/rotation = Quaternion(0.10594388, 0.006318934, -0.0770666, 0.99136114)
+bones/28/rotation = Quaternion(0.3487905, -0.0043272204, -0.037561644, 0.9364378)
+bones/29/rotation = Quaternion(0.25067246, 0.00063164724, -0.07867266, 0.96486974)
+bones/31/rotation = Quaternion(0.06286717, 0.01660498, 0.99698335, -0.04238328)
+bones/32/rotation = Quaternion(-0.12582861, -0.031094976, -0.0025903375, 0.99156123)
+bones/33/rotation = Quaternion(0.5088416, -0.08661434, 0.029755257, 0.85597485)
+bones/34/rotation = Quaternion(0.32739696, 0.0020558953, 0.004596056, 0.9448735)
+bones/36/rotation = Quaternion(-0.08886083, -0.014308443, 0.9942901, 0.05732691)
+bones/37/rotation = Quaternion(-0.09024025, 0.05515304, -0.0007070439, 0.99439144)
+bones/38/rotation = Quaternion(0.4818279, 0.08885275, -0.023480318, 0.8714332)
+bones/39/rotation = Quaternion(0.34607384, 0.0045727873, -0.0019122686, 0.9381943)
 
 [node name="BoneAttachment3D" parent="PlayerActor/mimico_animationen/Armature/Skeleton3D" index="8" unique_id=1663178290]
-transform = Transform3D(0.9921781, 0.032269217, 0.120588064, -0.11159523, -0.20360845, 0.9726712, 0.055940125, -0.97852, -0.19841477, -2.3122091, -4.8343616, -131.31561)
+transform = Transform3D(0.99956906, -0.020682089, 0.020829607, -0.024252482, -0.18214193, 0.98297274, -0.016535988, -0.9830543, -0.18256506, -1.2309414, -3.790825, -131.40718)
 
 [node name="BoneAttachment3DHand" parent="PlayerActor/mimico_animationen/Armature/Skeleton3D" index="9" unique_id=1906970325]
-transform = Transform3D(0.49601585, -0.13585843, 0.85761946, 0.7807645, 0.5019851, -0.3720445, -0.37996668, 0.85413855, 0.35506594, -28.403103, 7.7235327, -70.17306)
+transform = Transform3D(0.32862937, -0.17460884, 0.92817813, 0.8664022, 0.44694665, -0.22267736, -0.37596458, 0.8773537, 0.29816112, -25.892647, 2.954473, -67.99068)
 
 [node name="LightTarget" type="Node3D" parent="PlayerActor" unique_id=38885408]
 
@@ -220,24 +222,6 @@ draw_pass_1 = SubResource("SphereMesh_8e8q0")
 
 [node name="TargetAnchorNode3D" type="Node3D" parent="PlayerCameraSystem" unique_id=1838338819]
 
-[node name="HeadPosition" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D" unique_id=996517117]
-transform = Transform3D(0.9396926, 0, 0.34202012, 0, 1, 0, -0.34202012, 0, 0.9396926, 0, 4, 0)
-
-[node name="SpringArm3D" type="SpringArm3D" parent="PlayerCameraSystem/TargetAnchorNode3D/HeadPosition" unique_id=1136149354]
-transform = Transform3D(-1, 0, -1.5099579e-07, 0, 0.99999994, 0, 1.509958e-07, 0, -0.99999994, 0, 0, 0)
-collision_mask = 12582913
-shape = SubResource("SphereShape3D_dpos4")
-spring_length = 6.0
-
-[node name="PhantomCamera3D" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D/HeadPosition/SpringArm3D" unique_id=1124404546 node_paths=PackedStringArray("look_at_target")]
-transform = Transform3D(0.99107534, 0.13331677, 7.1953603e-09, 7.450605e-09, -1.1920013e-07, 0.96574503, 0.13332744, -0.99099606, -1.15125765e-07, 0, 0, 0)
-script = ExtResource("12_la4u0")
-priority = 2
-look_at_mode = 2
-look_at_target = NodePath("../../../TargetSpringArm3D/LookAtTargetNode3D")
-tween_resource = SubResource("Resource_arldf")
-metadata/_custom_type_script = "uid://csjccrhj5wnx7"
-
 [node name="TargetSpringArm3D" type="SpringArm3D" parent="PlayerCameraSystem/TargetAnchorNode3D" unique_id=2131670787]
 collision_mask = 0
 spring_length = 20.0
@@ -248,21 +232,41 @@ spring_length = 20.0
 mesh = SubResource("SphereMesh_mf8xc")
 surface_material_override/0 = SubResource("StandardMaterial3D_oa41v")
 
+[node name="HeadPosition" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D" unique_id=996517117]
+transform = Transform3D(0.9396926, 0, 0.34202012, 0, 1, 0, -0.34202012, 0, 0.9396926, 0, 4, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="PlayerCameraSystem/TargetAnchorNode3D/HeadPosition" unique_id=1136149354]
+transform = Transform3D(-1, 0, -1.5099579e-07, 0, 0.99999994, 0, 1.509958e-07, 0, -0.99999994, 0, 0, 0)
+collision_mask = 12582913
+shape = SubResource("SphereShape3D_dpos4")
+spring_length = 6.0
+
+[node name="PhantomCamera3D" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D/HeadPosition/SpringArm3D" unique_id=1124404546 node_paths=PackedStringArray("look_at_target")]
+transform = Transform3D(0, -0.99992305, 0, 0, 0, 0.96831197, -1, 0, 0, 0, 0, 0)
+script = ExtResource("12_la4u0")
+priority = 2
+look_at_mode = 2
+look_at_target = NodePath("../../../TargetSpringArm3D/LookAtTargetNode3D")
+tween_resource = SubResource("Resource_arldf")
+align_transform_with_view = Callable()
+align_rotation_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
 [node name="TopDownAnchorNode3D" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D" unique_id=1243421408]
 
-[node name="Node3D" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D/TopDownAnchorNode3D" unique_id=1879053465]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+[node name="SpringArm3D" type="SpringArm3D" parent="PlayerCameraSystem/TargetAnchorNode3D/TopDownAnchorNode3D" unique_id=1354368067]
+transform = Transform3D(-1, -8.215053e-08, 2.990035e-08, 0, 0.34202012, 0.93969256, -8.742278e-08, 0.93969256, -0.34202012, 0, 0, 0)
+spring_length = 20.0
 
-[node name="SpringArm3D" type="SpringArm3D" parent="PlayerCameraSystem/TargetAnchorNode3D/TopDownAnchorNode3D/Node3D" unique_id=1354368067]
-transform = Transform3D(-1, -8.609462e-08, 1.518081e-08, 0, 0.17364822, 0.9848077, -8.742278e-08, 0.9848077, -0.17364822, 0, 0, 0)
-spring_length = 12.0
-
-[node name="PhantomCamera3D" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D/TopDownAnchorNode3D/Node3D/SpringArm3D" unique_id=282115071 node_paths=PackedStringArray("look_at_target")]
-transform = Transform3D(-1, 0, 0, 0, 1.0000178, 0, 0, 0, -1.0000349, 0, 0, 0)
+[node name="PhantomCamera3D" type="Node3D" parent="PlayerCameraSystem/TargetAnchorNode3D/TopDownAnchorNode3D/SpringArm3D" unique_id=282115071 node_paths=PackedStringArray("look_at_target")]
+transform = Transform3D(-1.0020324, -3.886764e-07, 7.106583e-15, -3.6601514e-07, 0.9395987, -0.3420758, 1.3321863e-07, -0.341986, -0.9398455, 0, 0, 0)
 script = ExtResource("12_la4u0")
 look_at_mode = 2
-look_at_target = NodePath("../../../../../../PlayerActor")
+look_at_target = NodePath("../../../../../PlayerActor")
 tween_resource = SubResource("Resource_w1cqy")
+look_at_offset = Vector3(0, 10, 0)
+align_transform_with_view = Callable()
+align_rotation_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="ControllerStateMachine" type="Node" parent="." unique_id=1662482892 node_paths=PackedStringArray("initial_state")]
@@ -278,9 +282,20 @@ target_anchor_node_3d = NodePath("../../PlayerCameraSystem/TargetAnchorNode3D")
 spring_arm_3d = NodePath("../../PlayerCameraSystem/TargetAnchorNode3D/HeadPosition/SpringArm3D")
 dash_timer = NodePath("../../DashTimer")
 
-[node name="PlayerIdleControlled" type="Node" parent="ControllerStateMachine" unique_id=224958845 node_paths=PackedStringArray("target_anchor_node_3d")]
+[node name="PlayerIdleControlled" type="Node" parent="ControllerStateMachine" unique_id=224958845 node_paths=PackedStringArray("player_controller", "target_anchor_node_3d")]
 script = ExtResource("10_fcair")
+player_controller = NodePath("../..")
 target_anchor_node_3d = NodePath("../../PlayerCameraSystem/TargetAnchorNode3D")
+
+[node name="PlayerInputTopDownState" type="Node" parent="ControllerStateMachine" unique_id=1130169935 node_paths=PackedStringArray("player_controller", "player_body", "target_anchor_node_3d", "spring_arm_3d", "phantom_camera_3d", "dash_timer")]
+script = ExtResource("13_awkps")
+player_controller = NodePath("../..")
+player_body = NodePath("../../PlayerBody")
+target_anchor_node_3d = NodePath("../../PlayerCameraSystem/TargetAnchorNode3D")
+spring_arm_3d = NodePath("../../PlayerCameraSystem/TargetAnchorNode3D/TopDownAnchorNode3D/SpringArm3D")
+phantom_camera_3d = NodePath("../../PlayerCameraSystem/TargetAnchorNode3D/TopDownAnchorNode3D/SpringArm3D/PhantomCamera3D")
+dash_timer = NodePath("../../DashTimer")
+metadata/_custom_type_script = "uid://2y37yx57ooc4"
 
 [node name="PlayerActorMover" type="Node" parent="." unique_id=541342597 node_paths=PackedStringArray("player_controller")]
 script = ExtResource("11_meoet")
