@@ -23,10 +23,11 @@ background_energy_multiplier = 0.35
 sky = SubResource("Sky_ow5a4")
 tonemap_mode = 2
 
-[node name="TestScene" type="Node3D" unique_id=805365231 node_paths=PackedStringArray("player_controller", "input_manager")]
+[node name="TestScene" type="Node3D" unique_id=805365231 node_paths=PackedStringArray("player_controller", "input_manager", "start_marker_3d")]
 script = ExtResource("1_doi4a")
 player_controller = NodePath("Spieler und welt/PlayerController")
 input_manager = NodePath("Spieler und welt/InputManager")
+start_marker_3d = NodePath("StartMarker3D")
 
 [node name="Spieler und welt" type="Node3D" parent="." unique_id=591290303]
 
@@ -40,7 +41,7 @@ light_energy = 0.1
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="Spieler und welt" unique_id=1019278167]
-transform = Transform3D(0.9910721, 0.133327, 7.450581e-09, 7.450581e-09, -1.1920929e-07, 1.0000001, 0.133327, -0.9910722, -1.1920929e-07, 0, 4.1759114, 0)
+transform = Transform3D(0, -1, 0, 0, 0, 1, -1, 0, 0, 0, 4, 0)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Spieler und welt/Camera3D" unique_id=663753918]
@@ -50,13 +51,14 @@ script = ExtResource("2_doi4a")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PlayerController" parent="Spieler und welt" unique_id=88308788 instance=ExtResource("3_vrddd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1759113, 0)
 
 [node name="InputManager" parent="Spieler und welt" unique_id=799682356 instance=ExtResource("4_ork3v")]
 enable_lookup_direction = true
 
 [node name="CameraSystem" parent="Spieler und welt" unique_id=798910101 node_paths=PackedStringArray("camera_3d") instance=ExtResource("5_a0rq3")]
 camera_3d = NodePath("../Camera3D")
+
+[node name="StartMarker3D" type="Marker3D" parent="." unique_id=1608510968]
 
 [node name="zuhause" parent="." unique_id=1173817261 instance=ExtResource("7_vrddd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 3.360836, 16)
