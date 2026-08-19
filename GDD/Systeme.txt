@@ -1,6 +1,6 @@
 SpielSysteme:
-	- movementsystem 
-	- interaktion
+	- movementsystem ✔
+	- interaktion ✔
 	- inventar
 	- crafting
  	- bausystem
