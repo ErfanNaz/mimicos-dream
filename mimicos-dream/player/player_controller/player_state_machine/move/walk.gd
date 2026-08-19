@@ -21,16 +21,5 @@ func update(_delta: float) -> void:
 	if !player_body.is_on_floor():
 		transition("InAir")
 		return
-	if Input.is_action_just_pressed("RB"):
-		crossfade_run_sprint()
-
-func crossfade_run_sprint() -> void:
-	if is_fading:
-		return
-	is_fading = true
-	player_actor.set_animation("run")
-	await get_tree().create_timer(1).timeout
-	is_fading = false
-	if !is_state_active:
-		return
-	player_actor.set_animation("walk")
+	if player_controller.blackboard.is_dashing:
+		transition("Move/Run")

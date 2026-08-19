@@ -48,6 +48,7 @@ func exit() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	dash_timer.timeout.disconnect(self._on_dash_finished)
 	phantom_camera_3d.set_priority(0)
+	_on_dash_finished()
 
 func physics_update(delta: float) -> void:
 	process_tick(delta, controller_input)
@@ -114,6 +115,7 @@ func start_dash() -> void:
 		return
 	is_dashing = true
 	dash_timer.start()
+	player_controller.blackboard.is_dashing = true
 
 func get_move_direction(input: Vector2) -> Vector3:
 	var camera_forward := target_anchor_node_3d.global_transform.basis.z
@@ -135,3 +137,4 @@ func _on_dash_finished() -> void:
 	if !is_dashing:
 		return
 	is_dashing = false
+	player_controller.blackboard.is_dashing = false

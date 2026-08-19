@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cn2yyhknolne3" path="res://assets/Testobjecte/Welten/hauptwelt/zuhause.glb" id="7_vrddd"]
 [ext_resource type="PackedScene" uid="uid://do4r4nyvx2p52" path="res://assets/Testobjecte/Welten/Berg.glb" id="8_ork3v"]
 [ext_resource type="PackedScene" uid="uid://crgc1bm78k1l4" path="res://assets/Testobjecte/Welten/hauptwelt/Testzuhause.glb" id="9_a0rq3"]
+[ext_resource type="PackedScene" uid="uid://drrdvbflsvfca" path="res://assets/Testobjecte/Objekte/behälter/truhe.fbx" id="10_g451t"]
+[ext_resource type="PackedScene" uid="uid://cn1n3kfjpmwht" path="res://assets/Testobjecte/Objekte/schalter/schalter02.fbx" id="11_ioiol"]
+[ext_resource type="PackedScene" uid="uid://dsa25ajkyujjl" path="res://entities/trigger_system/trigger_system.tscn" id="12_mj4xq"]
+[ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="13_otg31"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
 panorama = ExtResource("1_wgdak")
@@ -22,6 +26,11 @@ background_mode = 2
 background_energy_multiplier = 0.35
 sky = SubResource("Sky_ow5a4")
 tonemap_mode = 2
+
+[sub_resource type="Resource" id="Resource_ioiol"]
+script = ExtResource("13_otg31")
+action_button = 0
+metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
 [node name="TestScene" type="Node3D" unique_id=805365231 node_paths=PackedStringArray("player_controller", "input_manager", "start_marker_3d")]
 script = ExtResource("1_doi4a")
@@ -71,3 +80,16 @@ transform = Transform3D(-8.120001, 0, 3.33786e-07, 0, 8.12, 0, -3.33786e-07, 0, 
 
 [node name="Testzuhause" parent="." unique_id=1109864024 instance=ExtResource("9_a0rq3")]
 transform = Transform3D(0.9659258, 0, 0.25881898, 0, 1, 0, -0.25881898, 0, 0.9659258, -259.3383, -31.278965, 197.02571)
+
+[node name="truhe" parent="." unique_id=673035002 instance=ExtResource("10_g451t")]
+transform = Transform3D(-0.6720191, 0, 1.8837172, 0, 2, 0, -1.8837172, 0, -0.6720191, -266.47086, -23.621365, 205.24883)
+
+[node name="schalter02" parent="truhe" unique_id=510915357 instance=ExtResource("11_ioiol")]
+transform = Transform3D(-0.011211529, 0.012212083, -0.49972507, -0.4988854, 0.031151874, 0.011953968, 0.031426713, 0.4988792, 0.0114863515, -0.003490448, 0.8640337, 0.46669006)
+
+[node name="TriggerSystem" parent="truhe" unique_id=446900515 node_paths=PackedStringArray("target_element", "trigger_element") instance=ExtResource("12_mj4xq")]
+transform = Transform3D(-0.16800478, 0, -0.4709293, 0, 0.5, 0, 0.4709293, 0, -0.16800478, 0.2766838, -0.0024175644, 0.6065979)
+visible = false
+target_element = NodePath("..")
+trigger_element = NodePath("../schalter02")
+interact_data = SubResource("Resource_ioiol")

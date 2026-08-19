@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StateBillboard" format=3 uid="uid://ciw6vwl83lbqy"]
 
-[ext_resource type="Script" uid="uid://vi148nbw2qvd" path="res://entities/player_controller/player_state_machine/state_billboard.gd" id="1_j0kyp"]
+[ext_resource type="Script" uid="uid://vi148nbw2qvd" path="res://player/player_controller/player_state_machine/state_blackboard.gd" id="1_j0kyp"]
 
 [resource]
 script = ExtResource("1_j0kyp")

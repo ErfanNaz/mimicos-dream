@@ -48,6 +48,7 @@ func exit() -> void:
 	set_process_input(false)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	dash_timer.timeout.disconnect(self._on_dash_finished)
+	_on_dash_finished()
 
 func physics_update(delta: float) -> void:
 	process_tick(delta, controller_input)
@@ -118,6 +119,8 @@ func start_dash() -> void:
 	if is_dashing:
 		return
 	is_dashing = true
+	player_controller.blackboard.is_dashing = true
+	ApplicationManager.warn(player_controller.blackboard)
 	dash_timer.start()
 
 func get_move_direction(input: Vector2) -> Vector3:
@@ -178,3 +181,4 @@ func _on_dash_finished() -> void:
 	if !is_dashing:
 		return
 	is_dashing = false
+	player_controller.blackboard.is_dashing = false
