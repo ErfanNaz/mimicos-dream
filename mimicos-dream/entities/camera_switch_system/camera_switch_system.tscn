@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://coda3ip52ori5"]
+
+[ext_resource type="Script" uid="uid://ckf4nn62tpxkl" path="res://entities/camera_switch_system/camera_switch_system.gd" id="1_r5qb0"]
+[ext_resource type="PackedScene" uid="uid://bgtpbxtq808xf" path="res://entities/trigger_system/trigger_switch/trigger_switch.tscn" id="2_lqg6g"]
+
+[node name="CameraSwitchSystem" type="Node3D" unique_id=2042903880 node_paths=PackedStringArray("trigger_switch")]
+script = ExtResource("1_r5qb0")
+trigger_switch = NodePath("TriggerSwitch")
+
+[node name="TriggerSwitch" parent="." unique_id=181858922 instance=ExtResource("2_lqg6g")]

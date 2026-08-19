@@ -17,6 +17,8 @@ var initial_anchor_transform: Transform3D
 func _ready() -> void:
 	GameManager.camera_system = self
 	initial_anchor_transform = anchor_node.transform
+	set_process(false)
+
 
 func _process(_delta: float) -> void:
 	if !camera_position_target:

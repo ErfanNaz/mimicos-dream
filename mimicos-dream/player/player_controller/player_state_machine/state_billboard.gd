@@ -1,6 +1,12 @@
 class_name StateBlackboard extends Resource
 
+enum PlayerControllerState {
+	idle,
+	input_third_person,
+	input_top_down
+}
 
+@export var controller_state: PlayerControllerState = PlayerControllerState.idle
 @export var velocity: Vector3 = Vector3.ZERO
 @export var velocity_y: float = 0.0
 @export var is_on_floor: bool = true
