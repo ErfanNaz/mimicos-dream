@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cn2yyhknolne3" path="res://assets/Testobjecte/Welten/hauptwelt/zuhause.glb" id="7_vrddd"]
 [ext_resource type="PackedScene" uid="uid://do4r4nyvx2p52" path="res://assets/Testobjecte/Welten/Berg.glb" id="8_ork3v"]
 [ext_resource type="PackedScene" uid="uid://crgc1bm78k1l4" path="res://assets/Testobjecte/Welten/hauptwelt/Testzuhause.glb" id="9_a0rq3"]
+[ext_resource type="PackedScene" uid="uid://c1hvryq1gn344" path="res://assets/Testobjecte/Welten/hauptwelt/TestWelt.glb" id="10_g451t"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
 panorama = ExtResource("1_wgdak")
@@ -30,6 +31,7 @@ input_manager = NodePath("Spieler und welt/InputManager")
 start_marker_3d = NodePath("StartMarker3D")
 
 [node name="Spieler und welt" type="Node3D" parent="." unique_id=591290303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.8, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Spieler und welt" unique_id=1758032337]
 environment = SubResource("Environment_ioiol")
@@ -41,7 +43,7 @@ light_energy = 0.1
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="Spieler und welt" unique_id=1019278167]
-transform = Transform3D(0, -1, 0, 0, 0, 1, -1, 0, 0, 0, 4, 0)
+transform = Transform3D(0, -1, 0, 0, 0, 1, -1, 0, 0, 0, 11.8, 0)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Spieler und welt/Camera3D" unique_id=663753918]
@@ -59,15 +61,42 @@ enable_lookup_direction = true
 camera_3d = NodePath("../Camera3D")
 
 [node name="StartMarker3D" type="Marker3D" parent="." unique_id=1608510968]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.8, 0)
 
-[node name="zuhause" parent="." unique_id=1173817261 instance=ExtResource("7_vrddd")]
+[node name="Map" type="Node3D" parent="." unique_id=221626681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 755)
+visible = false
+
+[node name="zuhause" parent="Map" unique_id=1173817261 instance=ExtResource("7_vrddd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 3.360836, 16)
 
-[node name="Berg2" parent="." unique_id=1326702398 instance=ExtResource("8_ork3v")]
+[node name="Berg2" parent="Map" unique_id=1326702398 instance=ExtResource("8_ork3v")]
 transform = Transform3D(-2.8999996, 0, -5.0229473, 0, 5.7999997, 0, 5.0229473, 0, -2.8999996, 244, -123, 601)
 
-[node name="Berg3" parent="." unique_id=1854376144 instance=ExtResource("8_ork3v")]
+[node name="Berg3" parent="Map" unique_id=1854376144 instance=ExtResource("8_ork3v")]
 transform = Transform3D(-8.120001, 0, 3.33786e-07, 0, 8.12, 0, -3.33786e-07, 0, -8.120001, -645, -123, 1188)
 
-[node name="Testzuhause" parent="." unique_id=1109864024 instance=ExtResource("9_a0rq3")]
+[node name="Testzuhause" parent="Map" unique_id=1109864024 instance=ExtResource("9_a0rq3")]
 transform = Transform3D(0.9659258, 0, 0.25881898, 0, 1, 0, -0.25881898, 0, 0.9659258, -259.3383, -31.278965, 197.02571)
+
+[node name="TestWelt" parent="." unique_id=1764811160 instance=ExtResource("10_g451t")]
+
+[node name="Light" type="Node3D" parent="." unique_id=1645484732]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light" unique_id=744470961]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 8)
+light_color = Color(0.7320883, 0.41621307, 1.92523e-07, 1)
+light_energy = 3.196
+omni_range = 15.66
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Light" unique_id=127403893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, -5)
+light_color = Color(0.7320883, 0.41621307, 1.92523e-07, 1)
+light_energy = 3.196
+omni_range = 15.66
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Light" unique_id=1666797446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, -13)
+light_color = Color(0.7320883, 0.41621307, 1.92523e-07, 1)
+light_energy = 3.196
+omni_range = 15.66
