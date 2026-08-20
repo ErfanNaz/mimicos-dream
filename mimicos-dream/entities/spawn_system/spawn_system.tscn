@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://d2wtn3lcj75ii"]
+
+[ext_resource type="Script" uid="uid://d3u51yqf72yci" path="res://entities/spawn_system/spawn_system.gd" id="1_2tutg"]
+[ext_resource type="PackedScene" uid="uid://bgtpbxtq808xf" path="res://entities/trigger_system/trigger_switch/trigger_switch.tscn" id="2_04uur"]
+
+[sub_resource type="Curve3D" id="Curve3D_2lqsy"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.9635248, -0.3919238, -0.1086905),
+"tilts": PackedFloat32Array(0)
+}
+point_count = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_mf8xc"]
+
+[sub_resource type="Curve3D" id="Curve3D_pjoha"]
+
+[sub_resource type="Animation" id="Animation_04uur"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpawnStartPath3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpawnVelocityPath3D/PathFollow3D2:progress_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_pjoha"]
+resource_name = "idle"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpawnStartPath3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpawnVelocityPath3D/PathFollow3D2:progress_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tf1qo"]
+_data = {
+&"RESET": SubResource("Animation_04uur"),
+&"idle": SubResource("Animation_pjoha")
+}
+
+[node name="SpawnSystem" type="Node3D" unique_id=1639703413 node_paths=PackedStringArray("multiplayer_spawner", "trigger_switch", "spawn_timer", "animation_player", "spawn_marker_3d", "target_marker_3d", "spawn_start_path_3d", "spawn_velocity_path_3d")]
+script = ExtResource("1_2tutg")
+multiplayer_spawner = NodePath("MultiplayerSpawner")
+trigger_switch = NodePath("TriggerSwitch")
+spawn_timer = NodePath("SpawnTimer")
+animation_player = NodePath("AnimationPlayer")
+spawn_marker_3d = NodePath("SpawnStartPath3D/PathFollow3D/SpawnMarker3D")
+target_marker_3d = NodePath("SpawnVelocityPath3D/PathFollow3D2/TargetMarker3D")
+spawn_start_path_3d = NodePath("SpawnStartPath3D")
+spawn_velocity_path_3d = NodePath("SpawnVelocityPath3D")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=192531598]
+spawn_path = NodePath("../SpawnRootNode3D")
+
+[node name="SpawnRootNode3D" type="Node3D" parent="." unique_id=1591064745]
+
+[node name="TriggerSwitch" parent="." unique_id=181858922 instance=ExtResource("2_04uur")]
+
+[node name="SpawnStartPath3D" type="Path3D" parent="." unique_id=2099262472]
+curve = SubResource("Curve3D_2lqsy")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="SpawnStartPath3D" unique_id=333350520]
+
+[node name="SpawnMarker3D" type="Marker3D" parent="SpawnStartPath3D/PathFollow3D" unique_id=582720362]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpawnStartPath3D/PathFollow3D/SpawnMarker3D" unique_id=1938113839]
+mesh = SubResource("SphereMesh_mf8xc")
+
+[node name="SpawnVelocityPath3D" type="Path3D" parent="." unique_id=1760747368]
+curve = SubResource("Curve3D_pjoha")
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="SpawnVelocityPath3D" unique_id=318718274]
+
+[node name="TargetMarker3D" type="Marker3D" parent="SpawnVelocityPath3D/PathFollow3D2" unique_id=927559374]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1776785321]
+libraries/ = SubResource("AnimationLibrary_tf1qo")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1177783262]

@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cnmmol2wkwuql"]
+
+[ext_resource type="Script" uid="uid://dlg2at38xikr7" path="res://entities/portal/portal.gd" id="1_tqc7l"]
+[ext_resource type="Shader" uid="uid://baxiov5yoqv2t" path="res://shaders/frosted_glass.gdshader" id="2_uqfsl"]
+[ext_resource type="Script" uid="uid://dwjaj6b1w32fr" path="res://common/interaction_system/interactable/interaction.gd" id="3_tqc7l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8t8qm"]
+render_priority = 0
+shader = ExtResource("2_uqfsl")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/color_coat = 0.0
+shader_parameter/oilyness = 0.1
+shader_parameter/rim_amount = 0.8
+shader_parameter/rim_shape = 2.5
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/refraction_strength = 0.5
+shader_parameter/blur_amount = 4.0
+shader_parameter/roughness_affect = 0.0
+shader_parameter/roughness = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mf8xc"]
+material = SubResource("ShaderMaterial_8t8qm")
+top_radius = 2.2
+bottom_radius = 2.2
+height = 8.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_oa41v"]
+top_radius = 2.2
+bottom_radius = 2.6
+height = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7ntmc"]
+top_radius = 2.359375
+bottom_radius = 2.359375
+height = 0.54589844
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jx2g"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mf8xc"]
+height = 7.8151855
+radius = 1.9624023
+
+[node name="Portal" type="Node3D" unique_id=1282310728 node_paths=PackedStringArray("spawn_marker_3d", "interaction", "mesh_instance_3d")]
+script = ExtResource("1_tqc7l")
+spawn_marker_3d = NodePath("SpawnMarker3D")
+interaction = NodePath("Interaction")
+mesh_instance_3d = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=975423419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("CylinderMesh_mf8xc")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1636426695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("CylinderMesh_oa41v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1003454990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.911298, 0)
+mesh = SubResource("CylinderMesh_7ntmc")
+surface_material_override/0 = SubResource("StandardMaterial3D_0jx2g")
+
+[node name="SpawnMarker3D" type="Marker3D" parent="." unique_id=1206285621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.476418, 0)
+
+[node name="Interaction" type="Area3D" parent="." unique_id=491651292]
+script = ExtResource("3_tqc7l")
+metadata/_custom_type_script = "uid://dwjaj6b1w32fr"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction" unique_id=2055001089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9074447, 0)
+shape = SubResource("CylinderShape3D_mf8xc")

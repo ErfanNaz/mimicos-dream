@@ -14,13 +14,19 @@
 [ext_resource type="Curve3D" uid="uid://dqnfwvsqtrssj" path="res://entities/highlight_path_system/curves/path_t_01.tres" id="11_pgpfx"]
 [ext_resource type="Curve3D" uid="uid://daagpxovqr7ho" path="res://entities/highlight_path_system/curves/path_p_01.tres" id="12_4228d"]
 [ext_resource type="PackedScene" uid="uid://dsa25ajkyujjl" path="res://entities/trigger_system/trigger_system.tscn" id="13_8rg8i"]
+[ext_resource type="PackedScene" uid="uid://d2wtn3lcj75ii" path="res://entities/spawn_system/spawn_system.tscn" id="15_4228d"]
+[ext_resource type="PackedScene" uid="uid://cfjsq115vsidg" path="res://entities/ball/ball.tscn" id="16_ru6md"]
+[ext_resource type="PackedScene" uid="uid://do4r4nyvx2p52" path="res://assets/Testobjecte/Welten/Berg.glb" id="17_msigb"]
+[ext_resource type="PackedScene" uid="uid://cnmmol2wkwuql" path="res://entities/portal/portal.tscn" id="18_oendh"]
+[ext_resource type="PackedScene" uid="uid://crgc1bm78k1l4" path="res://assets/Testobjecte/Welten/hauptwelt/Testzuhause.glb" id="18_tfnqt"]
+[ext_resource type="PackedScene" uid="uid://c1hvryq1gn344" path="res://assets/Testobjecte/Welten/hauptwelt/TestWelt.glb" id="19_hdod1"]
 
 [sub_resource type="Resource" id="Resource_4iqtb"]
 script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_pgpfx"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_msigb"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Resource" id="Resource_yr2eo"]
@@ -40,14 +46,14 @@ script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4228d"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_tfnqt"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Resource" id="Resource_4hvco"]
 script = ExtResource("2_yr2eo")
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ru6md"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hdod1"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Curve3D" id="Curve3D_ru6md"]
@@ -64,9 +70,58 @@ _data = {
 }
 point_count = 4
 
-[node name="Map01" type="Node3D" unique_id=1725308146 node_paths=PackedStringArray("start_marker_3d")]
+[sub_resource type="Curve3D" id="Curve3D_oendh"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -34.82186, 24.221838, 27.959595, 0, 0, 0, 0, 0, 0, -35.63826, 24.783274, 27.332153),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_msigb"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -33.3834, 25.38379, 24.055702, 0, 0, 0, 0, 0, 0, -31.107643, 25.25977, 26.629288),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_6qowt"]
+script = ExtResource("2_yr2eo")
+action_button = 0
+metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
+
+[sub_resource type="Curve3D" id="Curve3D_tfnqt"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -124.5686, 27.066956, -5.2169647, 0, 0, 0, 0, 0, 0, -125.848145, 28.157074, 5.4347076),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_hdod1"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -132.38647, 27.797668, -2.3479462, 0, 0, 0, 0, 0, 0, -132.71411, 27.949692, 0.11468506),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_6qowt"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.093872, 2.9760742, -0.63892365, 0, 0, 0, 0, 0, 0, -3.3214111, -3.506775, 36.829353, 0, 0, 0, 0, 0, 0, -62.020264, -1.7820435, 46.20278, 0, 0, 0, 0, 0, 0, -94.78528, 0.3972168, 32.534424, 0, 0, 0, 0, 0, 0, -151.84204, 16.52597, 49.812904, 0, 0, 0, 0, 0, 0, -184.22156, 21.61937, 37.91848, 0, 0, 0, 0, 0, 0, -242.95801, 30.95375, 46.90815, 0, 0, 0, 0, 0, 0, -244.79846, 29.545486, 54.113457),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="Curve3D" id="Curve3D_gsad5"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -11.678955, -8.085632, 32.749947, 0, 0, 0, 0, 0, 0, -40.53528, -3.2625885, 44.691475, 0, 0, 0, 0, 0, 0, -181.16077, 21.504883, 39.496956, 0, 0, 0, 0, 0, 0, -249.67883, 30.91504, 49.900505, 0, 0, 0, 0, 0, 0, -258.57385, 28.246262, 58.02555),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="Map01" type="Node3D" unique_id=1725308146 node_paths=PackedStringArray("start_marker_3d", "portal", "portal_2")]
 script = ExtResource("1_pcy5s")
 start_marker_3d = NodePath("StartMarker3D")
+portal = NodePath("Portal")
+portal_2 = NodePath("Portal2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=834964381]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -77,8 +132,6 @@ metadata/_edit_lock_ = true
 [node name="zuhause" parent="." unique_id=397786495 instance=ExtResource("10_5ofjs")]
 transform = Transform3D(-0.93483865, 0, -0.35507283, 0, 1, 0, 0.35507283, 0, -0.93483865, -192.47913, 29.824394, 163.61868)
 metadata/_edit_lock_ = true
-
-[node name="StartMarker3D" type="Marker3D" parent="." unique_id=193951223]
 
 [node name="triggers" type="Node3D" parent="." unique_id=1881714884]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.6577603, 0, -0.5978474)
@@ -101,7 +154,7 @@ visible = false
 
 [node name="Sprite3D" parent="triggers/TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.4, 0, 6.039832e-08, 0, 0.4, 0, -6.039832e-08, 0, -0.4, -4.612211, 2.5914545, 2.1660986)
-texture = SubResource("ViewportTexture_pgpfx")
+texture = SubResource("ViewportTexture_msigb")
 
 [node name="objekte" type="Node3D" parent="." unique_id=288404009]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.6577603, 0, -0.5978474)
@@ -154,7 +207,7 @@ visible = false
 animation_player = NodePath("../../schalter01/AnimationPlayer")
 
 [node name="Sprite3D" parent="HighlightPathSystem/TriggerSwitch" index="3" unique_id=226529221]
-texture = SubResource("ViewportTexture_4228d")
+texture = SubResource("ViewportTexture_tfnqt")
 
 [node name="TPath3D" type="Path3D" parent="HighlightPathSystem" unique_id=16752374]
 curve = ExtResource("11_pgpfx")
@@ -211,7 +264,7 @@ visible = false
 
 [node name="Sprite3D" parent="TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.24545783, 0, 0.54749477, 0, 0.6, 0, -0.54749477, 0, -0.24545783, -0.67036444, 3.9025612, 0.2469357)
-texture = SubResource("ViewportTexture_ru6md")
+texture = SubResource("ViewportTexture_hdod1")
 
 [node name="HighlightPathSystem2" parent="." unique_id=126581828 node_paths=PackedStringArray("camera_p_path_follow_3d", "camera_t_path_follow_3d") instance=ExtResource("7_e1bmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.210854, -4.7683716e-07, 76.58662)
@@ -226,6 +279,111 @@ curve = SubResource("Curve3D_ru6md")
 
 [node name="TargetPath3D" type="Path3D" parent="HighlightPathSystem2" unique_id=123723981]
 curve = SubResource("Curve3D_lwxhp")
+
+[node name="SpawnSystem" parent="." unique_id=1639703413 node_paths=PackedStringArray("spawn_p_path_follow_3d", "spawn_t_path_follow_3d") instance=ExtResource("15_4228d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.4933, 4.7683716e-07, 100.997375)
+spawn_p_path_follow_3d = NodePath("Path3D2")
+spawn_t_path_follow_3d = NodePath("Path3D")
+spawn_scene = ExtResource("16_ru6md")
+toggle_back_timer = 12
+
+[node name="Path3D2" type="Path3D" parent="SpawnSystem" unique_id=1399010731]
+curve = SubResource("Curve3D_oendh")
+
+[node name="Path3D" type="Path3D" parent="SpawnSystem" unique_id=960910374]
+curve = SubResource("Curve3D_msigb")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=58096546]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1091.5413, 222.37672, 140.11911)
+
+[node name="Map" type="Node3D" parent="Node3D" unique_id=907569478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 755)
+visible = false
+
+[node name="zuhause" parent="Node3D/Map" unique_id=327867254 instance=ExtResource("10_5ofjs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 3.360836, 16)
+
+[node name="Berg2" parent="Node3D/Map" unique_id=969536092 instance=ExtResource("17_msigb")]
+transform = Transform3D(-2.8999996, 0, -5.0229473, 0, 5.7999997, 0, 5.0229473, 0, -2.8999996, 244, -123, 601)
+
+[node name="Berg3" parent="Node3D/Map" unique_id=1303337404 instance=ExtResource("17_msigb")]
+transform = Transform3D(-8.120001, 0, 3.33786e-07, 0, 8.12, 0, -3.33786e-07, 0, -8.120001, -645, -123, 1188)
+
+[node name="Testzuhause" parent="Node3D/Map" unique_id=804472575 instance=ExtResource("18_tfnqt")]
+transform = Transform3D(0.9659258, 0, 0.25881898, 0, 1, 0, -0.25881898, 0, 0.9659258, -259.3383, -31.278965, 197.02571)
+
+[node name="TestWelt" parent="Node3D" unique_id=17612061 instance=ExtResource("19_hdod1")]
+
+[node name="truhe" parent="Node3D" unique_id=673035002 instance=ExtResource("4_hrjdk")]
+transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -10.320292, 7.8226776, 13.765212)
+
+[node name="schalter02" parent="Node3D/truhe" unique_id=1809915001 instance=ExtResource("4_yr2eo")]
+transform = Transform3D(0.49999997, 0, 0, 0, -2.1855696e-08, -0.49999997, 0, 0.50000006, -2.1855692e-08, 0, 0.8505721, 0.4137535)
+
+[node name="TriggerSystem" parent="Node3D/truhe" unique_id=950602479 node_paths=PackedStringArray("target_element", "trigger_element") instance=ExtResource("13_8rg8i")]
+transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, 0.24910209, 0, 0.6119845)
+visible = false
+target_element = NodePath("..")
+trigger_element = NodePath("../schalter02")
+interact_data = SubResource("Resource_6qowt")
+
+[node name="Light" type="Node3D" parent="Node3D" unique_id=246597752]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D/Light" unique_id=471615483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 8)
+light_color = Color(0.7320883, 0.41621307, 1.92523e-07, 1)
+light_energy = 3.196
+omni_range = 15.66
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Node3D/Light" unique_id=433813383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, -5)
+light_color = Color(0.7320883, 0.41621307, 1.92523e-07, 1)
+light_energy = 3.196
+omni_range = 15.66
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Node3D/Light" unique_id=1431278443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, -13)
+light_color = Color(0.7320883, 0.41621307, 1.92523e-07, 1)
+light_energy = 3.196
+omni_range = 15.66
+
+[node name="Portal2" parent="." unique_id=1672649276 node_paths=PackedStringArray("connected_portal") instance=ExtResource("18_oendh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1341.7692, 203.28627, 84.11987)
+connected_portal = NodePath("../Portal")
+
+[node name="Portal" parent="." unique_id=1282310728 node_paths=PackedStringArray("connected_portal") instance=ExtResource("18_oendh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9389, 9.536743e-07, 9.801182)
+connected_portal = NodePath("../Portal2")
+
+[node name="StartMarker3D" type="Marker3D" parent="." unique_id=193951223]
+
+[node name="SpawnSystem2" parent="." unique_id=259245714 node_paths=PackedStringArray("spawn_p_path_follow_3d", "spawn_t_path_follow_3d") instance=ExtResource("15_4228d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1312.0076, 195.25793, 136.93556)
+spawn_p_path_follow_3d = NodePath("pPath3D")
+spawn_t_path_follow_3d = NodePath("TPath3D")
+spawn_velocity_multiplayer = 40.0
+amount_per_second = 4
+spawn_scene = ExtResource("16_ru6md")
+toggle_back_timer = 20
+
+[node name="TPath3D" type="Path3D" parent="SpawnSystem2" unique_id=1036105995]
+curve = SubResource("Curve3D_tfnqt")
+
+[node name="pPath3D" type="Path3D" parent="SpawnSystem2" unique_id=1027501863]
+curve = SubResource("Curve3D_hdod1")
+
+[node name="HighlightPathSystem3" parent="." unique_id=793854255 node_paths=PackedStringArray("camera_p_path_follow_3d", "camera_t_path_follow_3d") instance=ExtResource("7_e1bmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1341.5231, 203.29817, 95.22521)
+camera_p_path_follow_3d = NodePath("PPath3D")
+camera_t_path_follow_3d = NodePath("TPath3D")
+playback_back_timer = 10
+one_shot = true
+
+[node name="PPath3D" type="Path3D" parent="HighlightPathSystem3" unique_id=367455997]
+curve = SubResource("Curve3D_6qowt")
+
+[node name="TPath3D" type="Path3D" parent="HighlightPathSystem3" unique_id=2130950685]
+curve = SubResource("Curve3D_gsad5")
 
 [editable path="triggers/TextSystem"]
 [editable path="HighlightPathSystem"]

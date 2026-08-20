@@ -20,3 +20,4 @@ func _ready() -> void:
 		return
 	var start_marker_3d: Node3D = map.start_marker_3d
 	player_controller.player_body.global_position = start_marker_3d.global_position
+	GameManager.current_player_controller = player_controller

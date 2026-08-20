@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cfjsq115vsidg"]
+
+[ext_resource type="Script" uid="uid://dwjaj6b1w32fr" path="res://common/interaction_system/interactable/interaction.gd" id="1_61umk"]
+[ext_resource type="Script" uid="uid://de5h2p37on5d0" path="res://entities/ball/ball.gd" id="1_jyt08"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mf8xc"]
+radius = 2.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_mf8xc"]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cs1va"]
+albedo_color = Color(0.048130304, 0.038781844, 0.04122325, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oa41v"]
+radius = 2.1
+
+[node name="Ball" type="RigidBody3D" unique_id=231173190 node_paths=PackedStringArray("interaction", "lifetime_timer")]
+script = ExtResource("1_jyt08")
+interaction = NodePath("Interaction")
+lifetime_timer = NodePath("LifetimeTimer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1807179914]
+shape = SubResource("SphereShape3D_mf8xc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=477774651]
+mesh = SubResource("SphereMesh_mf8xc")
+surface_material_override/0 = SubResource("StandardMaterial3D_cs1va")
+
+[node name="Interaction" type="Area3D" parent="." unique_id=1024439547]
+script = ExtResource("1_61umk")
+interaction_layer = 15
+metadata/_custom_type_script = "uid://dwjaj6b1w32fr"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction" unique_id=1398564825]
+shape = SubResource("SphereShape3D_oa41v")
+
+[node name="LifetimeTimer" type="Timer" parent="." unique_id=1926632007]
+wait_time = 10.0
+autostart = true
