@@ -20,13 +20,14 @@
 [ext_resource type="PackedScene" uid="uid://cnmmol2wkwuql" path="res://entities/portal/portal.tscn" id="18_oendh"]
 [ext_resource type="PackedScene" uid="uid://crgc1bm78k1l4" path="res://assets/Testobjecte/Welten/hauptwelt/Testzuhause.glb" id="18_tfnqt"]
 [ext_resource type="PackedScene" uid="uid://c1hvryq1gn344" path="res://assets/Testobjecte/Welten/hauptwelt/TestWelt.glb" id="19_hdod1"]
+[ext_resource type="PackedScene" uid="uid://cewws1nrmdtpq" path="res://entities/tv/tv.tscn" id="21_tfnqt"]
 
 [sub_resource type="Resource" id="Resource_4iqtb"]
 script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_msigb"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_tfnqt"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Resource" id="Resource_yr2eo"]
@@ -46,14 +47,14 @@ script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tfnqt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hdod1"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Resource" id="Resource_4hvco"]
 script = ExtResource("2_yr2eo")
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hdod1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6qowt"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Curve3D" id="Curve3D_ru6md"]
@@ -154,7 +155,7 @@ visible = false
 
 [node name="Sprite3D" parent="triggers/TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.4, 0, 6.039832e-08, 0, 0.4, 0, -6.039832e-08, 0, -0.4, -4.612211, 2.5914545, 2.1660986)
-texture = SubResource("ViewportTexture_msigb")
+texture = SubResource("ViewportTexture_tfnqt")
 
 [node name="objekte" type="Node3D" parent="." unique_id=288404009]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.6577603, 0, -0.5978474)
@@ -207,7 +208,7 @@ visible = false
 animation_player = NodePath("../../schalter01/AnimationPlayer")
 
 [node name="Sprite3D" parent="HighlightPathSystem/TriggerSwitch" index="3" unique_id=226529221]
-texture = SubResource("ViewportTexture_tfnqt")
+texture = SubResource("ViewportTexture_hdod1")
 
 [node name="TPath3D" type="Path3D" parent="HighlightPathSystem" unique_id=16752374]
 curve = ExtResource("11_pgpfx")
@@ -264,7 +265,7 @@ visible = false
 
 [node name="Sprite3D" parent="TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.24545783, 0, 0.54749477, 0, 0.6, 0, -0.54749477, 0, -0.24545783, -0.67036444, 3.9025612, 0.2469357)
-texture = SubResource("ViewportTexture_hdod1")
+texture = SubResource("ViewportTexture_6qowt")
 
 [node name="HighlightPathSystem2" parent="." unique_id=126581828 node_paths=PackedStringArray("camera_p_path_follow_3d", "camera_t_path_follow_3d") instance=ExtResource("7_e1bmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.210854, -4.7683716e-07, 76.58662)
@@ -292,6 +293,9 @@ curve = SubResource("Curve3D_oendh")
 
 [node name="Path3D" type="Path3D" parent="SpawnSystem" unique_id=960910374]
 curve = SubResource("Curve3D_msigb")
+
+[node name="Tv" parent="." unique_id=1540856026 instance=ExtResource("21_tfnqt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.99999994, 0, -1, 0, -4.371139e-08, 1080.5161, 230.06613, 142.5757)
 
 [node name="Node3D" type="Node3D" parent="." unique_id=58096546]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1091.5413, 222.37672, 140.11911)
