@@ -41,7 +41,7 @@ func _show_hud_changed(show_hud: bool) -> void:
 		player_controller.player_hud.hide()
 
 func _physics_process(delta: float) -> void:
-	var render_pos = actor.global_position.lerp(body.global_position, 0.1 + delta)
+	var render_pos = actor.global_position.lerp(body.global_position, 0.2 + delta)
 	actor.global_position = render_pos
 	
 	var current_y_rotation = actor.rotation.y
