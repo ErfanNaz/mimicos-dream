@@ -45,7 +45,7 @@ item_system = NodePath("Spieler und welt/ItemSystem")
 environment = SubResource("Environment_ioiol")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Spieler und welt" unique_id=2111646090]
-transform = Transform3D(1, 0, 0, 0, -0.9441754, 0.3294432, 0, -0.3294432, -0.9441754, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9402197, 0.3405685, 0, -0.3405685, 0.9402197, 0, 0, 0)
 light_color = Color(0.75790465, 0.5139813, 0, 1)
 light_energy = 2.109
 shadow_enabled = true
@@ -71,19 +71,22 @@ enable_lookup_direction = true
 camera_3d = NodePath("../Camera3D")
 
 [node name="StartMarker3D" type="Marker3D" parent="." unique_id=1608510968]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 324.00684, 102.58241, -228.94919)
 
 [node name="ground" parent="." unique_id=1528711412 instance=ExtResource("7_vrddd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 127.696915)
 
 [node name="WasserKristall" parent="." unique_id=1357830579 instance=ExtResource("9_g451t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.34354, 0.5795555, 50.147366)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.06356, 55.844154, -55.93233)
 
 [node name="WasserKristalPodest" parent="." unique_id=1606196670 instance=ExtResource("10_ioiol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.96817, 0.23132706, 34.070694)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.696291, 51.029396, -0.22292233)
+
+[node name="StaticBody3D" parent="WasserKristalPodest" index="3" unique_id=1983863047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -45.468437, 127.19673)
 
 [node name="bruecke" parent="WasserKristalPodest" index="4" unique_id=1546205678]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.08197, 0, 93.618805)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.1636403, 24.286713, -48.426704, 126.89228)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="WasserKristalPodest" unique_id=1873060877]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.995403, 0)
