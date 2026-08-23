@@ -25,19 +25,14 @@ sky = SubResource("Sky_ow5a4")
 tonemap_mode = 2
 fog_enabled = true
 fog_mode = 1
-fog_light_energy = 0.34
-fog_sun_scatter = 0.56
-fog_density = 0.1856
-fog_aerial_perspective = 0.381
-fog_sky_affect = 0.021
-fog_height = -21.11
-fog_height_density = 16.0
-fog_depth_curve = 20.392956
-fog_depth_begin = 989.7
-fog_depth_end = 1360.8
-volumetric_fog_density = 0.0103
+fog_light_energy = 0.18
+fog_density = 0.0
+fog_sky_affect = 0.0
+fog_height = 42.23
+fog_height_density = 0.2
 
 [node name="TestScene" type="Node3D" unique_id=805365231 node_paths=PackedStringArray("player_controller", "input_manager", "start_marker_3d", "item_system")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 49.9711, 0)
 script = ExtResource("1_doi4a")
 player_controller = NodePath("Spieler und welt/PlayerController")
 input_manager = NodePath("Spieler und welt/InputManager")
@@ -51,12 +46,13 @@ environment = SubResource("Environment_ioiol")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Spieler und welt" unique_id=2111646090]
 transform = Transform3D(1, 0, 0, 0, -0.9441754, 0.3294432, 0, -0.3294432, -0.9441754, 0, 0, 0)
-light_color = Color(0.666867, 0.5105868, 0.14875278, 1)
-light_energy = 1.526
+light_color = Color(0.75790465, 0.5139813, 0, 1)
+light_energy = 2.109
 shadow_enabled = true
+shadow_blur = 3.673
 
 [node name="Camera3D" type="Camera3D" parent="Spieler und welt" unique_id=1019278167]
-transform = Transform3D(0, -1, 0, 0, 0, 1, -1, 0, 0, 0, 4, 0)
+transform = Transform3D(0, -1, 0, 0, 0, 1, -1, 0, 0, 0, 53.9711, 0)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Spieler und welt/Camera3D" unique_id=663753918]
