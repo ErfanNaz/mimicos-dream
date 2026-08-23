@@ -77,7 +77,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.8, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 127.696915)
 
 [node name="WasserKristall" parent="." unique_id=1357830579 instance=ExtResource("9_g451t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.123379, 0.5795563, 54.30345)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.34354, 0.5795555, 50.147366)
 
 [node name="WasserKristalPodest" parent="." unique_id=1606196670 instance=ExtResource("10_ioiol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.028101, 0.23132825, 70.094635)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.96817, 0.23132706, 34.070694)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WasserKristalPodest" unique_id=1873060877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.995403, 0)
+light_color = Color(0.54696566, 0.09955373, 0.8105963, 1)
+light_energy = 3.218
+omni_range = 895.827
