@@ -23,6 +23,19 @@ background_mode = 2
 background_energy_multiplier = 0.35
 sky = SubResource("Sky_ow5a4")
 tonemap_mode = 2
+fog_enabled = true
+fog_mode = 1
+fog_light_energy = 0.34
+fog_sun_scatter = 0.56
+fog_density = 0.1856
+fog_aerial_perspective = 0.381
+fog_sky_affect = 0.021
+fog_height = -21.11
+fog_height_density = 16.0
+fog_depth_curve = 20.392956
+fog_depth_begin = 989.7
+fog_depth_end = 1360.8
+volumetric_fog_density = 0.0103
 
 [node name="TestScene" type="Node3D" unique_id=805365231 node_paths=PackedStringArray("player_controller", "input_manager", "start_marker_3d", "item_system")]
 script = ExtResource("1_doi4a")
@@ -72,4 +85,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 127.696915)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.123379, 0.5795563, 54.30345)
 
 [node name="WasserKristalPodest" parent="." unique_id=1606196670 instance=ExtResource("10_ioiol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.63248, 1.1072481, 233.31732)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.028101, 0.23132825, 70.094635)
