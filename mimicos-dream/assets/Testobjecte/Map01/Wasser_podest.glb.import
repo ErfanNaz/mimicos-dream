@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cjb0l35h6e3r5"
+uid="uid://dgvai7o7te335"
 path="res://.godot/imported/Wasser_podest.glb-c2cbaf828ff4c590304d564b4c5bfc4a.scn"
 
 [deps]
@@ -39,13 +39,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"nodes": {
-"PATH:Wasser_podest": {
-"generate/physics": true
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
 gltf/texture_map_mode=1
