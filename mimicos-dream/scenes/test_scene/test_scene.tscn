@@ -49,7 +49,6 @@ transform = Transform3D(1, 0, 0, 0, -0.9441754, 0.3294432, 0, -0.3294432, -0.944
 light_color = Color(0.75790465, 0.5139813, 0, 1)
 light_energy = 2.109
 shadow_enabled = true
-shadow_blur = 3.673
 
 [node name="Camera3D" type="Camera3D" parent="Spieler und welt" unique_id=1019278167]
 transform = Transform3D(0, -1, 0, 0, 0, 1, -1, 0, 0, 0, 53.9711, 0)
