@@ -4,6 +4,7 @@ extends Node3D
 @export var input_manager: InputManager
 @export var start_marker_3d: Marker3D
 @export var item_system: ItemSystem
+@export var animation_player: AnimationPlayer
 
 @export_range(0, 5, 1, "prefer_slider") var log_level: int = 2:
 	set(value):

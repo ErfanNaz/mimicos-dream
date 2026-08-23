@@ -82,8 +82,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.34354, 0.5795555, 50.147
 [node name="WasserKristalPodest" parent="." unique_id=1606196670 instance=ExtResource("10_ioiol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.96817, 0.23132706, 34.070694)
 
+[node name="bruecke" parent="WasserKristalPodest" index="4" unique_id=1546205678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.08197, 0, 93.618805)
+
 [node name="OmniLight3D" type="OmniLight3D" parent="WasserKristalPodest" unique_id=1873060877]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.995403, 0)
 light_color = Color(0.54696566, 0.09955373, 0.8105963, 1)
 light_energy = 3.218
 omni_range = 895.827
+
+[editable path="WasserKristalPodest"]
+[editable path="WasserKristalPodest/Wasser_podest_fertig"]
+[editable path="WasserKristalPodest/bruecke"]

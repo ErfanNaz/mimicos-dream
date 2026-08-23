@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dgvai7o7te335" path="res://assets/Testobjecte/Map01/Wasser_podest.glb" id="2_dgb20"]
 [ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="3_dgb20"]
 [ext_resource type="PackedScene" uid="uid://dvis70ukb2cb1" path="res://assets/Testobjecte/Map01/Wasser_podest_fertig.glb" id="5_alw81"]
+[ext_resource type="PackedScene" uid="uid://b1qjc10lq56ne" path="res://assets/Testobjecte/Map01/bruecke.glb" id="6_8k4bk"]
 
 [sub_resource type="Resource" id="Resource_mf8xc"]
 script = ExtResource("3_dgb20")
@@ -18,11 +19,12 @@ radius = 1.5297444
 [sub_resource type="SphereShape3D" id="SphereShape3D_oa41v"]
 radius = 1.1683124
 
-[node name="WasserKristalPodest" type="Node3D" unique_id=1606196670 node_paths=PackedStringArray("interaction", "wasser_podest_fertig", "wasser_podest_2")]
+[node name="WasserKristalPodest" type="Node3D" unique_id=1606196670 node_paths=PackedStringArray("interaction", "wasser_podest_fertig", "wasser_podest_2", "animation_player")]
 script = ExtResource("1_7urh2")
 interaction = NodePath("Interaction")
 wasser_podest_fertig = NodePath("Wasser_podest_fertig")
 wasser_podest_2 = NodePath("Wasser_podest2")
+animation_player = NodePath("bruecke/AnimationPlayer")
 
 [node name="Wasser_podest2" parent="." unique_id=1271384964 instance=ExtResource("2_dgb20")]
 
@@ -41,3 +43,8 @@ shape = SubResource("SphereShape3D_mf8xc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=396051698]
 shape = SubResource("SphereShape3D_oa41v")
+
+[node name="bruecke" parent="." unique_id=1546205678 instance=ExtResource("6_8k4bk")]
+
+[editable path="Wasser_podest_fertig"]
+[editable path="bruecke"]
