@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://v5xwdspwnyd2"]
+
+[ext_resource type="Script" uid="uid://cwxv30nabaf22" path="res://entities/item_system/item_system.gd" id="1_kr6hs"]
+[ext_resource type="PackedScene" uid="uid://dvhvusdgo3ljn" path="res://entities/item_system/item_system_ui.tscn" id="2_swkwd"]
+
+[node name="ItemSystem" type="Node" unique_id=977012689 node_paths=PackedStringArray("item_system_ui")]
+script = ExtResource("1_kr6hs")
+item_system_ui = NodePath("CanvasLayer/ItemSystemUi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=923458532]
+
+[node name="ItemSystemUi" parent="CanvasLayer" unique_id=502326445 instance=ExtResource("2_swkwd")]
