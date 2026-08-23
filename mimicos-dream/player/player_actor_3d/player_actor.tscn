@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://dxflnfoucfgrw"]
 
 [ext_resource type="Script" uid="uid://fb4jbhi6ds4" path="res://player/player_actor_3d/player_actor.gd" id="1_hs5vj"]
-[ext_resource type="PackedScene" uid="uid://cig6mbi61fcu4" path="res://player/player_actor_3d/mimico_with_rig_animations.glb" id="2_72pf7"]
 [ext_resource type="PackedScene" uid="uid://o0pu2sga1tfq" path="res://assets/animationen/mimico/mimico_animationen.glb" id="2_dg8bj"]
-[ext_resource type="Texture2D" uid="uid://buchwg7bg7rdw" path="res://player/player_actor_3d/faces/idle.png" id="3_11glw"]
 [ext_resource type="PackedScene" uid="uid://by42uy3lknwpj" path="res://player/player_actor_3d/assets/mimico_backpack.glb" id="4_wghgn"]
-[ext_resource type="Material" uid="uid://bsava25irrlk1" path="res://player/player_actor_3d/assets/player_body_base.tres" id="5_v1g2m"]
 [ext_resource type="AnimationNodeBlendTree" uid="uid://vqiw1k0y0kro" path="res://player/player_actor_3d/assets/player_animation_blend_tree.tres" id="6_2p4le"]
 [ext_resource type="Script" uid="uid://doejhfgthu4ky" path="res://addons/finite_state_machine/finite_state_machine.gd" id="6_rp2p5"]
 [ext_resource type="Script" uid="uid://djjlxrv48t4fr" path="res://player/player_actor_3d/states/player_actor_idle.gd" id="7_dg8bj"]
@@ -15,10 +12,6 @@
 [ext_resource type="Script" uid="uid://begysqxypk4uh" path="res://player/player_actor_3d/states/player_actor_run.gd" id="11_k8725"]
 [ext_resource type="Material" uid="uid://cvff6hkfnq5r6" path="res://player/player_actor_3d/assets/player_face_base.tres" id="13_7hylb"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1g2m"]
-transparency = 1
-albedo_texture = ExtResource("3_11glw")
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_v1g2m"]
 radius = 0.4655641
 
@@ -27,7 +20,7 @@ script = ExtResource("1_hs5vj")
 animation_player = NodePath("mimico_animationen/AnimationPlayer")
 player_body_mesh = NodePath("mimico_animationen/Armature/Skeleton3D/body")
 player_face_mesh = NodePath("mimico_animationen/Armature/Skeleton3D/body_001")
-mimico_backpack = NodePath("mimico_animationen/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack")
+mimico_backpack = NodePath("")
 spring_bone_simulator_3d = NodePath("mimico_animationen/Armature/Skeleton3D/SpringBoneSimulator3D")
 ik_hands_active = true
 ik_head_active = true
@@ -42,161 +35,76 @@ head_target = NodePath("head_target")
 left_hand_target = NodePath("left_hand_target")
 right_hand_target = NodePath("right_hand_target")
 
-[node name="player_model" parent="." unique_id=643908776 instance=ExtResource("2_72pf7")]
-visible = false
-
-[node name="body" parent="player_model/Armature/Skeleton3D" parent_id_path=PackedInt32Array(643908776, 2025664327) index="0" unique_id=1677525325]
-surface_material_override/0 = ExtResource("5_v1g2m")
-
-[node name="face" parent="player_model/Armature/Skeleton3D" parent_id_path=PackedInt32Array(643908776, 2025664327) index="1" unique_id=504553136]
-surface_material_override/0 = SubResource("StandardMaterial3D_v1g2m")
-
-[node name="cs_grp" parent="player_model" index="1" unique_id=44315244]
-visible = false
-
-[node name="AnimationPlayer" parent="player_model" index="2" unique_id=478112098]
-autoplay = &"idle"
-
-[node name="left_hand_target" type="Marker3D" parent="." unique_id=227313736]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4779597, 1.2920202, 0.39458883)
-
-[node name="left_pole_target" type="Marker3D" parent="." unique_id=1581276002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67379326, 1.2619594, -0.091252804)
-
-[node name="head_target" type="Marker3D" parent="." unique_id=2032560088]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.989, 6.629)
-
-[node name="right_hand_target" type="Marker3D" parent="." unique_id=217253442]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46537215, 1.272474, 0.4253714)
-
-[node name="right_pole_target" type="Marker3D" parent="." unique_id=1538221755]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60263234, 1.0832956, -0.19639742)
-
-[node name="HandArea3D" type="Area3D" parent="." unique_id=1244572555]
-transform = Transform3D(0.003199042, -0.001829421, 0.009296201, 0.0038142898, -0.008732884, -0.0030311507, 0.008672789, 0.0045155175, -0.0020958926, -0.27693543, 0.677854, 0.03452654)
-collision_layer = 0
-collision_mask = 32768
-monitoring = false
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HandArea3D" unique_id=985002213]
-shape = SubResource("SphereShape3D_v1g2m")
-
-[node name="AnimationTree" type="AnimationTree" parent="." unique_id=918044580]
-root_node = NodePath("../mimico_animationen")
-tree_root = ExtResource("6_2p4le")
-anim_player = NodePath("../mimico_animationen/AnimationPlayer")
-parameters/walk/blend_amount = 0.0
-parameters/jump/blend_amount = 0.0
-parameters/attack/blend_amount = 0.0
-parameters/TimeScale/scale = 2.0
-parameters/run/blend_amount = 0.0
-
-[node name="FiniteStateMachine" type="Node" parent="." unique_id=482290337 node_paths=PackedStringArray("initial_state")]
-script = ExtResource("6_rp2p5")
-initial_state = NodePath("PlayerActorIdle")
-metadata/_custom_type_script = "uid://doejhfgthu4ky"
-
-[node name="PlayerActorIdle" type="Node" parent="FiniteStateMachine" unique_id=328647811 node_paths=PackedStringArray("player_actor", "animation_tree")]
-script = ExtResource("7_dg8bj")
-player_actor = NodePath("../..")
-animation_tree = NodePath("../../AnimationTree")
-metadata/_custom_type_script = "uid://2y37yx57ooc4"
-
-[node name="PlayerActorWalk" type="Node" parent="FiniteStateMachine" unique_id=106166842 node_paths=PackedStringArray("player_actor", "animation_tree")]
-script = ExtResource("8_dg8bj")
-player_actor = NodePath("../..")
-animation_tree = NodePath("../../AnimationTree")
-metadata/_custom_type_script = "uid://bp5dgjm0trr2n"
-
-[node name="PlayerActorJump" type="Node" parent="FiniteStateMachine" unique_id=1799809741 node_paths=PackedStringArray("player_actor", "animation_tree")]
-script = ExtResource("9_py5t8")
-player_actor = NodePath("../..")
-animation_tree = NodePath("../../AnimationTree")
-metadata/_custom_type_script = "uid://2y37yx57ooc4"
-
-[node name="PlayerActorFall" type="Node" parent="FiniteStateMachine" unique_id=80606864 node_paths=PackedStringArray("player_actor", "animation_tree")]
-script = ExtResource("10_2p4le")
-player_actor = NodePath("../..")
-animation_tree = NodePath("../../AnimationTree")
-metadata/_custom_type_script = "uid://2y37yx57ooc4"
-
-[node name="PlayerActorRun" type="Node" parent="FiniteStateMachine" unique_id=1351327585 node_paths=PackedStringArray("player_actor", "animation_tree")]
-script = ExtResource("11_k8725")
-player_actor = NodePath("../..")
-animation_tree = NodePath("../../AnimationTree")
-metadata/_custom_type_script = "uid://2y37yx57ooc4"
-
 [node name="mimico_animationen" parent="." unique_id=1020652613 instance=ExtResource("2_dg8bj")]
 
 [node name="Skeleton3D" parent="mimico_animationen/Armature" parent_id_path=PackedInt32Array(1020652613, 1582663160) index="0" unique_id=232319626]
-bones/0/position = Vector3(-1.9435204, 0.4314624, -80.68356)
-bones/0/rotation = Quaternion(-0.7059345, 0.024397483, -0.018708196, 0.70760953)
+bones/0/position = Vector3(-0.7564673, 0.09371841, -80.57838)
+bones/0/rotation = Quaternion(-0.71358633, 0.028041977, -0.038677845, 0.6989366)
 bones/1/position = Vector3(-1.7136335e-07, 10.189091, -0.26635227)
-bones/1/rotation = Quaternion(-0.011622168, -0.013154222, 0.00011690572, 0.99984604)
+bones/1/rotation = Quaternion(-0.0045281816, -0.001531454, -0.016802741, 0.9998474)
 bones/2/position = Vector3(1.4901161e-08, 11.891309, 1.4901154e-07)
-bones/2/rotation = Quaternion(-0.033278987, -0.0028442552, 0.0055659194, 0.9994266)
+bones/2/rotation = Quaternion(-0.03368881, 0.00053501973, -0.0021898097, 0.99942994)
 bones/3/position = Vector3(4.4703484e-07, 13.590073, -9.536743e-07)
-bones/3/rotation = Quaternion(-0.0332871, -0.0027382893, 0.005599042, 0.9994265)
-bones/4/rotation = Quaternion(-0.013766264, -0.0024944656, 0.0011722497, 0.99990153)
+bones/3/rotation = Quaternion(-0.033681694, 0.00063155015, -0.0022123158, 0.99943)
+bones/4/rotation = Quaternion(-0.0109319445, -0.0017960222, -0.0048738904, 0.99992675)
 bones/5/position = Vector3(4.7683716e-07, 13.805379, 0.08692831)
-bones/5/rotation = Quaternion(-0.08454015, -0.06318613, 0.03093376, 0.99393344)
+bones/5/rotation = Quaternion(-0.06502577, -0.04370563, -0.09296565, 0.9925819)
 bones/6/position = Vector3(-4.7683716e-07, 111.95767, 0.70499295)
-bones/7/rotation = Quaternion(-0.5992258, -0.3992055, 0.6049138, -0.34006283)
+bones/7/rotation = Quaternion(-0.60023737, -0.392157, 0.61877394, -0.32100907)
 bones/8/position = Vector3(1.9367857e-07, 11.850665, -2.4274868e-07)
-bones/8/rotation = Quaternion(0.42682523, 0.17767994, 0.062084336, 0.8845313)
+bones/8/rotation = Quaternion(0.3954855, 0.17157057, 0.053217616, 0.9007345)
 bones/9/position = Vector3(1.6473009e-06, 23.265387, -9.322946e-08)
-bones/9/rotation = Quaternion(0.0027544282, -0.00064163574, 0.08388019, 0.9964718)
+bones/9/rotation = Quaternion(0.0024948737, -0.0006419791, 0.07598006, 0.997106)
 bones/10/position = Vector3(1.0955476e-06, 33.12188, 2.2307568e-06)
-bones/10/rotation = Quaternion(0.0030527846, 0.11472471, 0.017330853, 0.9932415)
+bones/10/rotation = Quaternion(0.012855654, 0.11669226, 0.017178256, 0.99293643)
 bones/11/position = Vector3(-4.0399723, 1.4944178, 4.7683716e-07)
-bones/11/rotation = Quaternion(-0.055196714, 0.11444421, 0.12546813, 0.9839277)
+bones/11/rotation = Quaternion(-0.056921307, 0.113951445, 0.14797515, 0.980754)
 bones/12/position = Vector3(-0.85076255, 3.3393347, -5.840975e-06)
-bones/12/rotation = Quaternion(0.19935414, 0.032214083, -0.07613093, 0.97643447)
+bones/12/rotation = Quaternion(0.1937547, 0.033516098, -0.053305052, 0.9790273)
 bones/13/position = Vector3(-0.7788249, 4.989052, 4.420185e-06)
-bones/13/rotation = Quaternion(-0.24415274, -0.016931895, 0.29571784, 0.9233926)
+bones/13/rotation = Quaternion(-0.2489842, -0.011451111, 0.31566805, 0.9155487)
 bones/14/position = Vector3(1.6295931, 4.1060085, -7.2195107e-06)
 bones/15/position = Vector3(-2.6950752e-06, 3.5427501, 1.7521234e-06)
-bones/15/rotation = Quaternion(0.17653584, -0.014588404, 0.06459678, 0.982064)
+bones/15/rotation = Quaternion(0.16412307, -0.014987899, 0.063324355, 0.98429114)
 bones/16/position = Vector3(0.1297276, 8.29649, -6.2262534e-06)
-bones/16/rotation = Quaternion(0.29357892, 0.00022005971, 0.011110524, 0.95587033)
+bones/16/rotation = Quaternion(0.28311974, 0.00020197553, 0.010071775, 0.95903164)
 bones/17/position = Vector3(-0.118397474, 6.25881, 9.893265e-07)
-bones/17/rotation = Quaternion(0.18312289, 0.0027691259, 0.025582068, 0.9827533)
+bones/17/rotation = Quaternion(0.17112207, 0.002644659, 0.024464326, 0.9849426)
 bones/18/position = Vector3(-0.011329926, 5.2870693, 6.0251996e-06)
-bones/19/rotation = Quaternion(0.5918955, -0.37218907, 0.651595, 0.2942091)
+bones/19/rotation = Quaternion(0.59667015, -0.37905684, 0.6301808, 0.32120532)
 bones/20/position = Vector3(-3.0636284e-06, 11.850675, -1.3644487e-05)
-bones/20/rotation = Quaternion(0.38062063, 0.018357791, 0.06221689, 0.9224533)
+bones/20/rotation = Quaternion(0.42957267, 0.01036761, 0.068216614, 0.9003923)
 bones/21/position = Vector3(8.768329e-07, 23.263199, -1.856501e-06)
-bones/21/rotation = Quaternion(0.003735979, 0.0007915005, -0.1301551, 0.9914863)
+bones/21/rotation = Quaternion(0.003655261, 0.0007918288, -0.12734568, 0.99185145)
 bones/22/position = Vector3(5.313197e-07, 33.130688, -4.3125738e-06)
-bones/22/rotation = Quaternion(-0.008668896, -0.22015403, -0.11823101, 0.9682347)
+bones/22/rotation = Quaternion(-0.008695885, -0.23582111, -0.12697606, 0.9634262)
 bones/23/position = Vector3(4.4794164, 1.3317825, -6.318114e-06)
-bones/23/rotation = Quaternion(0.0015245905, -0.11326481, -0.13889459, 0.98380744)
+bones/23/rotation = Quaternion(-0.0008166732, -0.11121407, -0.16030377, 0.98078215)
 bones/24/position = Vector3(0.95193005, 3.6153495, -9.504756e-07)
-bones/24/rotation = Quaternion(0.14608271, -0.05121839, 0.03897089, 0.9871768)
+bones/24/rotation = Quaternion(0.139003, -0.05514529, 0.01592113, 0.9886272)
 bones/25/position = Vector3(0.12745714, 4.707045, -1.9796805e-06)
-bones/25/rotation = Quaternion(-0.218598, 0.028910682, -0.20703013, 0.953162)
+bones/25/rotation = Quaternion(-0.22747338, 0.021203218, -0.22753267, 0.94659144)
 bones/26/position = Vector3(-1.0793884, 3.907393, -2.5489808e-06)
 bones/27/position = Vector3(-1.7264215e-06, 4.4303985, 4.456829e-06)
-bones/27/rotation = Quaternion(0.113560125, 0.0059887175, -0.07846907, 0.99040943)
+bones/27/rotation = Quaternion(0.09107737, 0.0070243133, -0.07446491, 0.9930311)
 bones/28/position = Vector3(-0.034370422, 7.7544003, -2.8873137e-06)
-bones/28/rotation = Quaternion(0.35556746, -0.0044447803, -0.038731337, 0.9338373)
+bones/28/rotation = Quaternion(0.33540007, -0.0040954393, -0.035253935, 0.941407)
 bones/29/position = Vector3(0.24005413, 6.3391104, 3.2293244e-06)
-bones/29/rotation = Quaternion(0.25778067, 0.0006413723, -0.0797516, 0.96290624)
+bones/29/rotation = Quaternion(0.23686041, 0.0006132443, -0.07657017, 0.96852154)
 bones/30/position = Vector3(-0.20568053, 5.053294, -5.826092e-06)
-bones/31/rotation = Quaternion(0.06316601, 0.009132023, 0.99708027, -0.04192474)
-bones/32/rotation = Quaternion(-0.10302758, -0.032350067, -0.0026893788, 0.9941487)
+bones/31/rotation = Quaternion(0.0628412, 0.028401414, 0.9964723, -0.047826905)
+bones/32/rotation = Quaternion(-0.15393111, -0.013043626, 0.0013903248, 0.98799455)
 bones/33/position = Vector3(1.0111839e-06, 30.739124, -5.882953e-07)
-bones/33/rotation = Quaternion(0.50363415, -0.08579625, 0.031070426, 0.8590846)
+bones/33/rotation = Quaternion(0.52043056, -0.08795372, 0.027962618, 0.84890187)
 bones/34/position = Vector3(-8.433756e-07, 18.798332, -2.1527035e-06)
-bones/34/rotation = Quaternion(0.3129667, -0.003516352, 0.0011581539, 0.9497569)
+bones/34/rotation = Quaternion(0.32550165, 0.0015080463, 0.004213899, 0.94553095)
 bones/35/position = Vector3(-7.0780516e-07, 7.18936, 1.1175891e-07)
-bones/36/rotation = Quaternion(-0.0854958, -0.0065487465, 0.9947885, 0.055168204)
+bones/36/rotation = Quaternion(-0.08991295, -0.02706443, 0.99409616, 0.05436889)
 bones/37/position = Vector3(6.9175775e-07, 32.614174, -5.120534e-07)
-bones/37/rotation = Quaternion(-0.09965207, 0.0568802, -0.0017071114, 0.99339384)
-bones/38/rotation = Quaternion(0.4935097, 0.08788078, -0.026390485, 0.8648865)
+bones/37/rotation = Quaternion(-0.086955905, 0.06806202, 0.0062713, 0.9938646)
+bones/38/rotation = Quaternion(0.48479944, 0.08853312, -0.024506433, 0.8697879)
 bones/39/position = Vector3(-1.389403e-06, 18.631144, -1.1885061e-07)
-bones/39/rotation = Quaternion(0.34017327, 0.0016953893, -0.0021589168, 0.9403589)
+bones/39/rotation = Quaternion(0.33458894, 0.0016341512, -0.0014845552, 0.94236165)
 
 [node name="body_001" parent="mimico_animationen/Armature/Skeleton3D" index="1" unique_id=1475734031]
 surface_material_override/0 = ExtResource("13_7hylb")
@@ -304,19 +212,15 @@ settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="mimico_animationen/Armature/Skeleton3D" index="8" unique_id=1663178290]
-transform = Transform3D(0.9991703, -0.038129095, 0.014315339, -0.020941805, -0.179517, 0.9835315, -0.034931347, -0.9830153, -0.18016656, -2.9974995, -3.5608735, -131.39714)
-visible = false
-bone_name = "mixamorig_Neck"
-bone_idx = 4
+transform = Transform3D(0.99408317, 0.042495113, 0.09996406, -0.09153601, -0.16773087, 0.9815738, 0.05847917, -0.98491615, -0.16284865, 0.5235532, -2.1586618, -116.1376)
+bone_name = "mixamorig_Spine2"
+bone_idx = 3
 
-[node name="mimico_backpack" parent="mimico_animationen/Armature/Skeleton3D/BoneAttachment3D" unique_id=1386257698 instance=ExtResource("4_wghgn")]
-transform = Transform3D(-0.9999991, 4.9312007e-06, 0.0013262348, 4.9173827e-06, 1, -1.04224e-05, -0.0013262348, -1.0415869e-05, -0.9999991, 1.284377e-10, -5.9604645e-07, -0.063865244)
+[node name="mimico_backpack" parent="mimico_animationen/Armature/Skeleton3D/BoneAttachment3D" unique_id=353637098 instance=ExtResource("4_wghgn")]
+transform = Transform3D(-99.340996, 0.7187133, -11.43911, -3.7680228, 92.208, 38.516212, 10.824592, 38.693424, -91.57316, 1.1935492, 0.8293991, -4.6036024)
 
-[node name="backpack_black" parent="mimico_animationen/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1386257698, 246948385) index="0" unique_id=276203689]
-transform = Transform3D(1.0000001, -1.3969839e-09, 2.9802322e-08, 2.3283064e-10, 1, -1.6298145e-09, 2.9802322e-08, -3.259629e-09, 1.0000002, 0, 0, 0)
-
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="mimico_animationen/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1386257698, 246948385) index="1" unique_id=1784912520]
-transform = Transform3D(0.9999999, 0, -2.3283064e-10, 0, 0.9999998, 0, 2.3283064e-10, 0, 0.9999999, 0, 0, 0)
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="mimico_animationen/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack/Armature/Skeleton3D" parent_id_path=PackedInt32Array(353637098, 246948385) index="0" unique_id=1784912520]
+transform = Transform3D(0.009810582, -0.0016526824, 0.0010105158, 0.0016496651, 0.00986233, 0.00011393847, -0.0010154375, 5.4920092e-05, 0.009948164, 0.0334891, 0.43355548, 0.09890443)
 setting_count = 1
 settings/0/root_bone_name = "Bone.001"
 settings/0/root_bone = 1
@@ -325,14 +229,14 @@ settings/0/end_bone = 2
 settings/0/extend_end_bone = false
 settings/0/center_from = 0
 settings/0/individual_config = false
-settings/0/rotation_axis = 3
+settings/0/rotation_axis = 0
 settings/0/radius/value = 0.02
 settings/0/radius/damping_curve = null
-settings/0/stiffness/value = 4.0
+settings/0/stiffness/value = 1.0
 settings/0/stiffness/damping_curve = null
 settings/0/drag/value = 0.4
 settings/0/drag/damping_curve = null
-settings/0/gravity/value = 0.0
+settings/0/gravity/value = 3.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, -1, 0)
 settings/0/joints/0/bone_name = "Bone.001"
@@ -343,13 +247,82 @@ settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
 [node name="BoneAttachment3DHand" type="BoneAttachment3D" parent="mimico_animationen/Armature/Skeleton3D" index="9" unique_id=1906970325]
-transform = Transform3D(0.3199042, -0.1829421, 0.92962015, 0.8672789, 0.45155177, -0.20958926, -0.381429, 0.87328845, 0.30311507, -27.693542, 3.4526544, -67.7854)
+transform = Transform3D(0.46543854, -0.15477693, 0.8714422, 0.8004211, 0.49382505, -0.33979777, -0.37774706, 0.8556752, 0.3537318, -25.796825, 5.6560564, -70.06508)
 bone_name = "mixamorig_RightHand"
 bone_idx = 22
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="mimico_animationen/Armature/Skeleton3D/BoneAttachment3DHand" unique_id=460059773]
 remote_path = NodePath("../../../../../HandArea3D")
 
-[editable path="player_model"]
+[node name="left_hand_target" type="Marker3D" parent="." unique_id=227313736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4779597, 1.2920202, 0.39458883)
+
+[node name="left_pole_target" type="Marker3D" parent="." unique_id=1581276002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.67379326, 1.2619594, -0.091252804)
+
+[node name="head_target" type="Marker3D" parent="." unique_id=2032560088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.989, 6.629)
+
+[node name="right_hand_target" type="Marker3D" parent="." unique_id=217253442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46537215, 1.272474, 0.4253714)
+
+[node name="right_pole_target" type="Marker3D" parent="." unique_id=1538221755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60263234, 1.0832956, -0.19639742)
+
+[node name="HandArea3D" type="Area3D" parent="." unique_id=1244572555]
+transform = Transform3D(0.004654385, -0.0015477693, 0.008714422, 0.0037774704, -0.0085567525, -0.003537318, 0.008004211, 0.0049382504, -0.0033979777, -0.25796825, 0.70065075, 0.05656056)
+collision_layer = 0
+collision_mask = 32768
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HandArea3D" unique_id=985002213]
+shape = SubResource("SphereShape3D_v1g2m")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=918044580]
+root_node = NodePath("../mimico_animationen")
+tree_root = ExtResource("6_2p4le")
+anim_player = NodePath("../mimico_animationen/AnimationPlayer")
+parameters/walk/blend_amount = 0.0
+parameters/jump/blend_amount = 0.0
+parameters/attack/blend_amount = 0.0
+parameters/TimeScale/scale = 2.0
+parameters/run/blend_amount = 0.0
+
+[node name="FiniteStateMachine" type="Node" parent="." unique_id=482290337 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("6_rp2p5")
+initial_state = NodePath("PlayerActorIdle")
+metadata/_custom_type_script = "uid://doejhfgthu4ky"
+
+[node name="PlayerActorIdle" type="Node" parent="FiniteStateMachine" unique_id=328647811 node_paths=PackedStringArray("player_actor", "animation_tree")]
+script = ExtResource("7_dg8bj")
+player_actor = NodePath("../..")
+animation_tree = NodePath("../../AnimationTree")
+metadata/_custom_type_script = "uid://2y37yx57ooc4"
+
+[node name="PlayerActorWalk" type="Node" parent="FiniteStateMachine" unique_id=106166842 node_paths=PackedStringArray("player_actor", "animation_tree")]
+script = ExtResource("8_dg8bj")
+player_actor = NodePath("../..")
+animation_tree = NodePath("../../AnimationTree")
+metadata/_custom_type_script = "uid://bp5dgjm0trr2n"
+
+[node name="PlayerActorJump" type="Node" parent="FiniteStateMachine" unique_id=1799809741 node_paths=PackedStringArray("player_actor", "animation_tree")]
+script = ExtResource("9_py5t8")
+player_actor = NodePath("../..")
+animation_tree = NodePath("../../AnimationTree")
+metadata/_custom_type_script = "uid://2y37yx57ooc4"
+
+[node name="PlayerActorFall" type="Node" parent="FiniteStateMachine" unique_id=80606864 node_paths=PackedStringArray("player_actor", "animation_tree")]
+script = ExtResource("10_2p4le")
+player_actor = NodePath("../..")
+animation_tree = NodePath("../../AnimationTree")
+metadata/_custom_type_script = "uid://2y37yx57ooc4"
+
+[node name="PlayerActorRun" type="Node" parent="FiniteStateMachine" unique_id=1351327585 node_paths=PackedStringArray("player_actor", "animation_tree")]
+script = ExtResource("11_k8725")
+player_actor = NodePath("../..")
+animation_tree = NodePath("../../AnimationTree")
+metadata/_custom_type_script = "uid://2y37yx57ooc4"
+
 [editable path="mimico_animationen"]
 [editable path="mimico_animationen/Armature/Skeleton3D/BoneAttachment3D/mimico_backpack"]
