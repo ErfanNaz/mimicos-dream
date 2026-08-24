@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bt4tdekby1tmv" path="res://assets/Testobjecte/Map01/Tannenbaum.fbx" id="11_d01bh"]
 [ext_resource type="PackedScene" uid="uid://dafeoxtykmpwi" path="res://assets/Testobjecte/Map01/Terrain.fbx" id="11_ioiol"]
 [ext_resource type="PackedScene" uid="uid://dcps6r75m632a" path="res://assets/Testobjecte/Map01/Scheune.fbx" id="12_d01bh"]
+[ext_resource type="PackedScene" uid="uid://bxkuerqlp8b84" path="res://assets/Testobjecte/Map01/Zaun.fbx" id="13_mj4xq"]
+[ext_resource type="PackedScene" uid="uid://csfwx5prdnk56" path="res://assets/Testobjecte/Map01/Laterne.fbx" id="14_otg31"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
 panorama = ExtResource("1_wgdak")
@@ -118,3 +120,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.3811, -11.909664, -56.69
 
 [node name="Tannenbaum13" parent="." unique_id=1148767537 instance=ExtResource("11_d01bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.267914, -14.597778, -29.63793)
+
+[node name="Zaun" parent="." unique_id=93876734 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.69818, -18.328669, 136.95753)
+
+[node name="Zaun6" parent="." unique_id=512897942 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(0.7750836, 0, -0.6318588, 0, 1, 0, 0.6318588, 0, 0.7750836, -20.676373, -18.328667, 145.69135)
+
+[node name="Zaun7" parent="." unique_id=477489836 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(0.7750836, 0, -0.6318588, 0, 1, 0, 0.6318588, 0, 0.7750836, -17.508308, -18.328667, 141.80518)
+
+[node name="Zaun4" parent="." unique_id=1759095879 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.69818, -18.328669, 131.18643)
+
+[node name="Zaun3" parent="." unique_id=387186532 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.232544, -18.328669, 136.95753)
+
+[node name="Zaun5" parent="." unique_id=1489636158 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.232544, -18.328669, 131.22812)
+
+[node name="Zaun2" parent="." unique_id=1945001905 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(0.3712926, 0, 0.9285159, 0, 1, 0, -0.9285159, 0, 0.3712926, -21.954067, -18.352264, 146.05237)
+
+[node name="Zaun13" parent="." unique_id=151914020 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(0.33503637, 0, 0.9422052, 0, 1, 0, -0.9422052, 0, 0.33503637, -41.441383, -18.352264, 139.17763)
+
+[node name="Zaun8" parent="." unique_id=131471403 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(0.06907521, 0, 0.99761146, 0, 1, 0, -0.99761146, 0, 0.06907521, -73.565285, -18.382353, 149.61685)
+
+[node name="Zaun9" parent="." unique_id=887633310 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(0.06907521, 0, 0.99761146, 0, 1, 0, -0.99761146, 0, 0.06907521, -81.926285, -18.382353, 149.03793)
+
+[node name="Zaun10" parent="." unique_id=820850069 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(0.06907521, 0, 0.99761146, 0, 1, 0, -0.99761146, 0, 0.06907521, -90.2718, -18.382353, 148.46008)
+
+[node name="Zaun11" parent="." unique_id=136158365 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(0.52143186, 0, 0.8532929, 0, 1, 0, -0.8532929, 0, 0.52143186, -75.67226, -18.382353, 148.13895)
+
+[node name="Zaun12" parent="." unique_id=284034684 instance=ExtResource("13_mj4xq")]
+transform = Transform3D(0.52143186, 0, 0.8532929, 0, 1, 0, -0.8532929, 0, 0.52143186, -80.79734, -18.382353, 145.0071)
+
+[node name="Laterne" parent="." unique_id=798406315 instance=ExtResource("14_otg31")]
+transform = Transform3D(0.7820451, 0, -0.6232218, 0, 1, 0, 0.6232218, 0, 0.7820451, -19.110556, -17.573727, 141.4391)
+
+[node name="Laterne2" parent="." unique_id=1052456683 instance=ExtResource("14_otg31")]
+transform = Transform3D(0.9999428, 0, 0.010703057, 0, 1, 0, -0.010703057, 0, 0.9999428, -90.92314, -17.573727, 109.96098)
+
+[node name="Laterne3" parent="." unique_id=1831819332 instance=ExtResource("14_otg31")]
+transform = Transform3D(-0.8453434, 0, -0.5342233, 0, 1, 0, 0.5342233, 0, -0.8453434, -65.05062, -17.573727, 50.148903)
+
+[node name="Laterne4" parent="." unique_id=100753307 instance=ExtResource("14_otg31")]
+transform = Transform3D(-0.8453434, 0, -0.5342233, 0, 1, 0, 0.5342233, 0, -0.8453434, -114.69328, -17.573727, -10.483665)
