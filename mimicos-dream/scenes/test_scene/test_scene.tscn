@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dcps6r75m632a" path="res://assets/Testobjecte/Map01/Scheune.fbx" id="12_d01bh"]
 [ext_resource type="PackedScene" uid="uid://bxkuerqlp8b84" path="res://assets/Testobjecte/Map01/Zaun.fbx" id="13_mj4xq"]
 [ext_resource type="PackedScene" uid="uid://csfwx5prdnk56" path="res://assets/Testobjecte/Map01/Laterne.fbx" id="14_otg31"]
+[ext_resource type="PackedScene" uid="uid://4yuqwjpeg8h5" path="res://assets/Testobjecte/Map01/Animationen/HinweisTafel.glb" id="15_q6ea6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
 panorama = ExtResource("1_wgdak")
@@ -243,3 +244,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.458546, -14.367985, 64.32
 
 [node name="Tannenbaum30" parent="." unique_id=1583496541 instance=ExtResource("11_d01bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.870205, -14.367977, 64.12372)
+
+[node name="HinweisTafel" parent="." unique_id=1441208737 instance=ExtResource("15_q6ea6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -18.031525, 4.5241165, -11.68325)
