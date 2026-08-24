@@ -93,10 +93,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.60555, -14.367973, 105.4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.33757, -14.367973, 103.41971)
 
 [node name="Tannenbaum6" parent="." unique_id=1933324991 instance=ExtResource("11_d01bh")]
-transform = Transform3D(0.713175, 0, 0, 0, 0.713175, 0, 0, 0, 0.713175, -114.9209, -14.367981, 121.38723)
+transform = Transform3D(0.713175, 0, 0, 0, 0.713175, 0, 0, 0, 0.713175, -114.9209, -15.916328, 121.38723)
 
 [node name="Tannenbaum7" parent="." unique_id=200901363 instance=ExtResource("11_d01bh")]
-transform = Transform3D(0.713175, 0, 0, 0, 0.713175, 0, 0, 0, 0.713175, -129.08173, -14.367981, 118.49799)
+transform = Transform3D(0.713175, 0, 0, 0, 0.713175, 0, 0, 0, 0.713175, -129.08173, -15.916328, 118.49799)
 
 [node name="Scheune" parent="." unique_id=877411347 instance=ExtResource("12_d01bh")]
 transform = Transform3D(-1.2269605e-07, 0, -2.8069584, 0, 2.8069584, 0, 2.8069584, 0, -1.2269605e-07, -117.51342, -7.7596893, -126.037384)
