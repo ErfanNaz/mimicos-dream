@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ynshxweffil6" path="res://assets/Testobjecte/Map01/Haus.fbx" id="10_g451t"]
 [ext_resource type="PackedScene" uid="uid://bt4tdekby1tmv" path="res://assets/Testobjecte/Map01/Tannenbaum.fbx" id="11_d01bh"]
 [ext_resource type="PackedScene" uid="uid://dafeoxtykmpwi" path="res://assets/Testobjecte/Map01/Terrain.fbx" id="11_ioiol"]
+[ext_resource type="PackedScene" uid="uid://dcps6r75m632a" path="res://assets/Testobjecte/Map01/Scheune.fbx" id="12_d01bh"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
 panorama = ExtResource("1_wgdak")
@@ -21,6 +22,7 @@ sky_material = SubResource("PanoramaSkyMaterial_g451t")
 
 [sub_resource type="Environment" id="Environment_ioiol"]
 background_mode = 2
+background_color = Color(0.288518, 0.28851798, 0.28851798, 1)
 background_energy_multiplier = 0.35
 sky = SubResource("Sky_ow5a4")
 tonemap_mode = 2
@@ -40,7 +42,7 @@ environment = SubResource("Environment_ioiol")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Spieler und welt" unique_id=2111646090]
 transform = Transform3D(0.74522996, -0.6269456, -0.2270937, -3.0754702e-08, -0.34056857, 0.9402197, -0.66680765, -0.70067984, -0.25380188, 0, 35.075455, 0)
-light_color = Color(0.7026509, 0.84118605, 1, 1)
+light_color = Color(0, 0, 0, 1)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="Spieler und welt" unique_id=1019278167]
@@ -95,3 +97,24 @@ transform = Transform3D(0.713175, 0, 0, 0, 0.713175, 0, 0, 0, 0.713175, -114.920
 
 [node name="Tannenbaum7" parent="." unique_id=200901363 instance=ExtResource("11_d01bh")]
 transform = Transform3D(0.713175, 0, 0, 0, 0.713175, 0, 0, 0, 0.713175, -129.08173, -14.367981, 118.49799)
+
+[node name="Scheune" parent="." unique_id=877411347 instance=ExtResource("12_d01bh")]
+transform = Transform3D(-1.2269605e-07, 0, -2.8069584, 0, 2.8069584, 0, 2.8069584, 0, -1.2269605e-07, -117.51342, -7.7596893, -126.037384)
+
+[node name="Tannenbaum8" parent="." unique_id=137214440 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.22667, -2.634468, -102.9178)
+
+[node name="Tannenbaum9" parent="." unique_id=2130999004 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.76615, -2.634468, -138.23691)
+
+[node name="Tannenbaum10" parent="." unique_id=1674438600 instance=ExtResource("11_d01bh")]
+transform = Transform3D(0.40176922, 0, 0, 0, 0.40176922, 0, 0, 0, 0.40176922, -122.09679, -5.3309555, -98.93552)
+
+[node name="Tannenbaum11" parent="." unique_id=405874595 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128.7789, -6.3205833, -81.684166)
+
+[node name="Tannenbaum12" parent="." unique_id=1651601767 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.3811, -11.909664, -56.697197)
+
+[node name="Tannenbaum13" parent="." unique_id=1148767537 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.267914, -14.597778, -29.63793)
