@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ynshxweffil6"
-path="res://.godot/imported/Haus.fbx-e1f38ecaf527a871f3ac4483b8004586.scn"
+uid="uid://dcps6r75m632a"
+path="res://.godot/imported/Scheune.fbx-d647a9e9ebf8612299596cb6a7dcc235.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/Haus.fbx"
-dest_files=["res://.godot/imported/Haus.fbx-e1f38ecaf527a871f3ac4483b8004586.scn"]
+source_file="res://assets/Testobjecte/Map01/Scheune.fbx"
+dest_files=["res://.godot/imported/Scheune.fbx-d647a9e9ebf8612299596cb6a7dcc235.scn"]
 
 [params]
 
@@ -41,23 +41,13 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Garage": {
+"PATH:Cube": {
 "generate/physics": true
 },
-"PATH:dach": {
+"PATH:Cube_003": {
 "generate/physics": true
 },
-"PATH:kamin": {
-"generate/physics": true
-},
-"PATH:möbel": {
-"generate/physics": true
-},
-"PATH:strommast_001": {
-"generate/physics": true,
-"physics/shape_type": 0
-},
-"PATH:wände": {
+"PATH:Cube_005": {
 "generate/physics": true
 }
 }
