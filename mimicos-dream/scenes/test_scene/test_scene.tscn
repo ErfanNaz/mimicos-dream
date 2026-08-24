@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dxyear54toy1v" path="res://entities/input_manager/input_manager.tscn" id="4_ork3v"]
 [ext_resource type="PackedScene" uid="uid://dvs75nw080kyk" path="res://entities/camera_system/camera_system.tscn" id="5_a0rq3"]
 [ext_resource type="PackedScene" uid="uid://v5xwdspwnyd2" path="res://entities/item_system/item_system.tscn" id="6_g451t"]
-[ext_resource type="PackedScene" uid="uid://b7v43cc0306n4" path="res://entities/items/wasser_kristall.tscn" id="9_g451t"]
-[ext_resource type="PackedScene" uid="uid://ynshxweffil6" path="res://assets/Testobjecte/Map01/Ground.fbx" id="10_g451t"]
-[ext_resource type="PackedScene" uid="uid://by3otuye5516d" path="res://entities/wasser_kristal_podest/wasser_kristal_podest.tscn" id="10_ioiol"]
+[ext_resource type="PackedScene" uid="uid://koenjlwour8j" path="res://assets/Testobjecte/Map01/Labor.fbx" id="10_d01bh"]
+[ext_resource type="PackedScene" uid="uid://ynshxweffil6" path="res://assets/Testobjecte/Map01/Haus.fbx" id="10_g451t"]
+[ext_resource type="PackedScene" uid="uid://bt4tdekby1tmv" path="res://assets/Testobjecte/Map01/Tannenbaum.fbx" id="11_d01bh"]
 [ext_resource type="PackedScene" uid="uid://dafeoxtykmpwi" path="res://assets/Testobjecte/Map01/Terrain.fbx" id="11_ioiol"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
@@ -64,34 +64,34 @@ enable_lookup_direction = true
 camera_3d = NodePath("../Camera3D")
 
 [node name="StartMarker3D" type="Marker3D" parent="." unique_id=1608510968]
-transform = Transform3D(2.0641053, 0, 0, 0, 2.0641053, 0, 0, 0, 2.0641053, -25.5441, 0, -23.95259)
+transform = Transform3D(2.0641053, 0, 0, 0, 2.0641053, 0, 0, 0, 2.0641053, -27.507977, 0, -26.11745)
 
-[node name="WasserKristall" parent="." unique_id=1357830579 instance=ExtResource("9_g451t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3181443, 0.9132118, 5.475398)
-
-[node name="WasserKristalPodest" parent="." unique_id=1606196670 instance=ExtResource("10_ioiol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.696291, 51.029396, -0.22292233)
-
-[node name="Wasser_podest2" parent="WasserKristalPodest" index="0" unique_id=1271384964]
-transform = Transform3D(2.6344543, 0, 0, 0, 2.6344543, 0, 0, 0, 2.6344543, -1.8898096, -69.01064, 168.19878)
-
-[node name="Wasser_podest_fertig" parent="WasserKristalPodest" index="1" unique_id=966799767]
-transform = Transform3D(2.6344543, 0, 0, 0, 2.6344543, 0, 0, 0, 2.6344543, -1.9009418, -68.96529, 168.2889)
-
-[node name="CollisionShape3D" parent="WasserKristalPodest/Interaction" parent_id_path=PackedInt32Array(1606196670, 155020914) index="0" unique_id=1365157154]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8932619, -68.81993, 168.22673)
-
-[node name="StaticBody3D" parent="WasserKristalPodest" index="3" unique_id=1983863047]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -45.468437, 127.19673)
-
-[node name="bruecke" parent="WasserKristalPodest" index="4" unique_id=1546205678]
-transform = Transform3D(1.7969664, 0, 0, 0, 1, 0, 0, 0, 1.1636403, 16.015839, -69.82528, 229.83354)
-
-[node name="Ground" parent="." unique_id=1736292683 instance=ExtResource("10_g451t")]
+[node name="Haus" parent="." unique_id=1736292683 instance=ExtResource("10_g451t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.084503174, 0)
 
 [node name="Terrain" parent="." unique_id=1238721775 instance=ExtResource("11_ioiol")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.399017, 0)
 
-[editable path="WasserKristalPodest"]
-[editable path="WasserKristalPodest/Wasser_podest_fertig"]
-[editable path="WasserKristalPodest/bruecke"]
+[node name="Labor" parent="." unique_id=505687268 instance=ExtResource("10_d01bh")]
+transform = Transform3D(4.0057297, 0, 0, 0, 4.0057297, 0, 0, 0, 4.0057297, -127.77404, -17.949024, 152.04517)
+
+[node name="Tannenbaum" parent="." unique_id=1598949770 instance=ExtResource("11_d01bh")]
+transform = Transform3D(0.9820141, 0, -0.1888075, 0, 1, 0, 0.1888075, 0, 0.9820141, -101.94554, -7.7585373, 142.13277)
+
+[node name="Tannenbaum2" parent="." unique_id=1919994643 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.520065, -7.5638046, 161.4282)
+
+[node name="Tannenbaum3" parent="." unique_id=285564612 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.56009, -14.367981, 120.75156)
+
+[node name="Tannenbaum4" parent="." unique_id=1956471725 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.60555, -14.367973, 105.41963)
+
+[node name="Tannenbaum5" parent="." unique_id=751122307 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.33757, -14.367973, 103.41971)
+
+[node name="Tannenbaum6" parent="." unique_id=1933324991 instance=ExtResource("11_d01bh")]
+transform = Transform3D(0.713175, 0, 0, 0, 0.713175, 0, 0, 0, 0.713175, -114.9209, -14.367981, 121.38723)
+
+[node name="Tannenbaum7" parent="." unique_id=200901363 instance=ExtResource("11_d01bh")]
+transform = Transform3D(0.713175, 0, 0, 0, 0.713175, 0, 0, 0, 0.713175, -129.08173, -14.367981, 118.49799)

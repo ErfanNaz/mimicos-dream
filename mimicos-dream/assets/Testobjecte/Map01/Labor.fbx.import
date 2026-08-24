@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ynshxweffil6"
-path="res://.godot/imported/Ground.fbx-dbe0dd88155805eaf59cd4200be3746a.scn"
+uid="uid://koenjlwour8j"
+path="res://.godot/imported/Labor.fbx-37985454c7e0cc625802ae429d78b59b.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/Ground.fbx"
-dest_files=["res://.godot/imported/Ground.fbx-dbe0dd88155805eaf59cd4200be3746a.scn"]
+source_file="res://assets/Testobjecte/Map01/Labor.fbx"
+dest_files=["res://.godot/imported/Labor.fbx-37985454c7e0cc625802ae429d78b59b.scn"]
 
 [params]
 
@@ -41,25 +41,13 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Point": {
-"node/node_type": "OmniLight3D"
-},
-"PATH:Point_001": {
-"node/node_type": "OmniLight3D"
-},
-"PATH:Spot": {
-"node/node_type": "SpotLight3D"
-},
-"PATH:dach": {
+"PATH:Labor": {
 "generate/physics": true
 },
-"PATH:kamin": {
+"PATH:steine": {
 "generate/physics": true
 },
-"PATH:möbel": {
-"generate/physics": true
-},
-"PATH:wände": {
+"PATH:steine_001": {
 "generate/physics": true
 }
 }

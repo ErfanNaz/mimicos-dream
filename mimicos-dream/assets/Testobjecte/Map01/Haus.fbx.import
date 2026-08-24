@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dgvai7o7te335"
-path="res://.godot/imported/Wasser_podest.glb-c2cbaf828ff4c590304d564b4c5bfc4a.scn"
+uid="uid://ynshxweffil6"
+path="res://.godot/imported/Haus.fbx-e1f38ecaf527a871f3ac4483b8004586.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/Wasser_podest.glb"
-dest_files=["res://.godot/imported/Wasser_podest.glb-c2cbaf828ff4c590304d564b4c5bfc4a.scn"]
+source_file="res://assets/Testobjecte/Map01/Haus.fbx"
+dest_files=["res://.godot/imported/Haus.fbx-e1f38ecaf527a871f3ac4483b8004586.scn"]
 
 [params]
 
@@ -32,7 +32,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -41,11 +41,30 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Wasser_podest": {
+"PATH:Point": {
+"node/node_type": "OmniLight3D"
+},
+"PATH:Point_001": {
+"node/node_type": "OmniLight3D"
+},
+"PATH:Spot": {
+"node/node_type": "SpotLight3D"
+},
+"PATH:dach": {
+"generate/physics": true
+},
+"PATH:kamin": {
+"generate/physics": true
+},
+"PATH:möbel": {
+"generate/physics": true
+},
+"PATH:wände": {
 "generate/physics": true
 }
 }
 }
-gltf/naming_version=2
-gltf/embedded_image_handling=1
-gltf/texture_map_mode=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2
