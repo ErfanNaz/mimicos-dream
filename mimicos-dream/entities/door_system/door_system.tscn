@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://18x64ejxbe1d"]
+
+[ext_resource type="PackedScene" uid="uid://bcmlryrbvnnvq" path="res://assets/Testobjecte/Objekte/türen/tür.fbx" id="1_4rqnl"]
+[ext_resource type="Script" uid="uid://dul60fkmtekh7" path="res://entities/door_system/door_system.gd" id="1_ggn1g"]
+[ext_resource type="PackedScene" uid="uid://cn1n3kfjpmwht" path="res://assets/Testobjecte/Objekte/schalter/schalter02.fbx" id="2_rxya7"]
+[ext_resource type="PackedScene" uid="uid://bgtpbxtq808xf" path="res://entities/trigger_system/trigger_switch/trigger_switch.tscn" id="3_aje5c"]
+[ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="3_ggn1g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mf8xc"]
+size = Vector3(4.7386475, 5.5457764, 0.7040405)
+
+[sub_resource type="Resource" id="Resource_o6njo"]
+script = ExtResource("3_ggn1g")
+title = "door"
+action_button = 0
+metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
+
+[node name="DoorSystem" type="Node3D" unique_id=434688693 node_paths=PackedStringArray("animation_player", "trigger_switch", "static_body_3d")]
+script = ExtResource("1_ggn1g")
+animation_player = NodePath("door/AnimationPlayer")
+trigger_switch = NodePath("TriggerSwitch")
+static_body_3d = NodePath("StaticBody3D")
+
+[node name="door" parent="." unique_id=1468137168 instance=ExtResource("1_4rqnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09623492, 0, -0.23098731)
+
+[node name="animation" parent="door" index="0" unique_id=1622538749]
+transform = Transform3D(120.00001, 0, 0, 0, -5.2453665e-06, 120, 0, -120, -5.2453665e-06, -0.715, 1.375, 0.22)
+
+[node name="schalter02" parent="." unique_id=510915357 instance=ExtResource("2_rxya7")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5294508, 1.8612571, 0.02622962)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=462412972]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1209384080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020812988, 2.623714, -0.26563293)
+shape = SubResource("BoxShape3D_mf8xc")
+debug_color = Color(0.50347227, 0.55972743, 0.43699017, 0.41960785)
+
+[node name="TriggerSwitch" parent="." unique_id=181858922 node_paths=PackedStringArray("animation_player") instance=ExtResource("3_aje5c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6108474, 0.037764847, 0.4386716)
+visible = false
+animation_player = NodePath("../schalter02/AnimationPlayer")
+interact_data = SubResource("Resource_o6njo")
+
+[editable path="door"]
+[editable path="schalter02"]

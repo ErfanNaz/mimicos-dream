@@ -1,4 +1,4 @@
-extends Node3D
+class_name TextSystem extends Node3D
 
 @export var text: String = ""
 @export var interact_data: InteractData
@@ -13,7 +13,7 @@ extends Node3D
 @export var animation_player: AnimationPlayer
 @export var text_label: Label
 
-var preview_state: String
+signal on_show(player_controller: PlayerController)
 
 func _ready() -> void:
 	trigger_switch.toggle_back_timer = toggle_back_timer
@@ -24,6 +24,7 @@ func _ready() -> void:
 	
 func _on_switch_toggle(_player_controller: PlayerController, on: bool) -> void:
 	if on:
+		on_show.emit(_player_controller)
 		animation_player.play("show")
 	else:
 		if one_shot:

@@ -3,6 +3,8 @@ class_name TriggerSwitch extends Node3D
 @export_range(0, 100, 1, "prefer_slider") var toggle_back_timer: int = 0
 @export var animation_player: AnimationPlayer
 
+@export var interact_data: InteractData
+
 @export_category("internal")
 @export var interaction: Interaction
 @export var ball_mesh_instance_3d: MeshInstance3D
@@ -15,6 +17,8 @@ var last_player: PlayerController
 var is_on: bool = false
 
 func _ready() -> void:
+	if interact_data:
+		interaction.interact_data = interact_data
 	interaction.on_interact.connect(self._toggle_trigger)
 	var mat: StandardMaterial3D = ball_mesh_instance_3d.get_surface_override_material(0).duplicate()
 	ball_mesh_instance_3d.set_surface_override_material(0, mat)

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cbgl6djb8r50p"]
+
+[ext_resource type="Script" uid="uid://bj7xi60o4hgr4" path="res://entities/fake_trigger/fake_trigger.gd" id="1_avehg"]
+[ext_resource type="PackedScene" uid="uid://cn1n3kfjpmwht" path="res://assets/Testobjecte/Objekte/schalter/schalter02.fbx" id="2_bhs5d"]
+[ext_resource type="Script" uid="uid://dwjaj6b1w32fr" path="res://common/interaction_system/interactable/interaction.gd" id="3_0wn4r"]
+[ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="4_t3ibm"]
+
+[sub_resource type="Resource" id="Resource_ec5dp"]
+script = ExtResource("4_t3ibm")
+title = "fake_trigger"
+action_button = 0
+metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_justf"]
+
+[node name="FakeTrigger" type="Node3D" unique_id=1168574047 node_paths=PackedStringArray("interaction", "animation_player")]
+script = ExtResource("1_avehg")
+interaction = NodePath("Interaction")
+animation_player = NodePath("schalter02/AnimationPlayer")
+
+[node name="schalter02" parent="." unique_id=510915357 instance=ExtResource("2_bhs5d")]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
+
+[node name="animation" parent="schalter02" index="1" unique_id=585784834]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+
+[node name="Interaction" type="Area3D" parent="." unique_id=805639639]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
+script = ExtResource("3_0wn4r")
+interact_data = SubResource("Resource_ec5dp")
+metadata/_custom_type_script = "uid://dwjaj6b1w32fr"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction" unique_id=1558977339]
+transform = Transform3D(1, 0, 0, 0, 1, -8.351872e-23, 0, -8.351872e-23, 1, 0, 0.31529236, 0.3501053)
+shape = SubResource("SphereShape3D_justf")
+
+[editable path="schalter02"]
