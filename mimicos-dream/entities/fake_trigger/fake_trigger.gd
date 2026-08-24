@@ -16,7 +16,7 @@ func _ready() -> void:
 			is_running = true
 			times_clicked += 1
 			player_controller.switch_to_state("idle")
-			player_controller.player_actor.animation_player.play("idle")
+			player_controller.player_actor.set_animation("idle")
 			animation_player.play("animation|on")
 			await get_tree().create_timer(1).timeout
 			animation_player.play("animation|off")
