@@ -19,9 +19,9 @@ func _ready() -> void:
 func _on_show_text(player_controller: PlayerController) -> void:
 	var times_clicked: int = fake_trigger.times_clicked
 	match(times_clicked) :
-		0: text_system_3.text_label.text = "This is not the first time you’re playing this, right?"
-		1: text_system_3.text_label.text = "You’re learning quick!"
-		_: text_system_3.text_label.text = "It took you %d tries to learn it?" % [times_clicked]
+		0: text_system_3.text_label.text = "Das ist doch nicht das erste Mal, dass du das spielst, oder?"
+		1: text_system_3.text_label.text = "Du lernst schnell!"
+		_: text_system_3.text_label.text = "Du hast %d Versuche gebraucht, um das zu lernen?" % [times_clicked]
 		
 
 func _portal_player(player_controller: PlayerController, from: Portal, to: Portal) -> void:
