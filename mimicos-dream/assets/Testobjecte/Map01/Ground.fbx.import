@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://db5uymenyqwrc"
-path="res://.godot/imported/ground.glb-04217fd703311260a627f27a39729c39.scn"
+uid="uid://ynshxweffil6"
+path="res://.godot/imported/Ground.fbx-dbe0dd88155805eaf59cd4200be3746a.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/ground.glb"
-dest_files=["res://.godot/imported/ground.glb-04217fd703311260a627f27a39729c39.scn"]
+source_file="res://assets/Testobjecte/Map01/Ground.fbx"
+dest_files=["res://.godot/imported/Ground.fbx-dbe0dd88155805eaf59cd4200be3746a.scn"]
 
 [params]
 
@@ -32,7 +32,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -41,23 +41,30 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Cube_001": {
+"PATH:Point": {
+"node/node_type": "OmniLight3D"
+},
+"PATH:Point_001": {
+"node/node_type": "OmniLight3D"
+},
+"PATH:Spot": {
+"node/node_type": "SpotLight3D"
+},
+"PATH:dach": {
 "generate/physics": true
 },
-"PATH:Cube_017": {
+"PATH:kamin": {
 "generate/physics": true
 },
-"PATH:Cylinder": {
+"PATH:möbel": {
 "generate/physics": true
 },
-"PATH:Plane": {
-"generate/physics": true
-},
-"PATH:Plane_002": {
+"PATH:wände": {
 "generate/physics": true
 }
 }
 }
-gltf/naming_version=2
-gltf/embedded_image_handling=1
-gltf/texture_map_mode=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2
