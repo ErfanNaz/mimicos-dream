@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cs4kdwk70y3hw"]
+
+[ext_resource type="Script" uid="uid://k1d332p8lc0y" path="res://entities/minigame_system/minigame_system.gd" id="1_dfhjp"]
+[ext_resource type="Shader" uid="uid://dc8k3frnyisnj" path="res://shaders/canvas_blur.gdshader" id="2_eq5db"]
+[ext_resource type="PackedScene" uid="uid://c0d7snlc8yu3v" path="res://entities/minigame_system/minigame_01.tscn" id="2_wtb0e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wtb0e"]
+shader = ExtResource("2_eq5db")
+shader_parameter/blur_size = 5.0
+
+[node name="MinigameSystem" type="Node" unique_id=1851283370 node_paths=PackedStringArray("minigame_01", "background")]
+script = ExtResource("1_dfhjp")
+minigame_01 = NodePath("CanvasLayer/Minigame01")
+background = NodePath("CanvasLayer/Background")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1654374911]
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=1489956384]
+visible = false
+material = SubResource("ShaderMaterial_wtb0e")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Minigame01" parent="CanvasLayer" unique_id=555434172 node_paths=PackedStringArray("minigame_system") instance=ExtResource("2_wtb0e")]
+visible = false
+minigame_system = NodePath("../..")

@@ -17,6 +17,8 @@ metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
 [node name="DoorSystem" type="Node3D" unique_id=434688693 node_paths=PackedStringArray("animation_player", "trigger_switch", "static_body_3d")]
 script = ExtResource("1_ggn1g")
+door_pin = null
+can_open = null
 animation_player = NodePath("door/AnimationPlayer")
 trigger_switch = NodePath("TriggerSwitch")
 static_body_3d = NodePath("StaticBody3D")

@@ -4,6 +4,7 @@ extends Node3D
 @export var input_manager: InputManager
 @export var map: Node3D
 @export var item_system: ItemSystem
+@export var minigame_system: MinigameSystem
 
 @export_range(0, 5, 1, "prefer_slider") var log_level: int = 2:
 	set(value):
@@ -23,3 +24,5 @@ func _ready() -> void:
 	player_controller.player_body.global_position = start_marker_3d.global_position
 	GameManager.current_player_controller = player_controller
 	GameManager.item_system = item_system
+	GameManager.minigame_system = minigame_system
+	

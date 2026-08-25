@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://bnabiam35uypr"]
+
+[ext_resource type="Script" uid="uid://bmp30cr5skwrc" path="res://entities/items/letter/letter.gd" id="1_5nvo8"]
+[ext_resource type="Script" uid="uid://db35xu1a264vf" path="res://entities/item_system/item_base.gd" id="1_gjyee"]
+[ext_resource type="Script" uid="uid://dwjaj6b1w32fr" path="res://common/interaction_system/interactable/interaction.gd" id="2_bpa18"]
+[ext_resource type="PackedScene" uid="uid://dth3medadidxr" path="res://assets/Testobjecte/Map01/Animationen/Brief.fbx" id="3_bpa18"]
+[ext_resource type="Texture2D" uid="uid://cinrijhwqq2qh" path="res://assets/Testobjecte/Map01/Bilder/Brief1.png" id="4_1mp2t"]
+[ext_resource type="Shader" uid="uid://dc8k3frnyisnj" path="res://shaders/canvas_blur.gdshader" id="5_47k0s"]
+[ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="5_njehq"]
+
+[sub_resource type="Resource" id="Resource_47k0s"]
+script = ExtResource("5_njehq")
+title = "letter_01"
+action_button = 1
+metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mf8xc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mf8xc"]
+shader = ExtResource("5_47k0s")
+shader_parameter/blur_size = 5.0
+
+[sub_resource type="Animation" id="Animation_47k0s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/DetailView/CenterContainer:offset_transform_position_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_n1ver"]
+resource_name = "on_hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/DetailView/CenterContainer:offset_transform_position_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_njehq"]
+resource_name = "on_show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/DetailView/CenterContainer:offset_transform_position_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0.2), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n1ver"]
+_data = {
+&"RESET": SubResource("Animation_47k0s"),
+&"on_hide": SubResource("Animation_n1ver"),
+&"on_show": SubResource("Animation_njehq")
+}
+
+[node name="Letter" type="Node3D" unique_id=1809275136 node_paths=PackedStringArray("item", "animation_player", "canvas_layer")]
+script = ExtResource("1_5nvo8")
+item = NodePath("Item")
+animation_player = NodePath("AnimationPlayer")
+canvas_layer = NodePath("CanvasLayer")
+
+[node name="Item" type="Node3D" parent="." unique_id=917210026 node_paths=PackedStringArray("interaction", "mesh")]
+script = ExtResource("1_gjyee")
+interaction = NodePath("Interaction")
+mesh = NodePath("Brief")
+item_image = ExtResource("4_1mp2t")
+
+[node name="Interaction" type="Area3D" parent="Item" unique_id=511043409]
+script = ExtResource("2_bpa18")
+interact_data = SubResource("Resource_47k0s")
+metadata/_custom_type_script = "uid://dwjaj6b1w32fr"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Item/Interaction" unique_id=840814494]
+shape = SubResource("SphereShape3D_mf8xc")
+
+[node name="Brief" parent="Item" unique_id=1525025361 instance=ExtResource("3_bpa18")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=706404650]
+visible = false
+
+[node name="DetailView" type="Control" parent="CanvasLayer" unique_id=1988080101]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DetailView" unique_id=558194876]
+material = SubResource("ShaderMaterial_mf8xc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.73333335, 0.64705884, 0.5411765, 0.4392157)
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/DetailView" unique_id=875873556]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 0.2)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/DetailView/CenterContainer" unique_id=1057282736]
+layout_mode = 2
+texture = ExtResource("4_1mp2t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=537332786]
+libraries/ = SubResource("AnimationLibrary_n1ver")

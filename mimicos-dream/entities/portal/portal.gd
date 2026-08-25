@@ -16,6 +16,8 @@ const DELAY: float = 3.0
 func _ready() -> void:
 	interaction.on_player_entered.connect(self._on_player_entered)
 	interaction.on_player_exited.connect(self._on_player_exited)
+	var mat: StandardMaterial3D = mesh_instance_3d.get_surface_override_material(0).duplicate()
+	mesh_instance_3d.set_surface_override_material(0, mat)
 
 
 func _on_player_entered(interaction: Interaction) -> void:

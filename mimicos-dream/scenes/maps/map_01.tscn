@@ -27,13 +27,14 @@
 [ext_resource type="PackedScene" uid="uid://bt4tdekby1tmv" path="res://assets/Testobjecte/Map01/Tannenbaum.fbx" id="25_u2lui"]
 [ext_resource type="PackedScene" uid="uid://18x64ejxbe1d" path="res://entities/door_system/door_system.tscn" id="26_qeyhh"]
 [ext_resource type="PackedScene" uid="uid://cbgl6djb8r50p" path="res://entities/fake_trigger/fake_trigger.tscn" id="27_0mq61"]
+[ext_resource type="PackedScene" uid="uid://bnabiam35uypr" path="res://entities/items/letter/letter.tscn" id="28_u2lui"]
 
 [sub_resource type="Resource" id="Resource_4iqtb"]
 script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0mq61"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_u2lui"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Resource" id="Resource_yr2eo"]
@@ -53,14 +54,14 @@ script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_u2lui"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_nkd1n"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Resource" id="Resource_4hvco"]
 script = ExtResource("2_yr2eo")
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_nkd1n"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_inhmn"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Curve3D" id="Curve3D_ru6md"]
@@ -124,10 +125,10 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_inhmn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_3vtmf"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_3vtmf"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_omibp"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [node name="Map01" type="Node3D" unique_id=1725308146 node_paths=PackedStringArray("start_marker_3d", "fake_trigger", "text_system_3", "portals")]
@@ -168,7 +169,7 @@ visible = false
 
 [node name="Sprite3D" parent="triggers/TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.4, 0, 6.039832e-08, 0, 0.4, 0, -6.039832e-08, 0, -0.4, -4.612211, 2.5914545, 2.1660986)
-texture = SubResource("ViewportTexture_0mq61")
+texture = SubResource("ViewportTexture_u2lui")
 
 [node name="objekte" type="Node3D" parent="." unique_id=288404009]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.6577603, 0, -0.5978474)
@@ -221,13 +222,16 @@ visible = false
 animation_player = NodePath("../../schalter01/AnimationPlayer")
 
 [node name="Sprite3D" parent="HighlightPathSystem/TriggerSwitch" index="3" unique_id=226529221]
-texture = SubResource("ViewportTexture_u2lui")
+texture = SubResource("ViewportTexture_nkd1n")
 
 [node name="TPath3D" type="Path3D" parent="HighlightPathSystem" unique_id=16752374]
 curve = ExtResource("11_pgpfx")
 
 [node name="PPath3D2" type="Path3D" parent="HighlightPathSystem" unique_id=1127803273]
 curve = ExtResource("12_4228d")
+
+[node name="StartMarker3D" type="Marker3D" parent="." unique_id=193951223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -177.7835, 127.7702, -1334.9744)
 
 [node name="Portals" type="Node3D" parent="." unique_id=1952272026]
 
@@ -240,7 +244,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9389, 9.536743e-07, 9.801
 connected_portal = NodePath("../Portal2")
 
 [node name="Portal3" parent="Portals" unique_id=411087265 node_paths=PackedStringArray("connected_portal") instance=ExtResource("18_oendh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -181.37738, 124.53389, -1339.0978)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -178.91736, 124.53389, -1339.0978)
 connected_portal = NodePath("../Portal4")
 
 [node name="Portal4" parent="Portals" unique_id=1469156814 node_paths=PackedStringArray("connected_portal") instance=ExtResource("18_oendh")]
@@ -296,7 +300,7 @@ visible = false
 
 [node name="Sprite3D" parent="TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.24545783, 0, 0.54749477, 0, 0.6, 0, -0.54749477, 0, -0.24545783, -0.67036444, 3.9025612, 0.2469357)
-texture = SubResource("ViewportTexture_nkd1n")
+texture = SubResource("ViewportTexture_inhmn")
 
 [node name="HighlightPathSystem2" parent="." unique_id=126581828 node_paths=PackedStringArray("camera_p_path_follow_3d", "camera_t_path_follow_3d") instance=ExtResource("7_e1bmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.210854, -4.7683716e-07, 76.58662)
@@ -448,10 +452,10 @@ transform = Transform3D(0.713175, 0, 0, 0, 0.713175, 0, 0, 0, 0.713175, -129.081
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.676483, 2.023346, -2.0421143)
 omni_range = 10.220524
 
-[node name="StartMarker3D" type="Marker3D" parent="." unique_id=193951223]
-
 [node name="DoorSystem" parent="." unique_id=434688693 instance=ExtResource("26_qeyhh")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -159.25282, 124.65889, -1339.3954)
+door_pin = "1986"
+can_open = true
 
 [node name="tür_rahmen" parent="DoorSystem/door" parent_id_path=PackedInt32Array(434688693, 1468137168) index="1" unique_id=973706474]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0.064941406, -0.125, -0.020004272)
@@ -472,7 +476,7 @@ visible = false
 
 [node name="Sprite3D" parent="TextSystem2" index="1" unique_id=571532252]
 transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, 4.7200775, 3, 2.7381592)
-texture = SubResource("ViewportTexture_inhmn")
+texture = SubResource("ViewportTexture_3vtmf")
 
 [node name="FakeTrigger" parent="." unique_id=1168574047 instance=ExtResource("27_0mq61")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.3392, 126.483925, -1338.0209)
@@ -487,7 +491,10 @@ visible = false
 
 [node name="Sprite3D" parent="TextSystem3" index="1" unique_id=571532252]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.9628906, 4.9089355, -0.39038086)
-texture = SubResource("ViewportTexture_3vtmf")
+texture = SubResource("ViewportTexture_omibp")
+
+[node name="Letter" parent="." unique_id=917210026 instance=ExtResource("28_u2lui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -169.69658, 126.06266, -1329.6619)
 
 [editable path="triggers/TextSystem"]
 [editable path="HighlightPathSystem"]

@@ -117,6 +117,7 @@ func switch_to_state(state: String) -> void:
 		"idle": idle_state_machine()
 		"third_person": input_active_state_machine()
 		"top_down": input_active_top_down_machine()
+		"staying": staying_state_machine()
 		_: input_active_state_machine()
 
 func input_active_state_machine() -> void:
@@ -124,6 +125,9 @@ func input_active_state_machine() -> void:
 
 func idle_state_machine() -> void:
 	self.player_state_machine.transition("PlayerIdleControlled")
+
+func staying_state_machine() -> void:
+	self.player_state_machine.transition("PlayerStayingControlled")
 
 func input_active_top_down_machine() -> void:
 	self.player_state_machine.transition("PlayerInputTopDownState")

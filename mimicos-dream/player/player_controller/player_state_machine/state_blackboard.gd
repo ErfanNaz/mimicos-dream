@@ -3,7 +3,8 @@ class_name StateBlackboard extends Resource
 enum PlayerControllerState {
 	idle,
 	input_third_person,
-	input_top_down
+	input_top_down,
+	staying
 }
 
 @export var controller_state: PlayerControllerState = PlayerControllerState.idle

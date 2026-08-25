@@ -40,6 +40,14 @@ func _ready() -> void:
 	self.area_entered.connect(self._on_area_entered)
 	
 
+func activate() -> void:
+	self.set_deferred("monitorable", true)
+	self.set_deferred("monitoring", true)
+
+func deactivate() -> void:
+	self.set_deferred("monitorable", false)
+	self.set_deferred("monitoring", false)
+
 func get_overlapping_players() -> Array[Interaction]:
 	var overlapping_players: Array[Interaction] = []
 	for area in get_overlapping_areas():

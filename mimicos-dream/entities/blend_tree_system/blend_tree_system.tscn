@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bp82kw13cg1i6"]
+
+[ext_resource type="Script" uid="uid://cw84c83eechjq" path="res://entities/blend_tree_system/blend_tree_system.gd" id="1_c33fs"]
+[ext_resource type="Script" uid="uid://c2c2u3ah8mbm6" path="res://entities/blend_tree_system/staging_animation_controller.gd" id="2_b0rb3"]
+
+[node name="BlendTreeSystem" type="Node3D" unique_id=311952047 node_paths=PackedStringArray("staged_animation_controller")]
+script = ExtResource("1_c33fs")
+staged_animation_controller = NodePath("StagedAnimationController")
+
+[node name="StagedAnimationController" type="Node" parent="." unique_id=1336279259]
+script = ExtResource("2_b0rb3")
+metadata/_custom_type_script = "uid://c2c2u3ah8mbm6"

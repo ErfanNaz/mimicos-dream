@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dvs75nw080kyk" path="res://entities/camera_system/camera_system.tscn" id="6_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://b03dp11bxot1q" path="res://scenes/maps/map_01.tscn" id="7_hujxm"]
 [ext_resource type="PackedScene" uid="uid://v5xwdspwnyd2" path="res://entities/item_system/item_system.tscn" id="8_yyfjg"]
+[ext_resource type="PackedScene" uid="uid://cs4kdwk70y3hw" path="res://entities/minigame_system/minigame_system.tscn" id="9_b1x3f"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hujxm"]
 panorama = ExtResource("2_yyfjg")
@@ -22,12 +23,13 @@ sky = SubResource("Sky_hujxm")
 tonemap_mode = 2
 fog_light_color = Color(0.69680893, 0.9194905, 0.9959524, 1)
 
-[node name="Main" type="Node3D" unique_id=4722677 node_paths=PackedStringArray("player_controller", "input_manager", "map", "item_system")]
+[node name="Main" type="Node3D" unique_id=4722677 node_paths=PackedStringArray("player_controller", "input_manager", "map", "item_system", "minigame_system")]
 script = ExtResource("1_l3cfh")
 player_controller = NodePath("PlayerController")
 input_manager = NodePath("InputManager")
 map = NodePath("Map01")
 item_system = NodePath("ItemSystem")
+minigame_system = NodePath("MinigameSystem")
 log_level = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1823298397]
@@ -61,3 +63,5 @@ camera_position_target = NodePath("../PlayerController/PlayerActor")
 [node name="Map01" parent="." unique_id=1725308146 instance=ExtResource("7_hujxm")]
 
 [node name="ItemSystem" parent="." unique_id=977012689 instance=ExtResource("8_yyfjg")]
+
+[node name="MinigameSystem" parent="." unique_id=1851283370 instance=ExtResource("9_b1x3f")]
