@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dafeoxtykmpwi"
-path="res://.godot/imported/Terrain.fbx-4a08a7ac335a1783c70914d2c3ef40e7.scn"
+uid="uid://c01o1bwkv5prs"
+path="res://.godot/imported/Kiste.fbx-bf7e882c546a11ab69f3423cf125a134.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/Terrain.fbx"
-dest_files=["res://.godot/imported/Terrain.fbx-4a08a7ac335a1783c70914d2c3ef40e7.scn"]
+source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Kiste.fbx"
+dest_files=["res://.godot/imported/Kiste.fbx-bf7e882c546a11ab69f3423cf125a134.scn"]
 
 [params]
 
@@ -41,8 +41,9 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:ground": {
-"generate/physics": true
+"PATH:Cube_005": {
+"generate/physics": true,
+"physics/shape_type": 1
 }
 }
 }

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dafeoxtykmpwi"
-path="res://.godot/imported/Terrain.fbx-4a08a7ac335a1783c70914d2c3ef40e7.scn"
+uid="uid://bw486eqkrdp2j"
+path="res://.godot/imported/Ecke.fbx-d64e4d794b5277cb7d0889720785c4cc.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/Terrain.fbx"
-dest_files=["res://.godot/imported/Terrain.fbx-4a08a7ac335a1783c70914d2c3ef40e7.scn"]
+source_file="res://assets/Testobjecte/Map01/modular assets/wände/Ecke.fbx"
+dest_files=["res://.godot/imported/Ecke.fbx-d64e4d794b5277cb7d0889720785c4cc.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:ground": {
+"PATH:Cube_003": {
 "generate/physics": true
 }
 }

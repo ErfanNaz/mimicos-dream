@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dafeoxtykmpwi"
-path="res://.godot/imported/Terrain.fbx-4a08a7ac335a1783c70914d2c3ef40e7.scn"
+uid="uid://dmwm1w4dvesyt"
+path="res://.godot/imported/Tür.fbx-20d232456d1840c535d5a362916f842e.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/Terrain.fbx"
-dest_files=["res://.godot/imported/Terrain.fbx-4a08a7ac335a1783c70914d2c3ef40e7.scn"]
+source_file="res://assets/Testobjecte/Map01/modular assets/wände/Tür.fbx"
+dest_files=["res://.godot/imported/Tür.fbx-20d232456d1840c535d5a362916f842e.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:ground": {
+"PATH:Cube_002": {
 "generate/physics": true
 }
 }
