@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://csfwx5prdnk56"
-path="res://.godot/imported/Laterne.fbx-58c355bbe7d88bd212a8b3cc4322d51a.scn"
+uid="uid://bg6y4kpjhymbr"
+path="res://.godot/imported/Haus02.fbx-f83d8ca0f3e542c7e0367b7f76511171.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/Laterne.fbx"
-dest_files=["res://.godot/imported/Laterne.fbx-58c355bbe7d88bd212a8b3cc4322d51a.scn"]
+source_file="res://assets/Testobjecte/Map01/Haus02.fbx"
+dest_files=["res://.godot/imported/Haus02.fbx-f83d8ca0f3e542c7e0367b7f76511171.scn"]
 
 [params]
 
@@ -41,7 +41,10 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Laterne": {
+"PATH:Boden": {
+"generate/physics": true
+},
+"PATH:Haus": {
 "generate/physics": true
 }
 }

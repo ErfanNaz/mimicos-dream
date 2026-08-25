@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://csfwx5prdnk56"
-path="res://.godot/imported/Laterne.fbx-58c355bbe7d88bd212a8b3cc4322d51a.scn"
+uid="uid://dutdj1dkt0uk7"
+path="res://.godot/imported/Bäumchen.fbx-e57f1ec428f3a1561a83542008fae366.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/Laterne.fbx"
-dest_files=["res://.godot/imported/Laterne.fbx-58c355bbe7d88bd212a8b3cc4322d51a.scn"]
+source_file="res://assets/Testobjecte/Map01/Bäumchen.fbx"
+dest_files=["res://.godot/imported/Bäumchen.fbx-e57f1ec428f3a1561a83542008fae366.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Laterne": {
+"PATH:Cube": {
 "generate/physics": true
 }
 }
