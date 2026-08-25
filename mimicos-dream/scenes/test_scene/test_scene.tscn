@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dxyear54toy1v" path="res://entities/input_manager/input_manager.tscn" id="4_ork3v"]
 [ext_resource type="PackedScene" uid="uid://dvs75nw080kyk" path="res://entities/camera_system/camera_system.tscn" id="5_a0rq3"]
 [ext_resource type="PackedScene" uid="uid://v5xwdspwnyd2" path="res://entities/item_system/item_system.tscn" id="6_g451t"]
+[ext_resource type="PackedScene" uid="uid://4yuqwjpeg8h5" path="res://assets/Testobjecte/Map01/Animationen/HinweisTafel.glb" id="8_g451t"]
+[ext_resource type="PackedScene" uid="uid://dth3medadidxr" path="res://assets/Testobjecte/Map01/Animationen/Brief.fbx" id="10_ioiol"]
+[ext_resource type="PackedScene" uid="uid://dno5ywv6if5y" path="res://assets/Testobjecte/Map01/Hecke.fbx" id="11_d01bh"]
+[ext_resource type="PackedScene" uid="uid://bt4tdekby1tmv" path="res://assets/Testobjecte/Map01/Tannenbaum.fbx" id="12_mj4xq"]
 [ext_resource type="PackedScene" uid="uid://bg6y4kpjhymbr" path="res://assets/Testobjecte/Map01/Haus02.fbx" id="20_3myh3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
@@ -62,8 +66,205 @@ enable_lookup_direction = true
 [node name="CameraSystem" parent="Spieler und welt" unique_id=798910101 node_paths=PackedStringArray("camera_3d") instance=ExtResource("5_a0rq3")]
 camera_3d = NodePath("../Camera3D")
 
+[node name="HinweisTafel" parent="Spieler und welt" unique_id=1441208737 instance=ExtResource("8_g451t")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.062063564, 3.5052605, -17.897)
+
 [node name="StartMarker3D" type="Marker3D" parent="." unique_id=1608510968]
 transform = Transform3D(2.0641053, 0, 0, 0, 2.0641053, 0, 0, 0, 2.0641053, 0, 0, 0)
 
 [node name="Haus02" parent="." unique_id=686002113 instance=ExtResource("20_3myh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.4370759)
+
+[node name="Brief" parent="." unique_id=1074685928 instance=ExtResource("10_ioiol")]
+transform = Transform3D(0.6727455, -0.73987395, 3.2340917e-08, 0, -4.371139e-08, -1, 0.73987395, 0.6727455, -2.940664e-08, -7.1341777, 1.3428917, -16.80294)
+
+[node name="Vegetation" type="Node3D" parent="." unique_id=440697935]
+
+[node name="Hecke" parent="Vegetation" unique_id=219228256 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.211025, 0, -8.407751)
+
+[node name="Hecke2" parent="Vegetation" unique_id=781540000 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.462307, 0, -8.407751)
+
+[node name="Hecke3" parent="Vegetation" unique_id=2111439035 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.727081, 0, -8.407751)
+
+[node name="Hecke4" parent="Vegetation" unique_id=1193662301 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.178202, 0, -8.407751)
+
+[node name="Hecke5" parent="Vegetation" unique_id=1133437900 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.448095, 0, -8.407751)
+
+[node name="Hecke6" parent="Vegetation" unique_id=795148399 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.755394, 0, -8.407751)
+
+[node name="Hecke7" parent="Vegetation" unique_id=1385587608 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.085922, 0, -8.407751)
+
+[node name="Hecke8" parent="Vegetation" unique_id=1963724007 instance=ExtResource("11_d01bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.30672, 0, -8.407751)
+
+[node name="Hecke9" parent="Vegetation" unique_id=155310929 instance=ExtResource("11_d01bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -41.60804, 0, -9.521375)
+
+[node name="Hecke10" parent="Vegetation" unique_id=1042786863 instance=ExtResource("11_d01bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -41.60804, 0, -12.83941)
+
+[node name="Hecke11" parent="Vegetation" unique_id=992298170 instance=ExtResource("11_d01bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -41.60804, 0, -16.150715)
+
+[node name="Hecke12" parent="Vegetation" unique_id=1277468016 instance=ExtResource("11_d01bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -41.60804, 0, -19.47844)
+
+[node name="Hecke13" parent="Vegetation" unique_id=110432914 instance=ExtResource("11_d01bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -41.60804, 0, -22.754478)
+
+[node name="Hecke14" parent="Vegetation" unique_id=378252144 instance=ExtResource("11_d01bh")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -41.60804, 0, -25.974514)
+
+[node name="Hecke15" parent="Vegetation" unique_id=2070066557 instance=ExtResource("11_d01bh")]
+transform = Transform3D(-2.6720016e-08, 0, -1, 0, 1, 0, 0.6112827, 0, -4.371139e-08, -41.60804, 0, -28.46543)
+
+[node name="Tannenbaum" parent="Vegetation" unique_id=1598949770 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -47.32258, 1.2820663, -13.978661)
+
+[node name="Tannenbaum2" parent="Vegetation" unique_id=1189237592 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -46.499645, 1.2820663, -10.511654)
+
+[node name="Tannenbaum9" parent="Vegetation" unique_id=1236926776 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -46.563923, 1.2820663, -22.07097)
+
+[node name="Tannenbaum10" parent="Vegetation" unique_id=389645674 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -45.74099, 1.2820663, -18.603964)
+
+[node name="Tannenbaum11" parent="Vegetation" unique_id=1527104312 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -47.49117, 1.2820663, -30.66905)
+
+[node name="Tannenbaum12" parent="Vegetation" unique_id=931460582 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -46.668236, 1.2820663, -27.202044)
+
+[node name="Tannenbaum3" parent="Vegetation" unique_id=583985119 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -48.494766, 1.2820663, -7.4350963)
+
+[node name="Tannenbaum4" parent="Vegetation" unique_id=1090046883 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -46.981167, 1.2820663, -4.2256646)
+
+[node name="Tannenbaum5" parent="Vegetation" unique_id=1155009954 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -44.35613, 1.2820663, -3.3428779)
+
+[node name="Tannenbaum6" parent="Vegetation" unique_id=1968485143 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -41.758755, 1.2820663, -1.0485692)
+
+[node name="Tannenbaum7" parent="Vegetation" unique_id=72540324 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -38.63748, 1.2820663, -2.530682)
+
+[node name="Tannenbaum8" parent="Vegetation" unique_id=323704863 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -37.946735, 1.2820663, -0.18250132)
+
+[node name="Tannenbaum13" parent="Vegetation" unique_id=644211121 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -34.34081, 1.2820663, -2.0601087)
+
+[node name="Tannenbaum14" parent="Vegetation" unique_id=224834196 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -31.219536, 1.2820663, -3.5422215)
+
+[node name="Tannenbaum15" parent="Vegetation" unique_id=824860558 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -30.52879, 1.2820663, -1.1940408)
+
+[node name="Tannenbaum16" parent="Vegetation" unique_id=217205709 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -36.111004, 1.2820663, 2.5761113)
+
+[node name="Tannenbaum17" parent="Vegetation" unique_id=1964072948 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -32.98973, 1.2820663, 1.0939984)
+
+[node name="Tannenbaum18" parent="Vegetation" unique_id=1528266232 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -32.298985, 1.2820663, 3.4421792)
+
+[node name="Tannenbaum19" parent="Vegetation" unique_id=881236783 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -29.788883, 1.2820663, 3.8405356)
+
+[node name="Tannenbaum20" parent="Vegetation" unique_id=184639936 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -26.66761, 1.2820663, 2.3584228)
+
+[node name="Tannenbaum21" parent="Vegetation" unique_id=2101091845 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -25.976864, 1.2820663, 4.7066035)
+
+[node name="Tannenbaum22" parent="Vegetation" unique_id=2054490801 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -27.428623, 1.2820663, -2.144401)
+
+[node name="Tannenbaum23" parent="Vegetation" unique_id=1413371511 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -24.30735, 1.2820663, -3.626514)
+
+[node name="Tannenbaum24" parent="Vegetation" unique_id=2120754541 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -23.616604, 1.2820663, -1.2783332)
+
+[node name="Tannenbaum25" parent="Vegetation" unique_id=601789697 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -21.61227, 1.2820663, -2.0601077)
+
+[node name="Tannenbaum26" parent="Vegetation" unique_id=260835479 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -18.490997, 1.2820663, -3.5422206)
+
+[node name="Tannenbaum27" parent="Vegetation" unique_id=1864901497 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -17.800251, 1.2820663, -1.1940398)
+
+[node name="Tannenbaum28" parent="Vegetation" unique_id=1225853534 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -22.202343, 1.2820663, 4.3463044)
+
+[node name="Tannenbaum29" parent="Vegetation" unique_id=590043063 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -19.08107, 1.2820663, 2.8641915)
+
+[node name="Tannenbaum30" parent="Vegetation" unique_id=439460408 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -18.390324, 1.2820663, 5.2123723)
+
+[node name="Tannenbaum31" parent="Vegetation" unique_id=1924117129 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -44.203316, 1.2820663, 3.334765)
+
+[node name="Tannenbaum32" parent="Vegetation" unique_id=961819882 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -41.082043, 1.2820663, 1.8526521)
+
+[node name="Tannenbaum33" parent="Vegetation" unique_id=67070655 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -40.391296, 1.2820663, 4.200833)
+
+[node name="Tannenbaum34" parent="Vegetation" unique_id=988993416 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -51.62127, 1.2820663, -0.37421083)
+
+[node name="Tannenbaum35" parent="Vegetation" unique_id=1257040947 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -48.499996, 1.2820663, -1.8563237)
+
+[node name="Tannenbaum36" parent="Vegetation" unique_id=544652869 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.39823478, 0, 0, 0, 0.39823478, 0, 0, 0, 0.39823478, -47.80925, 1.2820663, 0.49185705)
+
+[node name="Tannenbaum37" parent="Vegetation" unique_id=343278472 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.07156351, 0, -0.39175192, 0, 0.39823472, 0, 0.39175192, 0, 0.07156351, -53.38358, 1.2820663, -8.463892)
+
+[node name="Tannenbaum38" parent="Vegetation" unique_id=1744041211 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.07156351, 0, -0.39175192, 0, 0.39823472, 0, 0.39175192, 0, 0.07156351, -51.364697, 1.2820663, -5.6597686)
+
+[node name="Tannenbaum39" parent="Vegetation" unique_id=650704393 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.07156351, 0, -0.39175192, 0, 0.39823472, 0, 0.39175192, 0, 0.07156351, -53.55052, 1.2820663, -4.5582943)
+
+[node name="Tannenbaum40" parent="Vegetation" unique_id=1216967605 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.07156351, 0, -0.39175192, 0, 0.39823472, 0, 0.39175192, 0, 0.07156351, -53.72076, 1.2820663, -15.797546)
+
+[node name="Tannenbaum41" parent="Vegetation" unique_id=493394968 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.07156351, 0, -0.39175192, 0, 0.39823472, 0, 0.39175192, 0, 0.07156351, -51.701878, 1.2820663, -12.993423)
+
+[node name="Tannenbaum42" parent="Vegetation" unique_id=2011195702 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.07156351, 0, -0.39175192, 0, 0.39823472, 0, 0.39175192, 0, 0.07156351, -53.887703, 1.2820663, -11.891949)
+
+[node name="Tannenbaum43" parent="Vegetation" unique_id=1294230357 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.07156351, 0, -0.39175192, 0, 0.39823472, 0, 0.39175192, 0, 0.07156351, -51.444798, 1.2820663, -20.602356)
+
+[node name="Tannenbaum44" parent="Vegetation" unique_id=1594895351 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.07156351, 0, -0.39175192, 0, 0.39823472, 0, 0.39175192, 0, 0.07156351, -49.425915, 1.2820663, -17.798233)
+
+[node name="Tannenbaum45" parent="Vegetation" unique_id=1743497036 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.07156351, 0, -0.39175192, 0, 0.39823472, 0, 0.39175192, 0, 0.07156351, -51.61174, 1.2820663, -16.696758)
+
+[node name="Tannenbaum46" parent="Vegetation" unique_id=881587797 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.07156351, 0, -0.39175192, 0, 0.39823472, 0, 0.39175192, 0, 0.07156351, -53.046402, 1.2820663, -27.514538)
+
+[node name="Tannenbaum47" parent="Vegetation" unique_id=1926510255 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.07156351, 0, -0.39175192, 0, 0.39823472, 0, 0.39175192, 0, 0.07156351, -51.02752, 1.2820663, -24.710415)
+
+[node name="Tannenbaum48" parent="Vegetation" unique_id=714010340 instance=ExtResource("12_mj4xq")]
+transform = Transform3D(0.07156351, 0, -0.39175192, 0, 0.39823472, 0, 0.39175192, 0, 0.07156351, -53.213345, 1.2820663, -23.60894)
