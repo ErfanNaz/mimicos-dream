@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://csfwx5prdnk56"
-path="res://.godot/imported/Laterne.fbx-58c355bbe7d88bd212a8b3cc4322d51a.scn"
+uid="uid://bjgupawrepkni"
+path="res://.godot/imported/Schrank01.fbx-5c8186bd93e09b6fe27695ddaad3bb35.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/Laterne.fbx"
-dest_files=["res://.godot/imported/Laterne.fbx-58c355bbe7d88bd212a8b3cc4322d51a.scn"]
+source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Schrank01.fbx"
+dest_files=["res://.godot/imported/Schrank01.fbx-5c8186bd93e09b6fe27695ddaad3bb35.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Laterne": {
+"PATH:Cube_011": {
 "generate/physics": true
 }
 }

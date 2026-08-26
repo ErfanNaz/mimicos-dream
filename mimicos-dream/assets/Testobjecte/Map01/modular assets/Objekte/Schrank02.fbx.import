@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bt4tdekby1tmv"
-path="res://.godot/imported/Tannenbaum.fbx-39fd0e9b791828a8357ab925ab101c70.scn"
+uid="uid://lpibm5s40wbb"
+path="res://.godot/imported/Schrank02.fbx-01e3d6f280d020c9e2b03ab530614c6f.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/Tannenbaum.fbx"
-dest_files=["res://.godot/imported/Tannenbaum.fbx-39fd0e9b791828a8357ab925ab101c70.scn"]
+source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Schrank02.fbx"
+dest_files=["res://.godot/imported/Schrank02.fbx-01e3d6f280d020c9e2b03ab530614c6f.scn"]
 
 [params]
 
@@ -41,9 +41,8 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Cylinder_016": {
-"generate/physics": true,
-"physics/shape_type": 0
+"PATH:Cube_009": {
+"generate/physics": true
 }
 }
 }

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dno5ywv6if5y"
-path="res://.godot/imported/Hecke.fbx-bcc183b5966bdfad0348db5a373f3e4b.scn"
+uid="uid://dkmwvowdl7bbx"
+path="res://.godot/imported/Gaderobe.fbx-07263e54acd0443bea6509463b20cdac.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/Hecke.fbx"
-dest_files=["res://.godot/imported/Hecke.fbx-bcc183b5966bdfad0348db5a373f3e4b.scn"]
+source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Gaderobe.fbx"
+dest_files=["res://.godot/imported/Gaderobe.fbx-07263e54acd0443bea6509463b20cdac.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Cube": {
+"PATH:Cube_008": {
 "generate/physics": true
 }
 }
