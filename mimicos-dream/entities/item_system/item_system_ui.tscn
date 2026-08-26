@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7ufwyi3q3mgi" path="res://entities/item_system/item_system_ui.gd" id="1_gehp2"]
 
-[node name="ItemSystemUi" type="Control" unique_id=502326445 node_paths=PackedStringArray("current_item")]
+[node name="ItemSystemUi" type="Control" unique_id=502326445 node_paths=PackedStringArray("current_item", "left_arrow", "right_arrow")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +11,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gehp2")
 current_item = NodePath("MarginContainer/HBoxContainer/CurrentItem")
+left_arrow = NodePath("MarginContainer/HBoxContainer/LeftArrow")
+right_arrow = NodePath("MarginContainer/HBoxContainer/RightArrow")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=410204437]
 layout_mode = 1
@@ -28,7 +30,21 @@ theme_override_constants/margin_bottom = 40
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=476072998]
 layout_mode = 2
 
+[node name="LeftArrow" type="CenterContainer" parent="MarginContainer/HBoxContainer" unique_id=296817680]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/LeftArrow" unique_id=572632605]
+layout_mode = 2
+text = "<"
+
 [node name="CurrentItem" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=413464360]
 custom_minimum_size = Vector2(100, 100)
 custom_maximum_size = Vector2(100, 100)
 layout_mode = 2
+
+[node name="RightArrow" type="CenterContainer" parent="MarginContainer/HBoxContainer" unique_id=212328232]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/RightArrow" unique_id=1778139585]
+layout_mode = 2
+text = ">"

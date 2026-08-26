@@ -25,12 +25,12 @@ fog_light_color = Color(0.69680893, 0.9194905, 0.9959524, 1)
 
 [node name="Main" type="Node3D" unique_id=4722677 node_paths=PackedStringArray("player_controller", "input_manager", "map", "item_system", "minigame_system")]
 script = ExtResource("1_l3cfh")
+log_level = 0
 player_controller = NodePath("PlayerController")
 input_manager = NodePath("InputManager")
 map = NodePath("Map01")
 item_system = NodePath("ItemSystem")
 minigame_system = NodePath("MinigameSystem")
-log_level = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1823298397]
 environment = SubResource("Environment_ow5a4")
@@ -42,7 +42,6 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=128362928]
 transform = Transform3D(0, -1, 0, 0, 0, 1, -1, 0, 0, 0, 4.1759114, 0)
-top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=145780615]
 process_priority = 300
@@ -55,6 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1759113, 0)
 
 [node name="InputManager" parent="." unique_id=799682356 instance=ExtResource("3_k2fmo")]
 enable_lookup_direction = true
+enable_digital_direction = true
 
 [node name="CameraSystem" parent="." unique_id=798910101 node_paths=PackedStringArray("camera_3d", "camera_position_target") instance=ExtResource("6_ow5a4")]
 camera_3d = NodePath("../Camera3D")
@@ -62,6 +62,7 @@ camera_position_target = NodePath("../PlayerController/PlayerActor")
 
 [node name="Map01" parent="." unique_id=1725308146 instance=ExtResource("7_hujxm")]
 
-[node name="ItemSystem" parent="." unique_id=977012689 instance=ExtResource("8_yyfjg")]
+[node name="ItemSystem" parent="." unique_id=977012689 node_paths=PackedStringArray("player_controller") instance=ExtResource("8_yyfjg")]
+player_controller = NodePath("../PlayerController")
 
 [node name="MinigameSystem" parent="." unique_id=1851283370 instance=ExtResource("9_b1x3f")]

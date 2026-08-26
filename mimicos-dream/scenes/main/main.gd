@@ -26,3 +26,4 @@ func _ready() -> void:
 	GameManager.item_system = item_system
 	GameManager.minigame_system = minigame_system
 	
+	

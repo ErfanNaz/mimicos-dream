@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cihxsoj8dmdyk"]
+
+[ext_resource type="Script" uid="uid://bqa7t2vxdndws" path="res://entities/door_system/simple_door.gd" id="1_656lj"]
+[ext_resource type="PackedScene" uid="uid://bcmlryrbvnnvq" path="res://assets/Testobjecte/Objekte/türen/tür.fbx" id="1_rkwua"]
+[ext_resource type="Script" uid="uid://dwjaj6b1w32fr" path="res://common/interaction_system/interactable/interaction.gd" id="3_8ctkw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mf8xc"]
+radius = 3.519076
+
+[node name="SimpleDoor" type="Node3D" unique_id=637809543 node_paths=PackedStringArray("animation_player", "interaction")]
+script = ExtResource("1_656lj")
+animation_player = NodePath("tür/AnimationPlayer")
+interaction = NodePath("Interaction")
+
+[node name="tür" parent="." unique_id=1366005928 instance=ExtResource("1_rkwua")]
+
+[node name="Interaction" type="Area3D" parent="." unique_id=644330053]
+script = ExtResource("3_8ctkw")
+metadata/_custom_type_script = "uid://dwjaj6b1w32fr"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction" unique_id=247028268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4920415, 0)
+shape = SubResource("SphereShape3D_mf8xc")
+
+[editable path="tür"]

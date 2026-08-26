@@ -104,6 +104,7 @@ func _command_filter(command: PlayerControllerCommand) -> void:
 func get_controller_state() -> String:
 	match(blackboard.controller_state):
 		StateBlackboard.PlayerControllerState.idle: return "idle"
+		StateBlackboard.PlayerControllerState.staying: return "staying"
 		StateBlackboard.PlayerControllerState.input_third_person: return "third_person"
 		StateBlackboard.PlayerControllerState.input_top_down: return "top_down"
 	return "third_person"

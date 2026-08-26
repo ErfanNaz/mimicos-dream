@@ -8,8 +8,7 @@ class_name TriggerSwitch extends Node3D
 @export_category("internal")
 @export var interaction: Interaction
 @export var ball_mesh_instance_3d: MeshInstance3D
-@export var sprite_3d: Sprite3D
-@export var label: Label
+@export var label_3d: Label3D
 
 signal on_switch(player_controller: PlayerController, on: bool)
 
@@ -35,7 +34,7 @@ func _toggle_trigger(player_controller: PlayerController) -> void:
 	mat.emission = color
 	await get_tree().create_timer(1).timeout
 	if toggle_back_timer > 0:
-		sprite_3d.show()
+		label_3d.show()
 		last_player = player_controller
 		_auto_close(toggle_back_timer)
 		return
@@ -48,15 +47,15 @@ func _toggle_trigger(player_controller: PlayerController) -> void:
 func _auto_close(timer: int) -> void:
 	if timer <= 0:
 		timer = 0
-		label.text = ""
+		label_3d.text = ""
 		is_on = false
 		on_switch.emit(last_player, false)
 		var mat: StandardMaterial3D = ball_mesh_instance_3d.get_surface_override_material(0)
 		mat.emission = Color.WHITE
-		sprite_3d.hide()
+		label_3d.hide()
 		if animation_player:
 			animation_player.play("animation|off")
 		return
-	label.text = str(timer)
+	label_3d.text = str(timer)
 	await get_tree().create_timer(1).timeout
 	_auto_close(timer - 1)

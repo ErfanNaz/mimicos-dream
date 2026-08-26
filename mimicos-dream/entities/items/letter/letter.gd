@@ -1,10 +1,13 @@
 extends Node3D
 
+@export var letter_texture: Texture2D
+
 @export_category("Internal")
 @export var item: ItemBase
 @export var has_details: bool = false
 @export var animation_player: AnimationPlayer
 @export var canvas_layer: CanvasLayer
+@export var texture_rect: TextureRect
 
 var input_manager: InputManager
 var detail_change_locked: bool = false
@@ -12,6 +15,8 @@ var detail_change_locked: bool = false
 func _ready() -> void:
 	item.on_drag.connect(self._on_drag)
 	item.on_current_changed.connect(self._on_current_changed)
+	texture_rect.texture = letter_texture
+	item.item_image = letter_texture
 	set_process(false)
 
 func _on_drag(player_controller: PlayerController, _item: ItemBase) -> void:
@@ -20,6 +25,8 @@ func _on_drag(player_controller: PlayerController, _item: ItemBase) -> void:
 func _on_current_changed(player_controller: PlayerController, is_current: bool) -> void:
 	set_process(is_current)
 	input_manager = player_controller.input_manager
+	if !is_current && canvas_layer.visible:
+		_toggle_detail()
 	
 
 func _process(delta: float) -> void:

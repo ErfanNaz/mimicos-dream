@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://db35xu1a264vf" path="res://entities/item_system/item_base.gd" id="1_gjyee"]
 [ext_resource type="Script" uid="uid://dwjaj6b1w32fr" path="res://common/interaction_system/interactable/interaction.gd" id="2_bpa18"]
 [ext_resource type="PackedScene" uid="uid://dth3medadidxr" path="res://assets/Testobjecte/Map01/Animationen/Brief.fbx" id="3_bpa18"]
-[ext_resource type="Texture2D" uid="uid://cinrijhwqq2qh" path="res://assets/Testobjecte/Map01/Bilder/Brief1.png" id="4_1mp2t"]
 [ext_resource type="Shader" uid="uid://dc8k3frnyisnj" path="res://shaders/canvas_blur.gdshader" id="5_47k0s"]
 [ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="5_njehq"]
 
@@ -110,17 +109,17 @@ _data = {
 &"on_show": SubResource("Animation_njehq")
 }
 
-[node name="Letter" type="Node3D" unique_id=1809275136 node_paths=PackedStringArray("item", "animation_player", "canvas_layer")]
+[node name="Letter" type="Node3D" unique_id=1809275136 node_paths=PackedStringArray("item", "animation_player", "canvas_layer", "texture_rect")]
 script = ExtResource("1_5nvo8")
 item = NodePath("Item")
 animation_player = NodePath("AnimationPlayer")
 canvas_layer = NodePath("CanvasLayer")
+texture_rect = NodePath("CanvasLayer/DetailView/CenterContainer/TextureRect")
 
 [node name="Item" type="Node3D" parent="." unique_id=917210026 node_paths=PackedStringArray("interaction", "mesh")]
 script = ExtResource("1_gjyee")
 interaction = NodePath("Interaction")
 mesh = NodePath("Brief")
-item_image = ExtResource("4_1mp2t")
 
 [node name="Interaction" type="Area3D" parent="Item" unique_id=511043409]
 script = ExtResource("2_bpa18")
@@ -165,7 +164,6 @@ offset_transform_position_ratio = Vector2(0, 0.2)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/DetailView/CenterContainer" unique_id=1057282736]
 layout_mode = 2
-texture = ExtResource("4_1mp2t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=537332786]
 libraries/ = SubResource("AnimationLibrary_n1ver")
