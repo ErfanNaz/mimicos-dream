@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bcmlryrbvnnvq"
-path="res://.godot/imported/tür.fbx-611be04564dcc2b574b8097ebd6f1d7f.scn"
+uid="uid://b3emn0yfux62"
+path="res://.godot/imported/mülleimer.fbx-89d56f35d50b46666a70f0869a0e6c4b.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Objekte/türen/tür.fbx"
-dest_files=["res://.godot/imported/tür.fbx-611be04564dcc2b574b8097ebd6f1d7f.scn"]
+source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Küche/mülleimer.fbx"
+dest_files=["res://.godot/imported/mülleimer.fbx-89d56f35d50b46666a70f0869a0e6c4b.scn"]
 
 [params]
 
@@ -39,7 +39,13 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Cube_019": {
+"generate/physics": true
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

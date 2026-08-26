@@ -26,8 +26,8 @@ static_body_3d = NodePath("StaticBody3D")
 [node name="door" parent="." unique_id=1468137168 instance=ExtResource("1_4rqnl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09623492, 0, -0.23098731)
 
-[node name="animation" parent="door" index="0" unique_id=1622538749]
-transform = Transform3D(120.00001, 0, 0, 0, -5.2453665e-06, 120, 0, -120, -5.2453665e-06, -0.715, 1.375, 0.22)
+[node name="animation" parent="door" index="0" unique_id=127934280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0010043, 2.050795, 0.23255876)
 
 [node name="schalter02" parent="." unique_id=510915357 instance=ExtResource("2_rxya7")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.5294508, 1.8612571, 0.02622962)
