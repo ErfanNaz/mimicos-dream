@@ -31,8 +31,10 @@
 [ext_resource type="PackedScene" uid="uid://urfr3l8igess" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Küche/Spühle.fbx" id="29_iyv8n"]
 [ext_resource type="PackedScene" uid="uid://b3emn0yfux62" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Küche/mülleimer.fbx" id="30_6gffl"]
 [ext_resource type="PackedScene" uid="uid://dof7cgxa34m3k" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Bett.fbx" id="31_y7chr"]
-[ext_resource type="PackedScene" uid="uid://18x64ejxbe1d" path="res://entities/door_system/door_system.tscn" id="32_rgibw"]
+[ext_resource type="PackedScene" uid="uid://1bi6l5tq6k6w" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Sofa01.fbx" id="34_s55ph"]
 [ext_resource type="PackedScene" uid="uid://e5h6nyxircrw" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Teppich02.fbx" id="35_0ucsr"]
+[ext_resource type="PackedScene" uid="uid://1vofub1go7xv" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Schrank04.fbx" id="35_tomwh"]
+[ext_resource type="PackedScene" uid="uid://cihxsoj8dmdyk" path="res://entities/door_system/simple_door.tscn" id="36_0ucsr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
 panorama = ExtResource("1_wgdak")
@@ -142,9 +144,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.518892, 0, -32.47889)
 
 [node name="Schrank01" parent="Haus1" unique_id=1360872375 instance=ExtResource("20_3myh3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2422056, 0, -33.222725)
-
-[node name="Schrank03" parent="Haus1" unique_id=747558588 instance=ExtResource("21_2208h")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.4875784, -4.7683716e-07, -24.24481)
 
 [node name="Schrank04" parent="Haus1" unique_id=1527816894 instance=ExtResource("20_3myh3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.2999887, 4.7683716e-07, -21.574179)
@@ -1247,18 +1246,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0.028900146, -10)
 [node name="Bild" parent="Haus1" unique_id=796376522 instance=ExtResource("8_hqp6l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74778646, 2.4273186, -18.35)
 
-[node name="Kiste" parent="Haus1" unique_id=1330611333 instance=ExtResource("14_otg31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.405681, 0, -11.376118)
-
-[node name="Kiste2" parent="Haus1" unique_id=862720359 instance=ExtResource("14_otg31")]
-transform = Transform3D(0.74879444, 0, 0.28577185, 0, 0.8014728, 0, -0.28577185, 0, 0.74879444, 4.4727597, 0, -13.659311)
-
-[node name="Kiste3" parent="Haus1" unique_id=907945585 instance=ExtResource("14_otg31")]
-transform = Transform3D(0.5366107, 0, -0.23928161, 0, 0.5875429, 0, 0.23928161, 0, 0.5366107, 6.3411274, 0, -11.13079)
-
-[node name="Eimer" parent="Haus1" unique_id=327799352 instance=ExtResource("15_q6ea6")]
-transform = Transform3D(-0.36804315, 0, 0.92980874, 0, 1, 0, -0.92980874, 0, -0.36804315, 4.0528326, 0, -15.291016)
-
 [node name="Laterne" parent="Haus1" unique_id=1979984592 instance=ExtResource("17_uxsya")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.629774, 6.8793597, -15.06757)
 
@@ -1279,12 +1266,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5026195, 0, -32.494045)
 
 [node name="Kiste5" parent="Haus1" unique_id=2137363860 instance=ExtResource("14_otg31")]
 transform = Transform3D(0.3673008, 0, -0.2419726, 0, 0.4398416, 0, 0.2419726, 0, 0.3673008, -1.6443934, 0, -33.10299)
-
-[node name="Kiste6" parent="Haus1" unique_id=412782979 instance=ExtResource("14_otg31")]
-transform = Transform3D(0.5406261, 0, 0.25094843, 0, 0.59602994, 0, -0.25094843, 0, 0.5406261, -3.9416323, 0, -30.428919)
-
-[node name="Eimer2" parent="Haus1" unique_id=942315558 instance=ExtResource("15_q6ea6")]
-transform = Transform3D(0.49240842, 0, 0.53810984, 0, 0.72940266, 0, -0.53810984, 0, 0.49240842, -3.8900301, 1.1920624, -30.436462)
 
 [node name="Bild2" parent="Haus1" unique_id=914429248 instance=ExtResource("8_hqp6l")]
 transform = Transform3D(0.35447955, 0, 0, 0, 0.35447955, 0, 0, 0, 0.35447955, 2.4171958, 1.686554, -18.35)
@@ -1385,12 +1366,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.989437, 3.5587738, -5.8602
 [node name="Topfpflanze08" parent="Haus1" unique_id=993776066 instance=ExtResource("18_2ofcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.993637, 0, -9.901722)
 
-[node name="Schrank13" parent="Haus1" unique_id=433905774 instance=ExtResource("22_n7ikp")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.8667464, 0, -17.020384)
-
-[node name="Eimer6" parent="Haus1" unique_id=847841288 instance=ExtResource("15_q6ea6")]
-transform = Transform3D(0.32804567, 0, 0.71519226, 0, 0.78683794, 0, -0.71519226, 0, 0.32804567, 4.001063, 3.5325994, -16.420216)
-
 [node name="Laterne10" parent="Haus1" unique_id=1156044434 instance=ExtResource("17_uxsya")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.673553, 6.9054217, -10.255869)
 
@@ -1457,23 +1432,8 @@ transform = Transform3D(0.6296613, 0, 0, 0, 0.6296613, 0, 0, 0, 0.6296613, 34.31
 [node name="mülleimer2" parent="Haus1" unique_id=560593088 instance=ExtResource("30_6gffl")]
 transform = Transform3D(0.64613223, 0, 0, 0, 0.64613223, 0, 0, 0, 0.64613223, 26.008692, 0.01803939, -17.113863)
 
-[node name="DoorSystem2" parent="Haus1" unique_id=434688693 instance=ExtResource("32_rgibw")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 18.827526, 0, -7.894844)
-
-[node name="DoorSystem3" parent="Haus1" unique_id=1171402233 instance=ExtResource("32_rgibw")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.200214, 0, -12.101175)
-
-[node name="DoorSystem4" parent="Haus1" unique_id=387130645 instance=ExtResource("32_rgibw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.117009, -2.3841858e-07, -33.809715)
-
-[node name="DoorSystem5" parent="Haus1" unique_id=295525989 instance=ExtResource("32_rgibw")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.1130056, 0, -18.14413)
-
 [node name="Bett" parent="." unique_id=791108410 instance=ExtResource("31_y7chr")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.765335, 0.02423426, 11.444349)
-
-[node name="Schrank01" parent="." unique_id=44410747 instance=ExtResource("20_3myh3")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.0993767, 9.536743e-07, 13.276281)
 
 [node name="Truhe" parent="." unique_id=2049639277 instance=ExtResource("22_8acla")]
 transform = Transform3D(1.3924012, 0, 0, 0, 1.3924012, 0, 0, 0, 1.3924012, 5.556593, 0.026175033, 8.456093)
@@ -1511,15 +1471,6 @@ transform = Transform3D(0.41307664, 0, -0.3617646, 0, 0.5490956, 0, 0.3617646, 0
 [node name="Kiste4" parent="." unique_id=2110174168 instance=ExtResource("14_otg31")]
 transform = Transform3D(0.37435582, 0, 0.2859857, 0, 0.47109455, 0, -0.2859857, 0, 0.37435582, -4.014739, -4.7683716e-07, 9.481943)
 
-[node name="DoorSystem" parent="." unique_id=903100582 instance=ExtResource("32_rgibw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.913865, 0, -1.8505197)
-
-[node name="DoorSystem2" parent="." unique_id=1244484517 instance=ExtResource("32_rgibw")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.826418, 0, 0.09940112)
-
-[node name="DoorSystem3" parent="." unique_id=1601677784 instance=ExtResource("32_rgibw")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.88789296, -2.3841858e-07, 13.8578615)
-
 [node name="Teppich02" parent="." unique_id=1835307204 instance=ExtResource("35_0ucsr")]
 transform = Transform3D(10.106591, 0, 0, 0, 1, 0, 0, 0, 2.5360866, 7.019582, -1.9073486e-06, -6.0275164)
 
@@ -1534,3 +1485,36 @@ transform = Transform3D(8.488318, 0, 0, 0, 1, 0, 0, 0, 5.4803805, 6.8708897, -1.
 
 [node name="Teppich07" parent="." unique_id=1482129715 instance=ExtResource("35_0ucsr")]
 transform = Transform3D(4.149268, 0, 0, 0, 1, 0, 0, 0, 4.5249376, 11.226779, 0, -17.32388)
+
+[node name="Sofa01" parent="." unique_id=1238335821 instance=ExtResource("34_s55ph")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.7105136, 9.536743e-07, -27.249283)
+
+[node name="Topfpflanze01" parent="." unique_id=291404675 instance=ExtResource("18_2ofcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5313606, 1.8434958, -32.46058)
+
+[node name="Schrank05" parent="." unique_id=955512256 instance=ExtResource("35_tomwh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.63297, 0, -12.764652)
+
+[node name="Truhe2" parent="." unique_id=577824432 instance=ExtResource("22_8acla")]
+transform = Transform3D(1.3047844, 0, 0, 0, 1.3047844, 0, 0, 0, 1.3047844, 4.725761, 0.026174556, -15.636987)
+
+[node name="Topfpflanze02" parent="." unique_id=2052379849 instance=ExtResource("18_2ofcj")]
+transform = Transform3D(1.4173064, 0, 0, 0, 1.4173064, 0, 0, 0, 1.4173064, 4.286729, 0, -17.211857)
+
+[node name="SimpleDoor" parent="." unique_id=637809543 instance=ExtResource("36_0ucsr")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 0.86015046, 0, -1, 0, -4.371139e-08, 18.921677, 0, -10.7891865)
+
+[node name="SimpleDoor2" parent="." unique_id=159154931 instance=ExtResource("36_0ucsr")]
+transform = Transform3D(0.8652828, 0, 0, 0, 0.8693927, 0, 0, 0, 1, -4.048456, 0, -17.942055)
+
+[node name="SimpleDoor3" parent="." unique_id=1522641871 instance=ExtResource("36_0ucsr")]
+transform = Transform3D(0.8652828, 0, 0, 0, 0.8693927, 0, 0, 0, 1, -4.048456, 0, -2.0521007)
+
+[node name="SimpleDoor4" parent="." unique_id=792681109 instance=ExtResource("36_0ucsr")]
+transform = Transform3D(0.8652828, 0, 0, 0, 0.8693927, 0, 0, 0, 1, -0.049405932, 0, 13.99705)
+
+[node name="SimpleDoor5" parent="." unique_id=892861606 instance=ExtResource("36_0ucsr")]
+transform = Transform3D(-3.782271e-08, 0, 0.99999994, 0, 0.86939263, 0, -0.8652827, 0, -4.3711385e-08, 6.987732, 0, 1.0314428)
+
+[node name="Schrank06" parent="." unique_id=1712576160 instance=ExtResource("35_tomwh")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.377555, 0, 12.584909)
