@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://b3emn0yfux62" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Küche/mülleimer.fbx" id="30_6gffl"]
 [ext_resource type="PackedScene" uid="uid://dof7cgxa34m3k" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Bett.fbx" id="31_y7chr"]
 [ext_resource type="PackedScene" uid="uid://18x64ejxbe1d" path="res://entities/door_system/door_system.tscn" id="32_rgibw"]
+[ext_resource type="PackedScene" uid="uid://e5h6nyxircrw" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Teppich02.fbx" id="35_0ucsr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
 panorama = ExtResource("1_wgdak")
@@ -90,7 +91,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.484358, 0, -29.164629)
 [node name="Terrain" parent="." unique_id=959778851 instance=ExtResource("8_a0rq3")]
 
 [node name="Terrain2" parent="." unique_id=1060837050 instance=ExtResource("8_a0rq3")]
-transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 9.739338, 0)
+transform = Transform3D(0.9992034, 0, 0, 0, -0.9992034, -8.735313e-08, 0, 8.735313e-08, -0.9992034, 0, 9.739338, 0)
 
 [node name="Haus1" type="Node3D" parent="." unique_id=701769419]
 
@@ -1518,3 +1519,18 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.82
 
 [node name="DoorSystem3" parent="." unique_id=1601677784 instance=ExtResource("32_rgibw")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.88789296, -2.3841858e-07, 13.8578615)
+
+[node name="Teppich02" parent="." unique_id=1835307204 instance=ExtResource("35_0ucsr")]
+transform = Transform3D(10.106591, 0, 0, 0, 1, 0, 0, 0, 2.5360866, 7.019582, -1.9073486e-06, -6.0275164)
+
+[node name="Teppich05" parent="." unique_id=1672469907 instance=ExtResource("35_0ucsr")]
+transform = Transform3D(36.49526, 0, 0, 0, 1, 0, 0, 0, 3.420733, -2.8179874, -1.9073486e-06, 19.877125)
+
+[node name="Teppich04" parent="." unique_id=1405667077 instance=ExtResource("35_0ucsr")]
+transform = Transform3D(2.2803266, 0, 0, 0, 1, 0, 0, 0, 4.3849287, -0.80225825, 0, -11.948855)
+
+[node name="Teppich03" parent="." unique_id=1808866823 instance=ExtResource("35_0ucsr")]
+transform = Transform3D(8.488318, 0, 0, 0, 1, 0, 0, 0, 5.4803805, 6.8708897, -1.9073486e-06, -26.219416)
+
+[node name="Teppich07" parent="." unique_id=1482129715 instance=ExtResource("35_0ucsr")]
+transform = Transform3D(4.149268, 0, 0, 0, 1, 0, 0, 0, 4.5249376, 11.226779, 0, -17.32388)
