@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkmwvowdl7bbx"
-path="res://.godot/imported/Gaderobe.fbx-07263e54acd0443bea6509463b20cdac.scn"
+uid="uid://dw3chs0q75g8c"
+path="res://.godot/imported/Küchenschrank02.fbx-1c617e9138aa8ab53c2343de3a2dd0e8.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Gaderobe.fbx"
-dest_files=["res://.godot/imported/Gaderobe.fbx-07263e54acd0443bea6509463b20cdac.scn"]
+source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Küche/Küchenschrank02.fbx"
+dest_files=["res://.godot/imported/Küchenschrank02.fbx-1c617e9138aa8ab53c2343de3a2dd0e8.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Cube_008": {
+"PATH:Cube_015": {
 "generate/physics": true
 }
 }
