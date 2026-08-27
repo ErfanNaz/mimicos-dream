@@ -58,6 +58,7 @@
 [ext_resource type="PackedScene" uid="uid://cbkd503qtv51m" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Tasse.fbx" id="55_y8soa"]
 [ext_resource type="PackedScene" uid="uid://cnuvcrpxnlwhm" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Handtuch01.fbx" id="56_7o10a"]
 [ext_resource type="PackedScene" uid="uid://cl03e3auqpi04" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Handtuch02.fbx" id="57_5cov0"]
+[ext_resource type="PackedScene" uid="uid://18x64ejxbe1d" path="res://entities/door_system/door_system.tscn" id="58_7o10a"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
 panorama = ExtResource("1_wgdak")
@@ -136,7 +137,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.6
 transform = Transform3D(-0.6553555, 0, -0.20731677, 0, 0.68736535, 0, 0.20731677, 0, -0.6553555, 14.079376, 0.07955934, -10.83)
 
 [node name="Topfpflanze01" parent="Haus1" unique_id=1483854473 instance=ExtResource("18_2ofcj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.015865, 0, -32.969406)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.981899, 0, -32.969406)
 
 [node name="Topfpflanze02" parent="Haus1" unique_id=236318821 instance=ExtResource("18_2ofcj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89226, 0, -32.831154)
@@ -2801,6 +2802,9 @@ transform = Transform3D(0.035286024, -0.5834061, 0, 0.5834061, 0.035286024, 0, 0
 
 [node name="Buch_Violet38" parent="Haus1" unique_id=948649666 instance=ExtResource("44_wo2ib")]
 transform = Transform3D(0.03291613, -0.5442232, -0.21058339, 0.58340603, 0.035286017, 0, 0.012713439, -0.21019934, 0.5452177, -18.03663, 3.6320596, 12.319137)
+
+[node name="DoorSystem" parent="Haus1" unique_id=434688693 instance=ExtResource("58_7o10a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.908168, 0.027611494, -33.827827)
 
 [node name="Pfanne" parent="." unique_id=1649422488 instance=ExtResource("55_r4okn")]
 transform = Transform3D(-0.69059205, 0, 0.7232445, 0, 1, 0, -0.7232445, 0, -0.69059205, 20.078371, 0.6495627, -4.906935)
