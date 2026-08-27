@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1bi6l5tq6k6w"
-path="res://.godot/imported/Sofa01.fbx-ccc085b1d16fa79fcf6bc37999f92c10.scn"
+uid="uid://d2cqp7f1pl5lw"
+path="res://.godot/imported/Tv_Fernbedienung.fbx-8fd08cc37f279e9741f7f1e81b90aa53.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Sofa01.fbx"
-dest_files=["res://.godot/imported/Sofa01.fbx-ccc085b1d16fa79fcf6bc37999f92c10.scn"]
+source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Tv_Fernbedienung.fbx"
+dest_files=["res://.godot/imported/Tv_Fernbedienung.fbx-8fd08cc37f279e9741f7f1e81b90aa53.scn"]
 
 [params]
 
@@ -39,13 +39,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"nodes": {
-"PATH:Cube_031": {
-"generate/physics": true
-}
-}
-}
+_subresources={}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1bi6l5tq6k6w"
-path="res://.godot/imported/Sofa01.fbx-ccc085b1d16fa79fcf6bc37999f92c10.scn"
+uid="uid://o6k0bvk48vrl"
+path="res://.godot/imported/Tv_Unterschrank.fbx-d6a0e5e8c3f266c043cbd833910d5dd7.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Sofa01.fbx"
-dest_files=["res://.godot/imported/Sofa01.fbx-ccc085b1d16fa79fcf6bc37999f92c10.scn"]
+source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Tv_Unterschrank.fbx"
+dest_files=["res://.godot/imported/Tv_Unterschrank.fbx-d6a0e5e8c3f266c043cbd833910d5dd7.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Cube_031": {
+"PATH:Cylinder": {
 "generate/physics": true
 }
 }
