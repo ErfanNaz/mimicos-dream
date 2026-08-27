@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bmmwdtdaesnbb" path="res://scenes/maps/map_01.gd" id="1_pcy5s"]
 [ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="2_yr2eo"]
 [ext_resource type="PackedScene" uid="uid://d2dubbwfxg5b0" path="res://entities/highlight_system/highlight_system.tscn" id="3_4iqtb"]
-[ext_resource type="PackedScene" uid="uid://bcmlryrbvnnvq" path="res://assets/Testobjecte/Objekte/türen/tür.fbx" id="3_g5h58"]
+[ext_resource type="PackedScene" uid="uid://sra1yfnqvatu" path="res://assets/Testobjecte/Objekte/türen/tür.fbx" id="3_g5h58"]
 [ext_resource type="PackedScene" uid="uid://cyiamia4oprhb" path="res://entities/text_system/text_system.tscn" id="3_ja8my"]
 [ext_resource type="PackedScene" uid="uid://drrdvbflsvfca" path="res://assets/Testobjecte/Objekte/behälter/truhe.fbx" id="4_hrjdk"]
 [ext_resource type="PackedScene" uid="uid://cn1n3kfjpmwht" path="res://assets/Testobjecte/Objekte/schalter/schalter02.fbx" id="4_yr2eo"]
@@ -246,9 +246,6 @@ letter_texture = ExtResource("26_u2lui")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1272.3066, 213.55476, 26.11609)
 letter_texture = ExtResource("26_0mq61")
 
-[node name="StartMarker3D" type="Marker3D" parent="." unique_id=193951223]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1267.185, 215.0039, -10.229397)
-
 [node name="Portals" type="Node3D" parent="." unique_id=1952272026]
 
 [node name="Portal2" parent="Portals" unique_id=1672649276 node_paths=PackedStringArray("connected_portal") instance=ExtResource("18_oendh")]
@@ -274,6 +271,9 @@ connected_portal = NodePath("../Portal6")
 [node name="Portal6" parent="Portals" unique_id=194406435 node_paths=PackedStringArray("connected_portal") instance=ExtResource("18_oendh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9419, 3.8146973e-06, -3.7209244)
 connected_portal = NodePath("../Portal5")
+
+[node name="StartMarker3D" type="Marker3D" parent="." unique_id=193951223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1267.185, 215.48929, -2.2085323)
 
 [node name="schalter01" parent="." unique_id=1594216519 instance=ExtResource("11_5dti3")]
 transform = Transform3D(0.08356324, 0, -0.99650246, 0, 1, 0, 0.99650246, 0, 0.08356324, -0.14533472, 0, 1.4121547)
@@ -452,13 +452,9 @@ omni_range = 10.220524
 [node name="DoorSystem" parent="." unique_id=434688693 instance=ExtResource("26_qeyhh")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -159.25282, 124.65889, -1339.3954)
 door_pin = "1986"
-can_open = true
 
-[node name="schalter02" parent="DoorSystem" index="1" unique_id=510915357]
+[node name="schalter02" parent="DoorSystem" index="2" unique_id=335086031]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.876465, 0.104385376, 23.253098)
-
-[node name="TriggerSwitch" parent="DoorSystem" index="3" unique_id=181858922]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3795166, 0.037765503, 22.974838)
 
 [node name="TextSystem2" parent="." unique_id=1583512442 instance=ExtResource("3_ja8my")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -164.21579, 124.53389, -1337.8684)
@@ -519,7 +515,7 @@ transform = Transform3D(-3.934025e-08, 0, 0.9, 0, 0.9, 0, -0.9, 0, -3.934025e-08
 [editable path="schalter01"]
 [editable path="TextSystem"]
 [editable path="DoorSystem"]
-[editable path="DoorSystem/door"]
+[editable path="DoorSystem/Tür mit gitter"]
 [editable path="DoorSystem/schalter02"]
 [editable path="TextSystem2"]
 [editable path="TextSystem3"]

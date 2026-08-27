@@ -15,10 +15,10 @@ func _on_player_entered(_interaction: Interaction) -> void:
 	if is_open:
 		return
 	is_open = true
-	animation_player.play("animation|on")
+	animation_player.play("on")
 
 func on_player_exited(_interaction: Interaction) -> void:
 	if !is_open:
 		return
 	is_open = false
-	animation_player.play("animation|off")
+	animation_player.play("off")

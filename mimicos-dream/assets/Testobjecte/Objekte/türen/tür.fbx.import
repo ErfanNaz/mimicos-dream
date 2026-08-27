@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://sra1yfnqvatu"
-path="res://.godot/imported/Tür.fbx-460fe0a4da1c7a09d4a658e8c330b8ba.scn"
+path="res://.godot/imported/tür.fbx-611be04564dcc2b574b8097ebd6f1d7f.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Objekte/türen/Tür.fbx"
-dest_files=["res://.godot/imported/Tür.fbx-460fe0a4da1c7a09d4a658e8c330b8ba.scn"]
+source_file="res://assets/Testobjecte/Objekte/türen/tür.fbx"
+dest_files=["res://.godot/imported/tür.fbx-611be04564dcc2b574b8097ebd6f1d7f.scn"]
 
 [params]
 

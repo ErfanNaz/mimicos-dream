@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cihxsoj8dmdyk"]
 
 [ext_resource type="Script" uid="uid://bqa7t2vxdndws" path="res://entities/door_system/simple_door.gd" id="1_656lj"]
-[ext_resource type="PackedScene" uid="uid://bcmlryrbvnnvq" path="res://assets/Testobjecte/Objekte/türen/tür.fbx" id="1_rkwua"]
+[ext_resource type="PackedScene" uid="uid://sra1yfnqvatu" path="res://assets/Testobjecte/Objekte/türen/tür.fbx" id="1_rkwua"]
 [ext_resource type="Script" uid="uid://dwjaj6b1w32fr" path="res://common/interaction_system/interactable/interaction.gd" id="3_8ctkw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mf8xc"]
@@ -13,6 +13,9 @@ animation_player = NodePath("tür/AnimationPlayer")
 interaction = NodePath("Interaction")
 
 [node name="tür" parent="." unique_id=1366005928 instance=ExtResource("1_rkwua")]
+
+[node name="animation" parent="tür" index="0" unique_id=1574338495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Interaction" type="Area3D" parent="." unique_id=644330053]
 script = ExtResource("3_8ctkw")

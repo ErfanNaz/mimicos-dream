@@ -20,7 +20,7 @@ sky_material = SubResource("PanoramaSkyMaterial_hujxm")
 [sub_resource type="Environment" id="Environment_ow5a4"]
 background_mode = 2
 sky = SubResource("Sky_hujxm")
-tonemap_mode = 2
+tonemap_mode = 3
 fog_light_color = Color(0.69680893, 0.9194905, 0.9959524, 1)
 
 [node name="Main" type="Node3D" unique_id=4722677 node_paths=PackedStringArray("player_controller", "input_manager", "map", "item_system", "minigame_system", "camera_system")]

@@ -2801,6 +2801,7 @@ transform = Transform3D(0.03291613, -0.5442232, -0.21058339, 0.58340603, 0.03528
 
 [node name="DoorSystem" parent="Haus1" unique_id=434688693 instance=ExtResource("58_7o10a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.908168, 0.027611494, -33.827827)
+door_pin = "2513"
 
 [node name="Pfanne" parent="." unique_id=1649422488 instance=ExtResource("55_r4okn")]
 transform = Transform3D(-0.69059205, 0, 0.7232445, 0, 1, 0, -0.7232445, 0, -0.69059205, 20.078371, 0.6495627, -4.906935)
