@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cr0wbpcpcmoeo" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Küche/Spühlmaschine.fbx" id="28_rgibw"]
 [ext_resource type="PackedScene" uid="uid://urfr3l8igess" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Küche/Spühle.fbx" id="29_iyv8n"]
 [ext_resource type="PackedScene" uid="uid://b3emn0yfux62" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Küche/mülleimer.fbx" id="30_6gffl"]
+[ext_resource type="PackedScene" uid="uid://bj3xwftt6ya2" path="res://entities/radio/radio.tscn" id="31_s1w14"]
 [ext_resource type="PackedScene" uid="uid://dof7cgxa34m3k" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Bett.fbx" id="31_y7chr"]
 [ext_resource type="PackedScene" uid="uid://1bi6l5tq6k6w" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Sofa01.fbx" id="34_s55ph"]
 [ext_resource type="PackedScene" uid="uid://e5h6nyxircrw" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Teppich02.fbx" id="35_0ucsr"]
@@ -1525,4 +1526,7 @@ transform = Transform3D(0.52625537, 0, 0.43839836, 0, 0.68493634, 0, -0.43839836
 transform = Transform3D(-0.9179905, 0, 0.3966024, 0, 1, 0, -0.3966024, 0, -0.9179905, 3.987037, 1.237558, 12.4018345)
 
 [node name="Walkie Talkie2" parent="." unique_id=318049319 instance=ExtResource("37_tomwh")]
-transform = Transform3D(0.6281167, 0.7781191, 3.4012665e-08, 0, -4.371139e-08, 1, 0.7781191, -0.6281167, -2.7455854e-08, 4.1659136, 0.10243553, 12.074076)
+transform = Transform3D(-0.48306572, 0.87558407, 3.827299e-08, -3.6137356e-15, -4.3711392e-08, 1, 0.87558407, 0.48306572, 2.1115476e-08, 4.1659136, 0.10243553, 12.074076)
+
+[node name="Radio" parent="." unique_id=2079513662 instance=ExtResource("31_s1w14")]
+transform = Transform3D(-0.41006652, 0, 0.9120556, 0, 1, 0, -0.9120556, 0, -0.41006652, -3.8139815, 0, 4.453088)
