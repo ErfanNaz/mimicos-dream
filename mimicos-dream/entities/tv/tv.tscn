@@ -1,35 +1,28 @@
 [gd_scene format=3 uid="uid://cewws1nrmdtpq"]
 
 [ext_resource type="Script" uid="uid://doau36sauqtlo" path="res://entities/tv/tv.gd" id="1_ygn5s"]
-[ext_resource type="PackedScene" uid="uid://bgtpbxtq808xf" path="res://entities/trigger_system/trigger_switch/trigger_switch.tscn" id="2_3aafr"]
 [ext_resource type="VideoStream" uid="uid://bl14quy30rmvt" path="res://entities/tv/videos/v_01.ogv" id="2_5w405"]
-[ext_resource type="PackedScene" uid="uid://cn1n3kfjpmwht" path="res://assets/Testobjecte/Objekte/schalter/schalter02.fbx" id="4_n1o0s"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_33ubv"]
-viewport_path = NodePath("Sprite3D/SubViewport")
+[ext_resource type="Script" uid="uid://dwjaj6b1w32fr" path="res://common/interaction_system/interactable/interaction.gd" id="3_3aafr"]
+[ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="4_n1o0s"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5w405"]
 viewport_path = NodePath("SubViewport")
 
-[node name="Tv" type="Node3D" unique_id=1540856026 node_paths=PackedStringArray("video_stream_player", "trigger_switch")]
+[sub_resource type="Resource" id="Resource_3aafr"]
+script = ExtResource("4_n1o0s")
+title = "tv"
+action_button = 0
+metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mf8xc"]
+radius = 5.6944103
+
+[node name="Tv" type="Node3D" unique_id=1540856026 node_paths=PackedStringArray("video_stream_player", "interaction")]
 script = ExtResource("1_ygn5s")
 video_stream_player = NodePath("SubViewport/VideoStreamPlayer")
-trigger_switch = NodePath("TriggerSwitch")
-
-[node name="TriggerSwitch" parent="." unique_id=181858922 node_paths=PackedStringArray("animation_player") instance=ExtResource("2_3aafr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5569863, 0, 0.91268015)
-toggle_back_timer = 10
-animation_player = NodePath("../schalter02/AnimationPlayer")
-
-[node name="BallMeshInstance3D" parent="TriggerSwitch" index="0" unique_id=203046647]
-visible = false
-
-[node name="Sprite3D" parent="TriggerSwitch" index="3" unique_id=226529221]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5552874, 5.5560474, -0.8801547)
-texture = SubResource("ViewportTexture_33ubv")
+interaction = NodePath("Interaction")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=901471131]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0078924, 0)
 transparent = false
 double_sided = false
 texture = SubResource("ViewportTexture_5w405")
@@ -48,17 +41,10 @@ stream = ExtResource("2_5w405")
 loop = true
 bus = &"Interaction"
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=538967135]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45668006, 0.31640625)
-use_collision = true
-size = Vector3(5.4140625, 1, 1.6328125)
+[node name="Interaction" type="Area3D" parent="." unique_id=874833811]
+script = ExtResource("3_3aafr")
+interact_data = SubResource("Resource_3aafr")
+metadata/_custom_type_script = "uid://dwjaj6b1w32fr"
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=731019101]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0234334, -0.08871794)
-size = Vector3(5.4140625, 3.2729492, 0.16259766)
-
-[node name="schalter02" parent="." unique_id=510915357 instance=ExtResource("4_n1o0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.153501, 0.9758847, 0.44969893)
-
-[editable path="TriggerSwitch"]
-[editable path="schalter02"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction" unique_id=1100436904]
+shape = SubResource("SphereShape3D_mf8xc")

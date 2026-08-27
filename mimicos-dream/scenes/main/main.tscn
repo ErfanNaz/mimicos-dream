@@ -31,7 +31,6 @@ map = NodePath("Map01")
 item_system = NodePath("ItemSystem")
 minigame_system = NodePath("MinigameSystem")
 camera_system = NodePath("CameraSystem")
-log_level = 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1823298397]
 environment = SubResource("Environment_ow5a4")

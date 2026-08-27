@@ -1,12 +1,23 @@
 [gd_scene format=3 uid="uid://cs4kdwk70y3hw"]
 
 [ext_resource type="Script" uid="uid://k1d332p8lc0y" path="res://entities/minigame_system/minigame_system.gd" id="1_dfhjp"]
-[ext_resource type="Shader" uid="uid://dc8k3frnyisnj" path="res://shaders/canvas_blur.gdshader" id="2_eq5db"]
+[ext_resource type="Shader" uid="uid://cqwvfcgxadmbh" path="res://shaders/canvas_liquid_glass.gdshader" id="2_eq5db"]
 [ext_resource type="PackedScene" uid="uid://c0d7snlc8yu3v" path="res://entities/minigame_system/minigame_01.tscn" id="2_wtb0e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wtb0e"]
 shader = ExtResource("2_eq5db")
-shader_parameter/blur_size = 5.0
+shader_parameter/blur = 3.5
+shader_parameter/warp_intensity = 0.4
+shader_parameter/strength_x = 12.0
+shader_parameter/strength_y = 12.0
+shader_parameter/offset_x = 0.0
+shader_parameter/offset_y = 0.0
+shader_parameter/corner_radius = 0.0
+shader_parameter/edge_smoothness = 1.00000002375
+shader_parameter/tint = Color(0.95, 0.97, 1, 0.12)
+shader_parameter/edge_highlight = Color(1, 1, 1, 0.3)
+shader_parameter/edge_width = 1.5
+shader_parameter/chromatic_strength = 5.0
 
 [node name="MinigameSystem" type="Node" unique_id=1851283370 node_paths=PackedStringArray("minigame_01", "background")]
 script = ExtResource("1_dfhjp")
