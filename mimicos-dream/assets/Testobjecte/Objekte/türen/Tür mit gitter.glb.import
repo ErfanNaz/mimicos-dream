@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://sra1yfnqvatu"
-path="res://.godot/imported/Tür.fbx-460fe0a4da1c7a09d4a658e8c330b8ba.scn"
+uid="uid://6wbm4ys672u0"
+path="res://.godot/imported/Tür mit gitter.glb-0fe9ce927830d48ac9c6ce09a7855f9d.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Objekte/türen/Tür.fbx"
-dest_files=["res://.godot/imported/Tür.fbx-460fe0a4da1c7a09d4a658e8c330b8ba.scn"]
+source_file="res://assets/Testobjecte/Objekte/türen/Tür mit gitter.glb"
+dest_files=["res://.godot/imported/Tür mit gitter.glb-0fe9ce927830d48ac9c6ce09a7855f9d.scn"]
 
 [params]
 
@@ -32,7 +32,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -40,7 +40,6 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
-fbx/naming_version=2
+gltf/naming_version=2
+gltf/embedded_image_handling=1
+gltf/texture_map_mode=1
