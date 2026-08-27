@@ -3,21 +3,24 @@
 [ext_resource type="Script" uid="uid://2rg1trakjlye" path="res://entities/radio/radio.gd" id="1_8nais"]
 [ext_resource type="AudioStream" uid="uid://dld5hgfs5jst6" path="res://entities/radio/assets/audio_01.mp3" id="1_qdtoy"]
 [ext_resource type="PackedScene" uid="uid://ds0kw2rvunxji" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Radio.fbx" id="2_72vy1"]
-[ext_resource type="PackedScene" uid="uid://bgtpbxtq808xf" path="res://entities/trigger_system/trigger_switch/trigger_switch.tscn" id="3_qntic"]
-[ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="4_6w1mp"]
+[ext_resource type="Script" uid="uid://dwjaj6b1w32fr" path="res://common/interaction_system/interactable/interaction.gd" id="4_6w1mp"]
+[ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="5_8nais"]
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_irs12"]
 stream_count = 1
 stream_0 = ExtResource("1_qdtoy")
 
-[sub_resource type="Resource" id="Resource_6w1mp"]
-script = ExtResource("4_6w1mp")
+[sub_resource type="SphereShape3D" id="SphereShape3D_mf8xc"]
+radius = 0.7525179
+
+[sub_resource type="Resource" id="Resource_8nais"]
+script = ExtResource("5_8nais")
 title = "radio"
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_mf8xc"]
-radius = 0.7525179
+[sub_resource type="SphereShape3D" id="SphereShape3D_oa41v"]
+radius = 1.2726759
 
 [node name="Radio" type="Node3D" unique_id=2079513662 node_paths=PackedStringArray("audio_stream_player_3d")]
 script = ExtResource("1_8nais")
@@ -25,18 +28,10 @@ audio_stream_player_3d = NodePath("AudioStreamPlayer3D")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=546154324]
 stream = SubResource("AudioStreamPlaylist_irs12")
-max_distance = 100.0
+max_distance = 50.0
 bus = &"Interaction"
 
 [node name="Radio" parent="." unique_id=105085394 instance=ExtResource("2_72vy1")]
-
-[node name="TriggerSwitch" parent="." unique_id=181858922 instance=ExtResource("3_qntic")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052099958, 0, 0.005482197)
-toggle_back_timer = 20
-interact_data = SubResource("Resource_6w1mp")
-
-[node name="BallMeshInstance3D" parent="TriggerSwitch" index="0" unique_id=203046647]
-visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1404686283]
 
@@ -44,6 +39,13 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2755947, 0)
 shape = SubResource("SphereShape3D_mf8xc")
 
-[connection signal="on_switch" from="TriggerSwitch" to="." method="_on_trigger_switch_on_switch"]
+[node name="Interaction" type="Area3D" parent="." unique_id=2145810924]
+script = ExtResource("4_6w1mp")
+interact_data = SubResource("Resource_8nais")
+metadata/_custom_type_script = "uid://dwjaj6b1w32fr"
 
-[editable path="TriggerSwitch"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction" unique_id=992508115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40529656, 0)
+shape = SubResource("SphereShape3D_oa41v")
+
+[connection signal="on_interact" from="Interaction" to="." method="_on_interaction_on_interact"]
