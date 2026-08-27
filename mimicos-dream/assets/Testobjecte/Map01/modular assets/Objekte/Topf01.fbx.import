@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://de2l0bin4a3tk"
-path="res://.godot/imported/Dusche.fbx-6217fe1b916e011b429a7e21b39494d9.scn"
+uid="uid://dgjtmh0lfc5h3"
+path="res://.godot/imported/Topf01.fbx-d25b8b96ba723d476f1bd7b76f97f44a.scn"
 
 [deps]
 
-source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Dusche.fbx"
-dest_files=["res://.godot/imported/Dusche.fbx-6217fe1b916e011b429a7e21b39494d9.scn"]
+source_file="res://assets/Testobjecte/Map01/modular assets/Objekte/Topf01.fbx"
+dest_files=["res://.godot/imported/Topf01.fbx-d25b8b96ba723d476f1bd7b76f97f44a.scn"]
 
 [params]
 
@@ -39,13 +39,7 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"nodes": {
-"PATH:Cylinder_001": {
-"generate/physics": true
-}
-}
-}
+_subresources={}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
