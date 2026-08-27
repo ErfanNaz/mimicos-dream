@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://fm7ulrbblbb7"]
+
+[ext_resource type="Script" uid="uid://b14pqm7jvs7xe" path="res://entities/portal/portal_system.gd" id="1_a65ek"]
+[ext_resource type="PackedScene" uid="uid://cnmmol2wkwuql" path="res://entities/portal/portal.tscn" id="2_yanc6"]
+
+[node name="PortalSystem" type="Node3D" unique_id=477785534 node_paths=PackedStringArray("portal", "portal_2")]
+script = ExtResource("1_a65ek")
+portal = NodePath("Portal")
+portal_2 = NodePath("Portal2")
+
+[node name="Portal" parent="." unique_id=1282310728 node_paths=PackedStringArray("connected_portal") instance=ExtResource("2_yanc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+connected_portal = NodePath("../Portal2")
+
+[node name="Portal2" parent="." unique_id=1120266436 node_paths=PackedStringArray("connected_portal") instance=ExtResource("2_yanc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1216254, 0, -0.42302895)
+connected_portal = NodePath("../Portal")

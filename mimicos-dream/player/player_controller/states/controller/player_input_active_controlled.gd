@@ -119,8 +119,8 @@ func start_dash() -> void:
 	if is_dashing:
 		return
 	is_dashing = true
+	ApplicationManager.debug_only(player_controller.blackboard)
 	player_controller.blackboard.is_dashing = true
-	ApplicationManager.warn(player_controller.blackboard)
 	dash_timer.start()
 
 func get_move_direction(input: Vector2) -> Vector3:

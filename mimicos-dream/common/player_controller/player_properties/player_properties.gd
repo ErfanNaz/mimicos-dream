@@ -1,6 +1,6 @@
 class_name PlayerProperties extends Resource
 
-@export_range(2, 20, 1, "prefer_slider") var speed: float = 6.0:
+@export_range(2, 20, 1, "prefer_slider") var speed: float = 4.0:
 	set(value):
 		if value == speed:
 			return

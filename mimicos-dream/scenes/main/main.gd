@@ -5,6 +5,7 @@ extends Node3D
 @export var map: Node3D
 @export var item_system: ItemSystem
 @export var minigame_system: MinigameSystem
+@export var camera_system: CameraSystem
 
 @export_range(0, 5, 1, "prefer_slider") var log_level: int = 2:
 	set(value):
@@ -17,6 +18,7 @@ func _ready() -> void:
 	ApplicationManager.log_level = log_level
 	player_controller.input_active_state_machine()
 	player_controller.player_actor.disable_outline()
+	GameManager.camera_system = camera_system
 	GameManager.camera_system.phantom_camera_3d.set_look_at_target(player_controller.look_at_target_node_3d)
 	if !map || !map.start_marker_3d:
 		return
@@ -25,5 +27,6 @@ func _ready() -> void:
 	GameManager.current_player_controller = player_controller
 	GameManager.item_system = item_system
 	GameManager.minigame_system = minigame_system
+	
 	
 	

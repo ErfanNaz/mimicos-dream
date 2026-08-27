@@ -1,15 +1,16 @@
 extends Node3D
 
 @export var start_marker_3d: Marker3D
-@export var interaction: Interaction
 @export var fake_trigger: Node3D
 @export var text_system_3: TextSystem
 
 @export var portals: Node3D
+@export var test_scene: Node3D
 
 var hit_ones: bool = false
 
 func _ready() -> void:
+	test_scene.get_child(0).queue_free()
 	for portal: Portal in portals.get_children():
 		portal.portal_player.connect(self._portal_player)
 	await get_tree().create_timer(2).timeout

@@ -27,7 +27,7 @@ func _ready() -> void:
 	spawn_start_path_3d.curve = spawn_p_path_follow_3d.curve
 	spawn_velocity_path_3d.curve = spawn_t_path_follow_3d.curve
 	trigger_switch.toggle_back_timer = toggle_back_timer
-	if amount_per_second > 1:
+	if amount_per_second >= 1:
 		var wait_time = 1.0 / float(amount_per_second)
 		spawn_timer.wait_time = wait_time
 	else:
