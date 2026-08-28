@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://brtj30hrfgtnc" path="res://player/player_controller/player_controller.tscn" id="2_iuonh"]
 [ext_resource type="Texture2D" uid="uid://b0a0jhp5nte7n" path="res://scenes/main/assets/sky_19_2k.png" id="2_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://dxyear54toy1v" path="res://entities/input_manager/input_manager.tscn" id="3_k2fmo"]
+[ext_resource type="Shader" uid="uid://cahcwvbl074x1" path="res://shaders/camera_shader_01.gdshader" id="4_a8run"]
 [ext_resource type="PackedScene" uid="uid://dvs75nw080kyk" path="res://entities/camera_system/camera_system.tscn" id="6_ow5a4"]
 [ext_resource type="PackedScene" uid="uid://b03dp11bxot1q" path="res://scenes/maps/map_01.tscn" id="7_hujxm"]
 [ext_resource type="PackedScene" uid="uid://v5xwdspwnyd2" path="res://entities/item_system/item_system.tscn" id="8_yyfjg"]
@@ -22,6 +23,26 @@ background_mode = 2
 sky = SubResource("Sky_hujxm")
 tonemap_mode = 3
 fog_light_color = Color(0.69680893, 0.9194905, 0.9959524, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oa41v"]
+render_priority = 0
+shader = ExtResource("4_a8run")
+shader_parameter/outlineColor = Color(0, 0, 0, 0.78)
+shader_parameter/depth_threshold = 0.025
+shader_parameter/normal_threshold = 0.5
+shader_parameter/normal_smoothing = 0.25
+shader_parameter/max_thickness = 1.3
+shader_parameter/min_thickness = 0.5
+shader_parameter/max_distance = 75.0
+shader_parameter/min_distance = 2.0
+shader_parameter/grazing_fresnel_power = 5.0
+shader_parameter/grazing_angle_mask_power = 1.0
+shader_parameter/grazing_angle_modulation_factor = 50.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_mf8xc"]
+material = SubResource("ShaderMaterial_oa41v")
+flip_faces = true
+size = Vector2(2, 2)
 
 [node name="Main" type="Node3D" unique_id=4722677 node_paths=PackedStringArray("player_controller", "input_manager", "map", "item_system", "minigame_system", "camera_system")]
 script = ExtResource("1_l3cfh")
@@ -49,6 +70,9 @@ process_priority = 300
 process_physics_priority = 300
 script = ExtResource("2_hujxm")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="PostProcessing_01" type="MeshInstance3D" parent="Camera3D" unique_id=1003411069]
+mesh = SubResource("QuadMesh_mf8xc")
 
 [node name="PlayerController" parent="." unique_id=88308788 instance=ExtResource("2_iuonh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1759113, 0)
