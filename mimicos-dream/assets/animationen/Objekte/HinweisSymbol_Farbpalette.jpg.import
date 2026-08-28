@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw6bi8galemf4"
-path.s3tc="res://.godot/imported/boden_Plane Base Color.png-68e6d69902594a05f839921cbb402b40.s3tc.ctex"
+uid="uid://d1v4hrtl55ckp"
+path.s3tc="res://.godot/imported/HinweisSymbol_Farbpalette.jpg-94c43950c02336d5488e1601aedb884a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2defa71657788f23061014757bbd92a3"
+"md5": "311c4f6b1d90995b976c9e0e76383ff8"
 }
 
 [deps]
 
-source_file="res://assets/Testobjecte/Boden/boden_Plane Base Color.png"
-dest_files=["res://.godot/imported/boden_Plane Base Color.png-68e6d69902594a05f839921cbb402b40.s3tc.ctex"]
+source_file="res://assets/animationen/Objekte/HinweisSymbol_Farbpalette.jpg"
+dest_files=["res://.godot/imported/HinweisSymbol_Farbpalette.jpg-94c43950c02336d5488e1601aedb884a.s3tc.ctex"]
 
 [params]
 
