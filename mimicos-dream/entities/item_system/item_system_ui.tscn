@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dvhvusdgo3ljn"]
 
 [ext_resource type="Script" uid="uid://c7ufwyi3q3mgi" path="res://entities/item_system/item_system_ui.gd" id="1_gehp2"]
+[ext_resource type="Texture2D" uid="uid://bjvblhaacnbkb" path="res://assets/Testobjecte/Map01/Bilder/UI.png" id="2_x131h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa41v"]
+atlas = ExtResource("2_x131h")
+region = Rect2(79, 919, 201, 161)
 
 [node name="ItemSystemUi" type="Control" unique_id=502326445 node_paths=PackedStringArray("current_item", "left_arrow", "right_arrow")]
 layout_mode = 3
@@ -27,24 +32,36 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1971318863]
+custom_minimum_size = Vector2(120, 100)
+custom_maximum_size = Vector2(120, 100)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0, 0.11)
+texture = SubResource("AtlasTexture_oa41v")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=476072998]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="LeftArrow" type="CenterContainer" parent="MarginContainer/HBoxContainer" unique_id=296817680]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/LeftArrow" unique_id=572632605]
+visible = false
 layout_mode = 2
 text = "<"
 
 [node name="CurrentItem" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=413464360]
-custom_minimum_size = Vector2(100, 100)
-custom_maximum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(60, 60)
+custom_maximum_size = Vector2(60, 60)
 layout_mode = 2
 
 [node name="RightArrow" type="CenterContainer" parent="MarginContainer/HBoxContainer" unique_id=212328232]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/RightArrow" unique_id=1778139585]
+visible = false
 layout_mode = 2
 text = ">"
