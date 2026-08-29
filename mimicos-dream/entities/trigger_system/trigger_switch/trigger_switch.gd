@@ -7,8 +7,8 @@ class_name TriggerSwitch extends Node3D
 
 @export_category("internal")
 @export var interaction: Interaction
-@export var ball_mesh_instance_3d: MeshInstance3D
 @export var label_3d: Label3D
+@export var cube: MeshInstance3D
 
 signal on_switch(player_controller: PlayerController, on: bool)
 
@@ -19,8 +19,8 @@ func _ready() -> void:
 	if interact_data:
 		interaction.interact_data = interact_data
 	interaction.on_interact.connect(self._toggle_trigger)
-	var mat: StandardMaterial3D = ball_mesh_instance_3d.get_surface_override_material(0).duplicate()
-	ball_mesh_instance_3d.set_surface_override_material(0, mat)
+	var mat: StandardMaterial3D = cube.get_surface_override_material(0).duplicate()
+	cube.set_surface_override_material(0, mat)
 
 func _toggle_trigger(player_controller: PlayerController) -> void:
 	if is_on:
@@ -29,7 +29,7 @@ func _toggle_trigger(player_controller: PlayerController) -> void:
 	on_switch.emit(player_controller, true)
 	if animation_player:
 		animation_player.play("animation|on")
-	var mat: StandardMaterial3D = ball_mesh_instance_3d.get_surface_override_material(0)
+	var mat: StandardMaterial3D = cube.get_surface_override_material(0)
 	var color: Color = player_controller.get_player_color(player_controller.team)
 	mat.emission = color
 	await get_tree().create_timer(1).timeout
@@ -50,7 +50,7 @@ func _auto_close(timer: int) -> void:
 		label_3d.text = ""
 		is_on = false
 		on_switch.emit(last_player, false)
-		var mat: StandardMaterial3D = ball_mesh_instance_3d.get_surface_override_material(0)
+		var mat: StandardMaterial3D = cube.get_surface_override_material(0)
 		mat.emission = Color.WHITE
 		label_3d.hide()
 		if animation_player:
