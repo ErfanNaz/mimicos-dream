@@ -1775,9 +1775,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -39.
 [node name="Tv" parent="Haus1" unique_id=870833660 instance=ExtResource("39_qj0ue")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -39.57075, 1.7377223, -6.092859)
 
-[node name="Tv_Fernbedienung" parent="Haus1" unique_id=952889613 instance=ExtResource("40_31vvl")]
-transform = Transform3D(0.8078249, 0, -0.5894225, 0, 1, 0, 0.5894225, 0, 0.8078249, -39.011677, 1.6960561, -3.4855847)
-
 [node name="Sofa02" parent="Haus1" unique_id=1104965258 instance=ExtResource("34_s55ph")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -27.650192, 0, -6.0685863)
 
@@ -2799,6 +2796,12 @@ transform = Transform3D(0.03291613, -0.5442232, -0.21058339, 0.58340603, 0.03528
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.908168, 0.027611494, -33.827827)
 door_pin = "2513"
 
+[node name="Tür mit gitter" parent="Haus1/DoorSystem" index="1" unique_id=2097502043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.26737976)
+
+[node name="animation" parent="Haus1/DoorSystem/Tür mit gitter" index="0" unique_id=1394074591]
+transform = Transform3D(1, 0, 0, 0, 0.8303307, 0, 0, 0, 1, 0, 0, 0)
+
 [node name="Tisch" parent="Haus1" unique_id=249141503 instance=ExtResource("58_5cov0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26898694, 0.012610931, 5.9723644)
 
@@ -2831,3 +2834,12 @@ transform = Transform3D(-0.69059205, 0, 0.7232445, 0, 1, 0, -0.7232445, 0, -0.69
 
 [node name="Nachttisch" parent="." unique_id=729145385 instance=ExtResource("59_7o10a")]
 transform = Transform3D(-1.5767035, 0, -0.022491217, 0, 1.576864, 0, 0.022491217, 0, -1.5767035, 3.7718983, 0.006924391, 12.889702)
+
+[node name="Tisch" parent="." unique_id=190257584 instance=ExtResource("58_5cov0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.181374, 0.037306227, -6.0832443)
+
+[node name="Tv_Fernbedienung" parent="." unique_id=952889613 instance=ExtResource("40_31vvl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.844444, 1.5976014, -5.481102)
+
+[editable path="Haus1/DoorSystem"]
+[editable path="Haus1/DoorSystem/Tür mit gitter"]
