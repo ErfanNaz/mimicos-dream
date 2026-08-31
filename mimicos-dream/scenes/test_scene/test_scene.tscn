@@ -60,6 +60,12 @@
 [ext_resource type="PackedScene" uid="uid://2dlxgx1g83ra" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Tisch.fbx" id="58_5cov0"]
 [ext_resource type="PackedScene" uid="uid://18x64ejxbe1d" path="res://entities/door_system/door_system.tscn" id="58_7o10a"]
 [ext_resource type="PackedScene" uid="uid://day4iw85ul51v" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Nachttisch.fbx" id="59_7o10a"]
+[ext_resource type="PackedScene" uid="uid://bnabiam35uypr" path="res://entities/items/letter/letter.tscn" id="61_dedyg"]
+[ext_resource type="Texture2D" uid="uid://cinrijhwqq2qh" path="res://assets/Testobjecte/Map01/Bilder/Brief1.png" id="62_i3vi1"]
+[ext_resource type="Texture2D" uid="uid://c5igtwrf0kkgp" path="res://assets/Testobjecte/Map01/Bilder/Brief2.png" id="63_i3vi1"]
+[ext_resource type="Texture2D" uid="uid://b1bru7orqp0c" path="res://assets/Testobjecte/Map01/Bilder/Brief3.png" id="64_hb3p6"]
+[ext_resource type="Texture2D" uid="uid://cxjaoyajl6jyr" path="res://assets/Testobjecte/Map01/Bilder/Brief4.png" id="65_6dt4o"]
+[ext_resource type="PackedScene" uid="uid://cyiamia4oprhb" path="res://entities/text_system/text_system.tscn" id="66_wqfa3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
 panorama = ExtResource("1_wgdak")
@@ -73,6 +79,12 @@ background_mode = 2
 sky = SubResource("Sky_ow5a4")
 tonemap_mode = 4
 sdfgi_use_occlusion = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0ob2l"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_uf4ca"]
+viewport_path = NodePath("Sprite3D/SubViewport")
 
 [node name="TestScene" type="Node3D" unique_id=805365231 node_paths=PackedStringArray("player_controller", "input_manager", "start_marker_3d", "item_system")]
 script = ExtResource("1_doi4a")
@@ -2799,7 +2811,7 @@ door_pin = "2513"
 [node name="Tür mit gitter" parent="Haus1/DoorSystem" index="1" unique_id=2097502043]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.26737976)
 
-[node name="animation" parent="Haus1/DoorSystem/Tür mit gitter" index="0" unique_id=1394074591]
+[node name="animation" parent="Haus1/DoorSystem/Tür mit gitter" index="0" unique_id=1199325993]
 transform = Transform3D(1, 0, 0, 0, 0.8303307, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Tisch" parent="Haus1" unique_id=249141503 instance=ExtResource("58_5cov0")]
@@ -2841,5 +2853,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.181374, 0.037306227, -6.0
 [node name="Tv_Fernbedienung" parent="." unique_id=952889613 instance=ExtResource("40_31vvl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.844444, 1.5976014, -5.481102)
 
+[node name="Letter" parent="." unique_id=1809275136 instance=ExtResource("61_dedyg")]
+transform = Transform3D(0.46340913, 0.2489785, 1.0883195e-08, 1.7553076e-15, -2.2994783e-08, 0.5260592, 0.2489785, -0.46340913, -2.025626e-08, 16.698687, 0.0454141, -31.767662)
+letter_texture = ExtResource("62_i3vi1")
+
+[node name="Letter2" parent="." unique_id=1380348335 instance=ExtResource("61_dedyg")]
+transform = Transform3D(0.45943043, -0.400803, -1.7519655e-08, 0, -2.6650305e-08, 0.6096879, -0.400803, -0.45943043, -2.0082343e-08, 34.35233, 1.5603517, -16.958256)
+letter_texture = ExtResource("63_i3vi1")
+
+[node name="Letter3" parent="." unique_id=1455038109 instance=ExtResource("61_dedyg")]
+transform = Transform3D(-0.029509803, -0.27389595, 0.48944625, -0.016483864, 0.49033496, 0.27339947, -0.560629, 0, -0.03380157, 22.20536, 1.4603333, -0.89765906)
+letter_texture = ExtResource("64_hb3p6")
+
+[node name="Letter4" parent="." unique_id=1371286421 instance=ExtResource("61_dedyg")]
+transform = Transform3D(-2.887897e-08, 0.15673797, -0.66067386, 6.851234e-09, 0.66067386, 0.15673797, 0.6790116, 0, -2.9680539e-08, -39.534733, 0.5654689, 15.360198)
+letter_texture = ExtResource("65_6dt4o")
+
+[node name="TextSystem" parent="." unique_id=1175762003 instance=ExtResource("66_wqfa3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 29.184887, 0, -4.2491765)
+text = "alles voller Töpfe..."
+one_shot = false
+
+[node name="Sprite3D" parent="TextSystem" index="1" unique_id=571532252]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 4.6275883, 0)
+texture = SubResource("ViewportTexture_0ob2l")
+
+[node name="TextSystem2" parent="." unique_id=1413037500 instance=ExtResource("66_wqfa3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.738388, 4.7683716e-07, 6.064898)
+text = "Das wird wohl mein Kinderzimmer sein."
+one_shot = false
+
+[node name="Sprite3D" parent="TextSystem2" index="1" unique_id=571532252]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.9078188, 4.980098, 0)
+texture = SubResource("ViewportTexture_uf4ca")
+
 [editable path="Haus1/DoorSystem"]
 [editable path="Haus1/DoorSystem/Tür mit gitter"]
+[editable path="TextSystem"]
+[editable path="TextSystem2"]
