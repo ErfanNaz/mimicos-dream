@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cs4kdwk70y3hw" path="res://entities/minigame_system/minigame_system.tscn" id="7_0ob2l"]
 [ext_resource type="PackedScene" uid="uid://d0l2rvy688ip7" path="res://assets/Testobjecte/Map01/modular assets/Objekte/TestObjekte/Boden.fbx" id="9_g451t"]
 [ext_resource type="Texture2D" uid="uid://bcl487u5v75eh" path="res://assets/Testobjecte/Map01/modular assets/Objekte/TestObjekte/Checker.png" id="10_ioiol"]
-[ext_resource type="PackedScene" uid="uid://bam3smbcwpg86" path="res://assets/Testobjecte/Map01/modular assets/Objekte/TestObjekte/Schraubenschlüssel.fbx" id="12_mj4xq"]
 [ext_resource type="Texture2D" uid="uid://2cnao1vv8vk7" path="res://assets/Testobjecte/Map01/modular assets/Objekte/TestObjekte/Farbpalette.jpg" id="13_otg31"]
 [ext_resource type="PackedScene" uid="uid://5c8a2llrw7ej" path="res://assets/Testobjecte/Map01/modular assets/Objekte/TestObjekte/Generator.fbx" id="14_otg31"]
+[ext_resource type="PackedScene" uid="uid://ci04on4gct1k3" path="res://entities/items/wrench/wrench.tscn" id="15_hqp6l"]
 [ext_resource type="PackedScene" uid="uid://dkghft20upgyl" path="res://assets/Testobjecte/Map01/modular assets/Objekte/TestObjekte/Zahnrad.fbx" id="15_q6ea6"]
 [ext_resource type="PackedScene" uid="uid://2dlxgx1g83ra" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Tisch.fbx" id="58_5cov0"]
 
@@ -31,9 +31,6 @@ sdfgi_use_occlusion = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g451t"]
 albedo_texture = ExtResource("10_ioiol")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6ea6"]
-albedo_texture = ExtResource("13_otg31")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqp6l"]
 albedo_texture = ExtResource("13_otg31")
@@ -93,12 +90,6 @@ material_override = SubResource("StandardMaterial3D_g451t")
 [node name="Tisch" parent="." unique_id=229864514 instance=ExtResource("58_5cov0")]
 transform = Transform3D(0.6623882, 0, 0, 0, 0.6623882, 0, 0, 0, 0.6623882, -6.703316, 0.037306227, 20.283234)
 
-[node name="Schraubenschlüssel" parent="." unique_id=1516096836 instance=ExtResource("12_mj4xq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7903214, 1.1036897, 20.07077)
-
-[node name="Schraubenschlüssel" parent="Schraubenschlüssel" index="0" unique_id=1466565926]
-material_override = SubResource("StandardMaterial3D_q6ea6")
-
 [node name="Generator" parent="." unique_id=1370354398 instance=ExtResource("14_otg31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3018842, 4.7683716e-07, 23.259401)
 
@@ -111,7 +102,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2913737, 1.0576264, 19.464
 [node name="Zahnrad" parent="Zahnrad" index="0" unique_id=451774985]
 material_override = SubResource("StandardMaterial3D_uxsya")
 
+[node name="Wrench" parent="." unique_id=1617912662 instance=ExtResource("15_hqp6l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.782302, 1.1036899, 20.229513)
+
 [editable path="Boden"]
-[editable path="Schraubenschlüssel"]
 [editable path="Generator"]
 [editable path="Zahnrad"]
+[editable path="Wrench"]
