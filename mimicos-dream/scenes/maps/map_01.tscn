@@ -33,13 +33,14 @@
 [ext_resource type="Texture2D" uid="uid://d1v4hrtl55ckp" path="res://assets/animationen/Objekte/HinweisSymbol_Farbpalette.jpg" id="32_6lp7a"]
 [ext_resource type="PackedScene" uid="uid://cmlkquq7cvvnx" path="res://scenes/test_scene/test_scene.tscn" id="32_omibp"]
 [ext_resource type="Shader" uid="uid://c02i75jfwikh3" path="res://shaders/glass_02.gdshader" id="33_6lp7a"]
+[ext_resource type="PackedScene" uid="uid://ci04on4gct1k3" path="res://entities/items/wrench/wrench.tscn" id="34_k3hdf"]
 
 [sub_resource type="Resource" id="Resource_4iqtb"]
 script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6lp7a"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_k3hdf"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Resource" id="Resource_yr2eo"]
@@ -63,7 +64,7 @@ metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 script = ExtResource("2_yr2eo")
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_k3hdf"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_jayif"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Curve3D" id="Curve3D_ru6md"]
@@ -127,10 +128,10 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_jayif"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ply2o"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ply2o"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_cpbbj"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Curve3D" id="Curve3D_omibp"]
@@ -260,7 +261,7 @@ visible = false
 
 [node name="Sprite3D" parent="triggers/TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.4, 0, 6.039832e-08, 0, 0.4, 0, -6.039832e-08, 0, -0.4, -4.612211, 2.5914545, 2.1660986)
-texture = SubResource("ViewportTexture_6lp7a")
+texture = SubResource("ViewportTexture_k3hdf")
 
 [node name="truhe2" parent="." unique_id=1986066644 instance=ExtResource("4_hrjdk")]
 transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, -0.5009508, 0, 57.54696)
@@ -350,7 +351,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9419, 3.8146973e-06, -3.72
 connected_portal = NodePath("../Portal5")
 
 [node name="StartMarker3D" type="Marker3D" parent="." unique_id=193951223]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1267.185, 215.48929, -2.2085323)
 
 [node name="schalter01" parent="." unique_id=1594216519 instance=ExtResource("11_5dti3")]
 transform = Transform3D(0.08356324, 0, -0.99650246, 0, 1, 0, 0.99650246, 0, 0.08356324, -0.14533472, 0, 1.4121547)
@@ -401,7 +401,7 @@ visible = false
 
 [node name="Sprite3D" parent="TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.24545783, 0, 0.54749477, 0, 0.6, 0, -0.54749477, 0, -0.24545783, -0.67036444, 3.9025612, 0.2469357)
-texture = SubResource("ViewportTexture_k3hdf")
+texture = SubResource("ViewportTexture_jayif")
 
 [node name="HighlightPathSystem2" parent="." unique_id=126581828 node_paths=PackedStringArray("camera_p_path_follow_3d", "camera_t_path_follow_3d") instance=ExtResource("7_e1bmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.210854, -4.7683716e-07, 76.58662)
@@ -539,7 +539,7 @@ toggle_back_timer = 5
 
 [node name="Sprite3D" parent="TextSystem2" index="1" unique_id=571532252]
 transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, 4.7200775, 3, 2.7381592)
-texture = SubResource("ViewportTexture_jayif")
+texture = SubResource("ViewportTexture_ply2o")
 
 [node name="FakeTrigger" parent="." unique_id=1168574047 instance=ExtResource("27_0mq61")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.3392, 126.483925, -1336.459)
@@ -554,7 +554,7 @@ visible = false
 
 [node name="Sprite3D" parent="TextSystem3" index="1" unique_id=571532252]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.9628906, 4.9089355, -0.39038086)
-texture = SubResource("ViewportTexture_ply2o")
+texture = SubResource("ViewportTexture_cpbbj")
 
 [node name="SimpleDoor" parent="." unique_id=637809543 instance=ExtResource("28_nkd1n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -162.85582, 124.61087, -1347.2173)
@@ -596,6 +596,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1263.9299, 213.09186, 3.6956
 [node name="Cube" parent="HinweisSymbol2" index="0" unique_id=815555013]
 mesh = SubResource("ArrayMesh_jayif")
 surface_material_override/0 = SubResource("StandardMaterial3D_3vtmf")
+
+[node name="Wrench" parent="." unique_id=1617912662 instance=ExtResource("34_k3hdf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.80955, 0.5183945, -6.326194)
 
 [editable path="triggers/TextSystem"]
 [editable path="HighlightPathSystem"]

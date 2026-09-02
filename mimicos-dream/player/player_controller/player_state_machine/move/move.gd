@@ -5,6 +5,7 @@ extends State
 
 func enter() -> void:
 	player_controller.blackboard.selector = "move"
+	player_controller.footstap_audio_stream_player.play()
 	
 func update(_delta: float) -> void:
 	if !player_body.is_on_floor():

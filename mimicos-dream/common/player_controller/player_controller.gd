@@ -7,6 +7,7 @@ var TEAM_COLORS: Array[Color] = [
 	Color.from_string("#78bf69", Color.LIME_GREEN) 
 ]
 
+@export_category("Internal")
 @export var blackboard: StateBlackboard = StateBlackboard.new()
 @export var player_body: PlayerBody
 @export var player_actor: PlayerActor3D
@@ -14,6 +15,7 @@ var TEAM_COLORS: Array[Color] = [
 @export var player_properties: PlayerProperties
 @export var animation_player: AnimationPlayer
 @export var phantom_camera_3d: PhantomCamera3D
+@export var footstap_audio_stream_player: AudioStreamPlayer3D
 
 @export var player_interactable: PlayerInteractable
 

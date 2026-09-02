@@ -28,5 +28,23 @@ func _ready() -> void:
 	GameManager.item_system = item_system
 	GameManager.minigame_system = minigame_system
 	
-	
-	
+	check_node(self)
+
+
+func check_node(node: Node):
+	if node is Area3D or node is CollisionShape3D or node is StaticBody3D or node is RigidBody3D or node is CharacterBody3D:
+		var scale: Vector3 = node.global_transform.basis.get_scale()
+
+		var non_uniform := (
+			not is_equal_approx(scale.x, scale.y)
+			or not is_equal_approx(scale.x, scale.z)
+			or not is_equal_approx(scale.y, scale.z)
+		)
+
+		if non_uniform:
+			print("⚠️ JOLT SCALE PROBLEM")
+			print("   Node: ", node.get_path())
+			print("   Scale: ", scale)
+
+	for child in node.get_children():
+		check_node(child)
