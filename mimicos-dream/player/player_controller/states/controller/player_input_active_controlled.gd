@@ -44,6 +44,7 @@ func enter() -> void:
 	dash_timer.timeout.connect(self._on_dash_finished)
 	player_controller.blackboard.controller_state = StateBlackboard.PlayerControllerState.input_third_person
 	
+	
 func exit() -> void:
 	set_process_input(false)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

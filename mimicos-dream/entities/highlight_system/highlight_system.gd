@@ -21,8 +21,7 @@ func _ready() -> void:
 	
 func _on_switch_toggle(player_controller: PlayerController, on: bool) -> void:
 	if on:
-		player_controller.idle_state_machine()
-		player_controller.player_actor.set_animation("idle")
+		player_controller.staying_state_machine()
 		current_target = player_controller.phantom_camera_3d.get_look_at_target()
 		if !current_target:
 			ApplicationManager.warn("missing phantom camera target")

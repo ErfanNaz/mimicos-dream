@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dwjaj6b1w32fr" path="res://common/interaction_system/interactable/interaction.gd" id="2_bpa18"]
 [ext_resource type="PackedScene" uid="uid://dth3medadidxr" path="res://assets/Testobjecte/Map01/Animationen/Brief.fbx" id="3_bpa18"]
 [ext_resource type="Script" uid="uid://c1xrvdi64jpsl" path="res://common/interaction_system/interactable/interact_data.gd" id="5_njehq"]
-[ext_resource type="Shader" uid="uid://cqwvfcgxadmbh" path="res://shaders/canvas_liquid_glass.gdshader" id="6_47k0s"]
+[ext_resource type="Shader" uid="uid://dc8k3frnyisnj" path="res://shaders/canvas_blur.gdshader" id="6_47k0s"]
 
 [sub_resource type="Resource" id="Resource_47k0s"]
 script = ExtResource("5_njehq")
@@ -17,18 +17,7 @@ metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mf8xc"]
 shader = ExtResource("6_47k0s")
-shader_parameter/blur = 3.5
-shader_parameter/warp_intensity = 0.4
-shader_parameter/strength_x = 12.0
-shader_parameter/strength_y = 12.0
-shader_parameter/offset_x = 0.0
-shader_parameter/offset_y = 0.0
-shader_parameter/corner_radius = 0.0
-shader_parameter/edge_smoothness = 1.0
-shader_parameter/tint = Color(0.95, 0.97, 1, 0.12)
-shader_parameter/edge_highlight = Color(1, 1, 1, 0.3)
-shader_parameter/edge_width = 1.5
-shader_parameter/chromatic_strength = 5.0
+shader_parameter/blur_size = 5.0
 
 [sub_resource type="Animation" id="Animation_47k0s"]
 length = 0.001
@@ -131,6 +120,8 @@ texture_rect = NodePath("CanvasLayer/DetailView/CenterContainer/TextureRect")
 script = ExtResource("1_gjyee")
 interaction = NodePath("Interaction")
 mesh = NodePath("Brief")
+hand_rotation = Vector3(0.6981317, 0.15707964, -1.3089969)
+hand_scale = Vector3(0.5, 0.5, 0.5)
 
 [node name="Interaction" type="Area3D" parent="Item" unique_id=511043409]
 script = ExtResource("2_bpa18")
@@ -140,7 +131,7 @@ metadata/_custom_type_script = "uid://dwjaj6b1w32fr"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Item/Interaction" unique_id=840814494]
 shape = SubResource("SphereShape3D_mf8xc")
 
-[node name="Brief" parent="Item" unique_id=1525025361 instance=ExtResource("3_bpa18")]
+[node name="Brief" parent="Item" unique_id=483084967 instance=ExtResource("3_bpa18")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=706404650]
 visible = false

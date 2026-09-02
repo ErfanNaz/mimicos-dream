@@ -6,6 +6,12 @@ class_name ItemBase extends Node3D
 @export var mesh: Node3D
 @export var item_image: Texture2D
 
+@export_category("Hand Transform")
+@export var hand_position: Vector3 = Vector3.ZERO
+@export var hand_rotation: Vector3 = Vector3.ZERO
+@export var hand_scale: Vector3 = Vector3.ONE
+
+var mesh_instance: MeshInstance3D
 var mesh_animation_player: AnimationPlayer
 
 signal on_play_animation(player_controller: PlayerController, animation: String)
@@ -20,6 +26,7 @@ func _ready() -> void:
 	interaction.on_interact.connect(self.drag_item)
 	if !mesh:
 		return
+	mesh_instance = mesh.get_child(0)
 	mesh_animation_player = Utils.find_animation_player_in_glb(mesh)
 
 func play_animation(player_controller: PlayerController, animation: String) -> void:

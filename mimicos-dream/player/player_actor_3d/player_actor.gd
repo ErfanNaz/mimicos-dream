@@ -41,6 +41,7 @@ class_name PlayerActor3D extends Node3D
 @export var copy_transform_modifier_3d_left_hand: CopyTransformModifier3D
 @export var two_bone_ik_3d_right_arm: TwoBoneIK3D
 @export var copy_transform_modifier_3d_right_hand: CopyTransformModifier3D
+@export var right_hand_item_container: Node3D
 
 @export_group("Actor_Invers_Kinematics_Targets")
 @export var head_target: Marker3D
@@ -189,7 +190,6 @@ func get_body_material() -> StandardMaterial3D:
 	if !body_material:
 		return PLAYER_BODY_BASE
 	return body_material
-	
 
 func set_animation(_animation: String) -> void:
 	animation = _animation

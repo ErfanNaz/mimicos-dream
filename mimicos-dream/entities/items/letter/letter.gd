@@ -4,7 +4,6 @@ extends Node3D
 
 @export_category("Internal")
 @export var item: ItemBase
-@export var has_details: bool = false
 @export var animation_player: AnimationPlayer
 @export var canvas_layer: CanvasLayer
 @export var texture_rect: TextureRect

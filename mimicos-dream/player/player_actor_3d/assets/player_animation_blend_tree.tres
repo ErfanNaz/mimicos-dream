@@ -26,7 +26,7 @@ animation = &"Walk"
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_kmofx"]
 
 [resource]
-graph_offset = Vector2(-408.48132, 96.37411)
+graph_offset = Vector2(-641.6381, -134.28093)
 nodes/output/position = Vector2(813.3333, 186.66667)
 nodes/walk/node = SubResource("AnimationNodeBlend2_kmofx")
 nodes/walk/position = Vector2(-200, 133.33333)

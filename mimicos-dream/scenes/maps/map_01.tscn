@@ -32,13 +32,14 @@
 [ext_resource type="PackedScene" uid="uid://b5yskvhnf3h7w" path="res://assets/animationen/Objekte/HinweisSymbol.glb" id="31_3vtmf"]
 [ext_resource type="Texture2D" uid="uid://d1v4hrtl55ckp" path="res://assets/animationen/Objekte/HinweisSymbol_Farbpalette.jpg" id="32_6lp7a"]
 [ext_resource type="PackedScene" uid="uid://cmlkquq7cvvnx" path="res://scenes/test_scene/test_scene.tscn" id="32_omibp"]
+[ext_resource type="Shader" uid="uid://c02i75jfwikh3" path="res://shaders/glass_02.gdshader" id="33_6lp7a"]
 
 [sub_resource type="Resource" id="Resource_4iqtb"]
 script = ExtResource("2_yr2eo")
 action_button = 0
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_omibp"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6lp7a"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Resource" id="Resource_yr2eo"]
@@ -62,7 +63,7 @@ metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 script = ExtResource("2_yr2eo")
 metadata/_custom_type_script = "uid://c1xrvdi64jpsl"
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6lp7a"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_k3hdf"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Curve3D" id="Curve3D_ru6md"]
@@ -126,10 +127,10 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_k3hdf"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_jayif"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_jayif"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ply2o"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="Curve3D" id="Curve3D_omibp"]
@@ -186,9 +187,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nn1q6")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6eqys"]
-diffuse_mode = 3
-albedo_color = Color(0.45490196, 0.20392157, 0.12156863, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_47k0s"]
+render_priority = 0
+shader = ExtResource("33_6lp7a")
+shader_parameter/Refraction_Strength = 0.05
+shader_parameter/Fresnel_Power = 1.0
+shader_parameter/Emission_Power = 1.0
+shader_parameter/Specular_Power = 1.0
+shader_parameter/Roughness_Power = 0.1
+shader_parameter/Rim_Power = 0.1
+shader_parameter/Blur = 0.0
+shader_parameter/Taint = Color(1, 1, 1, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jayif"]
 resource_name = "HinweisSymbol_Cube_003"
@@ -251,7 +260,7 @@ visible = false
 
 [node name="Sprite3D" parent="triggers/TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.4, 0, 6.039832e-08, 0, 0.4, 0, -6.039832e-08, 0, -0.4, -4.612211, 2.5914545, 2.1660986)
-texture = SubResource("ViewportTexture_omibp")
+texture = SubResource("ViewportTexture_6lp7a")
 
 [node name="truhe2" parent="." unique_id=1986066644 instance=ExtResource("4_hrjdk")]
 transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, -0.5009508, 0, 57.54696)
@@ -392,7 +401,7 @@ visible = false
 
 [node name="Sprite3D" parent="TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-0.24545783, 0, 0.54749477, 0, 0.6, 0, -0.54749477, 0, -0.24545783, -0.67036444, 3.9025612, 0.2469357)
-texture = SubResource("ViewportTexture_6lp7a")
+texture = SubResource("ViewportTexture_k3hdf")
 
 [node name="HighlightPathSystem2" parent="." unique_id=126581828 node_paths=PackedStringArray("camera_p_path_follow_3d", "camera_t_path_follow_3d") instance=ExtResource("7_e1bmt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.210854, -4.7683716e-07, 76.58662)
@@ -511,7 +520,6 @@ curve = SubResource("Curve3D_gsad5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.92479, 124.59714, -1318.1035)
 
 [node name="Terrain2" parent="Node3D2" unique_id=1047171970 instance=ExtResource("23_qeyhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026824951, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Node3D2" unique_id=1135234823]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.676483, 2.023346, -2.0421143)
@@ -522,22 +530,19 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -159
 door_pin = "1986"
 
 [node name="schalter02" parent="DoorSystem" index="2" unique_id=335086031]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.876465, 0.104385376, 23.253098)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.413696, 0.104385376, 6.6699677)
 
 [node name="TextSystem2" parent="." unique_id=1583512442 instance=ExtResource("3_ja8my")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -164.21579, 124.53389, -1337.8684)
 text = "Vertrau der Wissenschaft"
 toggle_back_timer = 5
 
-[node name="TriggerSwitch" parent="TextSystem2" index="0" unique_id=181858922]
-visible = false
-
 [node name="Sprite3D" parent="TextSystem2" index="1" unique_id=571532252]
 transform = Transform3D(-1.7484556e-08, 0, -0.4, 0, 0.4, 0, 0.4, 0, -1.7484556e-08, 4.7200775, 3, 2.7381592)
-texture = SubResource("ViewportTexture_k3hdf")
+texture = SubResource("ViewportTexture_jayif")
 
 [node name="FakeTrigger" parent="." unique_id=1168574047 instance=ExtResource("27_0mq61")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.3392, 126.483925, -1338.0209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.3392, 126.483925, -1336.459)
 
 [node name="TextSystem3" parent="." unique_id=1509667194 instance=ExtResource("3_ja8my")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.00624, 124.53389, -1339.3053)
@@ -549,7 +554,7 @@ visible = false
 
 [node name="Sprite3D" parent="TextSystem3" index="1" unique_id=571532252]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.9628906, 4.9089355, -0.39038086)
-texture = SubResource("ViewportTexture_jayif")
+texture = SubResource("ViewportTexture_ply2o")
 
 [node name="SimpleDoor" parent="." unique_id=637809543 instance=ExtResource("28_nkd1n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -162.85582, 124.61087, -1347.2173)
@@ -583,7 +588,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1266.5032, 212.26625, 3.3618
 [node name="Cube" parent="HinweisSymbol" index="0" unique_id=815555013]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9185333, 0)
 mesh = SubResource("ArrayMesh_k3hdf")
-surface_material_override/0 = SubResource("StandardMaterial3D_6eqys")
+surface_material_override/0 = SubResource("ShaderMaterial_47k0s")
 
 [node name="HinweisSymbol2" parent="." unique_id=547031440 instance=ExtResource("31_3vtmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1263.9299, 213.09186, 3.6956587)

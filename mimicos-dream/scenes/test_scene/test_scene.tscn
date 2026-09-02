@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxyear54toy1v" path="res://entities/input_manager/input_manager.tscn" id="4_ork3v"]
 [ext_resource type="PackedScene" uid="uid://dvs75nw080kyk" path="res://entities/camera_system/camera_system.tscn" id="5_a0rq3"]
 [ext_resource type="PackedScene" uid="uid://v5xwdspwnyd2" path="res://entities/item_system/item_system.tscn" id="6_g451t"]
+[ext_resource type="PackedScene" uid="uid://cs4kdwk70y3hw" path="res://entities/minigame_system/minigame_system.tscn" id="7_0ob2l"]
 [ext_resource type="PackedScene" uid="uid://dafeoxtykmpwi" path="res://assets/Testobjecte/Map01/Terrain.fbx" id="8_a0rq3"]
 [ext_resource type="PackedScene" uid="uid://cjoame0d1a1d7" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Bild.fbx" id="8_hqp6l"]
 [ext_resource type="PackedScene" uid="uid://dmwm1w4dvesyt" path="res://assets/Testobjecte/Map01/modular assets/wände/Tür.fbx" id="10_g451t"]
@@ -80,18 +81,19 @@ sky = SubResource("Sky_ow5a4")
 tonemap_mode = 4
 sdfgi_use_occlusion = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0ob2l"]
-viewport_path = NodePath("Sprite3D/SubViewport")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_uf4ca"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
-[node name="TestScene" type="Node3D" unique_id=805365231 node_paths=PackedStringArray("player_controller", "input_manager", "start_marker_3d", "item_system")]
+[sub_resource type="ViewportTexture" id="ViewportTexture_jmend"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="TestScene" type="Node3D" unique_id=805365231 node_paths=PackedStringArray("player_controller", "input_manager", "start_marker_3d", "item_system", "minigame_system")]
 script = ExtResource("1_doi4a")
 player_controller = NodePath("Spieler und welt/PlayerController")
 input_manager = NodePath("Spieler und welt/InputManager")
 start_marker_3d = NodePath("StartMarker3D")
 item_system = NodePath("Spieler und welt/ItemSystem")
+minigame_system = NodePath("Spieler und welt/MinigameSystem")
 
 [node name="Spieler und welt" type="Node3D" parent="." unique_id=591290303]
 
@@ -119,7 +121,10 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 [node name="InputManager" parent="Spieler und welt" unique_id=799682356 instance=ExtResource("4_ork3v")]
 enable_lookup_direction = true
 
-[node name="ItemSystem" parent="Spieler und welt" unique_id=977012689 instance=ExtResource("6_g451t")]
+[node name="ItemSystem" parent="Spieler und welt" unique_id=977012689 node_paths=PackedStringArray("player_controller") instance=ExtResource("6_g451t")]
+player_controller = NodePath("../PlayerController")
+
+[node name="MinigameSystem" parent="Spieler und welt" unique_id=1851283370 instance=ExtResource("7_0ob2l")]
 
 [node name="CameraSystem" parent="Spieler und welt" unique_id=798910101 node_paths=PackedStringArray("camera_3d") instance=ExtResource("5_a0rq3")]
 camera_3d = NodePath("../Camera3D")
@@ -2811,7 +2816,7 @@ door_pin = "2513"
 [node name="Tür mit gitter" parent="Haus1/DoorSystem" index="1" unique_id=2097502043]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.26737976)
 
-[node name="animation" parent="Haus1/DoorSystem/Tür mit gitter" index="0" unique_id=1199325993]
+[node name="animation" parent="Haus1/DoorSystem/Tür mit gitter" index="0" unique_id=1890351676]
 transform = Transform3D(1, 0, 0, 0, 0.8303307, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Tisch" parent="Haus1" unique_id=249141503 instance=ExtResource("58_5cov0")]
@@ -2876,7 +2881,7 @@ one_shot = false
 
 [node name="Sprite3D" parent="TextSystem" index="1" unique_id=571532252]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 4.6275883, 0)
-texture = SubResource("ViewportTexture_0ob2l")
+texture = SubResource("ViewportTexture_uf4ca")
 
 [node name="TextSystem2" parent="." unique_id=1413037500 instance=ExtResource("66_wqfa3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.738388, 4.7683716e-07, 6.064898)
@@ -2885,7 +2890,7 @@ one_shot = false
 
 [node name="Sprite3D" parent="TextSystem2" index="1" unique_id=571532252]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.9078188, 4.980098, 0)
-texture = SubResource("ViewportTexture_uf4ca")
+texture = SubResource("ViewportTexture_jmend")
 
 [editable path="Haus1/DoorSystem"]
 [editable path="Haus1/DoorSystem/Tür mit gitter"]

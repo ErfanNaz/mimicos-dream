@@ -22,7 +22,8 @@ func _on_interact(player_controller: PlayerController) -> void:
 		return
 	if door_pin && door_pin != "":
 		GameManager.minigame_system.minigame_data = door_pin
-		GameManager.minigame_system.on_close_minigame.connect(self._on_close_minigame)
+		if !GameManager.minigame_system.on_close_minigame.is_connected(self._on_close_minigame):
+			GameManager.minigame_system.on_close_minigame.connect(self._on_close_minigame)
 		GameManager.minigame_system.open_minigame(MinigameSystem.MinigameType.door_lock_number, player_controller)
 		return
 	is_open = true

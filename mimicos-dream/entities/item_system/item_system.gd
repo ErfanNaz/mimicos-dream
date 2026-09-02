@@ -5,7 +5,7 @@ class_name ItemSystem extends Node
 
 signal on_item_add(player_controller: PlayerController, item: ItemBase)
 signal on_item_remove(player_controller: PlayerController, item: ItemBase)
-signal on_current_item_changed(player_controller: PlayerController ,item: ItemBase)
+signal on_current_item_changed(player_controller: PlayerController, item: ItemBase)
 
 var current_items: Array[ItemBase] = []
 var current_item: ItemBase
@@ -63,7 +63,18 @@ func _on_current_item_changed(player_controller: PlayerController, item: ItemBas
 	if !item:
 		item_system_ui.set_texture(null)
 		return
-	item_system_ui.set_texture(current_item.item_image)
+	item_system_ui.set_texture(item.item_image)
+	var hand: Node3D = player_controller.player_actor.right_hand_item_container
+	for child in hand.get_children():
+		hand.remove_child(child)
+	if !item.mesh_instance:
+		return
+	var mesh_instance: MeshInstance3D = MeshInstance3D.new()
+	mesh_instance.mesh = item.mesh_instance.mesh
+	mesh_instance.position = item.hand_position
+	mesh_instance.rotation = item.hand_rotation
+	mesh_instance.scale = item.hand_scale
+	hand.add_child(mesh_instance)
 
 func switch_current_item(index: int) -> bool:
 	if index < 0:
