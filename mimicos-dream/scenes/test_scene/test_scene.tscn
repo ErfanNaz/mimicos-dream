@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bcl487u5v75eh" path="res://assets/Testobjecte/Map01/modular assets/Objekte/TestObjekte/Checker.png" id="10_ioiol"]
 [ext_resource type="PackedScene" uid="uid://bam3smbcwpg86" path="res://assets/Testobjecte/Map01/modular assets/Objekte/TestObjekte/Schraubenschlüssel.fbx" id="12_mj4xq"]
 [ext_resource type="Texture2D" uid="uid://2cnao1vv8vk7" path="res://assets/Testobjecte/Map01/modular assets/Objekte/TestObjekte/Farbpalette.jpg" id="13_otg31"]
+[ext_resource type="PackedScene" uid="uid://5c8a2llrw7ej" path="res://assets/Testobjecte/Map01/modular assets/Objekte/TestObjekte/Generator.fbx" id="14_otg31"]
+[ext_resource type="PackedScene" uid="uid://dkghft20upgyl" path="res://assets/Testobjecte/Map01/modular assets/Objekte/TestObjekte/Zahnrad.fbx" id="15_q6ea6"]
 [ext_resource type="PackedScene" uid="uid://2dlxgx1g83ra" path="res://assets/Testobjecte/Map01/modular assets/Objekte/Tisch.fbx" id="58_5cov0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_g451t"]
@@ -31,6 +33,12 @@ sdfgi_use_occlusion = true
 albedo_texture = ExtResource("10_ioiol")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6ea6"]
+albedo_texture = ExtResource("13_otg31")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqp6l"]
+albedo_texture = ExtResource("13_otg31")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uxsya"]
 albedo_texture = ExtResource("13_otg31")
 
 [node name="TestScene" type="Node3D" unique_id=805365231 node_paths=PackedStringArray("player_controller", "input_manager", "start_marker_3d", "item_system", "minigame_system")]
@@ -82,14 +90,28 @@ camera_3d = NodePath("../Camera3D")
 [node name="Boden" parent="Boden" index="0" unique_id=1034477341]
 material_override = SubResource("StandardMaterial3D_g451t")
 
-[node name="Tisch" parent="Boden" unique_id=229864514 instance=ExtResource("58_5cov0")]
+[node name="Tisch" parent="." unique_id=229864514 instance=ExtResource("58_5cov0")]
 transform = Transform3D(0.6623882, 0, 0, 0, 0.6623882, 0, 0, 0, 0.6623882, -6.703316, 0.037306227, 20.283234)
 
-[node name="Schraubenschlüssel" parent="Boden" unique_id=1516096836 instance=ExtResource("12_mj4xq")]
+[node name="Schraubenschlüssel" parent="." unique_id=1516096836 instance=ExtResource("12_mj4xq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7903214, 1.1036897, 20.07077)
 
-[node name="Schraubenschlüssel" parent="Boden/Schraubenschlüssel" index="0" unique_id=1466565926]
+[node name="Schraubenschlüssel" parent="Schraubenschlüssel" index="0" unique_id=1466565926]
 material_override = SubResource("StandardMaterial3D_q6ea6")
 
+[node name="Generator" parent="." unique_id=1370354398 instance=ExtResource("14_otg31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3018842, 4.7683716e-07, 23.259401)
+
+[node name="Generator" parent="Generator" index="0" unique_id=1533482993]
+material_override = SubResource("StandardMaterial3D_hqp6l")
+
+[node name="Zahnrad" parent="." unique_id=1030875660 instance=ExtResource("15_q6ea6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2913737, 1.0576264, 19.464972)
+
+[node name="Zahnrad" parent="Zahnrad" index="0" unique_id=451774985]
+material_override = SubResource("StandardMaterial3D_uxsya")
+
 [editable path="Boden"]
-[editable path="Boden/Schraubenschlüssel"]
+[editable path="Schraubenschlüssel"]
+[editable path="Generator"]
+[editable path="Zahnrad"]
